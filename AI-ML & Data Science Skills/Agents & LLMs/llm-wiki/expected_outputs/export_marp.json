@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "vault": "/tmp/test-vault",
+  "source": "https://github.com/humaisali",
+  "theme": "gaia",
+  "output_dir": "slides",
+  "rendered_count": 1,
+  "rendered": [
+    "slides/sparse-autoencoder.marp.md"
+  ]
+}
