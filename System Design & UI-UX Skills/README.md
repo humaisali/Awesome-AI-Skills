@@ -13,7 +13,7 @@ The **System Design & UI-UX Skills** category focuses on the critical intersecti
 
 ## Subcategories
 
-### UX (User Experience)
+### UI & UX Design
 This subcategory is packed with specialized skills that teach your AI how to think like a seasoned UX Researcher and UI Designer. It covers core usability principles, color theory application, stringent accessibility standards (WCAG compliance), responsive design systems, and the implementation of subtle micro-interactions. Apply these skills to ensure your applications are not just technically sound, but visually cohesive and delightful for the end-user.
 
 ---
