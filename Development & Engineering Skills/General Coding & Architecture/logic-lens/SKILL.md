@@ -1,4 +1,4 @@
----
+﻿---
 name: logic-lens
 description: "AI-powered Claude Code skill that performs deep code review using formal logic and reasoning frameworks to detect bugs, anti-patterns, and security risks beyond what linters catch."
 category: development
@@ -9,7 +9,7 @@ source_type: community
 license: "MIT"
 license_source: https://github.com/humaisali
 date_added: "2026-04-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [code-review, logic-analysis, debugging, security-review, claude-code]
 tools: [claude, codex, cursor, gemini]
 ---
@@ -110,9 +110,9 @@ Logic Lens was tested against real-world codebases and caught issues missed by E
 
 ## Related Skills
 
-- `@lint-and-validate` — Complementary: run after logic-lens for style/syntax
-- `@security-auditor` — Specialized security-only deep scan
-- `@debugging-strategies` — Use when logic-lens findings need tracing
+- `@lint-and-validate` â€” Complementary: run after logic-lens for style/syntax
+- `@security-auditor` â€” Specialized security-only deep scan
+- `@debugging-strategies` â€” Use when logic-lens findings need tracing
 
 ## Additional Resources
 
@@ -123,3 +123,4 @@ Logic Lens was tested against real-world codebases and caught issues missed by E
 ## Limitations
 
 Use this skill only when the task clearly matches the scope described above (code review and logic analysis). Logic Lens provides AI-powered analysis and should be combined with human review for production-critical decisions. Do not treat the output as a substitute for environment-specific testing or security audits.
+

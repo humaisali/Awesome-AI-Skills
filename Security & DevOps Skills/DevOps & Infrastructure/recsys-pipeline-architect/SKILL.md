@@ -1,13 +1,13 @@
----
+﻿---
 name: recsys-pipeline-architect
-description: "Designs composable recommendation, ranking, and feed pipelines using the six-stage Source→Hydrator→Filter→Scorer→Selector→SideEffect framework"
+description: "Designs composable recommendation, ranking, and feed pipelines using the six-stage Sourceâ†’Hydratorâ†’Filterâ†’Scorerâ†’Selectorâ†’SideEffect framework"
 category: data-ai
 risk: safe
 source: https://github.com/humaisali
 source_repo: mturac/recsys-pipeline-architect
 source_type: community
 date_added: "2026-05-16"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [recommender-system, ranking, feed-algorithm, recsys, personalization, for-you-feed, rag-reranker, pipeline-architecture]
 tools: [claude, codex, cursor, gemini, opencode, cline, continue, windsurf]
 license: "MIT"
@@ -18,7 +18,7 @@ license_source: https://github.com/humaisali
 
 ## Overview
 
-A spec-and-scaffold skill for building composable recommendation, ranking, and feed pipelines. It encodes the six-stage **Source → Hydrator → Filter → Scorer → Selector → SideEffect** framework popularized by xAI's open-sourced [For You algorithm](https://github.com/xai-org/x-algorithm) (Apache 2.0). This skill is an independent reimplementation of the *pattern* — no code is copied from the original — licensed MIT. Use it whenever you need "the top K items for a (user, context)": social feeds, content CMSs, RAG rerankers, task prioritizers, notification triage, search reranking, ad ranking.
+A spec-and-scaffold skill for building composable recommendation, ranking, and feed pipelines. It encodes the six-stage **Source â†’ Hydrator â†’ Filter â†’ Scorer â†’ Selector â†’ SideEffect** framework popularized by xAI's open-sourced [For You algorithm](https://github.com/xai-org/x-algorithm) (Apache 2.0). This skill is an independent reimplementation of the *pattern* â€” no code is copied from the original â€” licensed MIT. Use it whenever you need "the top K items for a (user, context)": social feeds, content CMSs, RAG rerankers, task prioritizers, notification triage, search reranking, ad ranking.
 
 ## When to Use This Skill
 
@@ -40,15 +40,15 @@ Ask the user three questions (only what is missing):
 
 ### Step 2: Walk the eight steps of the spec
 
-The full SKILL walks through: clarify use case → identify candidate sources → list required hydrations → list filters → design scorer chain → selector → side effects → generate scaffold. Each step surfaces the architectural trade-offs (multi-action vs single-score, candidate isolation vs joint scoring, online vs offline batch) so the user makes them explicitly rather than defaulting silently.
+The full SKILL walks through: clarify use case â†’ identify candidate sources â†’ list required hydrations â†’ list filters â†’ design scorer chain â†’ selector â†’ side effects â†’ generate scaffold. Each step surfaces the architectural trade-offs (multi-action vs single-score, candidate isolation vs joint scoring, online vs offline batch) so the user makes them explicitly rather than defaulting silently.
 
 ### Step 3: Emit a runnable scaffold
 
-The upstream repository ships three runnable example scaffolds — every one green on its test suite:
+The upstream repository ships three runnable example scaffolds â€” every one green on its test suite:
 
-- **Strapi v5 plugin** (TypeScript, Jest, 3/3 pass) — adds `GET /api/feed/for-you` with multi-action scoring and author diversity
-- **Zentra-compatible pipeline** (Go with generics, 3/3 pass) — engine.Module-compatible, standalone-usable
-- **PMAI task prioritizer** (Python / FastAPI / pytest, 3/3 pass) — `GET /tasks/next?user_id=42&limit=10`
+- **Strapi v5 plugin** (TypeScript, Jest, 3/3 pass) â€” adds `GET /api/feed/for-you` with multi-action scoring and author diversity
+- **Zentra-compatible pipeline** (Go with generics, 3/3 pass) â€” engine.Module-compatible, standalone-usable
+- **PMAI task prioritizer** (Python / FastAPI / pytest, 3/3 pass) â€” `GET /tasks/next?user_id=42&limit=10`
 
 When the user's stack doesn't match, the skill generates from scratch following the interface definitions in `references/interfaces.md` (TypeScript, Go, Python, Rust).
 
@@ -74,32 +74,32 @@ Skill identifies this as an offline-batch pipeline. Generates a scheduled job sc
 
 ## Best Practices
 
-- ✅ Surface the multi-action vs single-score trade-off explicitly — don't default silently
-- ✅ Order filters by cost (cheap before expensive); universal filters before user-specific
-- ✅ Wrap side effects in fire-and-forget patterns (goroutines / promises without await / asyncio tasks) — never block the response
-- ✅ Keep scoring deterministic and cacheable; do diversity reranking as a separate stage
-- ✅ Attribute the pattern as "popularized by xAI's open-sourced For You algorithm" when generating output
-- ❌ Don't invent benchmark or latency numbers — say "depends on workload, run it yourself"
-- ❌ Don't name the user's generated artifact "X-like" or use "For You" branding — the pattern is free, the brand is not
-- ❌ Don't conflate this with model architecture: this skill is pipeline plumbing *around* the scorer, not the scorer itself
+- âœ… Surface the multi-action vs single-score trade-off explicitly â€” don't default silently
+- âœ… Order filters by cost (cheap before expensive); universal filters before user-specific
+- âœ… Wrap side effects in fire-and-forget patterns (goroutines / promises without await / asyncio tasks) â€” never block the response
+- âœ… Keep scoring deterministic and cacheable; do diversity reranking as a separate stage
+- âœ… Attribute the pattern as "popularized by xAI's open-sourced For You algorithm" when generating output
+- âŒ Don't invent benchmark or latency numbers â€” say "depends on workload, run it yourself"
+- âŒ Don't name the user's generated artifact "X-like" or use "For You" branding â€” the pattern is free, the brand is not
+- âŒ Don't conflate this with model architecture: this skill is pipeline plumbing *around* the scorer, not the scorer itself
 
 ## Limitations
 
-- This skill scaffolds pipeline plumbing; it does not train ML models — the scoring function is the user's responsibility
+- This skill scaffolds pipeline plumbing; it does not train ML models â€” the scoring function is the user's responsibility
 - It does not operate deployed pipelines (no monitoring, no autoscaling decisions)
 - It does not predict pipeline performance (depends on data, hardware, traffic)
-- It does not choose infrastructure (vector DB, cache, queue) — those are outside scope
+- It does not choose infrastructure (vector DB, cache, queue) â€” those are outside scope
 
 ## Security & Safety Notes
 
-- The generated scaffolds are framework code, not application logic — no shell commands, no network fetches, no credential handling
+- The generated scaffolds are framework code, not application logic â€” no shell commands, no network fetches, no credential handling
 - Filters in the generated cookbook include eligibility/paywall/geo-restriction checks; the skill recommends putting these *before* scoring (so blocked content is never scored)
 - Side-effect stages are always async / fire-and-forget; the skill documents this explicitly in the generated README to prevent users from accidentally blocking the response with cache writes or event emissions
 
 ## Common Pitfalls
 
 - **Problem:** Single-score model gets overfit to one metric (clicks) and degrades on others (long sessions, retention)
-  **Solution:** Skill recommends multi-action prediction with tunable weights — change behavior by changing weights, no retraining
+  **Solution:** Skill recommends multi-action prediction with tunable weights â€” change behavior by changing weights, no retraining
 
 - **Problem:** Joint scoring (transformer over the whole batch) is non-deterministic and uncacheable
   **Solution:** Skill defaults to candidate isolation via attention masking; recommends joint only when there's a specific reason (e.g., batch-aware diversity)
@@ -115,3 +115,4 @@ This skill is a thin adapter to the upstream repository. For the full SKILL.md c
 - **Release:** v0.1.0
 - **Install via skills.sh:** `npx skills add mturac/recsys-pipeline-architect`
 - **Pattern source:** https://github.com/xai-org/x-algorithm (Apache 2.0; this skill is MIT)
+

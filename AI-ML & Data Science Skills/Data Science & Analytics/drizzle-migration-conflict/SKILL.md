@@ -1,4 +1,4 @@
----
+﻿---
 name: drizzle-migration-conflict
 description: "Diagnose, repair, and prevent Drizzle Kit migration conflicts involving generated SQL, snapshots, journals, merge queues, and team workflows."
 category: databases
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: chaunsin/agent-skills
 source_type: community
 date_added: "2026-06-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [drizzle, migrations, database, ci, merge-conflicts]
 tools: [git, python, rg]
 license: "Apache-2.0"
@@ -177,3 +177,4 @@ Use these prompts to validate the skill behavior:
 - "We're halfway through moving from the legacy flat layout to folder-based migrations. How do we handle a conflict during the transition?"
 - "Our `drizzle.config.ts` sets `out` from `process.env.MIGRATIONS_DIR`, and the helper says no out directory was found. What now?"
 - "`drizzle-kit check` keeps failing on a migration we know commutes. Can we just always pass `--ignore-conflicts`?"
+

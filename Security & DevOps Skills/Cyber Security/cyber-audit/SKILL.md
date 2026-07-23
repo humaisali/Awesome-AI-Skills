@@ -1,4 +1,4 @@
----
+﻿---
 name: cyber-audit
 description: "Run read-only exposure checks for security advisories and write a structured local audit report."
 category: security
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [security, audit, read-only]
 tools: [claude, codex]
 license: "MIT"
@@ -26,13 +26,13 @@ disable-model-invocation: true
 
 - **Read-only.** No installs, removes, upgrades, restarts, network calls, or file modifications outside `~/Documents/security-audits/`.
 - **No `sudo`.** Never.
-- **One report per invocation.** Always end by writing the `.md` file (even if the verdict is "Not affected" — the audit trail matters).
+- **One report per invocation.** Always end by writing the `.md` file (even if the verdict is "Not affected" â€” the audit trail matters).
 - If a check requires a state-changing command, **skip it and note "not checked (would require state change)"** in the table. Do not run it.
 
 ## Workflow
 
 1. **Identify scope.** Extract from the advisory: package/binary name, affected versions, platform (macOS / Linux / Windows), attack vector (supply chain / RCE / local / network).
-2. **Run checks in parallel** (Bash tool, multiple calls in one message). Pick relevant checks for the advisory type — don't run all of them.
+2. **Run checks in parallel** (Bash tool, multiple calls in one message). Pick relevant checks for the advisory type â€” don't run all of them.
 3. **Build the table** as you go. Each row = one check + concrete result (version number, path, "None", "N/A").
 4. **Write the report** to `~/Documents/security-audits/YYYY-MM-DD-<short-kebab-slug>.md`. Use today's date from the environment header.
 5. **Tell the user** the verdict in one line + path to the report.
@@ -82,14 +82,14 @@ If the advisory mentions an ecosystem not above (Rust cargo, Go modules, Ruby ge
 File: `~/Documents/security-audits/YYYY-MM-DD-<short-kebab-slug>.md`
 
 ```markdown
-# <Subject> — Audit
+# <Subject> â€” Audit
 
 **Date:** YYYY-MM-DD
 **Host:** the user's Mac
 
 ## <CVEs | Advisory> in scope
 
-- **<ID or source> "<Name>"** — <one-line description>. <Affected versions or scope>.
+- **<ID or source> "<Name>"** â€” <one-line description>. <Affected versions or scope>.
 
 ## Audit results
 
@@ -107,20 +107,20 @@ File: `~/Documents/security-audits/YYYY-MM-DD-<short-kebab-slug>.md`
 
 ## Action taken
 
-None — diagnostic only, no files modified, no <packages installed/removed | services started/stopped | firewall rules changed>.
+None â€” diagnostic only, no files modified, no <packages installed/removed | services started/stopped | firewall rules changed>.
 
 ## Follow-ups
 
 - <Actionable item, or "None" if truly nothing>
 ```
 
-Match the tone of the two existing reports in `~/Documents/security-audits/` — terse, factual, bulleted, no hedging.
+Match the tone of the two existing reports in `~/Documents/security-audits/` â€” terse, factual, bulleted, no hedging.
 
 ## Verdict wording
 
-- **Not affected.** — package/binary absent, or installed but patched, or not running and not exposed.
-- **Affected.** — vulnerable version present *and* reachable by the attack vector.
-- **Partially affected.** — present but mitigated (e.g. binary installed but service not running, or listener bound to loopback only). Spell out the mitigation in the bullets.
+- **Not affected.** â€” package/binary absent, or installed but patched, or not running and not exposed.
+- **Affected.** â€” vulnerable version present *and* reachable by the attack vector.
+- **Partially affected.** â€” present but mitigated (e.g. binary installed but service not running, or listener bound to loopback only). Spell out the mitigation in the bullets.
 
 ## When to break the read-only rule
 
@@ -129,10 +129,11 @@ Never on your own. If the verdict is "Affected", list the remediation command in
 ## Reference
 
 Two existing reports in `~/Documents/security-audits/` show the expected style:
-- `baseline-audit.md` (long-form baseline audit — different format, do not mimic)
+- `baseline-audit.md` (long-form baseline audit â€” different format, do not mimic)
 - `YYYY-MM-DD-example-advisory.md` and any newer `YYYY-MM-DD-*.md` files (this is the format to match)
 
 ## Limitations
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

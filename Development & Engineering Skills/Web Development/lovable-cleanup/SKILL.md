@@ -1,11 +1,11 @@
----
+﻿---
 name: lovable-cleanup
-description: "Audits and strips Lovable scaffolding from Vite + React projects — removes lovable-tagger, swaps placeholder assets, prunes unused Radix deps, and cleans generated docs so the codebase ships as yours."
+description: "Audits and strips Lovable scaffolding from Vite + React projects â€” removes lovable-tagger, swaps placeholder assets, prunes unused Radix deps, and cleans generated docs so the codebase ships as yours."
 risk: safe
 source: https://github.com/humaisali
 source_repo: whoisabhishekadhikari/lovable-cleanup
 source_type: community
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-06-13"
 tags: [lovable, cleanup, vite, react, shadcn, devtools]
 tools: [claude, cursor, codex, antigravity, gemini-cli]
@@ -14,7 +14,7 @@ tools: [claude, cursor, codex, antigravity, gemini-cli]
 # lovable-cleanup
 
 > Remove every trace of Lovable scaffolding and ship the project as your own.
-> Made with [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) · author: **whoisabhishekadhikari**
+> Made with [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) Â· author: **whoisabhishekadhikari**
 
 ---
 
@@ -44,11 +44,11 @@ open-sourcing. This skill covers all 14 areas where Lovable leaves fingerprints.
 
 Lovable adds three categories of scaffolding that must be removed:
 
-1. **Dependency** — `lovable-tagger` dev dep + `componentTagger()` call in `vite.config.ts`.
+1. **Dependency** â€” `lovable-tagger` dev dep + `componentTagger()` call in `vite.config.ts`.
    This is the only runtime hook; removing it is always safe.
-2. **Branding artifacts** — `favicon.ico/png`, `og-image.png`, `logo.png`, generic `<title>`,
+2. **Branding artifacts** â€” `favicon.ico/png`, `og-image.png`, `logo.png`, generic `<title>`,
    and a Lovable project URL in `README.md`.
-3. **Generated docs** — `CLEANUP_SUMMARY.md`, `DEPLOYMENT_GUIDE.md`, `DEVELOPMENT_SUMMARY.md`,
+3. **Generated docs** â€” `CLEANUP_SUMMARY.md`, `DEPLOYMENT_GUIDE.md`, `DEVELOPMENT_SUMMARY.md`,
    `LOGO_UPDATE.md` in the project root.
 
 ### Why the execution order matters
@@ -59,40 +59,40 @@ means the README reflects the already-cleaned project.
 ### Unused dep footprint
 
 Lovable pre-installs the full shadcn/ui component set (~29 components) and all Radix UI
-primitives (~30 packages). Most projects use 5–10. The unused ones are safe to remove but
-`@radix-ui/react-slot` must be kept — it is an indirect dep used internally by many
+primitives (~30 packages). Most projects use 5â€“10. The unused ones are safe to remove but
+`@radix-ui/react-slot` must be kept â€” it is an indirect dep used internally by many
 shadcn components via the `asChild` prop.
 
 ---
 
 ## Recommended Execution Order
 
-1. Dependencies (Areas 2 & 7) — clear the package graph first
-2. Build config (Area 3) — remove the tagger from Vite
-3. Entry points (Areas 4 & 6) — clear runtime references
-4. Assets (Area 5) — swap brand files (defer if assets not ready yet)
-5. Docs & README (Areas 1 & 10) — clean last so README reflects the cleaned project
-6. Environment & Git (Areas 9 & 12) — security sweep
-7. SEO / deploy (Area 11) — usually a no-op; confirm and move on
-8. Unused deps (Area 13) — safe to defer until after ship if on a deadline
+1. Dependencies (Areas 2 & 7) â€” clear the package graph first
+2. Build config (Area 3) â€” remove the tagger from Vite
+3. Entry points (Areas 4 & 6) â€” clear runtime references
+4. Assets (Area 5) â€” swap brand files (defer if assets not ready yet)
+5. Docs & README (Areas 1 & 10) â€” clean last so README reflects the cleaned project
+6. Environment & Git (Areas 9 & 12) â€” security sweep
+7. SEO / deploy (Area 11) â€” usually a no-op; confirm and move on
+8. Unused deps (Area 13) â€” safe to defer until after ship if on a deadline
 
 ---
 
 ## Step-by-Step Guide
 
-### Area 1 · README.md
+### Area 1 Â· README.md
 
 - Line 1: Replace `# Welcome to your Lovable project` with the real project title
 - Line 5: Remove `https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID`
-- Lines 11–19: Delete the "Use Lovable" instructions block
-- Lines 65–73: Delete the "Deploy via Lovable / custom domain docs" block
+- Lines 11â€“19: Delete the "Use Lovable" instructions block
+- Lines 65â€“73: Delete the "Deploy via Lovable / custom domain docs" block
 
-✅ After stripping, read the README end-to-end. Offer to write a replacement intro
+âœ… After stripping, read the README end-to-end. Offer to write a replacement intro
 paragraph if large sections were removed.
 
 ---
 
-### Area 2 · package.json
+### Area 2 Â· package.json
 
 - Remove `"lovable-tagger"` from `devDependencies`
 - Rename `"name"` from `"vite_react_shadcn_ts"` to the real project name (kebab-case)
@@ -105,7 +105,7 @@ grep -n "lovable" package.json
 
 ---
 
-### Area 3 · vite.config.ts
+### Area 3 Â· vite.config.ts
 
 - Remove `import { componentTagger } from "lovable-tagger"`
 - Remove `mode === 'development' && componentTagger()` from the plugins array
@@ -118,7 +118,7 @@ grep -n "lovable\|componentTagger\|filter(Boolean)" vite.config.ts
 
 ---
 
-### Area 4 · index.html
+### Area 4 Â· index.html
 
 - Replace the generic `<title>` with the real product name
 - Remove any `<!-- Generated by Lovable -->` comments or Lovable meta tags
@@ -131,7 +131,7 @@ grep -in "lovable\|generator" index.html
 
 ---
 
-### Area 5 · public/ assets
+### Area 5 Â· public/ assets
 
 Replace these files (keep filenames, swap content):
 
@@ -140,18 +140,18 @@ Replace these files (keep filenames, swap content):
 | `favicon.ico` | Replace with real icon |
 | `favicon.png` | Replace with real icon |
 | `og-image.png` / `logo.png` | Replace with real brand assets |
-| `placeholder.svg` | Usually unused — safe to delete |
+| `placeholder.svg` | Usually unused â€” safe to delete |
 
-✅ Flag which files are actually referenced in `<head>` vs dead weight so the user
+âœ… Flag which files are actually referenced in `<head>` vs dead weight so the user
 knows what to prioritise.
 
 ---
 
-### Area 6 · Source files
+### Area 6 Â· Source files
 
-- `src/main.tsx` — scan for Lovable HOCs, wrappers, or comments
-- `src/App.tsx` — same
-- Auto-generated components — look for `// generated by Lovable` headers
+- `src/main.tsx` â€” scan for Lovable HOCs, wrappers, or comments
+- `src/App.tsx` â€” same
+- Auto-generated components â€” look for `// generated by Lovable` headers
 
 <!-- security-allowlist: grep over source files, read-only, no network -->
 ```bash
@@ -160,7 +160,7 @@ grep -rn "lovable\|Lovable" src/ --include="*.tsx" --include="*.ts"
 
 ---
 
-### Area 7 · Lockfile
+### Area 7 Â· Lockfile
 
 <!-- security-allowlist: npm uninstall removes a dev-only package, local filesystem only -->
 ```bash
@@ -172,9 +172,9 @@ Use `yarn remove` or `pnpm remove` if the project uses those instead.
 
 ---
 
-### Area 8 · package.json scripts (follow-up)
+### Area 8 Â· package.json scripts (follow-up)
 
-Double-check after Area 2 — scripts are sometimes injected separately from deps:
+Double-check after Area 2 â€” scripts are sometimes injected separately from deps:
 
 <!-- security-allowlist: grep, read-only -->
 ```bash
@@ -183,7 +183,7 @@ grep -n '"lovable' package.json
 
 ---
 
-### Area 9 · Environment files
+### Area 9 Â· Environment files
 
 <!-- security-allowlist: grep over local env files, read-only, no credentials transmitted -->
 ```bash
@@ -192,11 +192,11 @@ grep -rin "lovable" .env .env.local .env.example 2>/dev/null \
 ```
 
 Remove any Lovable API keys or project IDs. If a variable is Lovable-only, delete the
-entire line — don't leave an empty key.
+entire line â€” don't leave an empty key.
 
 ---
 
-### Area 10 · Root markdown docs
+### Area 10 Â· Root markdown docs
 
 Delete or repurpose these common Lovable-generated files:
 
@@ -210,14 +210,14 @@ Delete or repurpose these common Lovable-generated files:
 grep -rln "lovable\|Lovable" *.md 2>/dev/null
 ```
 
-✅ Skim each file before deleting — Lovable docs sometimes contain useful architecture
+âœ… Skim each file before deleting â€” Lovable docs sometimes contain useful architecture
 notes worth preserving in a rewritten `CONTRIBUTING.md` or `ARCHITECTURE.md`.
 
 ---
 
-### Area 11 · SEO & deploy config
+### Area 11 Â· SEO & deploy config
 
-Usually clean — confirm and move on:
+Usually clean â€” confirm and move on:
 
 <!-- security-allowlist: grep over config files, read-only -->
 ```bash
@@ -236,7 +236,7 @@ After replacing `og-image.png`, update OG meta in `index.html`:
 
 ---
 
-### Area 12 · Git config
+### Area 12 Â· Git config
 
 <!-- security-allowlist: grep and ls on local git config, read-only -->
 ```bash
@@ -248,9 +248,9 @@ Remove any Lovable-specific `.gitignore` entries or commit hooks.
 
 ---
 
-### Area 13 · Unused dependencies
+### Area 13 Â· Unused dependencies
 
-**Step 1 — Map what's actually imported**
+**Step 1 â€” Map what's actually imported**
 
 <!-- security-allowlist: grep over source files, read-only, writes to private temp dir only -->
 ```bash
@@ -262,7 +262,7 @@ grep -rh "from [\"']@/components/ui/" src/ --include="*.tsx" \
   | grep -oP "from [\"']\K@/components/ui/[^\"']+" | sort -u > "$tmpdir/shadcn-used.txt"
 ```
 
-**Step 2 — Diff against installed**
+**Step 2 â€” Diff against installed**
 
 <!-- security-allowlist: grep and diff on local package.json and private temp files, read-only -->
 ```bash
@@ -270,7 +270,7 @@ grep -oP '"@radix-ui/[^"]+' package.json | tr -d '"' | sort > "$tmpdir/radix-ins
 diff "$tmpdir/radix-installed.txt" "$tmpdir/radix-used.txt"
 ```
 
-**Step 3 — Bulk remove & verify**
+**Step 3 â€” Bulk remove & verify**
 
 <!-- security-allowlist: npm uninstall removes unused local packages, no network mutation -->
 ```bash
@@ -280,10 +280,10 @@ npm run build
 
 ---
 
-### Area 14 · Generic Lovable artifacts
+### Area 14 Â· Generic Lovable artifacts
 
-- `components.json` — verify `style`, `baseColor`, and `aliases` match the real project
-- `eslint.config.js` — usually standard; quick scan only
+- `components.json` â€” verify `style`, `baseColor`, and `aliases` match the real project
+- `eslint.config.js` â€” usually standard; quick scan only
 
 <!-- security-allowlist: grep on config files, read-only -->
 ```bash
@@ -315,7 +315,7 @@ grep -rn "lovable\|Lovable\|LOVABLE\|lovable-tagger\|lovable\.dev" \
 User: I just exported my project from Lovable. Clean it up.
 
 Agent:
-1. Runs master scan — finds 23 matches across 8 files
+1. Runs master scan â€” finds 23 matches across 8 files
 2. Uninstalls lovable-tagger, renames package.json "name"
 3. Strips vite.config.ts of componentTagger
 4. Updates index.html title, removes generator comment
@@ -332,32 +332,32 @@ Agent:
 1. Runs grep diff (Area 13 only)
 2. Identifies 18 unused @radix-ui packages
 3. Removes them in bulk, keeps @radix-ui/react-slot
-4. Runs npm run build to verify — passes clean
+4. Runs npm run build to verify â€” passes clean
 ```
 
 ---
 
 ## Best Practices
 
-- ✅ **Do:** Run dep removal (Areas 2 & 7) before touching source files
-- ✅ **Do:** Skim Lovable-generated docs before deleting — may contain useful arch notes
-- ✅ **Do:** Verify `npm run build` passes after every batch of changes
-- ✅ **Do:** Replace OG image before launch — it directly affects social sharing previews
-- ❌ **Don't:** Remove `@radix-ui/react-slot` — it's an indirect dep of most shadcn components
-- ❌ **Don't:** Leave empty env vars like `LOVABLE_PROJECT_ID=` — delete the whole line
+- âœ… **Do:** Run dep removal (Areas 2 & 7) before touching source files
+- âœ… **Do:** Skim Lovable-generated docs before deleting â€” may contain useful arch notes
+- âœ… **Do:** Verify `npm run build` passes after every batch of changes
+- âœ… **Do:** Replace OG image before launch â€” it directly affects social sharing previews
+- âŒ **Don't:** Remove `@radix-ui/react-slot` â€” it's an indirect dep of most shadcn components
+- âŒ **Don't:** Leave empty env vars like `LOVABLE_PROJECT_ID=` â€” delete the whole line
 
 ---
 
 ## Limitations
 
-- This skill does not create or source brand assets (favicons, OG images) — it only flags
+- This skill does not create or source brand assets (favicons, OG images) â€” it only flags
   what needs replacing. The user must supply real assets.
-- Dep pruning (Area 13) is safe but not foolproof — some Radix packages are indirect deps
+- Dep pruning (Area 13) is safe but not foolproof â€” some Radix packages are indirect deps
   not caught by a direct `grep`. Always verify with `npm run build`.
-- The skill does not modify `components.json` aliases automatically — it only scans and
+- The skill does not modify `components.json` aliases automatically â€” it only scans and
   flags mismatches for the user to fix manually.
 - Does not cover Lovable-specific backend integrations (Supabase row-level security, edge
-  functions) — those require separate review.
+  functions) â€” those require separate review.
 
 ---
 
@@ -378,15 +378,15 @@ the `from '@radix-ui/...'` import to find which component depends on it.
 
 **Symptoms:** Browser tab shows "Lovable" or "Vite App" despite edits  
 **Solution:** Check for a `<Helmet>` or `<Head>` component in `src/App.tsx` or a layout
-wrapper — React-level title tags override `index.html` at runtime.
+wrapper â€” React-level title tags override `index.html` at runtime.
 
 ---
 
 ## Related Skills
 
-- `@vite-config` — Vite configuration best practices
-- `@shadcn-setup` — shadcn/ui installation and customization
-- `@react-cleanup` — general React project hygiene
+- `@vite-config` â€” Vite configuration best practices
+- `@shadcn-setup` â€” shadcn/ui installation and customization
+- `@react-cleanup` â€” general React project hygiene
 
 ---
 
@@ -404,16 +404,17 @@ wrapper — React-level title tags override `index.html` at runtime.
 After completing the audit, produce a cleanup report:
 
 ```
-## ✅ Cleaned
+## âœ… Cleaned
 <list of changes made>
 
-## ⚠️ Needs your input
-<items needing a decision — brand assets, project name, domain>
+## âš ï¸ Needs your input
+<items needing a decision â€” brand assets, project name, domain>
 
-## 🗑️ Deferred (safe to do later)
+## ðŸ—‘ï¸ Deferred (safe to do later)
 <e.g. unused dep pruning, OG image swap>
 ```
 
 ---
 
-*Made with [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) · author: [whoisabhishekadhikari](https://github.com/whoisabhishekadhikari)*
+*Made with [agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) Â· author: [whoisabhishekadhikari](https://github.com/whoisabhishekadhikari)*
+

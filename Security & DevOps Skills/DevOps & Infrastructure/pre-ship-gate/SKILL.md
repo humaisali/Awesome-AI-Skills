@@ -1,4 +1,4 @@
----
+﻿---
 name: pre-ship-gate
 description: "A ship gate that runs before any production deploy: checks the silent failure modes that make a deploy 'succeed' while prod stays broken, then verifies the live revision instead of trusting deploy output."
 category: quality
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Sharrmavishal/operating-kit
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [deployment, quality-gate, verification, ci-cd, production]
 tools: [claude, cursor, gemini]
 license: MIT
@@ -91,13 +91,13 @@ new code will 500 on /orders.
 
 ## Best Practices
 
-- ✅ Treat "the command exited 0" and "the new version is live" as separate facts, and verify the second one.
-- ✅ Emit an explicit verdict (SHIP / HOLD) with the failing item named, not a vague "looks good".
-- ✅ Compare a live revision identifier against the intended one after every deploy.
-- ✅ Name the specific silent failure mode you are worried about, so a human can override with context.
-- ❌ Do not report "shipped" from deploy output alone.
-- ❌ Do not skip the pre-flight because the pipeline is green.
-- ❌ Do not treat a passing health check as proof the right version is live. Check the version field.
+- âœ… Treat "the command exited 0" and "the new version is live" as separate facts, and verify the second one.
+- âœ… Emit an explicit verdict (SHIP / HOLD) with the failing item named, not a vague "looks good".
+- âœ… Compare a live revision identifier against the intended one after every deploy.
+- âœ… Name the specific silent failure mode you are worried about, so a human can override with context.
+- âŒ Do not report "shipped" from deploy output alone.
+- âŒ Do not skip the pre-flight because the pipeline is green.
+- âŒ Do not treat a passing health check as proof the right version is live. Check the version field.
 
 ## Limitations
 
@@ -127,3 +127,4 @@ new code will 500 on /orders.
 
 - `@codebase-audit-pre-push`: clean and audit the code before it ever reaches a deploy.
 - `@dos-verify-done-claims`: verify a "done" claim against git ground truth after the fact.
+

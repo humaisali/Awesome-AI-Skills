@@ -1,4 +1,4 @@
----
+﻿---
 name: runapi-cli
 description: Generate AI images, videos, and music/audio from agents using the RunAPI CLI.
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: runapi-ai/cli-skill
 source_type: official
 date_added: "2026-06-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [runapi, cli, models, automation, codex, claude, gemini]
 tools: [claude, codex, gemini, cursor, antigravity]
 license: "Apache-2.0"
@@ -138,3 +138,4 @@ runapi agent install-skill --target-dir <path>
 - RunAPI CLI skill: https://github.com/runapi-ai/cli-skill
 - RunAPI CLI repository: https://github.com/runapi-ai/cli
 - RunAPI model catalog: https://runapi.ai/models.md
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: short
 description: "Rewrite the previous response more briefly while preserving the substance."
 category: writing
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [writing, editing, concise]
 tools: [claude, codex]
 license: "MIT"
@@ -26,3 +26,4 @@ rewrite your last response to be simpler & shorter. do not do anything else.
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

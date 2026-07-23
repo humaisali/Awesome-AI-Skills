@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-vue2-cli
 description: "Integrate markstream-vue2 into Vue CLI or Webpack 4 with export-map-safe CSS, CDN worker fallbacks, and conservative code-block defaults."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [vue2, vue-cli, webpack4, markdown, workers]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -68,3 +68,4 @@ export default {
 ## Security & Safety Notes
 
 Do not introduce CDN workers without reviewing CSP, network policy, and dependency trust. Preserve safe rendering defaults.
+

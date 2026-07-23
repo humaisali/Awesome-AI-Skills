@@ -1,4 +1,4 @@
----
+﻿---
 name: optim-agent
 description: "Guide agent-driven parameter optimization for configurable systems with measurable objectives. Use for HPO, inference tuning, simulations, or RL/control experiments."
 category: data
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Optim-Agent/optim-agent
 source_type: community
 date_added: "2026-07-15"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [optimization, hyperparameter-optimization, experiments, tuning]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -76,3 +76,4 @@ Tune controller gains or environment parameters for a simulator. Optimize reward
 
 - [Optim-Agent repository](https://github.com/Optim-Agent/optim-agent)
 - [Optim-Agent documentation](https://optim-agent.github.io/optim-agent/)
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: monte-carlo-monitor-creation
 description: "Guides creation of Monte Carlo monitors via MCP tools, producing monitors-as-code YAML for CI/CD deployment."
 category: data
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: monte-carlo-data/mc-agent-toolkit
 source_type: community
 date_added: "2026-04-08"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [data-observability, monitoring, monte-carlo, monitors-as-code]
 tools: [claude, cursor, codex]
 ---
@@ -139,7 +139,7 @@ Based on the monitor type, read the detailed reference for parameter guidance:
 
 #### Step 5: Ask about scheduling
 
-**Skip this step for table monitors.** Table monitors do not support the `schedule` field in MaC YAML — adding it will cause a validation error on `montecarlo monitors apply`. Table monitor scheduling is managed automatically by Monte Carlo.
+**Skip this step for table monitors.** Table monitors do not support the `schedule` field in MaC YAML â€” adding it will cause a validation error on `montecarlo monitors apply`. Table monitor scheduling is managed automatically by Monte Carlo.
 
 For all other monitor types, the creation tools default to a fixed schedule running every 60 minutes. Present these options:
 
@@ -225,3 +225,4 @@ Tell the user:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

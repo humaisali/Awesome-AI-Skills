@@ -1,4 +1,4 @@
----
+﻿---
 name: warehouse
 description: "Plan and review read-only data warehouse analysis with explicit scope, privacy, provenance, and validation checks."
 category: data
@@ -6,7 +6,7 @@ risk: critical
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-07-12"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [analytics, data-warehouse, sql, data-quality]
 tools: [claude, cursor, gemini]
 ---
@@ -51,7 +51,7 @@ Restate the request as:
 - **Window:** dates, timezone, and whether the period is complete.
 - **Decision:** how the result will be used.
 
-Call out ambiguous terms such as “active,” “customer,” “revenue,” or “last month.” Resolve ambiguity before querying.
+Call out ambiguous terms such as â€œactive,â€ â€œcustomer,â€ â€œrevenue,â€ or â€œlast month.â€ Resolve ambiguity before querying.
 
 ### 2. Find governed sources
 
@@ -128,7 +128,7 @@ Include the query or a reproducible query summary when disclosure is appropriate
 
 ## Example
 
-**Request:** “Did weekly activated accounts improve after the onboarding change?”
+**Request:** â€œDid weekly activated accounts improve after the onboarding change?â€
 
 **Safe response plan:**
 
@@ -152,3 +152,4 @@ Include the query or a reproducible query summary when disclosure is appropriate
 - It does not replace organization-specific metric definitions, privacy policy, or expert review.
 - It does not diagnose pipelines, administer warehouses, or make product and business decisions.
 - Conclusions remain limited by source quality, freshness, sampling, and the analytical design.
+

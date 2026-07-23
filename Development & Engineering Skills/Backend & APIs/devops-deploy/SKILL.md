@@ -1,10 +1,10 @@
----
+﻿---
 name: devops-deploy
-description: "DevOps e deploy de aplicacoes — Docker, CI/CD com GitHub Actions, AWS Lambda, SAM, Terraform, infraestrutura como codigo e monitoramento."
+description: "DevOps e deploy de aplicacoes â€” Docker, CI/CD com GitHub Actions, AWS Lambda, SAM, Terraform, infraestrutura como codigo e monitoramento."
 risk: critical
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - devops
 - docker
@@ -20,11 +20,11 @@ tools:
 - codex-cli
 ---
 
-# DEVOPS-DEPLOY — Da Ideia para Producao
+# DEVOPS-DEPLOY â€” Da Ideia para Producao
 
 ## Overview
 
-DevOps e deploy de aplicacoes — Docker, CI/CD com GitHub Actions, AWS Lambda, SAM, Terraform, infraestrutura como codigo e monitoramento. Ativar para: dockerizar aplicacao, configurar pipeline CI/CD, deploy na AWS, Lambda, ECS, configurar GitHub Actions, Terraform, rollback, blue-green deploy, health checks, alertas.
+DevOps e deploy de aplicacoes â€” Docker, CI/CD com GitHub Actions, AWS Lambda, SAM, Terraform, infraestrutura como codigo e monitoramento. Ativar para: dockerizar aplicacao, configurar pipeline CI/CD, deploy na AWS, Lambda, ECS, configurar GitHub Actions, Terraform, rollback, blue-green deploy, health checks, alertas.
 
 ## When to Use This Skill
 
@@ -38,7 +38,7 @@ DevOps e deploy de aplicacoes — Docker, CI/CD com GitHub Actions, AWS Lambda, 
 
 ## How It Works
 
-> "Move fast and don't break things." — Engenharia de elite nao e lenta.
+> "Move fast and don't break things." â€” Engenharia de elite nao e lenta.
 > E rapida e confiavel ao mesmo tempo.
 
 ---
@@ -297,3 +297,4 @@ def create_error_alarm(function_name: str, sns_topic_arn: str):
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

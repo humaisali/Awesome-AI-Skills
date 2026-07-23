@@ -1,10 +1,10 @@
----
+﻿---
 name: "helm-chart-builder"
-description: "Helm chart development agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw — chart scaffolding, values design, template patterns, dependency management, security hardening, and chart testing. Use when: user wants to create or improve Helm charts, design values.yaml files, implement template helpers, audit chart security (RBAC, network policies, pod security), manage subcharts, or run helm lint/test."
+description: "Helm chart development agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw â€” chart scaffolding, values design, template patterns, dependency management, security hardening, and chart testing. Use when: user wants to create or improve Helm charts, design values.yaml files, implement template helpers, audit chart security (RBAC, network policies, pod security), manage subcharts, or run helm lint/test."
 license: MIT
 metadata:
   version: 1.0.0
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: engineering
   updated: 2026-03-15
 ---
@@ -15,7 +15,7 @@ metadata:
 
 Opinionated Helm workflow that turns ad-hoc Kubernetes manifests into maintainable, testable, reusable charts. Covers chart structure, values design, template patterns, dependency management, and security hardening.
 
-Not a Helm tutorial — a set of concrete decisions about how to build charts that operators trust and developers don't fight.
+Not a Helm tutorial â€” a set of concrete decisions about how to build charts that operators trust and developers don't fight.
 
 ---
 
@@ -24,8 +24,8 @@ Not a Helm tutorial — a set of concrete decisions about how to build charts th
 | Command | What it does |
 |---------|-------------|
 | `/helm:create` | Scaffold a production-ready Helm chart with best-practice structure |
-| `/helm:review` | Analyze an existing chart for issues — missing labels, hardcoded values, template anti-patterns |
-| `/helm:security` | Audit chart for security issues — RBAC, network policies, pod security, secrets handling |
+| `/helm:review` | Analyze an existing chart for issues â€” missing labels, hardcoded values, template anti-patterns |
+| `/helm:security` | Audit chart for security issues â€” RBAC, network policies, pod security, secrets handling |
 
 ---
 
@@ -42,13 +42,13 @@ Recognize these patterns from the user:
 - "Helm best practices for [workload type]"
 - Any request involving: Helm chart, values.yaml, Chart.yaml, templates, helpers, _helpers.tpl, subcharts, helm lint, helm test
 
-If the user has a Helm chart or wants to package Kubernetes resources → this skill applies.
+If the user has a Helm chart or wants to package Kubernetes resources â†’ this skill applies.
 
 ---
 
 ## Workflow
 
-### `/helm:create` — Chart Scaffolding
+### `/helm:create` â€” Chart Scaffolding
 
 1. **Identify workload type**
    - Web service (Deployment + Service + Ingress)
@@ -61,43 +61,43 @@ If the user has a Helm chart or wants to package Kubernetes resources → this s
 
    ```
    mychart/
-   ├── Chart.yaml              # Chart metadata and dependencies
-   ├── values.yaml             # Default configuration
-   ├── values.schema.json      # Optional: JSON Schema for values validation
-   ├── .helmignore             # Files to exclude from packaging
-   ├── templates/
-   │   ├── _helpers.tpl        # Named templates and helper functions
-   │   ├── deployment.yaml     # Workload resource
-   │   ├── service.yaml        # Service exposure
-   │   ├── ingress.yaml        # Ingress (if applicable)
-   │   ├── serviceaccount.yaml # ServiceAccount
-   │   ├── hpa.yaml            # HorizontalPodAutoscaler
-   │   ├── pdb.yaml            # PodDisruptionBudget
-   │   ├── networkpolicy.yaml  # NetworkPolicy
-   │   ├── configmap.yaml      # ConfigMap (if needed)
-   │   ├── secret.yaml         # Secret (if needed)
-   │   ├── NOTES.txt           # Post-install usage instructions
-   │   └── tests/
-   │       └── test-connection.yaml
-   └── charts/                 # Subcharts (dependencies)
+   â”œâ”€â”€ Chart.yaml              # Chart metadata and dependencies
+   â”œâ”€â”€ values.yaml             # Default configuration
+   â”œâ”€â”€ values.schema.json      # Optional: JSON Schema for values validation
+   â”œâ”€â”€ .helmignore             # Files to exclude from packaging
+   â”œâ”€â”€ templates/
+   â”‚   â”œâ”€â”€ _helpers.tpl        # Named templates and helper functions
+   â”‚   â”œâ”€â”€ deployment.yaml     # Workload resource
+   â”‚   â”œâ”€â”€ service.yaml        # Service exposure
+   â”‚   â”œâ”€â”€ ingress.yaml        # Ingress (if applicable)
+   â”‚   â”œâ”€â”€ serviceaccount.yaml # ServiceAccount
+   â”‚   â”œâ”€â”€ hpa.yaml            # HorizontalPodAutoscaler
+   â”‚   â”œâ”€â”€ pdb.yaml            # PodDisruptionBudget
+   â”‚   â”œâ”€â”€ networkpolicy.yaml  # NetworkPolicy
+   â”‚   â”œâ”€â”€ configmap.yaml      # ConfigMap (if needed)
+   â”‚   â”œâ”€â”€ secret.yaml         # Secret (if needed)
+   â”‚   â”œâ”€â”€ NOTES.txt           # Post-install usage instructions
+   â”‚   â””â”€â”€ tests/
+   â”‚       â””â”€â”€ test-connection.yaml
+   â””â”€â”€ charts/                 # Subcharts (dependencies)
    ```
 
 3. **Apply Chart.yaml best practices**
 
    ```
    METADATA
-   ├── apiVersion: v2 (Helm 3 only — never v1)
-   ├── name: matches directory name exactly
-   ├── version: semver (chart version, not app version)
-   ├── appVersion: application version string
-   ├── description: one-line summary of what the chart deploys
-   └── type: application (or library for shared helpers)
+   â”œâ”€â”€ apiVersion: v2 (Helm 3 only â€” never v1)
+   â”œâ”€â”€ name: matches directory name exactly
+   â”œâ”€â”€ version: semver (chart version, not app version)
+   â”œâ”€â”€ appVersion: application version string
+   â”œâ”€â”€ description: one-line summary of what the chart deploys
+   â””â”€â”€ type: application (or library for shared helpers)
 
    DEPENDENCIES
-   ├── Pin dependency versions with ~X.Y.Z (patch-level float)
-   ├── Use condition field to make subcharts optional
-   ├── Use alias for multiple instances of same subchart
-   └── Run helm dependency update after changes
+   â”œâ”€â”€ Pin dependency versions with ~X.Y.Z (patch-level float)
+   â”œâ”€â”€ Use condition field to make subcharts optional
+   â”œâ”€â”€ Use alias for multiple instances of same subchart
+   â””â”€â”€ Run helm dependency update after changes
    ```
 
 4. **Generate values.yaml with documentation**
@@ -113,7 +113,7 @@ If the user has a Helm chart or wants to package Kubernetes resources → this s
    helm template mychart/ --debug
    ```
 
-### `/helm:review` — Chart Analysis
+### `/helm:review` â€” Chart Analysis
 
 1. **Check chart structure**
 
@@ -144,7 +144,7 @@ If the user has a Helm chart or wants to package Kubernetes resources → this s
 
 4. **Generate review report**
    ```
-   HELM CHART REVIEW — [chart name]
+   HELM CHART REVIEW â€” [chart name]
    Date: [timestamp]
 
    CRITICAL: [count]
@@ -155,7 +155,7 @@ If the user has a Helm chart or wants to package Kubernetes resources → this s
    [Detailed findings with fix recommendations]
    ```
 
-### `/helm:security` — Security Audit
+### `/helm:security` â€” Security Audit
 
 1. **Pod security audit**
 
@@ -191,7 +191,7 @@ If the user has a Helm chart or wants to package Kubernetes resources → this s
 
 4. **Generate security report**
    ```
-   SECURITY AUDIT — [chart name]
+   SECURITY AUDIT â€” [chart name]
    Date: [timestamp]
 
    CRITICAL: [count]
@@ -274,7 +274,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
-Selector labels (subset of common labels — must be immutable).
+Selector labels (subset of common labels â€” must be immutable).
 */}}
 {{- define "mychart.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "mychart.name" . }}
@@ -363,25 +363,25 @@ spec:
 
 ```
 STRUCTURE
-├── Flat over nested (image.tag > container.spec.image.tag)
-├── Group by resource (service.*, ingress.*, resources.*)
-├── Use enabled: true/false for optional resources
-├── Document every key with inline YAML comments
-└── Provide sensible development defaults
+â”œâ”€â”€ Flat over nested (image.tag > container.spec.image.tag)
+â”œâ”€â”€ Group by resource (service.*, ingress.*, resources.*)
+â”œâ”€â”€ Use enabled: true/false for optional resources
+â”œâ”€â”€ Document every key with inline YAML comments
+â””â”€â”€ Provide sensible development defaults
 
 NAMING
-├── camelCase for keys (replicaCount, not replica_count)
-├── Boolean keys: use adjectives (enabled, required) not verbs
-├── Nested keys: max 3 levels deep
-└── Match upstream conventions (image.repository, image.tag, image.pullPolicy)
+â”œâ”€â”€ camelCase for keys (replicaCount, not replica_count)
+â”œâ”€â”€ Boolean keys: use adjectives (enabled, required) not verbs
+â”œâ”€â”€ Nested keys: max 3 levels deep
+â””â”€â”€ Match upstream conventions (image.repository, image.tag, image.pullPolicy)
 
 ANTI-PATTERNS
-├── Hardcoded cluster URLs or domains
-├── Secrets as default values
-├── Empty strings where null is correct
-├── Deeply nested structures (>3 levels)
-├── Undocumented values
-└── values.yaml that doesn't work without overrides
+â”œâ”€â”€ Hardcoded cluster URLs or domains
+â”œâ”€â”€ Secrets as default values
+â”œâ”€â”€ Empty strings where null is correct
+â”œâ”€â”€ Deeply nested structures (>3 levels)
+â”œâ”€â”€ Undocumented values
+â””â”€â”€ values.yaml that doesn't work without overrides
 ```
 
 ---
@@ -390,18 +390,18 @@ ANTI-PATTERNS
 
 ```
 SUBCHARTS
-├── Use Chart.yaml dependencies (not requirements.yaml — Helm 3)
-├── Pin versions: version: ~15.x.x (patch float)
-├── Use condition: to make optional: condition: postgresql.enabled
-├── Use alias: for multiple instances of same chart
-├── Override subchart values under subchart name key in values.yaml
-└── Run helm dependency update before packaging
+â”œâ”€â”€ Use Chart.yaml dependencies (not requirements.yaml â€” Helm 3)
+â”œâ”€â”€ Pin versions: version: ~15.x.x (patch float)
+â”œâ”€â”€ Use condition: to make optional: condition: postgresql.enabled
+â”œâ”€â”€ Use alias: for multiple instances of same chart
+â”œâ”€â”€ Override subchart values under subchart name key in values.yaml
+â””â”€â”€ Run helm dependency update before packaging
 
 LIBRARY CHARTS
-├── type: library in Chart.yaml — no templates directory
-├── Export named templates only — no rendered resources
-├── Use for shared labels, annotations, security contexts
-└── Version independently from application charts
+â”œâ”€â”€ type: library in Chart.yaml â€” no templates directory
+â”œâ”€â”€ Export named templates only â€” no rendered resources
+â”œâ”€â”€ Use for shared labels, annotations, security contexts
+â””â”€â”€ Version independently from application charts
 ```
 
 ---
@@ -410,14 +410,14 @@ LIBRARY CHARTS
 
 Flag these without being asked:
 
-- **No _helpers.tpl** → Create one. Every chart needs standard labels and fullname helpers.
-- **Hardcoded image tag in template** → Extract to values.yaml. Tags must be overridable.
-- **No resource requests/limits** → Add them. Pods without limits can starve the node.
-- **Running as root** → Add securityContext. No exceptions for production charts.
-- **No NOTES.txt** → Create one. Users need post-install instructions.
-- **Secrets in values.yaml defaults** → Remove them. Use placeholders with comments explaining how to provide secrets.
-- **No liveness/readiness probes** → Add them. Kubernetes needs to know if the pod is healthy.
-- **Missing app.kubernetes.io labels** → Add via _helpers.tpl. Required for proper resource tracking.
+- **No _helpers.tpl** â†’ Create one. Every chart needs standard labels and fullname helpers.
+- **Hardcoded image tag in template** â†’ Extract to values.yaml. Tags must be overridable.
+- **No resource requests/limits** â†’ Add them. Pods without limits can starve the node.
+- **Running as root** â†’ Add securityContext. No exceptions for production charts.
+- **No NOTES.txt** â†’ Create one. Users need post-install instructions.
+- **Secrets in values.yaml defaults** â†’ Remove them. Use placeholders with comments explaining how to provide secrets.
+- **No liveness/readiness probes** â†’ Add them. Kubernetes needs to know if the pod is healthy.
+- **Missing app.kubernetes.io labels** â†’ Add via _helpers.tpl. Required for proper resource tracking.
 
 ---
 
@@ -443,7 +443,8 @@ clawhub install cs-helm-chart-builder
 
 ## Related Skills
 
-- **senior-devops** — Broader DevOps scope (CI/CD, IaC, monitoring). Complementary — use helm-chart-builder for chart-specific work, senior-devops for pipeline and infrastructure.
-- **docker-development** — Container building. Complementary — docker-development builds the images, helm-chart-builder deploys them to Kubernetes.
-- **ci-cd-pipeline-builder** — Pipeline construction. Complementary — helm-chart-builder defines the deployment artifact, ci-cd-pipeline-builder automates its delivery.
-- **senior-security** — Application security. Complementary — helm-chart-builder covers Kubernetes-level security (RBAC, pod security), senior-security covers application-level threats.
+- **senior-devops** â€” Broader DevOps scope (CI/CD, IaC, monitoring). Complementary â€” use helm-chart-builder for chart-specific work, senior-devops for pipeline and infrastructure.
+- **docker-development** â€” Container building. Complementary â€” docker-development builds the images, helm-chart-builder deploys them to Kubernetes.
+- **ci-cd-pipeline-builder** â€” Pipeline construction. Complementary â€” helm-chart-builder defines the deployment artifact, ci-cd-pipeline-builder automates its delivery.
+- **senior-security** â€” Application security. Complementary â€” helm-chart-builder covers Kubernetes-level security (RBAC, pod security), senior-security covers application-level threats.
+

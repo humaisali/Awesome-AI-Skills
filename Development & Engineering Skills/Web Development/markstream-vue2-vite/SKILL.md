@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-vue2-vite
 description: "Integrate markstream-vue2 into Vue 2 plus Vite with bundled worker imports, CSS ordering, Composition API compatibility, and safe streaming defaults."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [vue2, vite, markdown, workers, streaming]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -67,3 +67,4 @@ export default {
 ## Security & Safety Notes
 
 Review worker source, CSP, dependency changes, and bundle impact. Do not relax safe rendering defaults.
+

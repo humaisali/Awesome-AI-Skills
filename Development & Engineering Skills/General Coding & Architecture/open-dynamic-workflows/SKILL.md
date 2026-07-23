@@ -1,4 +1,4 @@
----
+﻿---
 name: open-dynamic-workflows
 description: "Plan, orchestrate, and adversarially verify parallel AI coding agents with a dynamic multi-agent workflow engine."
 category: ai-agents
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Suraj1235/open-dynamic-workflows
 source_type: community
 date_added: "2026-06-06"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [multi-agent, orchestration, workflow, adversarial-verification, coding-agents]
 tools: [claude, cursor, codex, gemini, antigravity]
 # Optional: declare the upstream license if source_repo is set
@@ -46,7 +46,7 @@ Completed work is routed through an adversarial verification pass that challenge
 ### Example 1: Run a parallel workflow
 
 ODW is installed from source (clone the repo, then `npm install`). The CLI is
-`odw-daemon` — run it as `npm run odw -- <args>` from inside the repo, or as
+`odw-daemon` â€” run it as `npm run odw -- <args>` from inside the repo, or as
 `npx odw-daemon <args>` / a global `odw-daemon` if you link the bin.
 
 ```bash
@@ -74,10 +74,10 @@ npm run odw -- run --script examples/workflows/studio-prime.workflow.js --cwd .
 
 ## Best Practices
 
-- ✅ Scope each subtask so agents can run without shared state.
-- ✅ Keep the adversarial verification pass enabled before merging agent output.
-- ❌ Don't run interdependent subtasks in parallel without declaring their dependencies.
-- ❌ Don't commit provider API keys; use environment variables or a secrets manager.
+- âœ… Scope each subtask so agents can run without shared state.
+- âœ… Keep the adversarial verification pass enabled before merging agent output.
+- âŒ Don't run interdependent subtasks in parallel without declaring their dependencies.
+- âŒ Don't commit provider API keys; use environment variables or a secrets manager.
 
 ## Limitations
 
@@ -99,3 +99,4 @@ npm run odw -- run --script examples/workflows/studio-prime.workflow.js --cwd .
 
 - `@multi-agent-orchestration` - When coordinating multiple agents on one goal.
 - `@code-review` - How adversarial verification complements human review.
+

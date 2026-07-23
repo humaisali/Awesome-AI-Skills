@@ -1,11 +1,11 @@
----
+﻿---
 name: hono
-description: "Build ultra-fast web APIs and full-stack apps with Hono — runs on Cloudflare Workers, Deno, Bun, Node.js, and any WinterCG-compatible runtime."
+description: "Build ultra-fast web APIs and full-stack apps with Hono â€” runs on Cloudflare Workers, Deno, Bun, Node.js, and any WinterCG-compatible runtime."
 category: backend
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-18"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [hono, edge, cloudflare-workers, bun, deno, api, typescript, web-standards]
 tools: [claude, cursor, gemini]
 ---
@@ -14,7 +14,7 @@ tools: [claude, cursor, gemini]
 
 ## Overview
 
-Hono (炎, "flame" in Japanese) is a small, ultrafast web framework built on Web Standards (`Request`/`Response`/`fetch`). It runs anywhere: Cloudflare Workers, Deno Deploy, Bun, Node.js, AWS Lambda, and any WinterCG-compatible runtime — with the same code. Hono's router is one of the fastest available, and its middleware system, built-in JSX support, and RPC client make it a strong choice for edge APIs, BFFs, and lightweight full-stack apps.
+Hono (ç‚Ž, "flame" in Japanese) is a small, ultrafast web framework built on Web Standards (`Request`/`Response`/`fetch`). It runs anywhere: Cloudflare Workers, Deno Deploy, Bun, Node.js, AWS Lambda, and any WinterCG-compatible runtime â€” with the same code. Hono's router is one of the fastest available, and its middleware system, built-in JSX support, and RPC client make it a strong choice for edge APIs, BFFs, and lightweight full-stack apps.
 
 ## When to Use This Skill
 
@@ -97,7 +97,7 @@ app
 
 ### Step 3: Middleware
 
-Hono middleware works exactly like `fetch` interceptors — before and after handlers:
+Hono middleware works exactly like `fetch` interceptors â€” before and after handlers:
 
 ```typescript
 import { Hono } from 'hono';
@@ -198,7 +198,7 @@ export default app;
 
 ### Step 7: RPC Client (End-to-End Type Safety)
 
-Hono's RPC mode exports route types that the `hc` client consumes — similar to tRPC but using fetch conventions:
+Hono's RPC mode exports route types that the `hc` client consumes â€” similar to tRPC but using fetch conventions:
 
 ```typescript
 // server: src/routes/posts.ts
@@ -228,7 +228,7 @@ import type { PostsType } from '../server/routes/posts';
 
 const client = hc<PostsType>('/api/posts');
 
-// Fully typed — autocomplete on routes, params, and responses
+// Fully typed â€” autocomplete on routes, params, and responses
 const { posts } = await client.$get().json();
 const newPost = await client.$post({ json: { title: 'New Post' } }).json();
 ```
@@ -309,26 +309,26 @@ app.get('/stream', c =>
 
 ## Best Practices
 
-- ✅ Use route groups (sub-apps) to keep handlers in separate files — `app.route('/users', usersRouter)`
-- ✅ Use `zValidator` for all request body, query, and param validation
-- ✅ Type Cloudflare Workers bindings with the `Bindings` generic: `new Hono<{ Bindings: Env }>()`
-- ✅ Use the RPC client (`hc`) when your frontend and backend share the same repo
-- ✅ Prefer returning `c.json()`/`c.text()` over `new Response()` for cleaner code
-- ❌ Don't use Node.js-specific APIs (`fs`, `path`, `process`) if you want edge portability
-- ❌ Don't add heavy dependencies — Hono's value is its tiny footprint on edge runtimes
-- ❌ Don't skip middleware typing — use generics (`Variables`, `Bindings`) to keep `c.get()` type-safe
+- âœ… Use route groups (sub-apps) to keep handlers in separate files â€” `app.route('/users', usersRouter)`
+- âœ… Use `zValidator` for all request body, query, and param validation
+- âœ… Type Cloudflare Workers bindings with the `Bindings` generic: `new Hono<{ Bindings: Env }>()`
+- âœ… Use the RPC client (`hc`) when your frontend and backend share the same repo
+- âœ… Prefer returning `c.json()`/`c.text()` over `new Response()` for cleaner code
+- âŒ Don't use Node.js-specific APIs (`fs`, `path`, `process`) if you want edge portability
+- âŒ Don't add heavy dependencies â€” Hono's value is its tiny footprint on edge runtimes
+- âŒ Don't skip middleware typing â€” use generics (`Variables`, `Bindings`) to keep `c.get()` type-safe
 
 ## Security & Safety Notes
 
 - Always validate input with `zValidator` before using data from requests.
 - Use Hono's built-in `csrf` middleware on mutation endpoints when serving HTML/forms.
-- For Cloudflare Workers, store secrets in `wrangler.toml` `[vars]` (non-secret) or `wrangler secret put` (secret) — never hardcode them in source.
-- When using `bearerAuth` or `jwt`, ensure tokens are validated server-side — do not trust client-provided user IDs.
+- For Cloudflare Workers, store secrets in `wrangler.toml` `[vars]` (non-secret) or `wrangler secret put` (secret) â€” never hardcode them in source.
+- When using `bearerAuth` or `jwt`, ensure tokens are validated server-side â€” do not trust client-provided user IDs.
 - Rate-limit sensitive endpoints (auth, password reset) with Cloudflare Rate Limiting or a custom middleware.
 
 ## Common Pitfalls
 
-- **Problem:** Handler returns `undefined` — response is empty
+- **Problem:** Handler returns `undefined` â€” response is empty
   **Solution:** Always `return` a response from handlers: `return c.json(...)` not just `c.json(...)`.
 
 - **Problem:** Middleware runs after the response is sent
@@ -337,17 +337,18 @@ app.get('/stream', c =>
 - **Problem:** `c.env` is undefined on Node.js
   **Solution:** Cloudflare `env` bindings only exist in Workers. Use `process.env` on Node.js.
 
-- **Problem:** Route not matching — gets a 404
+- **Problem:** Route not matching â€” gets a 404
   **Solution:** Check that `app.route('/prefix', subRouter)` uses the same prefix your client calls. Sub-routers should **not** repeat the prefix in their own routes.
 
 ## Related Skills
 
-- `@cloudflare-workers-expert` — Deep dive into Cloudflare Workers platform specifics
-- `@trpc-fullstack` — Alternative RPC approach for TypeScript full-stack apps
-- `@zod-validation-expert` — Detailed Zod schema patterns used with `@hono/zod-validator`
-- `@nodejs-backend-patterns` — When you need a Node.js-specific backend (not edge)
+- `@cloudflare-workers-expert` â€” Deep dive into Cloudflare Workers platform specifics
+- `@trpc-fullstack` â€” Alternative RPC approach for TypeScript full-stack apps
+- `@zod-validation-expert` â€” Detailed Zod schema patterns used with `@hono/zod-validator`
+- `@nodejs-backend-patterns` â€” When you need a Node.js-specific backend (not edge)
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

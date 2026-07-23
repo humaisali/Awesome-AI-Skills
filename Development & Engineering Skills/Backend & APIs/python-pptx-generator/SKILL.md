@@ -1,4 +1,4 @@
----
+﻿---
 name: python-pptx-generator
 description: "Generate complete Python scripts that build polished PowerPoint decks with python-pptx and real slide content."
 category: development
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-04-06"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [python, powerpoint, python-pptx, presentations, slide-decks]
 tools: [claude, cursor, gemini, codex]
 ---
@@ -76,12 +76,12 @@ Output: A python-pptx script with executive-friendly slide titles, concise bulle
 
 ## Best Practices
 
-- ✅ Use standard `python-pptx` layouts unless the user asks for custom positioning
-- ✅ Write audience-appropriate bullet points instead of placeholders
-- ✅ Save the output file explicitly in the script, for example `output.pptx`
-- ✅ Keep slide titles short and the bullet hierarchy readable
-- ❌ Do not return partial snippets that require the user to assemble the rest
-- ❌ Do not invent unsupported styling APIs without checking `python-pptx` capabilities
+- âœ… Use standard `python-pptx` layouts unless the user asks for custom positioning
+- âœ… Write audience-appropriate bullet points instead of placeholders
+- âœ… Save the output file explicitly in the script, for example `output.pptx`
+- âœ… Keep slide titles short and the bullet hierarchy readable
+- âŒ Do not return partial snippets that require the user to assemble the rest
+- âŒ Do not invent unsupported styling APIs without checking `python-pptx` capabilities
 
 ## Security & Safety Notes
 
@@ -109,3 +109,4 @@ Output: A python-pptx script with executive-friendly slide titles, concise bulle
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

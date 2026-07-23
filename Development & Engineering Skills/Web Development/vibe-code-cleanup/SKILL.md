@@ -1,4 +1,4 @@
----
+﻿---
 name: vibe-code-cleanup
 description: "Safe production cleanup and hardening for vibe-coded fullstack apps (Next.js, React, Node.js, etc.). Removes dead imports, unused files, and broken references without breaking routes or APIs."
 category: fullstack
@@ -6,13 +6,13 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-05-31"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [cleanup, refactor, nextjs, production, vibe-code, fullstack, nodejs]
 tools: [claude, cursor, gemini, claude-code]
 version: 1.0.0
 ---
 
-# Vibe-Code Cleanup — Production Refactor Skill
+# Vibe-Code Cleanup â€” Production Refactor Skill
 
 A safe, incremental cleanup workflow for AI-generated / vibe-coded fullstack apps.
 The goal is to make the codebase production-ready **without** breaking anything that already works.
@@ -42,7 +42,7 @@ Always:
 
 ---
 
-## Step 1 — Reconnaissance (read before touching)
+## Step 1 â€” Reconnaissance (read before touching)
 
 Before changing anything, map the codebase:
 
@@ -65,7 +65,7 @@ Document what you find. Do NOT change yet.
 
 ---
 
-## Step 2 — Fix Broken Imports First
+## Step 2 â€” Fix Broken Imports First
 
 Broken imports cause build failures and should be fixed before anything else.
 
@@ -83,7 +83,7 @@ npx tsc --noEmit 2>&1
 
 ---
 
-## Step 3 — Identify Dead Code (verify before removing)
+## Step 3 â€” Identify Dead Code (verify before removing)
 
 A file/export is safe to remove **only if**:
 1. No other file imports it (grep-confirmed)
@@ -100,7 +100,7 @@ grep -r "MyComponent" --include="*.{js,ts,jsx,tsx}" .
 
 ---
 
-## Step 4 — Consolidate Repeated Logic into Helpers
+## Step 4 â€” Consolidate Repeated Logic into Helpers
 
 Look for repeated patterns (metadata blocks, API fetch wrappers, error handlers) that appear in 3+ places.
 
@@ -145,7 +145,7 @@ export function buildPageMetadata({ title, description, path, image }) {
 
 ---
 
-## Step 5 — Environment Variable Audit
+## Step 5 â€” Environment Variable Audit
 
 ```bash
 # List all env vars used in code
@@ -159,7 +159,7 @@ Flag any env vars used in code but missing from `.env.example`. Never add secret
 
 ---
 
-## Step 6 — Validate After Every Batch
+## Step 6 â€” Validate After Every Batch
 
 Run this after every meaningful batch of cleanup changes:
 
@@ -177,11 +177,11 @@ npm run build
 npm test -- --runInBand --passWithNoTests
 ```
 
-If build or typecheck breaks → **revert the last batch** before continuing.
+If build or typecheck breaks â†’ **revert the last batch** before continuing.
 
 ---
 
-## Step 7 — Commit Strategy
+## Step 7 â€” Commit Strategy
 
 Each commit should be a single logical unit:
 
@@ -229,3 +229,4 @@ Treat these as off-limits unless there's a verified bug:
 - Does not infer product intent from code alone; confirm behavior before deleting routes, components, API contracts, or data models.
 - Cleanup should be applied in small reviewed batches because broad refactors can hide regressions.
 - Avoid changing auth, billing, persistence, or third-party integration behavior without explicit requirements and tests.
+

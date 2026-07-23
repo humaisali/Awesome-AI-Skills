@@ -1,4 +1,4 @@
----
+﻿---
 name: hf-cloud-aws-context-discovery
 description: "Discover the effective local AWS profile, region, account, and caller identity before any AWS task without exposing credentials."
 risk: safe
@@ -6,7 +6,7 @@ source: https://github.com/humaisali
 source_repo: huggingface/skills
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: Apache-2.0
 license_source: https://github.com/humaisali
 tags: [hugging-face, aws, credentials, discovery, cloud]
@@ -33,11 +33,11 @@ Use a profile the user explicitly named, otherwise use the profile identified by
 
 ### 2. Region
 
-Resolution order — stop at the first one that produces a value:
+Resolution order â€” stop at the first one that produces a value:
 1. Region the user explicitly named in this conversation
 2. Region reported by `aws configure list --profile "$profile"`
 3. Region reported by `aws configure get region --profile "$profile"`
-5. Ask the user — but only after the first four have failed
+5. Ask the user â€” but only after the first four have failed
 
 Do not fall back to `us-east-1` or any other hardcoded default.
 
@@ -56,12 +56,12 @@ The `Arn` field tells you what kind of principal this is. The pattern matters be
 | ARN pattern | Type | IAM write capability |
 |---|---|---|
 | `arn:aws:iam::<acct>:user/<name>` | IAM user | Depends on attached policies |
-| `arn:aws:sts::<acct>:assumed-role/AWSReservedSSO_<...>/<email>` | **SSO assumed-role** | Typically **none** — can't create/modify IAM roles |
+| `arn:aws:sts::<acct>:assumed-role/AWSReservedSSO_<...>/<email>` | **SSO assumed-role** | Typically **none** â€” can't create/modify IAM roles |
 | `arn:aws:sts::<acct>:assumed-role/<role>/<session>` | Regular assumed-role | Depends on the role |
 
 **If the caller is SSO**, surface this immediately before later skills hit `iam:CreateRole` and fail:
 
-> Heads up: you're authenticated via SSO (`AWSReservedSSO_<PermissionSet>_...`). SSO principals usually can't create IAM roles directly. If we need a SageMaker execution role, I'll look for an existing one first — if none exists, you'll need to ask whoever manages your AWS access to create one.
+> Heads up: you're authenticated via SSO (`AWSReservedSSO_<PermissionSet>_...`). SSO principals usually can't create IAM roles directly. If we need a SageMaker execution role, I'll look for an existing one first â€” if none exists, you'll need to ask whoever manages your AWS access to create one.
 
 This is the highest-leverage thing this skill does. Surfacing it now turns a confusing mid-deployment error into a five-second conversation.
 
@@ -85,7 +85,7 @@ One or two lines, not a wall of text:
 
 > Working with profile `my-profile` in `eu-west-1`, account `123456789012`. You're authenticated via SSO, so we'll need to use an existing IAM role rather than create one.
 
-Don't ask the user to confirm the region you just read from their config — they configured it; that is the confirmation.
+Don't ask the user to confirm the region you just read from their config â€” they configured it; that is the confirmation.
 
 If something is wrong (credentials expired, profile doesn't exist, no region anywhere), stop and surface the specific error before continuing.
 
@@ -94,3 +94,4 @@ If something is wrong (credentials expired, profile doesn't exist, no region any
 - Discovery may reveal account IDs, role ARNs, or profile names; report only what the task needs and never expose secrets or session tokens.
 - STS identity checks require network access and valid credentials.
 - A valid identity does not imply permission to change resources.
+

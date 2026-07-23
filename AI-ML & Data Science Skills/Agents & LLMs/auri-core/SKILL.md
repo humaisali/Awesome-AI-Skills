@@ -1,10 +1,10 @@
----
+﻿---
 name: auri-core
 description: "Auri: assistente de voz inteligente (Alexa + Claude claude-opus-4-20250805). Visao do produto, persona Vitoria Neural, stack AWS, modelo Free/Pro/Business/Enterprise, roadmap 4 fases, GTM, north star WAC e analise competitiva."
 risk: none
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - voice-assistant
 - product-vision
@@ -601,3 +601,4 @@ Se a API da Anthropic estiver indisponivel, o sistema retorna respostas pre-conf
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,11 +1,11 @@
----
+﻿---
 name: uxui-principles
 description: "Evaluate interfaces against 168 research-backed UX/UI principles, detect antipatterns, and inject UX context into AI coding sessions."
 category: design
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-04-03"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [ux, ui, design, evaluation, principles, antipatterns, accessibility]
 tools: [claude, cursor, windsurf]
 ---
@@ -50,3 +50,4 @@ npx skills add uxuiprinciples/agent-skills
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

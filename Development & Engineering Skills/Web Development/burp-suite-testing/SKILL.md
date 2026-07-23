@@ -1,9 +1,9 @@
----
+﻿---
 name: burp-suite-testing
 description: "Execute comprehensive web application security testing using Burp Suite's integrated toolset, including HTTP traffic interception and modification, request analysis and replay, automated vulnerability scanning, and manual testing workflows."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -32,11 +32,11 @@ Execute comprehensive web application security testing using Burp Suite's integr
 ### Editions Comparison
 | Feature | Community | Professional |
 |---------|-----------|--------------|
-| Proxy | ✓ | ✓ |
-| Repeater | ✓ | ✓ |
+| Proxy | âœ“ | âœ“ |
+| Repeater | âœ“ | âœ“ |
 | Intruder | Limited | Full |
-| Scanner | ✗ | ✓ |
-| Extensions | ✓ | ✓ |
+| Scanner | âœ— | âœ“ |
+| Extensions | âœ“ | âœ“ |
 
 ## Outputs / Deliverables
 
@@ -169,10 +169,10 @@ Test different inputs efficiently:
 Original Request:
 GET /product?productId=1 HTTP/1.1
 
-Test 1: productId=2    → Valid product response
-Test 2: productId=999  → Not Found response  
-Test 3: productId='    → Error/exception response
-Test 4: productId=1 OR 1=1 → SQL injection test
+Test 1: productId=2    â†’ Valid product response
+Test 2: productId=999  â†’ Not Found response  
+Test 3: productId='    â†’ Error/exception response
+Test 4: productId=1 OR 1=1 â†’ SQL injection test
 ```
 
 #### Analyze Responses
@@ -227,7 +227,7 @@ Set up automated attack:
 
 1. Send request to Intruder (right-click > Send to Intruder)
 2. Go to **Intruder** tab
-3. Define payload positions using § markers
+3. Define payload positions using Â§ markers
 4. Select attack type
 
 #### Attack Types
@@ -245,7 +245,7 @@ Set up automated attack:
 Positions Tab:
 POST /login HTTP/1.1
 ...
-username=§admin§&password=§password§
+username=Â§adminÂ§&password=Â§passwordÂ§
 
 Payloads Tab:
 Set 1: admin, user, test, guest
@@ -384,3 +384,4 @@ javascript:alert(1)
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

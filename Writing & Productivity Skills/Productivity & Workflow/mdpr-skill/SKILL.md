@@ -1,4 +1,4 @@
----
+﻿---
 name: mdpr-skill
 description: "Review MDPR Markdown presentation workflows with semantic hints, visual checks, and deterministic renderer boundaries."
 category: productivity
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: ch040602/mdpr-skill
 source_type: community
 date_added: "2026-07-01"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [mdpr, presentations, markdown, powerpoint, codex, visual-review, agent-hints]
 tools: [claude, cursor, gemini, codex, antigravity]
 license: "MIT"
@@ -231,3 +231,4 @@ visual improvements through recipes, themes, and validation policies.
 - `@2slides-ppt-generator` - Use for hosted API-based presentation generation.
 - `@office-productivity` - Use for broader document, spreadsheet, and slide
   workflow coordination.
+

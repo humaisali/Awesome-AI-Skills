@@ -1,10 +1,10 @@
----
+﻿---
 name: whatsapp-cloud-api
 description: Integracao com WhatsApp Business Cloud API (Meta). Mensagens, templates, webhooks HMAC-SHA256, automacao de atendimento. Boilerplates Node.js e Python.
 risk: critical
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - messaging
 - whatsapp
@@ -76,17 +76,17 @@ Use esta arvore para determinar o proximo passo:
 
 ```
 O usuario precisa de setup inicial?
-├── SIM → Leia references/setup-guide.md
-└── NAO → Qual linguagem?
-    ├── Node.js/TypeScript
-    └── Python
-    → O que quer fazer?
-       ├── Enviar mensagens → Secao "Tipos de Mensagem" abaixo
-       ├── Receber mensagens → Secao "Webhooks" abaixo
-       ├── Automatizar atendimento → Secao "Automacao" abaixo
-       ├── WhatsApp Flows / Commerce → Secao "Features Avancados" abaixo
-       ├── Gerenciar templates → references/template-management.md
-       └── Compliance / limites → Secao "Compliance & Quality" abaixo
+â”œâ”€â”€ SIM â†’ Leia references/setup-guide.md
+â””â”€â”€ NAO â†’ Qual linguagem?
+    â”œâ”€â”€ Node.js/TypeScript
+    â””â”€â”€ Python
+    â†’ O que quer fazer?
+       â”œâ”€â”€ Enviar mensagens â†’ Secao "Tipos de Mensagem" abaixo
+       â”œâ”€â”€ Receber mensagens â†’ Secao "Webhooks" abaixo
+       â”œâ”€â”€ Automatizar atendimento â†’ Secao "Automacao" abaixo
+       â”œâ”€â”€ WhatsApp Flows / Commerce â†’ Secao "Features Avancados" abaixo
+       â”œâ”€â”€ Gerenciar templates â†’ references/template-management.md
+       â””â”€â”€ Compliance / limites â†’ Secao "Compliance & Quality" abaixo
 ```
 
 Para iniciar um projeto do zero com boilerplate pronto, use o script:
@@ -171,7 +171,7 @@ Templates sao a unica forma de iniciar conversa com um cliente. Devem ser aprova
       {
         "type": "body",
         "parameters": [
-          { "type": "text", "text": "João" }
+          { "type": "text", "text": "JoÃ£o" }
         ]
       }
     ]
@@ -283,7 +283,7 @@ function validateSignature(rawBody: Buffer, signature: string): boolean {
 ## Eventos Recebidos
 
 - **messages** - Mensagem do cliente (texto, midia, botao, localizacao)
-- **statuses** - Atualizado de status (sent → delivered → read)
+- **statuses** - Atualizado de status (sent â†’ delivered â†’ read)
 - **errors** - Erros de entrega
 
 **Requisitos:**
@@ -325,9 +325,9 @@ async def send_main_menu(to: str):
 Gerencie conversas com uma maquina de estados. Cada cliente tem um estado atual que determina como a proxima mensagem sera processada:
 
 ```
-INICIO → MENU_PRINCIPAL → SUPORTE → AGUARDANDO_DETALHES → ESCALACAO_HUMANO
-                        → VENDAS → CATALOGO → CHECKOUT
-                        → FINANCEIRO → SEGUNDA_VIA_BOLETO
+INICIO â†’ MENU_PRINCIPAL â†’ SUPORTE â†’ AGUARDANDO_DETALHES â†’ ESCALACAO_HUMANO
+                        â†’ VENDAS â†’ CATALOGO â†’ CHECKOUT
+                        â†’ FINANCEIRO â†’ SEGUNDA_VIA_BOLETO
 ```
 
 ## Janela De 24 Horas
@@ -371,7 +371,7 @@ Anuncios no Facebook/Instagram com botao que abre conversa no WhatsApp. 99% de t
 
 ## Status Tracking
 
-Rastreie entrega: pending → server → device → read. Receba via webhook de status updates.
+Rastreie entrega: pending â†’ server â†’ device â†’ read. Receba via webhook de status updates.
 
 **Para detalhes completos de features avancados**, leia `references/advanced-features.md`.
 **Para gerenciamento de templates via API**, leia `references/template-management.md`.
@@ -395,7 +395,7 @@ O WhatsApp monitora a qualidade das suas mensagens e atribui um rating:
 
 | Rating    | Significado                        | Acao                              |
 |-----------|------------------------------------|-----------------------------------|
-| Verde     | Boa qualidade, poucos bloqueios    | Manter — elegivel para upgrade    |
+| Verde     | Boa qualidade, poucos bloqueios    | Manter â€” elegivel para upgrade    |
 | Amarelo   | Qualidade media, atencao necessaria| Revisar conteudo e frequencia     |
 | Vermelho  | Qualidade baixa, risco de suspensao| Acao imediata: reduzir volume     |
 
@@ -444,7 +444,7 @@ python scripts/validate_config.py
 
 | Arquivo                        | Quando ler                                        |
 |--------------------------------|---------------------------------------------------|
-| `references/setup-guide.md`    | Setup inicial — criar conta Meta, configurar API  |
+| `references/setup-guide.md`    | Setup inicial â€” criar conta Meta, configurar API  |
 | `references/message-types.md`  | Exemplos completos de todos os tipos de mensagem   |
 | `references/webhook-setup.md`  | Configurar webhooks com seguranca HMAC             |
 | `references/automation-patterns.md` | Chatbot, filas, state machine, integracao IA  |
@@ -491,3 +491,4 @@ python scripts/validate_config.py
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

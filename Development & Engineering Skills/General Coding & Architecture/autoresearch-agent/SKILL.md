@@ -1,10 +1,10 @@
----
+﻿---
 name: "autoresearch-agent"
 description: "Autonomous experiment loop that optimizes any file by a measurable metric. Inspired by Karpathy's autoresearch. The agent edits a target file, runs a fixed evaluation, keeps improvements (git commit), discards failures (git reset), and loops indefinitely. Use when: user wants to optimize code speed, reduce bundle/image size, improve test pass rate, optimize prompts, improve content quality (headlines, copy, CTR), or run any measurable improvement loop. Requires: a target file, an evaluation command that outputs a metric, and a git repo."
 license: MIT
 metadata:
   version: 2.0.0
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: engineering
   updated: 2026-03-13
 ---
@@ -15,7 +15,7 @@ metadata:
 
 Autonomous experiment loop inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch). The agent edits one file, runs a fixed evaluation, keeps improvements, discards failures, and loops indefinitely.
 
-Not one guess — fifty measured attempts, compounding.
+Not one guess â€” fifty measured attempts, compounding.
 
 ---
 
@@ -42,13 +42,13 @@ Recognize these patterns from the user:
 - "I want to get [metric] from X to Y"
 - Any request involving: optimize, benchmark, improve, experiment loop, autoresearch
 
-If the user describes a target file + a way to measure success → this skill applies.
+If the user describes a target file + a way to measure success â†’ this skill applies.
 
 ---
 
 ## Setup
 
-### First Time — Create the Experiment
+### First Time â€” Create the Experiment
 
 Run the setup script. The user decides where experiments live:
 
@@ -78,27 +78,27 @@ python scripts/setup_experiment.py \
 ```
 
 The `--scope` flag determines where `.autoresearch/` lives:
-- `project` (default) → `.autoresearch/` in the repo root. Experiment definitions are git-tracked. Results are gitignored.
-- `user` → `~/.autoresearch/` in the home directory. Everything is personal.
+- `project` (default) â†’ `.autoresearch/` in the repo root. Experiment definitions are git-tracked. Results are gitignored.
+- `user` â†’ `~/.autoresearch/` in the home directory. Everything is personal.
 
 ### What Setup Creates
 
 ```
 .autoresearch/
-├── config.yaml                        ← Global settings
-├── .gitignore                         ← Ignores results.tsv, *.log
-└── {domain}/{experiment-name}/
-    ├── program.md                     ← Objectives, constraints, strategy
-    ├── config.cfg                     ← Target, eval cmd, metric, direction
-    ├── results.tsv                    ← Experiment log (gitignored)
-    └── evaluate.py                    ← Evaluation script (if --evaluator used)
+â”œâ”€â”€ config.yaml                        â† Global settings
+â”œâ”€â”€ .gitignore                         â† Ignores results.tsv, *.log
+â””â”€â”€ {domain}/{experiment-name}/
+    â”œâ”€â”€ program.md                     â† Objectives, constraints, strategy
+    â”œâ”€â”€ config.cfg                     â† Target, eval cmd, metric, direction
+    â”œâ”€â”€ results.tsv                    â† Experiment log (gitignored)
+    â””â”€â”€ evaluate.py                    â† Evaluation script (if --evaluator used)
 ```
 
 **results.tsv columns:** `commit | metric | status | description`
-- `commit` — short git hash
-- `metric` — float value or "N/A" for crashes
-- `status` — keep | discard | crash
-- `description` — what changed or why it crashed
+- `commit` â€” short git hash
+- `metric` â€” float value or "N/A" for crashes
+- `status` â€” keep | discard | crash
+- `description` â€” what changed or why it crashed
 
 ### Domains
 
@@ -118,26 +118,26 @@ The user may have written their own `program.md`. If found in the experiment dir
 
 ## Agent Protocol
 
-You are the loop. The scripts handle setup and evaluation — you handle the creative work.
+You are the loop. The scripts handle setup and evaluation â€” you handle the creative work.
 
 ### Before Starting
 1. Read `.autoresearch/{domain}/{name}/config.cfg` to get:
-   - `target` — the file you edit
-   - `evaluate_cmd` — the command that measures your changes
-   - `metric` — the metric name to look for in eval output
-   - `metric_direction` — "lower" or "higher" is better
-   - `time_budget_minutes` — max time per evaluation
+   - `target` â€” the file you edit
+   - `evaluate_cmd` â€” the command that measures your changes
+   - `metric` â€” the metric name to look for in eval output
+   - `metric_direction` â€” "lower" or "higher" is better
+   - `time_budget_minutes` â€” max time per evaluation
 2. Read `program.md` for strategy, constraints, and what you can/cannot change
 3. Read `results.tsv` for experiment history (columns: commit, metric, status, description)
 4. Checkout the experiment branch: `git checkout autoresearch/{domain}/{name}`
 
 ### Each Iteration
-1. Review results.tsv — what worked? What failed? What hasn't been tried?
+1. Review results.tsv â€” what worked? What failed? What hasn't been tried?
 2. Decide ONE change to the target file. One variable per experiment.
 3. Edit the target file
 4. Commit: `git add {target} && git commit -m "experiment: {description}"`
 5. Evaluate: `python scripts/run_experiment.py --experiment {domain}/{name} --single`
-6. Read the output — it prints KEEP, DISCARD, or CRASH with the metric value
+6. Read the output â€” it prints KEEP, DISCARD, or CRASH with the metric value
 7. Go to step 1
 
 ### What the Script Handles (you don't)
@@ -173,15 +173,15 @@ Future iterations benefit from this accumulated knowledge.
 ### Stopping
 - Run until interrupted by the user, context limit reached, or goal in program.md is met
 - Before stopping: ensure results.tsv is up to date
-- On context limit: the next session can resume — results.tsv and git log persist
+- On context limit: the next session can resume â€” results.tsv and git log persist
 
 ### Rules
 
 - **One change per experiment.** Don't change 5 things at once. You won't know what worked.
 - **Simplicity criterion.** A small improvement that adds ugly complexity is not worth it. Equal performance with simpler code is a win. Removing code that gets same results is the best outcome.
 - **Never modify the evaluator.** `evaluate.py` is the ground truth. Modifying it invalidates all comparisons. Hard stop if you catch yourself doing this.
-- **Timeout.** If a run exceeds 2.5× the time budget, kill it and treat as crash.
-- **Crash handling.** If it's a typo or missing import, fix and re-run. If the idea is fundamentally broken, revert, log "crash", move on. 5 consecutive crashes → pause and alert.
+- **Timeout.** If a run exceeds 2.5Ã— the time budget, kill it and treat as crash.
+- **Crash handling.** If it's a typo or missing import, fix and re-run. If the idea is fundamentally broken, revert, log "crash", move on. 5 consecutive crashes â†’ pause and alert.
 - **No new dependencies.** Only use what's already available in the project.
 
 ---
@@ -208,12 +208,12 @@ Ready-to-use evaluation scripts. Copied into the experiment directory during set
 | `llm_judge_prompt` | `quality_score` 0-100 (higher) | System prompts, agent instructions |
 | `llm_judge_copy` | `engagement_score` 0-10 (higher) | Social posts, ad copy, emails |
 
-LLM judges call the CLI tool the user is already running (Claude, Codex, Gemini). The evaluation prompt is locked inside `evaluate.py` — the agent cannot modify it. This prevents the agent from gaming its own evaluator.
+LLM judges call the CLI tool the user is already running (Claude, Codex, Gemini). The evaluation prompt is locked inside `evaluate.py` â€” the agent cannot modify it. This prevents the agent from gaming its own evaluator.
 
 The user's existing subscription covers the cost:
-- Claude Code Max → unlimited Claude calls for evaluation
-- Codex CLI (ChatGPT Pro) → unlimited Codex calls
-- Gemini CLI (free tier) → free evaluation calls
+- Claude Code Max â†’ unlimited Claude calls for evaluation
+- Codex CLI (ChatGPT Pro) â†’ unlimited Codex calls
+- Gemini CLI (free tier) â†’ free evaluation calls
 
 ### Custom Evaluators
 
@@ -221,7 +221,7 @@ If no built-in evaluator fits, the user writes their own `evaluate.py`. Only req
 
 ```python
 #!/usr/bin/env python3
-# My custom evaluator — DO NOT MODIFY after experiment starts
+# My custom evaluator â€” DO NOT MODIFY after experiment starts
 import subprocess
 result = subprocess.run(["my-benchmark", "--json"], capture_output=True, text=True)
 # Parse and output
@@ -251,7 +251,7 @@ python scripts/log_results.py --dashboard --format markdown --output dashboard.m
 ### Dashboard Output
 
 ```
-DOMAIN          EXPERIMENT          RUNS  KEPT  BEST         Δ FROM START  STATUS
+DOMAIN          EXPERIMENT          RUNS  KEPT  BEST         Î” FROM START  STATUS
 engineering     api-speed            47    14   185ms        -76.9%        active
 engineering     bundle-size          23     8   412KB        -58.3%        paused
 marketing       medium-ctr           31    11   8.4/10       +68.0%        active
@@ -260,9 +260,9 @@ prompts         support-tone         15     6   82/100       +46.4%        done
 
 ### Export Formats
 
-- **TSV** — default, tab-separated (compatible with spreadsheets)
-- **CSV** — comma-separated, with proper quoting
-- **Markdown** — formatted table, readable in GitHub/docs
+- **TSV** â€” default, tab-separated (compatible with spreadsheets)
+- **CSV** â€” comma-separated, with proper quoting
+- **Markdown** â€” formatted table, readable in GitHub/docs
 
 ---
 
@@ -270,13 +270,13 @@ prompts         support-tone         15     6   82/100       +46.4%        done
 
 Flag these without being asked:
 
-- **No evaluation command works** → Test it before starting the loop. Run once, verify output.
-- **Target file not in git** → `git init && git add . && git commit -m 'initial'` first.
-- **Metric direction unclear** → Ask: is lower or higher better? Must know before starting.
-- **Time budget too short** → If eval takes longer than budget, every run crashes.
-- **Agent modifying evaluate.py** → Hard stop. This invalidates all comparisons.
-- **5 consecutive crashes** → Pause the loop. Alert the user. Don't keep burning cycles.
-- **No improvement in 20+ runs** → Suggest changing strategy in program.md or trying a different approach.
+- **No evaluation command works** â†’ Test it before starting the loop. Run once, verify output.
+- **Target file not in git** â†’ `git init && git add . && git commit -m 'initial'` first.
+- **Metric direction unclear** â†’ Ask: is lower or higher better? Must know before starting.
+- **Time budget too short** â†’ If eval takes longer than budget, every run crashes.
+- **Agent modifying evaluate.py** â†’ Hard stop. This invalidates all comparisons.
+- **5 consecutive crashes** â†’ Pause the loop. Alert the user. Don't keep burning cycles.
+- **No improvement in 20+ runs** â†’ Suggest changing strategy in program.md or trying a different approach.
 
 ---
 
@@ -302,7 +302,8 @@ clawhub install cs-autoresearch-agent
 
 ## Related Skills
 
-- **self-improving-agent** — improves an agent's own memory/rules over time. NOT for structured experiment loops.
-- **senior-ml-engineer** — ML architecture decisions. Complementary — use for initial design, then autoresearch for optimization.
-- **tdd-guide** — test-driven development. Complementary — tests can be the evaluation function.
-- **skill-security-auditor** — audit skills before publishing. NOT for optimization loops.
+- **self-improving-agent** â€” improves an agent's own memory/rules over time. NOT for structured experiment loops.
+- **senior-ml-engineer** â€” ML architecture decisions. Complementary â€” use for initial design, then autoresearch for optimization.
+- **tdd-guide** â€” test-driven development. Complementary â€” tests can be the evaluation function.
+- **skill-security-auditor** â€” audit skills before publishing. NOT for optimization loops.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: design-it
 description: "Routes frontend design tasks to 48 specific UI styles. Triggers for websites, app screens, or UI components requesting a specific aesthetic."
 category: frontend
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-06-17"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [design, ui, frontend]
 tools: [claude, cursor, gemini]
 ---
@@ -167,4 +167,5 @@ To use a style, you MUST read its file at `<style-folder>/SKILL.md` relative to 
 
 - This skill does not replace environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, or safety boundaries are missing.
+
 

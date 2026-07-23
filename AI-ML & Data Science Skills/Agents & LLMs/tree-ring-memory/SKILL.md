@@ -1,4 +1,4 @@
----
+﻿---
 name: tree-ring-memory
 description: "Use Tree Ring Memory for local-first AI-agent memory lifecycle work: recall, evidence, audit, forgetting, and consolidation without transcript dumping."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: TerminallyLazy/Tree-Ring-Memory
 source_type: community
 date_added: "2026-07-08"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [agent-memory, local-first, recall, privacy, codex, sqlite, cli]
 tools: [claude, codex, cursor, gemini, antigravity, opencode]
 license: "Apache-2.0"
@@ -216,3 +216,4 @@ strong.
 
 - Tree Ring Memory repository: <https://github.com/TerminallyLazy/Tree-Ring-Memory>
 - Codex plugin wrapper: <https://github.com/TerminallyLazy/tree-ring-memory-codex-plugin>
+

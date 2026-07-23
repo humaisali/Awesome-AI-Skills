@@ -1,4 +1,4 @@
----
+﻿---
 name: effective-agent-skills
 description: "Author and review high-quality agent skills with triggers, progressive disclosure, and safety notes."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [skills, authoring, quality]
 tools: [claude, codex]
 license: "MIT"
@@ -31,10 +31,10 @@ An Agent Skill is a folder containing a `SKILL.md` file (YAML frontmatter + mark
 
 ```
 my-skill/
-├── SKILL.md          # Required: metadata + instructions
-├── scripts/          # Optional: executable code (CLIs, validators, helpers)
-├── references/       # Optional: detailed docs loaded only when needed
-└── assets/           # Optional: templates, fonts, static files
+â”œâ”€â”€ SKILL.md          # Required: metadata + instructions
+â”œâ”€â”€ scripts/          # Optional: executable code (CLIs, validators, helpers)
+â”œâ”€â”€ references/       # Optional: detailed docs loaded only when needed
+â””â”€â”€ assets/           # Optional: templates, fonts, static files
 ```
 
 Skills are an open standard (agentskills.io), originally created by Anthropic and adopted by OpenAI Codex, Cursor, Gemini CLI, Microsoft Agent Framework, Google ADK, and 40+ other agent products. A skill written once works across all compatible agents.
@@ -47,33 +47,33 @@ Base LLMs are generalists. Real work requires procedural knowledge, organization
 
 | Approach | Problem |
 |---|---|
-| Stuff it into the system prompt | Always loaded → context bloat at scale |
+| Stuff it into the system prompt | Always loaded â†’ context bloat at scale |
 | Re-paste instructions each session | No version control, no consistency |
 | Fine-tuning | Slow, expensive, opaque, vendor-locked |
 | MCP servers alone | Give the agent tools but no workflows for using them |
 
 Skills solve four problems at once:
 
-- **Context efficiency** — instructions load only when relevant
-- **Repeatability** — multi-step procedures become auditable workflows
-- **Composability** — multiple skills combine at runtime per task
-- **Portability** — same files work across vendors and surfaces
+- **Context efficiency** â€” instructions load only when relevant
+- **Repeatability** â€” multi-step procedures become auditable workflows
+- **Composability** â€” multiple skills combine at runtime per task
+- **Portability** â€” same files work across vendors and surfaces
 
-Mental model: skills are to LLMs what man pages, runbooks, and team handbooks are to engineers — reference material loaded into working memory only when the task demands it.
+Mental model: skills are to LLMs what man pages, runbooks, and team handbooks are to engineers â€” reference material loaded into working memory only when the task demands it.
 
 ---
 
-## 3. How they work — progressive disclosure
+## 3. How they work â€” progressive disclosure
 
 The architectural core. Three-stage loading:
 
-**Level 1 — Discovery (~100 tokens per skill, always in context):**
+**Level 1 â€” Discovery (~100 tokens per skill, always in context):**
 Only `name` + `description` from frontmatter are injected into the system prompt at startup. Agent knows the skill exists and when it applies. You can install dozens of skills with negligible overhead.
 
-**Level 2 — Activation (<5,000 tokens, loaded on match):**
+**Level 2 â€” Activation (<5,000 tokens, loaded on match):**
 When the user's request matches a skill's description, the agent reads the full `SKILL.md` body into context.
 
-**Level 3 — Execution (unbounded, on demand):**
+**Level 3 â€” Execution (unbounded, on demand):**
 The agent reads referenced files (`references/foo.md`) or runs scripts (`scripts/validate.py`) only as needed. Scripts can execute without their source being loaded into context at all.
 
 This is why bundled content has no practical limit. Files don't consume tokens until accessed.
@@ -104,12 +104,12 @@ description: What this skill does AND when to use it. Include trigger phrases th
 ```
 
 Frontmatter constraints:
-- `name` is lowercase, hyphens only, 1–64 chars, **exactly matches the parent folder name**
+- `name` is lowercase, hyphens only, 1â€“64 chars, **exactly matches the parent folder name**
 - Avoid `<` and `>` in frontmatter (they can inject into the system prompt)
 - Invalid YAML silently prevents loading
 
 Optional standard fields:
-- `disable-model-invocation: true` — stops the agent from auto-loading the skill based on the conversation; it can only be triggered manually (e.g. `/skill-name`). Now a standard Agent Skills spec field, so it works across spec-compliant clients (Claude Code, Copilot, etc.), not just Claude. Caveat: it prevents auto-invocation, but some clients (Claude Code, open bug) still inject the `description` into context, so it doesn't always save the discovery-level tokens. Use for manual-only utilities you don't want firing automatically.
+- `disable-model-invocation: true` â€” stops the agent from auto-loading the skill based on the conversation; it can only be triggered manually (e.g. `/skill-name`). Now a standard Agent Skills spec field, so it works across spec-compliant clients (Claude Code, Copilot, etc.), not just Claude. Caveat: it prevents auto-invocation, but some clients (Claude Code, open bug) still inject the `description` into context, so it doesn't always save the discovery-level tokens. Use for manual-only utilities you don't want firing automatically.
 
 ---
 
@@ -117,16 +117,16 @@ Optional standard fields:
 
 Skills tend to fall into one of two patterns. Both are valid; they solve different problems.
 
-### Pattern A — Capability primitives (tool wrappers)
+### Pattern A â€” Capability primitives (tool wrappers)
 The skill is a thin wrapper over a deterministic CLI or script. Logic lives in code. SKILL.md teaches the agent how to invoke it.
 
 - **Adds**: new capabilities (search, email, browser, API access)
 - **Reliability via**: shell tools, not prompts
-- **Typical length**: 30–80 lines, mostly command examples
+- **Typical length**: 30â€“80 lines, mostly command examples
 - **Use when**: the bottleneck is "the agent can't do X"
 
-### Pattern B — Process primitives (cognitive disciplines)
-The skill encodes a methodology the agent should follow. Pure prompt engineering — no scripts needed.
+### Pattern B â€” Process primitives (cognitive disciplines)
+The skill encodes a methodology the agent should follow. Pure prompt engineering â€” no scripts needed.
 
 - **Adds**: structured workflows (TDD, code review, design alignment, debugging loops)
 - **Reliability via**: explicit procedure, checklists, validation loops
@@ -136,7 +136,7 @@ A mature setup uses both. Pattern A gives the agent better tools. Pattern B give
 
 ---
 
-## 6. How to write effective skills — do this
+## 6. How to write effective skills â€” do this
 
 ### Description as routing contract
 The description is the only thing the agent sees before deciding to load the skill. If your skill doesn't trigger, the description is wrong 95% of the time, not the body.
@@ -148,7 +148,7 @@ Include three elements:
 
 Pattern: `"X via Y. Use for [situations]. [Differentiator: no Z required / faster than W / handles edge case V]."`
 
-**Never summarize the full workflow in the description.** If the description contains a step-by-step summary of *how* the skill works, the agent tends to follow that summary and skip loading the body. Describe *what* and *when*, never *how*. The description answers "should I open this skill now?" — not "what are the steps?"
+**Never summarize the full workflow in the description.** If the description contains a step-by-step summary of *how* the skill works, the agent tends to follow that summary and skip loading the body. Describe *what* and *when*, never *how*. The description answers "should I open this skill now?" â€” not "what are the steps?"
 
 ### Keep SKILL.md lean
 - Beyond a certain length, you're usually encoding logic that should be in a script or referenced file
@@ -157,7 +157,7 @@ Pattern: `"X via Y. Use for [situations]. [Differentiator: no Z required / faste
 Concrete command examples with inline comments beat prose explanations. The agent pattern-matches on syntax. Show, don't describe.
 
 ### Push determinism into code
-Anything fragile, repetitive, or where variation is a bug → script. Use markdown only for tasks requiring judgment.
+Anything fragile, repetitive, or where variation is a bug â†’ script. Use markdown only for tasks requiring judgment.
 
 ### Match strictness to task fragility (degrees of freedom)
 Scale instruction rigidity to how costly a wrong move is:
@@ -166,7 +166,7 @@ Scale instruction rigidity to how costly a wrong move is:
 - **Exact scripts and strict step lists** when the workflow is fragile, error-prone, or consistency-critical (e.g. migrations, document patching).
 
 ### Build validation loops
-The single biggest output quality improvement: state a verify → fix → re-verify loop explicitly.
+The single biggest output quality improvement: state a verify â†’ fix â†’ re-verify loop explicitly.
 
 - Document skills: visual QA pass before delivery
 - Code skills: tests pass + zero type errors before completion
@@ -187,7 +187,7 @@ For [specific edge case], read references/edge-cases.md first.
 ```
 
 ### Keep references one level deep
-Link referenced files directly from SKILL.md. Never build chains (SKILL.md → advanced.md → details.md → actual.md) — the agent may preview nested files only partially and miss critical instructions. Add a table of contents to any reference file longer than 100 lines.
+Link referenced files directly from SKILL.md. Never build chains (SKILL.md â†’ advanced.md â†’ details.md â†’ actual.md) â€” the agent may preview nested files only partially and miss critical instructions. Add a table of contents to any reference file longer than 100 lines.
 
 ### Document output formats
 If your script returns structured data, show the agent what it looks like. Enables reliable downstream parsing.
@@ -206,7 +206,7 @@ Skills can write to repo-level files (CONTEXT.md, ADRs, decision logs) that futu
 
 ---
 
-## 7. What not to do — anti-patterns
+## 7. What not to do â€” anti-patterns
 
 ### Don't re-teach what the model already knows
 Every line in SKILL.md should provide context the model doesn't already have. No Python syntax tutorials. No "what is git." Challenge every paragraph.
@@ -262,9 +262,9 @@ Skills can execute arbitrary code and steer agent behavior. A malicious skill is
 
 ## 9. Testing and debugging
 
-- **"Which skill did you use?"** — ask the agent post-task. Fastest routing debug.
-- **Routing fails → description problem.** Add specific trigger phrases.
-- **Execution fails → body problem.** Add explicit steps, examples, or validation.
+- **"Which skill did you use?"** â€” ask the agent post-task. Fastest routing debug.
+- **Routing fails â†’ description problem.** Add specific trigger phrases.
+- **Execution fails â†’ body problem.** Add explicit steps, examples, or validation.
 - **Skills snapshot at session start.** Edits during a session require a restart.
 - **Test against the weakest model you'll deploy on.** Stronger models forgive vague skills; weaker models expose them.
 - **Run an eval suite.** A handful of representative prompts that should and shouldn't trigger the skill, with expected outputs.
@@ -273,12 +273,12 @@ Skills can execute arbitrary code and steer agent behavior. A malicious skill is
 
 ## 10. Composition
 
-Skills compose at runtime — the agent loads multiple skills as needed for a single task. Design for this:
+Skills compose at runtime â€” the agent loads multiple skills as needed for a single task. Design for this:
 
 - **One skill = one concern.** Resist bundling.
 - **Define interfaces between skills.** If skill A produces artifacts that skill B consumes, document the shape.
 - **Use a repo-level config substrate.** A shared file (e.g., AGENTS.md, CONTEXT.md, settings.json) that multiple skills read and write coordinates them without explicit handoffs.
-- **Loops over menus.** A coordinated set of skills forming a workflow (align → spec → build → verify → refactor) drives adoption far better than an unrelated catalog of capabilities.
+- **Loops over menus.** A coordinated set of skills forming a workflow (align â†’ spec â†’ build â†’ verify â†’ refactor) drives adoption far better than an unrelated catalog of capabilities.
 
 ---
 
@@ -331,3 +331,4 @@ Before publishing a skill:
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

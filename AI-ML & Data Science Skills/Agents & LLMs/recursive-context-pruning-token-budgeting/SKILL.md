@@ -1,4 +1,4 @@
----
+﻿---
 name: recursive-context-pruning-token-budgeting
 description: "Optimizes AI agent performance by pruning redundant context, managing token usage, and enforcing ultra-concise, direct-to-value responses."
 category: prompt-engineering
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Kench001/antigravity-awesome-skills
 source_type: self
 date_added: "2026-05-03"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [efficiency, token-optimization, brevity, context-management]
 tools: [claude, cursor, gemini]
 # Optional: declare the upstream license if source_repo is set
@@ -19,7 +19,7 @@ tools: [claude, cursor, gemini]
 
 ## Overview
 
-This skill implements a "Gatekeeper" logic to prevent context window bloat and unnecessary token expenditure. It ensures the agent only processes relevant data shards and adheres to an Atomic Precision protocol—delivering functional answers with zero conversational filler. By recursively summarizing state and stripping "bridge phrases," it maximizes the longevity and speed of long-running development workflows.
+This skill implements a "Gatekeeper" logic to prevent context window bloat and unnecessary token expenditure. It ensures the agent only processes relevant data shards and adheres to an Atomic Precision protocolâ€”delivering functional answers with zero conversational filler. By recursively summarizing state and stripping "bridge phrases," it maximizes the longevity and speed of long-running development workflows.
 
 ## When to Use This Skill
 
@@ -77,11 +77,11 @@ User: "Deploy the function."
 
 ## Best Practices
 
-- ✅ **Direct Start:** Place the code or answer at the very first character of the response.
-- ✅ **Summarize-as-you-go:** Turn 10 pages of discussion into 5 bullet points for the next turn.
-- ✅ **Omit Signatures:** Never end with "Let me know if you need more help."
-- ❌ **No Bridge Phrases:** Avoid "Here is the code," "Sure," or "I can help with that."
-- ❌ **No Guessing:** If input is missing, ask immediately rather than wasting tokens on a generic guess.
+- âœ… **Direct Start:** Place the code or answer at the very first character of the response.
+- âœ… **Summarize-as-you-go:** Turn 10 pages of discussion into 5 bullet points for the next turn.
+- âœ… **Omit Signatures:** Never end with "Let me know if you need more help."
+- âŒ **No Bridge Phrases:** Avoid "Here is the code," "Sure," or "I can help with that."
+- âŒ **No Guessing:** If input is missing, ask immediately rather than wasting tokens on a generic guess.
 
 ## Limitations
 
@@ -105,4 +105,5 @@ User: "Deploy the function."
 
 - `@atomic-precision-response` - Specifically for removing conversational filler.
 - `@context-sharding` - For managing large-scale documentation mapping.
+
 

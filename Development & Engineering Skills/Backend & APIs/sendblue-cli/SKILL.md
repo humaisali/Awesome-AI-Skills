@@ -1,13 +1,13 @@
----
+﻿---
 name: sendblue-cli
-description: "Send iMessage and SMS from the shell via the @sendblue/cli npm package — outbound sends, contact management, and account setup with no API client or webhook server required."
+description: "Send iMessage and SMS from the shell via the @sendblue/cli npm package â€” outbound sends, contact management, and account setup with no API client or webhook server required."
 category: api-integration
 risk: critical
 source: https://github.com/humaisali
 source_repo: sendblue-api/sendblue-cli
 source_type: official
 date_added: "2026-05-22"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [sendblue, imessage, sms, cli, messaging, notifications]
 tools: [claude, cursor, gemini]
 license: "MIT"
@@ -22,7 +22,7 @@ plugin:
 
 ## Overview
 
-`@sendblue/cli` is a Node CLI that creates a Sendblue account, provisions an iMessage-enabled number, and sends messages. It is the fastest way to text from a shell, script, or Claude Code hook — no API client, no webhook server, no credentials in env vars. Credentials live at `~/.sendblue/credentials.json` (mode `600`) and Node.js 18+ is required.
+`@sendblue/cli` is a Node CLI that creates a Sendblue account, provisions an iMessage-enabled number, and sends messages. It is the fastest way to text from a shell, script, or Claude Code hook â€” no API client, no webhook server, no credentials in env vars. Credentials live at `~/.sendblue/credentials.json` (mode `600`) and Node.js 18+ is required.
 
 ## When to Use This Skill
 
@@ -43,7 +43,7 @@ npx @sendblue/cli <command>
 
 ### Step 2: Set up an account
 
-`sendblue setup` runs interactively by default. For CI/scripts, run it in two phases — the first call sends an 8-digit verification code by email, the second consumes it.
+`sendblue setup` runs interactively by default. For CI/scripts, run it in two phases â€” the first call sends an 8-digit verification code by email, the second consumes it.
 
 ```bash
 sendblue setup --email you@example.com                                       # sends code
@@ -55,7 +55,7 @@ sendblue setup --email you@example.com --code 12345678 \
 |---|---|
 | `--email` | Email address |
 | `--code` | 8-digit verification code (from the email) |
-| `--company` | Lowercase, hyphens/underscores, 3–64 chars |
+| `--company` | Lowercase, hyphens/underscores, 3â€“64 chars |
 | `--contact` | First contact, E.164 |
 
 ### Step 3: Send messages
@@ -89,7 +89,7 @@ On the free plan, **a contact must text your Sendblue number once before outboun
 ### Example 1: Notify when a long task finishes
 
 ```bash
-long_running_thing && sendblue send +15551234567 "✅ done: $(date)"
+long_running_thing && sendblue send +15551234567 "âœ… done: $(date)"
 ```
 
 ### Example 2: Read recent inbound for a specific contact
@@ -106,15 +106,15 @@ sendblue whoami || sendblue login
 
 ### Example 4: Wire to a Claude Code `Stop` hook
 
-To text yourself at the end of every agent turn, register a `Stop` hook in `settings.json` that shells out to `sendblue send`. Defer the actual hook wiring to [[update-config]] and the trigger logic to [[sendblue-notify]] — this skill only owns the CLI invocation.
+To text yourself at the end of every agent turn, register a `Stop` hook in `settings.json` that shells out to `sendblue send`. Defer the actual hook wiring to [[update-config]] and the trigger logic to [[sendblue-notify]] â€” this skill only owns the CLI invocation.
 
 ## Best Practices
 
-- ✅ **Use E.164 numbers everywhere.** `+15551234567`, never `5551234567` or `(555) 123-4567`.
-- ✅ **Run `sendblue whoami` before unattended batches** to fail fast on stale or missing creds.
-- ✅ **Re-run `setup` as the same OS user** that owns `~/.sendblue/credentials.json`.
-- ❌ **Don't `sudo`** — it writes creds to root's home and the next non-sudo run won't see them.
-- ❌ **Don't embed creds in env vars** when the CLI already reads them from the per-user credentials file.
+- âœ… **Use E.164 numbers everywhere.** `+15551234567`, never `5551234567` or `(555) 123-4567`.
+- âœ… **Run `sendblue whoami` before unattended batches** to fail fast on stale or missing creds.
+- âœ… **Re-run `setup` as the same OS user** that owns `~/.sendblue/credentials.json`.
+- âŒ **Don't `sudo`** â€” it writes creds to root's home and the next non-sudo run won't see them.
+- âŒ **Don't embed creds in env vars** when the CLI already reads them from the per-user credentials file.
 
 ## Limitations
 
@@ -124,27 +124,28 @@ To text yourself at the end of every agent turn, register a `Stop` hook in `sett
 
 ## Security & Safety Notes
 
-- Credentials are written to `~/.sendblue/credentials.json` with mode `600`. Treat that file like an API key — do not commit it, do not copy it across machines without the same posture.
+- Credentials are written to `~/.sendblue/credentials.json` with mode `600`. Treat that file like an API key â€” do not commit it, do not copy it across machines without the same posture.
 - Treat every outbound send, contact setup, login, or account setup action as state-changing. Preview the recipient, message body, and account/email target, then wait for explicit user confirmation before running it.
 - Run the CLI as the OS user that owns the credentials file. `sudo` writes a separate copy under root's home and silently desyncs.
-- Outbound messages to phone numbers are not free of consequence — wire `sendblue send` into hooks or loops only after gating on duration or success conditions to avoid spamming the recipient.
+- Outbound messages to phone numbers are not free of consequence â€” wire `sendblue send` into hooks or loops only after gating on duration or success conditions to avoid spamming the recipient.
 - Verification codes arrive by email; treat the address you registered with as a recovery factor for the account.
 
 ## Common Pitfalls
 
-- **E.164 only.** `5551234567` or `(555) 123-4567` will fail — always `+15551234567`.
-- **Free-plan unverified contacts.** Outbound to a contact that hasn't texted in first returns an error — have them text your Sendblue number once, then confirm with `sendblue contacts`.
+- **E.164 only.** `5551234567` or `(555) 123-4567` will fail â€” always `+15551234567`.
+- **Free-plan unverified contacts.** Outbound to a contact that hasn't texted in first returns an error â€” have them text your Sendblue number once, then confirm with `sendblue contacts`.
 - **Two-step setup in non-interactive mode.** `--email` alone only sends the code; you must run a second invocation with `--code` and the rest of the flags to finish.
-- **Credentials are per-user.** `~/.sendblue/credentials.json` is owner-only (`600`). Don't `sudo` and pollute root's home — re-running as the same user that ran `setup` is what works.
+- **Credentials are per-user.** `~/.sendblue/credentials.json` is owner-only (`600`). Don't `sudo` and pollute root's home â€” re-running as the same user that ran `setup` is what works.
 
 ## Related Skills
 
-- `@sendblue-api` — HTTP/JSON alternative for application code, webhooks, and features the CLI does not expose.
-- `@sendblue-notify` — Patterns and copy rules for "text me when X is done" workflows that sit on top of this CLI.
-- `@update-config` — Wires `sendblue send` into Claude Code hooks (`Stop`, `Notification`) without owning the message logic.
+- `@sendblue-api` â€” HTTP/JSON alternative for application code, webhooks, and features the CLI does not expose.
+- `@sendblue-notify` â€” Patterns and copy rules for "text me when X is done" workflows that sit on top of this CLI.
+- `@update-config` â€” Wires `sendblue send` into Claude Code hooks (`Stop`, `Notification`) without owning the message logic.
 
 ## Links
 
 - README & full flag reference: <https://github.com/sendblue-api/sendblue-cli>
 - Sendblue: <https://sendblue.com>
 - API docs (deeper protocol details): <https://docs.sendblue.com>
+

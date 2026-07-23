@@ -1,4 +1,4 @@
----
+﻿---
 name: quit-sponsor
 description: "Helps an AI agent provide non-judgmental, evidence-informed quit-smoking support with user-consented tracking, craving check-ins, and escalation to human or clinical help. Not medical care."
 category: personal-development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: metrox-eth/quit-sponsor
 source_type: community
 date_added: "2026-07-12"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [quit-smoking, smoking-cessation, health, habits, addiction-recovery, wellbeing, coaching]
 tools: [claude]
 license: "MIT"
@@ -42,7 +42,7 @@ Use current guidance rather than categorical rules. Help the person build a quit
 
 ### Step 3: Run the sponsor decision tree
 
-On a declared craving: acknowledge the check-in, ask whether smoking material is immediately reachable, offer a short coping action the person prefers, and connect them to human support when useful. On a slip: normalize without minimizing, move attribution away from "I am weak" toward the situation and plan, ask what the person wants to do next, and update one coping plan. Offer a clinician, pharmacist, or local quitline early; repeated slips strengthen that recommendation. Schedule follow-ups only when the platform actually supports reminders and the person has opted in—never pretend the agent can initiate contact when it cannot.
+On a declared craving: acknowledge the check-in, ask whether smoking material is immediately reachable, offer a short coping action the person prefers, and connect them to human support when useful. On a slip: normalize without minimizing, move attribution away from "I am weak" toward the situation and plan, ask what the person wants to do next, and update one coping plan. Offer a clinician, pharmacist, or local quitline early; repeated slips strengthen that recommendation. Schedule follow-ups only when the platform actually supports reminders and the person has opted inâ€”never pretend the agent can initiate contact when it cannot.
 
 ### Step 4: Personalize
 
@@ -72,12 +72,12 @@ debrief, updates one if-then plan, and checks the slip log for repetition.
 
 ## Best Practices
 
-- ✅ Ask permission before logging and keep the record local, minimal, reviewable, and deletable
-- ✅ Offer a real quitline, clinician, pharmacist, or trusted person early—not only after failure
-- ✅ Present multiple evidence-based paths and let the person choose with appropriate clinical support
-- ❌ Do not prescribe medication, recommend doses, diagnose symptoms, or promise a fixed withdrawal timeline
-- ❌ Do not present abrupt quitting, a quit date, or gradual reduction as universally correct or incorrect
-- ❌ Do not moralize about a slip or claim to provide human monitoring the platform cannot perform
+- âœ… Ask permission before logging and keep the record local, minimal, reviewable, and deletable
+- âœ… Offer a real quitline, clinician, pharmacist, or trusted person earlyâ€”not only after failure
+- âœ… Present multiple evidence-based paths and let the person choose with appropriate clinical support
+- âŒ Do not prescribe medication, recommend doses, diagnose symptoms, or promise a fixed withdrawal timeline
+- âŒ Do not present abrupt quitting, a quit date, or gradual reduction as universally correct or incorrect
+- âŒ Do not moralize about a slip or claim to provide human monitoring the platform cannot perform
 
 ## Limitations
 
@@ -94,3 +94,4 @@ debrief, updates one if-then plan, and checks the slip log for repetition.
 - Escalate promptly to a clinician for medication questions, pregnancy or breastfeeding, significant medical or mental-health conditions, escalating alcohol or sedative use, or symptoms that concern the person.
 - Do not recommend vaping without verifying current local clinical guidance and law. Do not call any medication a universally safe default; suitability depends on the person.
 - The logbook is private health data: keep it local, never exfiltrate or quote it publicly, and delete it when the person requests deletion.
+

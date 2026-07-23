@@ -1,4 +1,4 @@
----
+﻿---
 name: ditto
 description: "Use when a user asks to mine or update a private, evidence-backed work profile from local Claude Code, Codex, Copilot CLI, or OpenCode sessions."
 category: agent-behavior
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: ohad6k/ditto
 source_type: community
 date_added: "2026-07-14"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [personalization, context-engineering, session-mining, agent-memory]
 tools: [claude, cursor, gemini, codex-cli]
 license: "MIT"
@@ -171,3 +171,4 @@ for approval of the displayed preview plan.
 
 - `@agenttrace-session-audit` - Use for cost, latency, failure, and health analysis of coding-agent sessions.
 - `@agent-memory` - Use for explicit persistent knowledge storage rather than evidence-based profile mining.
+

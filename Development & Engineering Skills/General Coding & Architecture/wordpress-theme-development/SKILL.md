@@ -1,4 +1,4 @@
----
+﻿---
 name: wordpress-theme-development
 description: "WordPress theme development workflow covering theme architecture, template hierarchy, custom post types, block editor support, responsive design, and WordPress 7.0 features: DataViews, Pattern Editing, Navigation Overlays, and admin refresh."
 category: granular-workflow-bundle
@@ -73,7 +73,7 @@ Use this workflow when:
 /*
 Theme Name: My Custom Theme
 Theme URI: https://example.com
-Author: Humais Ali
+Maintained & Curated by: Humais Ali
 Author URI: https://example.com
 Description: A WordPress 7.0 compatible theme with modern design
 Version: 1.0.0
@@ -442,33 +442,33 @@ Use @playwright-skill to test WordPress theme
 
 ```
 theme-name/
-├── style.css
-├── functions.php
-├── index.php
-├── header.php
-├── footer.php
-├── sidebar.php
-├── single.php
-├── page.php
-├── archive.php
-├── search.php
-├── 404.php
-├── comments.php
-├── template-parts/
-│   ├── header/
-│   ├── footer/
-│   ├── navigation/
-│   └── content/
-├── patterns/           # Block patterns (WP 7.0)
-├── templates/          # Site editor templates
-├── inc/
-│   ├── class-theme.php
-│   └── supports.php
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── images/
-└── languages/
+â”œâ”€â”€ style.css
+â”œâ”€â”€ functions.php
+â”œâ”€â”€ index.php
+â”œâ”€â”€ header.php
+â”œâ”€â”€ footer.php
+â”œâ”€â”€ sidebar.php
+â”œâ”€â”€ single.php
+â”œâ”€â”€ page.php
+â”œâ”€â”€ archive.php
+â”œâ”€â”€ search.php
+â”œâ”€â”€ 404.php
+â”œâ”€â”€ comments.php
+â”œâ”€â”€ template-parts/
+â”‚   â”œâ”€â”€ header/
+â”‚   â”œâ”€â”€ footer/
+â”‚   â”œâ”€â”€ navigation/
+â”‚   â””â”€â”€ content/
+â”œâ”€â”€ patterns/           # Block patterns (WP 7.0)
+â”œâ”€â”€ templates/          # Site editor templates
+â”œâ”€â”€ inc/
+â”‚   â”œâ”€â”€ class-theme.php
+â”‚   â””â”€â”€ supports.php
+â”œâ”€â”€ assets/
+â”‚   â”œâ”€â”€ css/
+â”‚   â”œâ”€â”€ js/
+â”‚   â””â”€â”€ images/
+â””â”€â”€ languages/
 ```
 
 ## WordPress 7.0 Theme Checklist
@@ -504,3 +504,4 @@ theme-name/
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

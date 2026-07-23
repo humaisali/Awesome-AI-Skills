@@ -1,4 +1,4 @@
----
+﻿---
 name: android-ui-journey-testing
 description: "XML-specified Android UI journey testing, interactive step execution, assertion verification, and JSON outcome reporting."
 category: testing
@@ -6,7 +6,7 @@ risk: critical
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-06-18"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [android, journey-testing, ui-verification, testing, adb, automation]
 tools: [claude, cursor, gemini, antigravity]
 ---
@@ -173,11 +173,11 @@ Format the execution results into a standardized JSON schema and write it to the
 
 ## Best Practices
 
-- ✅ **Calculate Centers for Taps**: When parsing element bounds like `[x1,y1][x2,y2]`, always compute the middle coordinate:
+- âœ… **Calculate Centers for Taps**: When parsing element bounds like `[x1,y1][x2,y2]`, always compute the middle coordinate:
   $$x_{center} = \frac{x_1 + x_2}{2}, \quad y_{center} = \frac{y_1 + y_2}{2}$$
-- ✅ **Include Sleep Buffers**: Always add a short delay (e.g., 1-2 seconds) after interactive actions (like button taps) to let layouts and transitions render before executing assertions.
-- ✅ **Fail Fast**: Stop the test immediately upon encountering the first failure. Continuing after a failure leads to invalid results.
-- ✅ **Log Precise Commands Safely**: Include non-sensitive raw commands (such as `adb shell input tap`) in the JSON output list for diagnostics. Redact text entered into password, OTP, token, payment, or personal-data fields; never persist the literal secret in reports, CI logs, or shared artifacts.
+- âœ… **Include Sleep Buffers**: Always add a short delay (e.g., 1-2 seconds) after interactive actions (like button taps) to let layouts and transitions render before executing assertions.
+- âœ… **Fail Fast**: Stop the test immediately upon encountering the first failure. Continuing after a failure leads to invalid results.
+- âœ… **Log Precise Commands Safely**: Include non-sensitive raw commands (such as `adb shell input tap`) in the JSON output list for diagnostics. Redact text entered into password, OTP, token, payment, or personal-data fields; never persist the literal secret in reports, CI logs, or shared artifacts.
 
 ## Limitations
 
@@ -189,3 +189,4 @@ Format the execution results into a standardized JSON schema and write it to the
 
 - `@android-cli` - General CLI tool syntax, package install, and device queries.
 - `@android_ui_verification` - Direct ADB script templates for general UI checks.
+

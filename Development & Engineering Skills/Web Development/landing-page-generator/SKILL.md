@@ -1,20 +1,20 @@
----
+﻿---
 name: "landing-page-generator"
 description: "Generates high-converting Next.js/React landing pages with Tailwind CSS. Uses PAS, AIDA, and BAB frameworks for optimized copy/components (Heroes, Features, Pricing). Focuses on Core Web Vitals/SEO."
 category: "front-end"
 risk: "safe"
 source: https://github.com/humaisali
 date_added: "2026-03-18"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: ["nextjs", "react", "tailwind", "landing-page", "marketing", "seo", "cro"]
 tools: ["claude", "cursor", "gemini"]
 ---
 
 # Landing Page Generator
 
-Generate high-converting landing pages from a product description. Output complete Next.js/React components with multiple section variants, proven copy frameworks, SEO optimization, and performance-first patterns. Not lorem ipsum — actual copy that converts.
+Generate high-converting landing pages from a product description. Output complete Next.js/React components with multiple section variants, proven copy frameworks, SEO optimization, and performance-first patterns. Not lorem ipsum â€” actual copy that converts.
 
-**Target:** LCP < 1s · CLS < 0.1 · FID < 100ms  
+**Target:** LCP < 1s Â· CLS < 0.1 Â· FID < 100ms  
 **Output:** TSX components + Tailwind styles + SEO meta + copy variants
 
 ## When to Use
@@ -26,7 +26,7 @@ Generate high-converting landing pages from a product description. Output comple
 
 - 5 hero section variants (centered, split, gradient, video-bg, minimal)
 - Feature sections (grid, alternating, cards with icons)
-- Pricing tables (2–4 tiers with feature lists and toggle)
+- Pricing tables (2â€“4 tiers with feature lists and toggle)
 - FAQ accordion with schema markup
 - Testimonials (grid, carousel, single-quote)
 - CTA sections (banner, full-page, inline)
@@ -39,17 +39,17 @@ Generate high-converting landing pages from a product description. Output comple
 
 Follow these steps in order for every landing page request:
 
-1. **Gather inputs** — collect product name, tagline, audience, pain point, key benefit, pricing tiers, design style, and copy framework using the trigger format below. Ask only for missing fields.
-2. **Analyze brand voice** (recommended) — if the user has existing brand content (website copy, blog posts, marketing materials), run it through `marketing-skill/content-production/scripts/brand_voice_analyzer.py` to get a voice profile (formality, tone, perspective). Use the profile to inform design style and copy framework selection:
-   - formal + professional → **enterprise** style, **AIDA** framework
-   - casual + friendly → **bold-startup** style, **BAB** framework
-   - professional + authoritative → **dark-saas** style, **PAS** framework
-   - casual + conversational → **clean-minimal** style, **BAB** framework
-3. **Select design style** — map the user's choice (or infer from brand voice analysis) to one of the four Tailwind class sets in the Design Style Reference.
-4. **Apply copy framework** — write all headline and body copy using the chosen framework (PAS / AIDA / BAB) before generating components. Match the voice profile's formality and tone throughout.
-5. **Generate sections in order** — Hero → Features → Pricing → FAQ → Testimonials → CTA → Footer. Skip sections not relevant to the product.
-6. **Validate against SEO checklist** — run through every item in the SEO Checklist before outputting final code. Fix any gaps inline.
-7. **Output final components** — deliver complete, copy-paste-ready TSX files with all Tailwind classes, SEO meta, and structured data included.
+1. **Gather inputs** â€” collect product name, tagline, audience, pain point, key benefit, pricing tiers, design style, and copy framework using the trigger format below. Ask only for missing fields.
+2. **Analyze brand voice** (recommended) â€” if the user has existing brand content (website copy, blog posts, marketing materials), run it through `marketing-skill/content-production/scripts/brand_voice_analyzer.py` to get a voice profile (formality, tone, perspective). Use the profile to inform design style and copy framework selection:
+   - formal + professional â†’ **enterprise** style, **AIDA** framework
+   - casual + friendly â†’ **bold-startup** style, **BAB** framework
+   - professional + authoritative â†’ **dark-saas** style, **PAS** framework
+   - casual + conversational â†’ **clean-minimal** style, **BAB** framework
+3. **Select design style** â€” map the user's choice (or infer from brand voice analysis) to one of the four Tailwind class sets in the Design Style Reference.
+4. **Apply copy framework** â€” write all headline and body copy using the chosen framework (PAS / AIDA / BAB) before generating components. Match the voice profile's formality and tone throughout.
+5. **Generate sections in order** â€” Hero â†’ Features â†’ Pricing â†’ FAQ â†’ Testimonials â†’ CTA â†’ Footer. Skip sections not relevant to the product.
+6. **Validate against SEO checklist** â€” run through every item in the SEO Checklist before outputting final code. Fix any gaps inline.
+7. **Output final components** â€” deliver complete, copy-paste-ready TSX files with all Tailwind classes, SEO meta, and structured data included.
 
 ---
 
@@ -83,21 +83,21 @@ Copy framework: PAS | AIDA | BAB
 
 ## Copy Frameworks
 
-**PAS (Problem → Agitate → Solution)**
+**PAS (Problem â†’ Agitate â†’ Solution)**
 - H1: Painful state they're in
 - Sub: What happens if they don't fix it
 - CTA: What you offer
-- *Example — H1:* "Your team wastes 3 hours a day on manual reporting" / *Sub:* "Every hour spent on spreadsheets is an hour not closing deals. Your competitors are already automated." / *CTA:* "Automate your reports in 10 minutes →"
+- *Example â€” H1:* "Your team wastes 3 hours a day on manual reporting" / *Sub:* "Every hour spent on spreadsheets is an hour not closing deals. Your competitors are already automated." / *CTA:* "Automate your reports in 10 minutes â†’"
 
-**AIDA (Attention → Interest → Desire → Action)**
-- H1: Bold attention-grabbing statement → Sub: Interesting fact or benefit → Features: Desire-building proof points → CTA: Clear action
+**AIDA (Attention â†’ Interest â†’ Desire â†’ Action)**
+- H1: Bold attention-grabbing statement â†’ Sub: Interesting fact or benefit â†’ Features: Desire-building proof points â†’ CTA: Clear action
 
-**BAB (Before → After → Bridge)**
-- H1: "[Before state] → [After state]" → Sub: "Here's how [product] bridges the gap" → Features: How it works (the bridge)
+**BAB (Before â†’ After â†’ Bridge)**
+- H1: "[Before state] â†’ [After state]" â†’ Sub: "Here's how [product] bridges the gap" â†’ Features: How it works (the bridge)
 
 ---
 
-## Representative Component: Hero (Centered Gradient — Dark SaaS)
+## Representative Component: Hero (Centered Gradient â€” Dark SaaS)
 
 Use this as the structural template for all hero variants. Swap layout classes, gradient direction, and image placement for split, video-bg, and minimal variants.
 
@@ -127,10 +127,10 @@ export function HeroCentered() {
             Start free trial
           </Button>
           <Button size="lg" variant="outline" className="border-gray-700 text-gray-300">
-            See how it works →
+            See how it works â†’
           </Button>
         </div>
-        <p className="mt-4 text-sm text-gray-500">No credit card required · 14-day free trial</p>
+        <p className="mt-4 text-sm text-gray-500">No credit card required Â· 14-day free trial</p>
       </div>
     </section>
   )
@@ -163,9 +163,9 @@ Inject `FAQPage` JSON-LD via `<script type="application/ld+json" dangerouslySetI
 
 ## SEO Checklist
 
-- [ ] `<title>` tag: primary keyword + brand (50–60 chars)
-- [ ] Meta description: benefit + CTA (150–160 chars)
-- [ ] OG image: 1200×630px with product name and tagline
+- [ ] `<title>` tag: primary keyword + brand (50â€“60 chars)
+- [ ] Meta description: benefit + CTA (150â€“160 chars)
+- [ ] OG image: 1200Ã—630px with product name and tagline
 - [ ] H1: one per page, includes primary keyword
 - [ ] Structured data: FAQPage, Product, or Organization schema
 - [ ] Canonical URL set
@@ -175,7 +175,7 @@ Inject `FAQPage` JSON-LD via `<script type="application/ld+json" dangerouslySetI
 - [ ] Mobile viewport meta tag present
 - [ ] Internal linking to pricing and docs
 
-> **Validation step:** Before outputting final code, verify every checklist item above is satisfied. Fix any gaps inline — do not skip items.
+> **Validation step:** Before outputting final code, verify every checklist item above is satisfied. Fix any gaps inline â€” do not skip items.
 
 ---
 
@@ -193,21 +193,22 @@ Inject `FAQPage` JSON-LD via `<script type="application/ld+json" dangerouslySetI
 
 ## Common Pitfalls
 
-- Hero image not preloaded — add `priority` prop to first `<Image>`
-- Missing mobile breakpoints — always design mobile-first with `sm:` prefixes
-- CTA copy too vague — "Get started" beats "Learn more"; "Start free trial" beats "Sign up"
-- Pricing page missing trust signals — add money-back guarantee and testimonials near CTA
-- No above-the-fold CTA on mobile — ensure button is visible without scrolling on 375px viewport
+- Hero image not preloaded â€” add `priority` prop to first `<Image>`
+- Missing mobile breakpoints â€” always design mobile-first with `sm:` prefixes
+- CTA copy too vague â€” "Get started" beats "Learn more"; "Start free trial" beats "Sign up"
+- Pricing page missing trust signals â€” add money-back guarantee and testimonials near CTA
+- No above-the-fold CTA on mobile â€” ensure button is visible without scrolling on 375px viewport
 
 ---
 
 ## Related Skills
 
-- **Brand Voice Analyzer** (`marketing-skill/content-production/scripts/brand_voice_analyzer.py`) — Run before generation to establish voice profile and ensure copy consistency
-- **UI Design System** (`product-team/ui-design-system/`) — Generate design tokens from brand color before building the page
-- **Competitive Teardown** (`product-team/competitive-teardown/`) — Competitive positioning informs landing page messaging and differentiation
+- **Brand Voice Analyzer** (`marketing-skill/content-production/scripts/brand_voice_analyzer.py`) â€” Run before generation to establish voice profile and ensure copy consistency
+- **UI Design System** (`product-team/ui-design-system/`) â€” Generate design tokens from brand color before building the page
+- **Competitive Teardown** (`product-team/competitive-teardown/`) â€” Competitive positioning informs landing page messaging and differentiation
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

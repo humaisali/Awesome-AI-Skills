@@ -1,10 +1,10 @@
----
+﻿---
 name: analytics-product
-description: "Analytics de produto — PostHog, Mixpanel, eventos, funnels, cohorts, retencao, north star metric, OKRs e dashboards de produto."
+description: "Analytics de produto â€” PostHog, Mixpanel, eventos, funnels, cohorts, retencao, north star metric, OKRs e dashboards de produto."
 risk: none
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - analytics
 - product
@@ -19,11 +19,11 @@ tools:
 - codex-cli
 ---
 
-# ANALYTICS-PRODUCT — Decida com Dados
+# ANALYTICS-PRODUCT â€” Decida com Dados
 
 ## Overview
 
-Analytics de produto — PostHog, Mixpanel, eventos, funnels, cohorts, retencao, north star metric, OKRs e dashboards de produto. Ativar para: configurar tracking de eventos, criar funil de conversao, analise de cohort, retencao, DAU/MAU, feature flags, A/B testing, north star metric, OKRs, dashboard de produto.
+Analytics de produto â€” PostHog, Mixpanel, eventos, funnels, cohorts, retencao, north star metric, OKRs e dashboards de produto. Ativar para: configurar tracking de eventos, criar funil de conversao, analise de cohort, retencao, DAU/MAU, feature flags, A/B testing, north star metric, OKRs, dashboard de produto.
 
 ## When to Use This Skill
 
@@ -44,9 +44,9 @@ Correto:   user_signed_up, conversation_started, upgrade_completed
 Errado:    signup, click, conversion
 ```
 
-## Analytics-Product — Decida Com Dados
+## Analytics-Product â€” Decida Com Dados
 
-> "In God we trust. All others must bring data." — W. Edwards Deming
+> "In God we trust. All others must bring data." â€” W. Edwards Deming
 
 ---
 
@@ -304,3 +304,4 @@ def ab_test_significance(
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

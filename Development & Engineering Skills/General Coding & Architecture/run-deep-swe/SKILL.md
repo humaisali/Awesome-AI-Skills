@@ -1,4 +1,4 @@
----
+﻿---
 name: run-deep-swe
 description: "Run reproducible DeepSWE coding-agent benchmark evaluations through OpenRouter and mini-swe-agent."
 category: agent-evaluation
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [benchmark, deepswe, openrouter, evaluation]
 tools: [claude, codex]
 license: "MIT"
@@ -24,7 +24,7 @@ disable-model-invocation: true
 
 DeepSWE (deepswe.datacurve.ai) is a 113-task Harbor-compatible coding-agent benchmark. It runs via **Pier** (Harbor fork) driving **mini-swe-agent** (model-agnostic). Any model reachable through OpenRouter can be scored.
 
-## Prerequisites — state-check first
+## Prerequisites â€” state-check first
 
 ```bash
 which uv git docker || echo "MISSING: install uv, git, docker"
@@ -32,7 +32,7 @@ docker info >/dev/null 2>&1 || echo "MISSING: Docker daemon not running (Pier's 
 echo "OPENROUTER_API_KEY set? ${OPENROUTER_API_KEY:+YES}"
 ```
 
-**Docker must be running** — Pier sandboxes each task in Docker by default (`--env modal` for cloud instead).
+**Docker must be running** â€” Pier sandboxes each task in Docker by default (`--env modal` for cloud instead).
 
 `OPENROUTER_API_KEY` must already be present in the environment. If it is unset,
 ask the user to configure their preferred secret-management path; do not read
@@ -53,13 +53,13 @@ Run all `pier` commands from inside `deep-swe/`, using relative `-p tasks/...`.
 
 mini-swe-agent has a native OpenRouter model class. Both routes below use `OPENROUTER_API_KEY` and the OpenRouter slug (`vendor/model`, e.g. `minimax/minimax-m3`):
 
-**Route A — native OpenRouter class (preferred, hits openrouter.ai/api/v1 directly):**
+**Route A â€” native OpenRouter class (preferred, hits openrouter.ai/api/v1 directly):**
 ```bash
 pier run -p deep-swe/tasks --agent mini-swe-agent \
   --model minimax/minimax-m3 --model-class openrouter
 ```
 
-**Route B — LiteLLM provider prefix (fallback; same key):**
+**Route B â€” LiteLLM provider prefix (fallback; same key):**
 ```bash
 pier run -p deep-swe/tasks --agent mini-swe-agent \
   --model openrouter/minimax/minimax-m3
@@ -68,9 +68,9 @@ pier run -p deep-swe/tasks --agent mini-swe-agent \
 Notes:
 - Slug = the exact OpenRouter slug. Verify it at openrouter.ai/models before running.
 - Free/zero-cost models: OpenRouter cost tracking can error. Set `export MSWEA_COST_TRACKING=ignore_errors`.
-- Flag spelling can vary by version — confirm with `pier run --help` and `mini --help`.
+- Flag spelling can vary by version â€” confirm with `pier run --help` and `mini --help`.
 
-## Smoke test FIRST (1 task — do this before any full run)
+## Smoke test FIRST (1 task â€” do this before any full run)
 
 Always validate end-to-end wiring on a single task before spending tokens on the corpus:
 
@@ -81,7 +81,7 @@ pier run -p deep-swe/tasks/<task-id> --agent mini-swe-agent \
 ls deep-swe/tasks
 ```
 
-Pass criteria: run completes, model returns actions (not auth/format errors), a score/trajectory is emitted. If it 401s → key wrong. If "provider not provided"/"model not mapped" → fix slug or switch route.
+Pass criteria: run completes, model returns actions (not auth/format errors), a score/trajectory is emitted. If it 401s â†’ key wrong. If "provider not provided"/"model not mapped" â†’ fix slug or switch route.
 
 ## Subset run (deterministic sample)
 
@@ -91,7 +91,7 @@ pier run -p deep-swe/tasks --agent mini-swe-agent \
   --n-tasks 10 --sample-seed 0
 ```
 
-## Full 113-task corpus (costs tokens + time — confirm with user first)
+## Full 113-task corpus (costs tokens + time â€” confirm with user first)
 
 ```bash
 pier run -p deep-swe/tasks --agent mini-swe-agent \
@@ -118,3 +118,4 @@ pier run -p deep-swe/tasks --agent mini-swe-agent \
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

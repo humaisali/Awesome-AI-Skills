@@ -1,4 +1,4 @@
----
+﻿---
 name: agenttrace-session-audit
 description: "Audit local AI coding-agent sessions with agenttrace for cost, tool failures, latency, anomalies, health, diffs, and CI gates."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: luoyuctl/agenttrace
 source_type: community
 date_added: "2026-05-10"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [ai-coding, observability, cost-tracking, session-analysis]
 tools: [claude, cursor, gemini, codex-cli]
 license: "MIT"
@@ -156,3 +156,4 @@ guard against critical anomalies or unhealthy runs.
 
 - `@langfuse` - Use for production LLM application tracing and evaluation.
 - `@observability-engineer` - Use for broader service monitoring, SLOs, and incident workflows.
+

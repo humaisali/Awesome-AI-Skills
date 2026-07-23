@@ -1,11 +1,11 @@
----
+﻿---
 name: git-pr-review
 description: Generate a concise and structured PR description from commit history with minimal token usage
 risk: safe
 source: https://github.com/humaisali
 source_type: community
 date_added: "2026-05-03"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 ---
 
 ## Objective
@@ -59,9 +59,9 @@ For each commit:
   - feat, fix, refactor, chore, docs, test
 - If missing:
   - infer from message keywords:
-    - "add", "create" → feat
-    - "fix", "bug" → fix
-    - "refactor", "improve" → refactor
+    - "add", "create" â†’ feat
+    - "fix", "bug" â†’ fix
+    - "refactor", "improve" â†’ refactor
 
 ---
 
@@ -82,12 +82,12 @@ IGNORE commits that match:
 Cluster commits by feature/module:
 
 Heuristic:
-- Same keyword → same group
-- Same folder/file pattern → same group
+- Same keyword â†’ same group
+- Same folder/file pattern â†’ same group
 
 Example:
-- auth.service + auth.controller → "authentication"
-- payment + checkout → "payment flow"
+- auth.service + auth.controller â†’ "authentication"
+- payment + checkout â†’ "payment flow"
 
 ---
 
@@ -122,7 +122,7 @@ Rules:
 ## Description Format (STRICT)
 
 ## Summary
-1–2 lines explaining the purpose
+1â€“2 lines explaining the purpose
 
 ## Changes
 Grouped bullet points:
@@ -142,7 +142,7 @@ Only if relevant:
 
 ## Output Rules
 
-- Max ~120–180 words total
+- Max ~120â€“180 words total
 - No repetition of commit messages
 - No low-level code explanation
 - No fluff
@@ -177,3 +177,4 @@ Adds authentication flow and resolves session persistence issues.
 
 ## Impact
 Improves security and fixes inconsistent login behavior.
+

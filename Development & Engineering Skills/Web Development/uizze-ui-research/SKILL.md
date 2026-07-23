@@ -1,4 +1,4 @@
----
+﻿---
 name: uizze-ui-research
 description: "Use when building or reviewing web and iOS product UI and you need real UI references, structured design contracts, or implementation validation through UIZZE MCP."
 category: design
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: aislon/uizze-mcp
 source_type: official
 date_added: "2026-07-12"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [ui-design, ui-research, mcp, design-contracts, agent-workflows]
 tools: [claude, cursor, codex, copilot, antigravity, lovable]
 ---
@@ -61,11 +61,11 @@ Use UIZZE to inspect relevant real product settings screens, audit this implemen
 
 ## Best Practices
 
-- ✅ Start with the smallest relevant set of references rather than collecting a broad gallery.
-- ✅ Separate observed patterns from the current project's brand and component rules.
-- ✅ Use validation findings as implementation feedback, not as permission to copy an interface.
-- ❌ Do not reproduce another product's brand, proprietary copy, assets, or exact layout.
-- ❌ Do not commit agent tokens, include them in prompts, or place them in client-side code.
+- âœ… Start with the smallest relevant set of references rather than collecting a broad gallery.
+- âœ… Separate observed patterns from the current project's brand and component rules.
+- âœ… Use validation findings as implementation feedback, not as permission to copy an interface.
+- âŒ Do not reproduce another product's brand, proprietary copy, assets, or exact layout.
+- âŒ Do not commit agent tokens, include them in prompts, or place them in client-side code.
 
 ## Security & Safety Notes
 
@@ -91,3 +91,4 @@ Use UIZZE to inspect relevant real product settings screens, audit this implemen
 - This skill does not replace product-specific user research, accessibility review, project tests, or human design judgment.
 - It cannot make a hosted UIZZE MCP workflow available without a valid authorized connection.
 - Stop and ask for clarification if the product goal, existing design system, or access boundaries are missing.
+

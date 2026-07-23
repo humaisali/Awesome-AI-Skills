@@ -1,10 +1,10 @@
----
+﻿---
 name: "scrum-master"
 description: "Advanced Scrum Master skill for data-driven agile team analysis and coaching. Use when the user asks about sprint planning, velocity tracking, retrospectives, standup facilitation, backlog grooming, story points, burndown charts, blocker resolution, or agile team health. Runs Python scripts to analyse sprint JSON exports from Jira or similar tools: velocity_analyzer.py for Monte Carlo sprint forecasting, sprint_health_scorer.py for multi-dimension health scoring, and retrospective_analyzer.py for action-item and theme tracking. Produces confidence-interval forecasts, health grade reports, and improvement-velocity trends for high-performing Scrum teams."
 license: MIT
 metadata:
   version: 2.0.0
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: project-management
   domain: agile-development
   updated: 2026-02-15
@@ -14,7 +14,7 @@ metadata:
 
 # Scrum Master Expert
 
-Data-driven Scrum Master skill combining sprint analytics, probabilistic forecasting, and team development coaching. The unique value is in the three Python analysis scripts and their workflows — refer to `references/` and `assets/` for deeper framework detail.
+Data-driven Scrum Master skill combining sprint analytics, probabilistic forecasting, and team development coaching. The unique value is in the three Python analysis scripts and their workflows â€” refer to `references/` and `assets/` for deeper framework detail.
 
 ---
 
@@ -51,7 +51,7 @@ python velocity_analyzer.py sprint_data.json --format json > analysis.json
 
 ### 2. Sprint Health Scorer (`scripts/sprint_health_scorer.py`)
 
-Scores team health across 6 weighted dimensions, producing an overall 0–100 grade.
+Scores team health across 6 weighted dimensions, producing an overall 0â€“100 grade.
 
 | Dimension | Weight | Target |
 |---|---|---|
@@ -130,7 +130,7 @@ Jira and similar tools can export sprint data; map exported fields to this schem
 
 ### Daily Standup
 
-1. Track participation and help-seeking patterns — feed ceremony data into `sprint_health_scorer.py` at sprint end.
+1. Track participation and help-seeking patterns â€” feed ceremony data into `sprint_health_scorer.py` at sprint end.
 2. Log each blocker with date opened; resolution time feeds the Blocker Resolution dimension.
 3. If a blocker is unresolved after 2 days, escalate proactively and note in sprint data.
 
@@ -147,7 +147,7 @@ Jira and similar tools can export sprint data; map exported fields to this schem
    python retrospective_analyzer.py sprint_data.json --format text > retro.txt
    ```
 2. Open with the health score and top-flagged dimensions to focus discussion.
-3. Use the retrospective analyzer's action-item completion rate to determine how many new action items the team can realistically absorb (target: ≤3 if completion rate <60%).
+3. Use the retrospective analyzer's action-item completion rate to determine how many new action items the team can realistically absorb (target: â‰¤3 if completion rate <60%).
 4. Assign each action item an owner and measurable success criterion before closing the session.
 5. Record new action items in `sprint_data.json` for tracking in the next cycle.
 
@@ -179,7 +179,7 @@ Apply stage-specific facilitation (details in `references/team-dynamics-framewor
 
 ### Progress Measurement
 
-- **Sprint cadence**: re-run health scorer; target overall score improvement of ≥5 points per quarter.
+- **Sprint cadence**: re-run health scorer; target overall score improvement of â‰¥5 points per quarter.
 - **Monthly**: psychological safety pulse survey; target >4.0/5.0.
 - **Quarterly**: full maturity re-assessment via retrospective analyzer.
 - If scores plateau or regress for 2 consecutive sprints, escalate intervention strategy (see `references/team-dynamics-framework.md`).
@@ -204,19 +204,20 @@ Apply stage-specific facilitation (details in `references/team-dynamics-framewor
 ## Limitations
 
 - **Sample size**: fewer than 6 sprints reduces Monte Carlo confidence; always state confidence intervals, not point estimates.
-- **Data completeness**: missing ceremony or story-completion fields suppress affected scoring dimensions — report gaps explicitly.
+- **Data completeness**: missing ceremony or story-completion fields suppress affected scoring dimensions â€” report gaps explicitly.
 - **Context sensitivity**: script recommendations must be interpreted alongside organisational and team context not captured in JSON data.
 - **Quantitative bias**: metrics do not replace qualitative observation; combine scores with direct team interaction.
-- **Team size**: techniques are optimised for 5–9 member teams; larger groups may require adaptation.
+- **Team size**: techniques are optimised for 5â€“9 member teams; larger groups may require adaptation.
 - **External factors**: cross-team dependencies and organisational constraints are not fully modelled by single-team metrics.
 
 ---
 
 ## Related Skills
 
-- **Agile Product Owner** (`product-team/agile-product-owner/`) — User stories and backlog feed sprint planning
-- **Senior PM** (`project-management/senior-pm/`) — Portfolio health context informs sprint priorities
+- **Agile Product Owner** (`product-team/agile-product-owner/`) â€” User stories and backlog feed sprint planning
+- **Senior PM** (`project-management/senior-pm/`) â€” Portfolio health context informs sprint priorities
 
 ---
 
 *For deep framework references see `references/velocity-forecasting-guide.md` and `references/team-dynamics-framework.md`. For template assets see `assets/sprint_report_template.md` and `assets/team_health_check_template.md`.*
+

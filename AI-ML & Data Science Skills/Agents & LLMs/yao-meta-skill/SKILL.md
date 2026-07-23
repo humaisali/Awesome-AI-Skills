@@ -1,15 +1,15 @@
----
+﻿---
 name: yao-meta-skill
 description: Create, refactor, evaluate, and package agent skills from workflows, prompts, transcripts, docs, or notes. Use for skill creation, reusable workflow packaging, skill improvement, evals, and team-ready distribution.
 metadata:
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
 category: "skill-authoring"
 risk: "safe"
 source: https://github.com/humaisali
 source_repo: "yaojingang/yao-meta-skill"
 source_type: "community"
 date_added: "2026-06-19"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: "MIT"
 license_source: https://github.com/humaisali
 tags:
@@ -84,3 +84,4 @@ Primary: [Method](references/skill-engineering-method.md), [Artifact Design](ref
 - Requires the upstream tool, account, API key, or local setup when the workflow names one.
 - Does not authorize destructive, production, paid, or external-message actions without explicit user approval.
 - Validate generated artifacts or recommendations against the user's real sources before treating them as final.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: weaviate-cookbooks
 description: "Build Weaviate AI apps from official cookbook blueprints for RAG, agentic RAG, data exploration, multimodal PDF search, async clients, and frontends."
 category: ai
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: weaviate/agent-skills
 source_type: official
 date_added: "2026-06-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [weaviate, rag, agents, vector-database, ai-apps]
 tools: [python, weaviate, nextjs]
 license: "BSD-3-Clause"
@@ -65,3 +65,4 @@ Use this when the user explicitly asks for a frontend for their Weaviate backend
 - Cookbook blueprints still need adaptation to the user's data model, embedding provider, auth model, deployment platform, and latency/cost targets.
 - This skill does not validate live Weaviate credentials, cloud quotas, or model availability unless the user provides and approves the relevant environment.
 - Generated apps should be reviewed for security, data privacy, prompt injection exposure, and production observability before launch.
+

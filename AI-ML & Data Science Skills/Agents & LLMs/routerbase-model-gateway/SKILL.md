@@ -1,4 +1,4 @@
----
+﻿---
 name: routerbase-model-gateway
 description: "Integrate RouterBase as an OpenAI-compatible model gateway for routing GPT, Claude, Gemini, media, audio, and embedding requests."
 category: ai-ml
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: zenlee123/routerbase-agent-skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [routerbase, llm-routing, openai-compatible, model-gateway]
 tools: [claude, cursor, gemini, codex, antigravity]
 license: "MIT-0"
@@ -173,3 +173,4 @@ Use this table when recommending a model strategy:
 
 - `@api-analyzer` - Use when the task is only to validate one API request shape.
 - `@langfuse` - Use when the task needs production LLM observability, tracing, and evaluation.
+

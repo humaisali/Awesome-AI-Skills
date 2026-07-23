@@ -1,11 +1,11 @@
----
+﻿---
 name: trpc-fullstack
-description: "Build end-to-end type-safe APIs with tRPC — routers, procedures, middleware, subscriptions, and Next.js/React integration patterns."
+description: "Build end-to-end type-safe APIs with tRPC â€” routers, procedures, middleware, subscriptions, and Next.js/React integration patterns."
 category: framework
 risk: none
 source: https://github.com/humaisali
 date_added: "2026-03-17"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [typescript, trpc, api, fullstack, nextjs, react, type-safety]
 tools: [claude, cursor, gemini]
 ---
@@ -14,7 +14,7 @@ tools: [claude, cursor, gemini]
 
 ## Overview
 
-tRPC lets you build fully type-safe APIs without writing a schema or code-generation step. Your TypeScript types flow from the server router directly to the client — so every API call is autocompleted, validated at compile time, and refactoring-safe. Use this skill when building TypeScript monorepos, Next.js apps, or any project where the server and client share a codebase.
+tRPC lets you build fully type-safe APIs without writing a schema or code-generation step. Your TypeScript types flow from the server router directly to the client â€” so every API call is autocompleted, validated at compile time, and refactoring-safe. Use this skill when building TypeScript monorepos, Next.js apps, or any project where the server and client share a codebase.
 
 ## When to Use This Skill
 
@@ -28,15 +28,15 @@ tRPC lets you build fully type-safe APIs without writing a schema or code-genera
 
 ### Routers and Procedures
 
-A **router** groups related **procedures** (think: endpoints). Procedures are typed functions — `query` for reads, `mutation` for writes, `subscription` for real-time streams.
+A **router** groups related **procedures** (think: endpoints). Procedures are typed functions â€” `query` for reads, `mutation` for writes, `subscription` for real-time streams.
 
 ### Input Validation with Zod
 
-All procedure inputs are validated with Zod schemas. The validated, typed input is available in the procedure handler — no manual parsing.
+All procedure inputs are validated with Zod schemas. The validated, typed input is available in the procedure handler â€” no manual parsing.
 
 ### Context
 
-`context` is shared state passed to every procedure — auth session, database client, request headers, etc. It is built once per request in a context factory. **Important:** Next.js App Router and Pages Router require separate context factories because App Router handlers receive a fetch `Request`, not a Node.js `NextApiRequest`.
+`context` is shared state passed to every procedure â€” auth session, database client, request headers, etc. It is built once per request in a context factory. **Important:** Next.js App Router and Pages Router require separate context factories because App Router handlers receive a fetch `Request`, not a Node.js `NextApiRequest`.
 
 ### Middleware
 
@@ -91,10 +91,10 @@ import { db } from './db';
 
 /**
  * Context for the HTTP handler (App Router Route Handler).
- * `opts.req` is the fetch Request — auth is resolved server-side via `auth()`.
+ * `opts.req` is the fetch Request â€” auth is resolved server-side via `auth()`.
  */
 export async function createTRPCContext(opts: FetchCreateContextFnOptions) {
-  const session = await auth(); // server-side auth — no req/res needed
+  const session = await auth(); // server-side auth â€” no req/res needed
   return { session, db, headers: opts.req.headers };
 }
 
@@ -202,7 +202,7 @@ export const appRouter = router({
   user: userRouter,
 });
 
-// Export the type for the client — never import the appRouter itself on the client
+// Export the type for the client â€” never import the appRouter itself on the client
 export type AppRouter = typeof appRouter;
 ```
 
@@ -224,7 +224,7 @@ const handler = (req: Request) =>
     endpoint: '/api/trpc',
     req,
     router: appRouter,
-    // opts is FetchCreateContextFnOptions — req is the fetch Request
+    // opts is FetchCreateContextFnOptions â€” req is the fetch Request
     createContext: (opts: FetchCreateContextFnOptions) => createTRPCContext(opts),
   });
 
@@ -284,7 +284,7 @@ import { trpc } from '@/utils/trpc';
 export function PostList() {
   const { data, isLoading, error } = trpc.post.list.useQuery({ limit: 10 });
 
-  if (isLoading) return <p>Loading…</p>;
+  if (isLoading) return <p>Loadingâ€¦</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
@@ -329,7 +329,7 @@ export function CreatePost() {
       <input name="title" placeholder="Title" required />
       <textarea name="body" placeholder="Body" required />
       <button type="submit" disabled={createPost.isPending}>
-        {createPost.isPending ? 'Creating…' : 'Create Post'}
+        {createPost.isPending ? 'Creatingâ€¦' : 'Create Post'}
       </button>
       {createPost.error && <p>{createPost.error.message}</p>}
     </form>
@@ -339,7 +339,7 @@ export function CreatePost() {
 
 ### Example 3: Server-Side Caller (Server Components / SSR)
 
-Use `createServerContext` — the dedicated server-side factory — so that `auth()` is called
+Use `createServerContext` â€” the dedicated server-side factory â€” so that `auth()` is called
 correctly without needing a synthetic or empty request object:
 
 ```typescript
@@ -351,7 +351,7 @@ import { createServerContext } from '@/server/context';
 const createCaller = createCallerFactory(appRouter);
 
 export default async function PostsPage() {
-  // Uses createServerContext — calls auth() server-side, no req/res cast needed
+  // Uses createServerContext â€” calls auth() server-side, no req/res cast needed
   const caller = createCaller(await createServerContext());
   const { posts } = await caller.post.list({ limit: 20 });
 
@@ -390,7 +390,7 @@ export const notificationRouter = router({
 ```
 
 ```typescript
-// Client usage — requires wsLink in the client config
+// Client usage â€” requires wsLink in the client config
 trpc.notification.onNew.useSubscription(undefined, {
   onData(data) {
     toast(data.message);
@@ -402,24 +402,24 @@ trpc.notification.onNew.useSubscription(undefined, {
 
 ## Best Practices
 
-- ✅ **Export only `AppRouter` type** from server code — never import `appRouter` on the client
-- ✅ **Use separate context factories** — `createTRPCContext` for the HTTP handler, `createServerContext` for Server Components and callers
-- ✅ **Validate all inputs with Zod** — never trust raw `input` without a schema
-- ✅ **Split routers by domain** (posts, users, billing) and merge in `root.ts`
-- ✅ **Extend context in middleware** rather than querying the DB multiple times per request
-- ✅ **Use `utils.invalidate()`** after mutations to keep the cache fresh
-- ❌ **Don't cast context with `as any`** to silence type errors — the mismatch will surface as a runtime failure when auth or session lookups return undefined
-- ❌ **Don't use `createContext({} as any)`** in Server Components — use `createServerContext()` which calls `auth()` directly
-- ❌ **Don't put business logic in the route handler** — keep it in the procedure or a service layer
-- ❌ **Don't share the tRPC client instance globally** — create it per-provider to avoid stale closures
+- âœ… **Export only `AppRouter` type** from server code â€” never import `appRouter` on the client
+- âœ… **Use separate context factories** â€” `createTRPCContext` for the HTTP handler, `createServerContext` for Server Components and callers
+- âœ… **Validate all inputs with Zod** â€” never trust raw `input` without a schema
+- âœ… **Split routers by domain** (posts, users, billing) and merge in `root.ts`
+- âœ… **Extend context in middleware** rather than querying the DB multiple times per request
+- âœ… **Use `utils.invalidate()`** after mutations to keep the cache fresh
+- âŒ **Don't cast context with `as any`** to silence type errors â€” the mismatch will surface as a runtime failure when auth or session lookups return undefined
+- âŒ **Don't use `createContext({} as any)`** in Server Components â€” use `createServerContext()` which calls `auth()` directly
+- âŒ **Don't put business logic in the route handler** â€” keep it in the procedure or a service layer
+- âŒ **Don't share the tRPC client instance globally** â€” create it per-provider to avoid stale closures
 
 ---
 
 ## Security & Safety Notes
 
-- Always enforce authorization in `protectedProcedure` — never rely on client-side checks alone
+- Always enforce authorization in `protectedProcedure` â€” never rely on client-side checks alone
 - Validate all input shapes with Zod, including pagination cursors and IDs, to prevent injection via malformed inputs
-- Avoid exposing internal error details to clients — use `TRPCError` with a public-safe `message` and keep stack traces server-side only
+- Avoid exposing internal error details to clients â€” use `TRPCError` with a public-safe `message` and keep stack traces server-side only
 - Rate-limit public procedures using middleware to prevent abuse
 
 ---
@@ -442,21 +442,21 @@ trpc.notification.onNew.useSubscription(undefined, {
   **Solution:** Use `@trpc/server/adapters/fetch` and `fetchRequestHandler` for the App Router; the `nextjs` adapter is for Pages Router only
 
 - **Problem:** Subscriptions not connecting
-  **Solution:** Subscriptions require `splitLink` — route subscriptions to `wsLink` and queries/mutations to `httpBatchLink`
+  **Solution:** Subscriptions require `splitLink` â€” route subscriptions to `wsLink` and queries/mutations to `httpBatchLink`
 
 ---
 
 ## Related Skills
 
-- `@typescript-expert` — Deep TypeScript patterns used inside tRPC routers and generic utilities
-- `@react-patterns` — React hooks patterns that pair with `trpc.*.useQuery` and `useMutation`
-- `@test-driven-development` — Write procedure unit tests using `createCallerFactory` without an HTTP server
-- `@security-auditor` — Review tRPC middleware chains for auth bypass and input validation gaps
+- `@typescript-expert` â€” Deep TypeScript patterns used inside tRPC routers and generic utilities
+- `@react-patterns` â€” React hooks patterns that pair with `trpc.*.useQuery` and `useMutation`
+- `@test-driven-development` â€” Write procedure unit tests using `createCallerFactory` without an HTTP server
+- `@security-auditor` â€” Review tRPC middleware chains for auth bypass and input validation gaps
 
 ## Additional Resources
 
 - [tRPC Official Docs](https://trpc.io/docs)
-- [create-t3-app](https://create.t3.gg) — Production Next.js starter with tRPC wired in
+- [create-t3-app](https://create.t3.gg) â€” Production Next.js starter with tRPC wired in
 - [tRPC GitHub](https://github.com/trpc/trpc)
 - [TanStack Query Docs](https://tanstack.com/query/latest)
 
@@ -464,3 +464,4 @@ trpc.notification.onNew.useSubscription(undefined, {
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

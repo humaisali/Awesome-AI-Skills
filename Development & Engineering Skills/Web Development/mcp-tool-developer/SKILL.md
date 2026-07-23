@@ -1,4 +1,4 @@
----
+﻿---
 name: mcp-tool-developer
 description: "Build Model Context Protocol (MCP) servers and tools from scratch. Full-stack MCP development with TypeScript/Python, testing, deployment, and registry publishing."
 category: developer-tools
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: demo112/yunqu-ai-skills
 source_type: community
 date_added: "2026-05-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [mcp, ai-agent, tool-development, typescript, python, llm, model-context-protocol]
 tools: [claude, cursor, gemini]
 ---
@@ -130,3 +130,4 @@ Wrap an external API as an MCP tool with auth, rate limiting, and error handling
 
 - `api-integration-architect` - For API design patterns used in MCP tools
 - `security-audit-code-reviewer` - For reviewing MCP server code security
+

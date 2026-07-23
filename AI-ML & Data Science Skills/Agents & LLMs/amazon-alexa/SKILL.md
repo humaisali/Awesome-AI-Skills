@@ -1,10 +1,10 @@
----
+﻿---
 name: amazon-alexa
 description: "Integracao completa com Amazon Alexa para criar skills de voz inteligentes, transformar Alexa em assistente com Claude como cerebro (projeto Auri) e integrar com AWS ecosystem (Lambda, DynamoDB, Polly, Transcribe, Lex, Smart Home)."
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - voice
 - alexa
@@ -19,7 +19,7 @@ tools:
 - codex-cli
 ---
 
-# AMAZON ALEXA — Voz Inteligente com Claude
+# AMAZON ALEXA â€” Voz Inteligente com Claude
 
 ## Overview
 
@@ -47,9 +47,9 @@ Integracao completa com Amazon Alexa para criar skills de voz inteligentes, tran
 ## 1. Visao Geral Do Ecossistema
 
 ```
-[Alexa Device] → [Alexa Cloud] → [AWS Lambda] → [Claude API]
+[Alexa Device] â†’ [Alexa Cloud] â†’ [AWS Lambda] â†’ [Claude API]
     Fala          Transcricao      Logica          Inteligencia
-      ↑               ↑               ↑                ↑
+      â†‘               â†‘               â†‘                â†‘
    Usuario         Intent        Handler          Anthropic
                                + DynamoDB
                                + Polly TTS
@@ -60,12 +60,12 @@ Integracao completa com Amazon Alexa para criar skills de voz inteligentes, tran
 
 | Componente | Servico AWS | Funcao |
 |-----------|-------------|--------|
-| Voz → Texto | Alexa ASR nativo | Reconhecimento de fala |
+| Voz â†’ Texto | Alexa ASR nativo | Reconhecimento de fala |
 | NLU | ASK Interaction Model + Lex V2 | Extrair intent e slots |
 | Backend | AWS Lambda (Python/Node.js) | Logica e orquestracao |
 | LLM | Claude API (Anthropic) | Inteligencia e respostas |
 | Persistencia | Amazon DynamoDB | Historico e preferencias |
-| Texto → Voz | Amazon Polly (neural) | Fala natural da Auri |
+| Texto â†’ Voz | Amazon Polly (neural) | Fala natural da Auri |
 | Interface Visual | APL (Alexa Presentation Language) | Telas em Echo Show |
 | Smart Home | Alexa Smart Home API | Controle de dispositivos |
 | Automacao | Alexa Routines API | Rotinas inteligentes |
@@ -94,7 +94,7 @@ ask new \
   --skill-name auri \
   --language pt-BR
 
-## └── .Ask/Ask-Resources.Json
+## â””â”€â”€ .Ask/Ask-Resources.Json
 
 ```
 
@@ -171,7 +171,7 @@ No arquivo `models/pt-BR.json`:
         {
           "name": "RoutineType",
           "values": [
-            {"name": {"value": "bom dia", "synonyms": ["acordar", "manhã"]}},
+            {"name": {"value": "bom dia", "synonyms": ["acordar", "manhÃ£"]}},
             {"name": {"value": "boa noite", "synonyms": ["dormir", "descansar"]}},
             {"name": {"value": "trabalho", "synonyms": ["trabalhar", "foco"]}},
             {"name": {"value": "sair", "synonyms": ["saindo", "goodbye"]}}
@@ -318,7 +318,7 @@ attrs["ttl"] = int(time.time()) + (180 * 24 * 3600)
 
 | Voice | Idioma | Tipo | Recomendado |
 |-------|--------|------|-------------|
-| `Vitoria` | pt-BR | Neural | ✅ Auri PT-BR |
+| `Vitoria` | pt-BR | Neural | âœ… Auri PT-BR |
 | `Camila` | pt-BR | Neural | Alternativa |
 | `Ricardo` | pt-BR | Standard | Masculino |
 | `Ines` | pt-PT | Neural | Portugal |
@@ -566,7 +566,7 @@ def get_secret(secret_name):
 
 ---
 
-## Fase 1 — Setup (Dia 1)
+## Fase 1 â€” Setup (Dia 1)
 
 ```
 [ ] Conta Amazon Developer criada
@@ -576,7 +576,7 @@ def get_secret(secret_name):
 [ ] Anthropic API key armazenada em Secrets Manager
 ```
 
-## Fase 2 — Skill Base (Dia 2-3)
+## Fase 2 â€” Skill Base (Dia 2-3)
 
 ```
 [ ] ask new --template hello-world --skill-name auri
@@ -587,7 +587,7 @@ def get_secret(secret_name):
 [ ] Teste basico no ASK simulator
 ```
 
-## Fase 3 — Persistencia (Dia 4)
+## Fase 3 â€” Persistencia (Dia 4)
 
 ```
 [ ] DynamoDB table criada
@@ -596,7 +596,7 @@ def get_secret(secret_name):
 [ ] Preferencias do usuario salvas
 ```
 
-## Fase 4 — Polly + Apl (Dia 5-6)
+## Fase 4 â€” Polly + Apl (Dia 5-6)
 
 ```
 [ ] Polly integrado com voz Vitoria (neural)
@@ -604,7 +604,7 @@ def get_secret(secret_name):
 [ ] APL renderizando em Echo Show simulator
 ```
 
-## Fase 5 — Smart Home (Opcional)
+## Fase 5 â€” Smart Home (Opcional)
 
 ```
 [ ] Smart Home skill habilitada
@@ -613,7 +613,7 @@ def get_secret(secret_name):
 [ ] Teste com device real
 ```
 
-## Fase 6 — Publicacao
+## Fase 6 â€” Publicacao
 
 ```
 [ ] Teste completo de todas funcionalidades
@@ -664,3 +664,4 @@ def get_secret(secret_name):
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

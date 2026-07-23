@@ -1,10 +1,10 @@
----
+﻿---
 name: junta-leiloeiros
 description: Coleta e consulta dados de leiloeiros oficiais de todas as 27 Juntas Comerciais do Brasil. Scraper multi-UF, banco SQLite, API FastAPI e exportacao CSV/JSON.
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - scraping
 - brazilian-data
@@ -41,35 +41,35 @@ Coleta e consulta dados de leiloeiros oficiais de todas as 27 Juntas Comerciais 
 
 ## How It Works
 
-Coleta dados públicos de leiloeiros oficiais de todas as 27 Juntas Comerciais estaduais,
-persiste em banco SQLite local e oferece API REST e exportação em múltiplos formatos.
+Coleta dados pÃºblicos de leiloeiros oficiais de todas as 27 Juntas Comerciais estaduais,
+persiste em banco SQLite local e oferece API REST e exportaÃ§Ã£o em mÃºltiplos formatos.
 
-## Localização
+## LocalizaÃ§Ã£o
 
 ```
 C:\Users\renat\skills\junta-leiloeiros\
-├── scripts/
-│   ├── scraper/
-│   │   ├── base_scraper.py      ← classe abstrata
-│   │   ├── states.py            ← registro dos 27 scrapers
-│   │   ├── jucesp.py / jucerja.py / jucemg.py / jucec.py / jucis_df.py
-│   │   └── generic_scraper.py   ← usado pelos 22 estados restantes
-│   ├── db.py                    ← banco SQLite
-│   ├── run_all.py               ← orquestrador de scraping
-│   ├── serve_api.py             ← API FastAPI
-│   ├── export.py                ← exportação
-│   └── requirements.txt
-├── references/
-│   ├── juntas_urls.md           ← URLs e status de todas as 27 juntas
-│   ├── schema.md                ← schema do banco
-│   └── legal.md                 ← base legal
-└── data/
-    ├── leiloeiros.db            ← banco SQLite (criado no primeiro run)
-    ├── scraping_log.json        ← log de cada coleta
-    └── exports/                 ← arquivos exportados
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ scraper/
+â”‚   â”‚   â”œâ”€â”€ base_scraper.py      â† classe abstrata
+â”‚   â”‚   â”œâ”€â”€ states.py            â† registro dos 27 scrapers
+â”‚   â”‚   â”œâ”€â”€ jucesp.py / jucerja.py / jucemg.py / jucec.py / jucis_df.py
+â”‚   â”‚   â””â”€â”€ generic_scraper.py   â† usado pelos 22 estados restantes
+â”‚   â”œâ”€â”€ db.py                    â† banco SQLite
+â”‚   â”œâ”€â”€ run_all.py               â† orquestrador de scraping
+â”‚   â”œâ”€â”€ serve_api.py             â† API FastAPI
+â”‚   â”œâ”€â”€ export.py                â† exportaÃ§Ã£o
+â”‚   â””â”€â”€ requirements.txt
+â”œâ”€â”€ references/
+â”‚   â”œâ”€â”€ juntas_urls.md           â† URLs e status de todas as 27 juntas
+â”‚   â”œâ”€â”€ schema.md                â† schema do banco
+â”‚   â””â”€â”€ legal.md                 â† base legal
+â””â”€â”€ data/
+    â”œâ”€â”€ leiloeiros.db            â† banco SQLite (criado no primeiro run)
+    â”œâ”€â”€ scraping_log.json        â† log de cada coleta
+    â””â”€â”€ exports/                 â† arquivos exportados
 ```
 
-## Instalação (Uma Vez)
+## InstalaÃ§Ã£o (Uma Vez)
 
 ```bash
 pip install -r C:\Users\renat\skills\junta-leiloeiros\scripts\requirements.txt
@@ -87,7 +87,7 @@ playwright install chromium
 
 python C:\Users\renat\skills\junta-leiloeiros\scripts\run_all.py
 
-## Estados Específicos
+## Estados EspecÃ­ficos
 
 python C:\Users\renat\skills\junta-leiloeiros\scripts\run_all.py --estado SP RJ MG
 
@@ -100,7 +100,7 @@ python C:\Users\renat\skills\junta-leiloeiros\scripts\run_all.py --dry-run
 python C:\Users\renat\skills\junta-leiloeiros\scripts\run_all.py --concurrency 3
 ```
 
-## Estatísticas Por Estado
+## EstatÃ­sticas Por Estado
 
 python C:\Users\renat\skills\junta-leiloeiros\scripts\db.py
 
@@ -121,7 +121,7 @@ python C:\Users\renat\skills\junta-leiloeiros\scripts\serve_api.py
 
 **Endpoints:**
 - `GET /leiloeiros?estado=SP&situacao=ATIVO&nome=silva&limit=100`
-- `GET /leiloeiros/{estado}` — ex: `/leiloeiros/SP`
+- `GET /leiloeiros/{estado}` â€” ex: `/leiloeiros/SP`
 - `GET /busca?q=texto`
 - `GET /stats`
 - `GET /export/json`
@@ -136,7 +136,7 @@ python C:\Users\renat\skills\junta-leiloeiros\scripts\export.py --format all
 python C:\Users\renat\skills\junta-leiloeiros\scripts\export.py --format csv --estado SP
 ```
 
-## Usar Em Código Python
+## Usar Em CÃ³digo Python
 
 ```python
 import sys
@@ -154,14 +154,14 @@ leiloeiros = db.get_all(estado="SP", situacao="ATIVO")
 
 resultados = db.search("silva")
 
-## Estatísticas
+## EstatÃ­sticas
 
 stats = db.get_stats()
 ```
 
 ## Adicionar Scraper Customizado
 
-Se um estado precisar de lógica específica (ex: site usa JavaScript):
+Se um estado precisar de lÃ³gica especÃ­fica (ex: site usa JavaScript):
 
 ```python
 
@@ -179,7 +179,7 @@ class MeuEstadoScraper(AbstractJuntaScraper):
         soup = await self.fetch_page()
         if not soup:
             return []
-        # lógica específica aqui
+        # lÃ³gica especÃ­fica aqui
         return [self.make_leiloeiro(nome="...", matricula="...")]
 ```
 
@@ -189,7 +189,7 @@ from .meu_estado import MeuEstadoScraper
 SCRAPERS["XX"] = MeuEstadoScraper
 ```
 
-## Referências
+## ReferÃªncias
 
 - URLs de todas as juntas: `references/juntas_urls.md`
 - Schema do banco: `references/schema.md`
@@ -220,3 +220,4 @@ SCRAPERS["XX"] = MeuEstadoScraper
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

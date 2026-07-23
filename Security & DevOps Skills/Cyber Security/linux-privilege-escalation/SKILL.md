@@ -1,9 +1,9 @@
----
+﻿---
 name: linux-privilege-escalation
 description: "Execute systematic privilege escalation assessments on Linux systems to identify and exploit misconfigurations, vulnerable services, and security weaknesses that allow elevation from low-privilege user access to root-level control."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -511,3 +511,4 @@ uid=1000(user) gid=1000(user) euid=0(root)
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

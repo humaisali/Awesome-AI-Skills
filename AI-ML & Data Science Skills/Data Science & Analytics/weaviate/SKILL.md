@@ -1,4 +1,4 @@
----
+﻿---
 name: weaviate
 description: "Search, query, inspect, create, and import data into Weaviate vector database collections using official scripts and references."
 category: databases
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: weaviate/agent-skills
 source_type: official
 date_added: "2026-06-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [weaviate, vector-database, semantic-search, hybrid-search, data-import]
 tools: [python, weaviate]
 license: "BSD-3-Clause"
@@ -52,7 +52,7 @@ Set only the keys your collections use, refer to [Environment Requirements](refe
 ### Collection Management
 
 - [List Collections](references/list_collections.md): Use to **discover what collections exist** in the Weaviate instance. This should typically be the first step before performing any search or data operation.
-- [Get Collection Details](references/get_collection.md): Use to **understand a collection's schema** — its properties, data types, vectorizer configuration, replication factor, and multi-tenancy status. Helpful before running searches or imports.
+- [Get Collection Details](references/get_collection.md): Use to **understand a collection's schema** â€” its properties, data types, vectorizer configuration, replication factor, and multi-tenancy status. Helpful before running searches or imports.
 - [Explore Collection](references/explore_collection.md): Use to **analyze data distribution, top values, and inspect actual content** in a collection. Helpful for understanding what data looks like before querying.
 - [Create Collection](references/create_collection.md): Use to **create new collections with custom schemas** before importing data. Do not specify a vectorizer unless the user explicitly requests one (the default `text2vec_weaviate` is used).
 
@@ -88,7 +88,7 @@ Set only the keys your collections use, refer to [Environment Requirements](refe
    uv run scripts/explore_collection.py "COLLECTION_NAME"
    ```
 
-5. **Create a collection** if importing a new CSV, JSON, or JSONL file — the collection must exist before importing:
+5. **Create a collection** if importing a new CSV, JSON, or JSONL file â€” the collection must exist before importing:
 
    ```bash
    uv run scripts/create_collection.py CollectionName \
@@ -101,14 +101,14 @@ Set only the keys your collections use, refer to [Environment Requirements](refe
    ```bash
    uv run scripts/import.py "data.csv" --collection "CollectionName"
    ```
-   > For PDF imports, the collection is created automatically — skip step 5.
+   > For PDF imports, the collection is created automatically â€” skip step 5.
 
 7. **Choose the right search type:**
-   - Get AI-powered answers with source citations across multiple collections → `ask.py`
-   - Get raw objects from multiple collections → `query_search.py`
-   - General search → `hybrid_search.py` (default)
-   - Conceptual similarity → `semantic_search.py`
-   - Exact terms/IDs → `keyword_search.py`
+   - Get AI-powered answers with source citations across multiple collections â†’ `ask.py`
+   - Get raw objects from multiple collections â†’ `query_search.py`
+   - General search â†’ `hybrid_search.py` (default)
+   - Conceptual similarity â†’ `semantic_search.py`
+   - Exact terms/IDs â†’ `keyword_search.py`
 
 ## Output Formats
 
@@ -121,12 +121,13 @@ All scripts support:
 
 Common errors:
 
-- `WEAVIATE_URL not set` → Set the environment variable
-- `Collection not found` → Use `list_collections.py` to see available collections
-- `Authentication error` → Check API keys for both Weaviate and vectorizer providers
+- `WEAVIATE_URL not set` â†’ Set the environment variable
+- `Collection not found` â†’ Use `list_collections.py` to see available collections
+- `Authentication error` â†’ Check API keys for both Weaviate and vectorizer providers
 
 ## Limitations
 
 - This skill requires a reachable Weaviate instance and valid credentials before live operations can succeed.
 - Data import, collection creation, and query-agent operations can change or expose user data; confirm the target instance and collection before running scripts.
 - The included scripts are Weaviate-focused and do not replace broader data-governance, backup, or production migration procedures.
+

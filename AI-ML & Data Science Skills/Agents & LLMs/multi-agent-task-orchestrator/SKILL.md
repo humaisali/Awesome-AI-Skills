@@ -1,4 +1,4 @@
----
+﻿---
 name: multi-agent-task-orchestrator
 description: "Route tasks to specialized AI agents with anti-duplication, quality gates, and 30-minute heartbeat monitoring"
 category: agent-orchestration
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: milkomida77/guardian-agent-prompts
 source_type: community
 date_added: "2026-04-09"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [multi-agent, orchestration, task-routing, quality-gates, anti-duplication]
 tools: [claude, cursor, gemini]
 ---
@@ -37,9 +37,9 @@ You decompose tasks, delegate to the right agent, prevent conflicts,
 and verify quality before marking anything done.
 
 WHAT YOU ARE NOT:
-- NOT a code writer — delegate to code agents
-- NOT a researcher — delegate to research agents
-- NOT a tester — delegate to test agents
+- NOT a code writer â€” delegate to code agents
+- NOT a researcher â€” delegate to research agents
+- NOT a tester â€” delegate to test agents
 ```
 
 This "NOT-block" pattern reduces task drift by ~35% in production.
@@ -103,7 +103,7 @@ Mark done ONLY after ALL checks pass.
 ```
 Every 30 minutes, ask:
 1. "What have I DELEGATED in the last 30 minutes?"
-2. If nothing → open the task backlog and assign the next task
+2. If nothing â†’ open the task backlog and assign the next task
 3. Check for idle agents (no message in >30min on assigned task)
 4. Relance idle agents or reassign their tasks
 ```
@@ -124,7 +124,7 @@ DEADLINE: 30 minutes
 ```
 User asks: "Fix the login bug"
 Registry check: Task #47 "Fix authentication bug" is IN_PROGRESS by security-reviewer
-Decision: SKIP — similar task already assigned (78% match)
+Decision: SKIP â€” similar task already assigned (78% match)
 Action: Notify user of existing task, wait for completion
 ```
 
@@ -160,3 +160,4 @@ Action: Notify user of existing task, wait for completion
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: indexing-issue-auditor
 description: "High-level technical SEO and site architecture auditor. Invoke to scan local or live environments for indexing, crawl budget, and structural errors."
 category: growth
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-04-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [seo, architecture, indexing, crawler, sitemap]
 tools: [claude, cursor, gemini, antigravity]
 ---
@@ -17,7 +17,7 @@ tools: [claude, cursor, gemini, antigravity]
 
 Act as a **Senior Technical SEO Architect, Web Infrastructure Engineer, and Site Reliability Auditor**. Your objective is to perform a deep-dive scan of a website's architecture to identify, diagnose, and fix crawl health issues, indexing blocks, and structural SEO failures.
 
-Your job is NOT just to find issues — your goal is to **design and rebuild** the site's architecture into a fully optimized system that Google fully trusts.
+Your job is NOT just to find issues â€” your goal is to **design and rebuild** the site's architecture into a fully optimized system that Google fully trusts.
 
 ## When to Use This Skill
 
@@ -68,7 +68,7 @@ Audit render-blocking JS, CSS delays, and lazy loading errors from a structural 
 Redesign the internal linking graph into a topical SEO Silo (Hub and Spoke) model.
 
 ### Phase 10: Final Rebuild Plan
-Produce a step-by-step cleanup order and an SEO stabilization roadmap (Day 1 → Day 30).
+Produce a step-by-step cleanup order and an SEO stabilization roadmap (Day 1 â†’ Day 30).
 
 ## Master Issue Control Table
 For every audit, you MUST generate a table in this exact format:
@@ -91,10 +91,10 @@ For every audit, you MUST generate a table in this exact format:
 
 ## Best Practices
 
-- ✅ **Provide FIX + STRUCTURAL DESIGN**: Do not just report; provide the technical fix and the architectural redesign.
-- ✅ **Logical Verification**: Never assume an issue; verify each response code and link logic.
-- ✅ **Quantify Impact**: Define the system-level impact of every architectural choice.
-- ❌ **No Fluff**: Focus on actionable, engineering-level structured output.
+- âœ… **Provide FIX + STRUCTURAL DESIGN**: Do not just report; provide the technical fix and the architectural redesign.
+- âœ… **Logical Verification**: Never assume an issue; verify each response code and link logic.
+- âœ… **Quantify Impact**: Define the system-level impact of every architectural choice.
+- âŒ **No Fluff**: Focus on actionable, engineering-level structured output.
 
 ## Common Pitfalls
 
@@ -105,7 +105,7 @@ For every audit, you MUST generate a table in this exact format:
 
 ## Limitations
 
-- **Live Interaction**: Cannot initiate a Google Search Console "Request Indexing" action — instructions only.
+- **Live Interaction**: Cannot initiate a Google Search Console "Request Indexing" action â€” instructions only.
 - **Rendering**: Can identify render-blocking assets but relies on provided text/code for deep DOM analysis.
 
 ## Related Skills
@@ -113,4 +113,5 @@ For every audit, you MUST generate a table in this exact format:
 - `@seo-structure-architect` - For detailed header hierarchy and schema markup.
 - `@security-auditor` - For server-side security and vulnerability checks.
 - `@web-performance-optimization` - For deep lighthouse and speed optimization.
+
 

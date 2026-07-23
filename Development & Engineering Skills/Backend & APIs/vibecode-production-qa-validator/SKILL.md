@@ -1,4 +1,4 @@
----
+﻿---
 name: vibecode-production-qa-validator
 description: "13-phase production QA for fullstack Next.js apps: build verification, SEO tags, OG images, favicon, route regression, API auth, page speed, lazy load, vulnerability scan, UI/UX cards, error boundaries, database, secure rendering, and cleanup."
 category: devops
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-05-31"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [qa, nextjs, production, deployment, seo, authentication, api, performance, favicon, cleanup, lighthouse, database, security, ui-ux]
 tools: [claude, cursor, gemini, claude-code, opencode]
 version: 2.0.0
@@ -54,7 +54,7 @@ qa:code() { npx tsc --noEmit && npx eslint . --ext .js,.jsx,.ts,.tsx --max-warni
 ### Phase 2: Build Verification
 
 - [ ] `npm run build` succeeds
-- [ ] SEO pages show `○`/`●` not `λ`
+- [ ] SEO pages show `â—‹`/`â—` not `Î»`
 - [ ] Build log has no errors
 
 ```bash
@@ -63,10 +63,10 @@ qa:build() { local log; log="$(mktemp "${TMPDIR:-/tmp}/qa-build.XXXXXX.log")" ||
 
 | Symbol | Meaning |
 |--------|---------|
-| `○` | Static |
-| `●` | SSG |
-| `λ` | Dynamic/serverless |
-| `⊕` | Partial prerender |
+| `â—‹` | Static |
+| `â—` | SSG |
+| `Î»` | Dynamic/serverless |
+| `âŠ•` | Partial prerender |
 
 ---
 
@@ -82,18 +82,18 @@ qa:build() { local log; log="$(mktemp "${TMPDIR:-/tmp}/qa-build.XXXXXX.log")" ||
 qa:auth() {
   local F=0
   for ep in /api/auth/login /api/auth/session /api/auth/logout; do
-    curl -so /dev/null -w "%{http_code}" "$PROD_URL$ep" | grep -q "200\|401" || { echo "  ✗ $ep unreachable"; ((F++)); }
+    curl -so /dev/null -w "%{http_code}" "$PROD_URL$ep" | grep -q "200\|401" || { echo "  âœ— $ep unreachable"; ((F++)); }
   done
-  curl -so /dev/null -w "%{http_code}" "$PROD_URL/api/protected" | grep -q "401\|403" || echo "  ⚠ Protected route not denying unauthenticated"
+  curl -so /dev/null -w "%{http_code}" "$PROD_URL/api/protected" | grep -q "401\|403" || echo "  âš  Protected route not denying unauthenticated"
   return $F
 }
 qa:auth:cookies() {
   for ep in /api/auth/session /api/auth/login; do
     curl -sI "$PROD_URL$ep" | grep -i "^set-cookie:" | while IFS= read -r c; do
       echo "  $ep: $(echo "$c" | cut -d= -f1)"
-      echo "$c" | grep -qi "HttpOnly" || echo "    ✗ Missing HttpOnly"
-      echo "$c" | grep -qi "Secure" || echo "    ✗ Missing Secure"
-      echo "$c" | grep -qi "SameSite" || echo "    ⚠ Missing SameSite"
+      echo "$c" | grep -qi "HttpOnly" || echo "    âœ— Missing HttpOnly"
+      echo "$c" | grep -qi "Secure" || echo "    âœ— Missing Secure"
+      echo "$c" | grep -qi "SameSite" || echo "    âš  Missing SameSite"
     done
   done
 }
@@ -110,18 +110,18 @@ qa:auth:cookies() {
 
 ```bash
 qa:routes() { local F=0; for p; do local C=$(curl -so /dev/null -w "%{http_code}" "$PROD_URL$p"); echo "$C $p"; [ "$C" = "200" ] || ((F++)); done; return $F; }
-qa:robots() { curl -s "$PROD_URL/robots.txt" | grep -qi "Disallow: /$" && echo "  ✗ Blocks all crawlers" || echo "  ✓ OK"; }
-qa:sitemap() { curl -s "$PROD_URL/sitemap.xml" | python3 -c "import sys,xml.etree.ElementTree as ET; ET.parse(sys.stdin); print('✓ Valid XML')"; }
+qa:robots() { curl -s "$PROD_URL/robots.txt" | grep -qi "Disallow: /$" && echo "  âœ— Blocks all crawlers" || echo "  âœ“ OK"; }
+qa:sitemap() { curl -s "$PROD_URL/sitemap.xml" | python3 -c "import sys,xml.etree.ElementTree as ET; ET.parse(sys.stdin); print('âœ“ Valid XML')"; }
 ```
 
 ---
 
-### Phase 5: SEO — Tags, Images, Favicon, Slugs
+### Phase 5: SEO â€” Tags, Images, Favicon, Slugs
 
-- [ ] `<title>` 30–60 chars, unique per page
+- [ ] `<title>` 30â€“60 chars, unique per page
 - [ ] `<meta name="description">` in raw HTML
 - [ ] og:title matches `<title>`, og:url matches canonical
-- [ ] og:image ≥ 1200×630px, absolute URL, loads 200
+- [ ] og:image â‰¥ 1200Ã—630px, absolute URL, loads 200
 - [ ] twitter:card = summary_large_image
 - [ ] Canonical self-referencing, no duplicates
 - [ ] `/favicon.ico` 200, apple-touch-icon present
@@ -132,16 +132,16 @@ qa:sitemap() { curl -s "$PROD_URL/sitemap.xml" | python3 -c "import sys,xml.etre
 ```bash
 qa:seo() {
   local H=$(curl -s "$PROD_URL"); local F=0
-  for t in "og:title" "og:description" "og:image" "twitter:card" "canonical" "description"; do echo "$H" | grep -qi "$t" || { echo "  ✗ $t"; ((F++)); }; done
-  echo "$H" | grep -qi "<title>" || { echo "  ✗ <title>"; ((F++)); }
-  local T=$(echo "$H" | grep -oP '<title>\K[^<]+'); local L=${#T}; [ $L -ge 30 -a $L -le 60 ] || echo "  ⚠ Title ${L}chars (target 30-60)"
-  curl -so /dev/null -w "%{http_code}" "$PROD_URL/favicon.ico" | grep -q 200 || echo "  ⚠ No favicon.ico"
+  for t in "og:title" "og:description" "og:image" "twitter:card" "canonical" "description"; do echo "$H" | grep -qi "$t" || { echo "  âœ— $t"; ((F++)); }; done
+  echo "$H" | grep -qi "<title>" || { echo "  âœ— <title>"; ((F++)); }
+  local T=$(echo "$H" | grep -oP '<title>\K[^<]+'); local L=${#T}; [ $L -ge 30 -a $L -le 60 ] || echo "  âš  Title ${L}chars (target 30-60)"
+  curl -so /dev/null -w "%{http_code}" "$PROD_URL/favicon.ico" | grep -q 200 || echo "  âš  No favicon.ico"
   return $F
 }
 qa:seo:ogimage() {
   local I=$(curl -s "$PROD_URL" | grep -oP 'og:image" content="\K[^"]+'); [[ "$I" =~ ^http ]] || I="$PROD_URL$I"
-  curl -so /dev/null -w "%{http_code}" "$I" | grep -q 200 || { echo "  ✗ og:image returns non-200"; return 1; }
-  command -v identify &>/dev/null && curl -s "$I" | identify -format "%wx%h" - 2>/dev/null | grep -qP "12\d{2}x6\d{2}" && echo "  ✓ ≥ 1200x630" || echo "  ⚠ Install imagemagick to check dimensions"
+  curl -so /dev/null -w "%{http_code}" "$I" | grep -q 200 || { echo "  âœ— og:image returns non-200"; return 1; }
+  command -v identify &>/dev/null && curl -s "$I" | identify -format "%wx%h" - 2>/dev/null | grep -qP "12\d{2}x6\d{2}" && echo "  âœ“ â‰¥ 1200x630" || echo "  âš  Install imagemagick to check dimensions"
 }
 ```
 
@@ -158,10 +158,10 @@ qa:seo:ogimage() {
 qa:api() {
   for p; do
     local R=$(curl -so /dev/null -w "%{http_code} %{content_type}" "$PROD_URL$p")
-    echo "  $p → $R"
+    echo "  $p â†’ $R"
   done
   local E=$(curl -s "$PROD_URL/api/nonexistent")
-  echo "$E" | python3 -c "import sys,json; d=json.load(sys.stdin); assert 'error' in d; print('✓ Consistent errors')" 2>/dev/null || echo "  ⚠ Inconsistent error shape"
+  echo "$E" | python3 -c "import sys,json; d=json.load(sys.stdin); assert 'error' in d; print('âœ“ Consistent errors')" 2>/dev/null || echo "  âš  Inconsistent error shape"
 }
 ```
 
@@ -176,9 +176,9 @@ qa:api() {
 ```bash
 qa:git() {
   local S=$(git diff HEAD 2>/dev/null | grep -i "password\|secret\|api_key\|localhost:3000" | grep "^+")
-  [ -n "$S" ] && { echo "  ✗ Secrets in diff!"; echo "$S"; return 1; } || echo "  ✓ No secrets"
+  [ -n "$S" ] && { echo "  âœ— Secrets in diff!"; echo "$S"; return 1; } || echo "  âœ“ No secrets"
   local A=$(git status --short 2>/dev/null | grep -E "\.next|node_modules" | head -3)
-  [ -n "$A" ] && echo "  ⚠ Build artifacts:" && echo "$A" || echo "  ✓ No artifacts"
+  [ -n "$A" ] && echo "  âš  Build artifacts:" && echo "$A" || echo "  âœ“ No artifacts"
 }
 ```
 
@@ -193,8 +193,8 @@ qa:git() {
 
 ```bash
 qa:smoke() {
-  curl -sI "$PROD_URL" | head -1 | grep -q "200" && echo "  ✓ Homepage" || echo "  ✗ Homepage"
-  curl -sI "$PROD_URL/sitemap.xml" | head -1 | grep -q "200" && echo "  ✓ Sitemap" || echo "  ✗ Sitemap"
+  curl -sI "$PROD_URL" | head -1 | grep -q "200" && echo "  âœ“ Homepage" || echo "  âœ— Homepage"
+  curl -sI "$PROD_URL/sitemap.xml" | head -1 | grep -q "200" && echo "  âœ“ Sitemap" || echo "  âœ— Sitemap"
 }
 ```
 
@@ -202,7 +202,7 @@ qa:smoke() {
 
 ### Phase 9: Page Speed, Lazy Load & Bundles
 
-- [ ] Lighthouse ≥ 90 (Perf, A11y, SEO)
+- [ ] Lighthouse â‰¥ 90 (Perf, A11y, SEO)
 - [ ] FCP < 2.5s, LCP < 4.0s, CLS < 0.1
 - [ ] Images lazy-loaded (`loading="lazy"`), WebP/AVIF
 - [ ] Dynamic imports for heavy components
@@ -214,13 +214,13 @@ qa:smoke() {
 qa:lazyload() {
   local N=$(grep -r "loading=" app/ --include="*.tsx" 2>/dev/null | grep -c "lazy" || true)
   echo "  Lazy images: $N"
-  grep -rn "next/dynamic\|dynamic((" app/ --include="*.tsx" 2>/dev/null | head -5 | grep . || echo "  ⚠ No dynamic imports"
+  grep -rn "next/dynamic\|dynamic((" app/ --include="*.tsx" 2>/dev/null | head -5 | grep . || echo "  âš  No dynamic imports"
 }
 qa:heavyload() {
   ls -lhS .next/static/chunks/*.js 2>/dev/null | head -5
   local W=$(curl -so /dev/null -w "%{size_download}" "$PROD_URL" 2>/dev/null || echo 0)
   echo "  HTML weight: ~$((W/1024))KB"
-  echo "  ⚠ Run 'npx lighthouse $PROD_URL --view' for full weight analysis"
+  echo "  âš  Run 'npx lighthouse $PROD_URL --view' for full weight analysis"
 }
 # PageSpeed: open "https://pagespeed.web.dev/?url=$PROD_URL"
 ```
@@ -229,35 +229,35 @@ qa:heavyload() {
 
 ### Phase 10: Cleanup & Vulnerability Scan
 
-- [ ] `npm prune`, `depcheck` — no unused deps
+- [ ] `npm prune`, `depcheck` â€” no unused deps
 - [ ] No console.log/debugger in staged code
-- [ ] `npm audit` — zero critical/high vulnerabilities
+- [ ] `npm audit` â€” zero critical/high vulnerabilities
 - [ ] No eval/new Function/document.write
 - [ ] TODOs resolved
 
 ```bash
 qa:vulns() {
-  npm audit 2>/dev/null | grep -E "critical|high" | grep . && echo "  ✗ Vulnerabilities!" || echo "  ✓ No critical/high vulns"
-  npm outdated 2>/dev/null | head -5 | grep . || echo "  ✓ All up to date"
+  npm audit 2>/dev/null | grep -E "critical|high" | grep . && echo "  âœ— Vulnerabilities!" || echo "  âœ“ No critical/high vulns"
+  npm outdated 2>/dev/null | head -5 | grep . || echo "  âœ“ All up to date"
   local D=$(grep -rn "eval(\|new Function(\|document.write(" app/ src/ --include="*.ts" --include="*.tsx" 2>/dev/null | head -5) # security-allowlist: defensive source scan
-  [ -n "$D" ] && echo "  ⚠ Dangerous patterns:" && echo "$D" || echo "  ✓ No dangerous patterns"
+  [ -n "$D" ] && echo "  âš  Dangerous patterns:" && echo "$D" || echo "  âœ“ No dangerous patterns"
 }
 qa:cleanup() {
   local D=$(git diff --cached 2>/dev/null | grep "^+" | grep -i "console\.log\|debugger" | head -5)
-  [ -n "$D" ] && echo "  ✗ Debug artifacts:" && echo "$D" || echo "  ✓ No debug artifacts"
+  [ -n "$D" ] && echo "  âœ— Debug artifacts:" && echo "$D" || echo "  âœ“ No debug artifacts"
   local T=$(git diff --cached 2>/dev/null | grep "^+" | grep -i "TODO\|FIXME\|HACK" | head -5)
-  [ -n "$T" ] && echo "  ⚠ TODOs remain:" && echo "$T"
+  [ -n "$T" ] && echo "  âš  TODOs remain:" && echo "$T"
 }
 ```
 
 ---
 
-### Phase 11: UI/UX — Cards, Animation, Error Boundaries
+### Phase 11: UI/UX â€” Cards, Animation, Error Boundaries
 
-- [ ] Cards: equal height grid, no overlap, text ellipsis, responsive (1→2→3 col)
-- [ ] No horizontal scroll at any viewport (320–1440px)
+- [ ] Cards: equal height grid, no overlap, text ellipsis, responsive (1â†’2â†’3 col)
+- [ ] No horizontal scroll at any viewport (320â€“1440px)
 - [ ] Images: consistent `aspect-ratio` + `object-fit: cover`
-- [ ] Touch targets ≥ 44×44px
+- [ ] Touch targets â‰¥ 44Ã—44px
 - [ ] Animations use `transform`+`opacity` only (not layout props)
 - [ ] `prefers-reduced-motion` respected
 - [ ] Error boundaries at root + route level (`app/error.tsx`, `app/global-error.tsx`)
@@ -269,20 +269,20 @@ qa:cleanup() {
 ```bash
 qa:ux:cards() {
   local E=$(grep -rn "text-overflow\|line-clamp\|truncate" app/ --include="*.css" --include="*.tsx" 2>/dev/null | head -3)
-  [ -n "$E" ] && echo "  ✓ Text overflow handling" || echo "  ⚠ No text overflow handling"
+  [ -n "$E" ] && echo "  âœ“ Text overflow handling" || echo "  âš  No text overflow handling"
   local A=$(grep -rn "aspect-\|object-fit" app/ --include="*.css" --include="*.tsx" 2>/dev/null | head -3)
-  [ -n "$A" ] && echo "  ✓ aspect-ratio/object-fit used" || echo "  ⚠ No aspect-ratio set"
+  [ -n "$A" ] && echo "  âœ“ aspect-ratio/object-fit used" || echo "  âš  No aspect-ratio set"
 }
 qa:ux:boundaries() {
   for f in app/error.tsx app/global-error.tsx app/not-found.tsx app/loading.tsx; do
-    [ -f "$f" ] && echo "  ✓ $f" || echo "  ⚠ Missing $f"
+    [ -f "$f" ] && echo "  âœ“ $f" || echo "  âš  Missing $f"
   done
 }
 qa:ux:animation() {
   local A=$(grep -rn "animation.*width\|transition.*height\|@keyframes.*top\|@keyframes.*margin" app/ --include="*.css" --include="*.tsx" 2>/dev/null | head -5)
-  [ -n "$A" ] && echo "  ⚠ Layout-triggering animations:" && echo "$A" || echo "  ✓ No layout-triggering animations"
+  [ -n "$A" ] && echo "  âš  Layout-triggering animations:" && echo "$A" || echo "  âœ“ No layout-triggering animations"
   local P=$(grep -r "@media.*prefers-reduced-motion" app/ --include="*.css" --include="*.tsx" 2>/dev/null | head -3)
-  [ -n "$P" ] && echo "  ✓ prefers-reduced-motion found in CSS" || echo "  ⚠ No prefers-reduced-motion in CSS"
+  [ -n "$P" ] && echo "  âœ“ prefers-reduced-motion found in CSS" || echo "  âš  No prefers-reduced-motion in CSS"
 }
 ```
 
@@ -301,15 +301,15 @@ qa:ux:animation() {
 ```bash
 qa:database() {
   local H=$(grep -rn "postgres://\|mysql://\|mongodb://" app/ src/ --include="*.ts" --include="*.tsx" 2>/dev/null | grep -v ".env" | head -5)
-  [ -n "$H" ] && { echo "  ✗ Hardcoded DB URL:"; echo "$H"; } || echo "  ✓ No hardcoded DB URLs"
+  [ -n "$H" ] && { echo "  âœ— Hardcoded DB URL:"; echo "$H"; } || echo "  âœ“ No hardcoded DB URLs"
   local R=$(grep -rn "\$queryRaw\|\.raw(" app/ src/ --include="*.ts" --include="*.tsx" 2>/dev/null | head -5)
-  [ -n "$R" ] && echo "  ⚠ Raw SQL:" && echo "$R" || echo "  ✓ No raw SQL"
+  [ -n "$R" ] && echo "  âš  Raw SQL:" && echo "$R" || echo "  âœ“ No raw SQL"
   local N=$(grep -rn "\.findMany\|\.findUnique" app/ src/ --include="*.ts" --include="*.tsx" 2>/dev/null | grep -v "include:" | head -5)
-  [ -n "$N" ] && echo "  ⚠ Possible N+1:" && echo "$N" || echo "  ✓ No N+1 patterns"
+  [ -n "$N" ] && echo "  âš  Possible N+1:" && echo "$N" || echo "  âœ“ No N+1 patterns"
 }
 qa:db:migrations() {
-  [ -d "prisma/migrations" ] && echo "  ✓ Prisma: $(ls prisma/migrations 2>/dev/null | wc -l) migrations" || echo "  - No prisma migrations dir"
-  local M=$(ls db/migrations/*.sql 2>/dev/null | head -5); [ -n "$M" ] && echo "  ✓ SQL migrations:" && echo "$M" || echo "  - No SQL migration files"
+  [ -d "prisma/migrations" ] && echo "  âœ“ Prisma: $(ls prisma/migrations 2>/dev/null | wc -l) migrations" || echo "  - No prisma migrations dir"
+  local M=$(ls db/migrations/*.sql 2>/dev/null | head -5); [ -n "$M" ] && echo "  âœ“ SQL migrations:" && echo "$M" || echo "  - No SQL migration files"
 }
 ```
 
@@ -327,12 +327,12 @@ qa:db:migrations() {
 ```bash
 qa:secure() {
   local S=$(git grep -n "api_key\|API_KEY\|secret_key\|PRIVATE_KEY" -- ':!*.env*' ':!*test*' 2>/dev/null | head -5)
-  [ -n "$S" ] && echo "  ✗ Secrets in source:" && echo "$S" || echo "  ✓ No hardcoded secrets"
+  [ -n "$S" ] && echo "  âœ— Secrets in source:" && echo "$S" || echo "  âœ“ No hardcoded secrets"
   local D=$(grep -rn "dangerouslySetInnerHTML" app/ src/ --include="*.tsx" 2>/dev/null | head -5)
-  [ -n "$D" ] && echo "  ⚠ XSS risk — use DOMPurify:" && echo "$D" || echo "  ✓ No dangerouslySetInnerHTML"
+  [ -n "$D" ] && echo "  âš  XSS risk â€” use DOMPurify:" && echo "$D" || echo "  âœ“ No dangerouslySetInnerHTML"
   local T=$(grep -rn "localStorage\|sessionStorage" app/ src/ --include="*.ts" --include="*.tsx" 2>/dev/null | grep -i "token\|jwt\|secret" | head -5)
-  [ -n "$T" ] && echo "  ⚠ Tokens in storage — use httpOnly cookies:" && echo "$T" || echo "  ✓ No tokens in storage"
-  curl -s "$PROD_URL/api/nonexistent" 2>/dev/null | grep -qi "stack\|Error:" && echo "  ✗ Stack trace leak" || echo "  ✓ No stack leak"
+  [ -n "$T" ] && echo "  âš  Tokens in storage â€” use httpOnly cookies:" && echo "$T" || echo "  âœ“ No tokens in storage"
+  curl -s "$PROD_URL/api/nonexistent" 2>/dev/null | grep -qi "stack\|Error:" && echo "  âœ— Stack trace leak" || echo "  âœ“ No stack leak"
 }
 ```
 
@@ -373,11 +373,11 @@ jobs:
 
 ## Best Practices
 
-| ✅ Do | ❌ Don't |
+| âœ… Do | âŒ Don't |
 |-------|----------|
 | Run full 13-phase flow before deploy | Skip typecheck or lint |
 | Set `PROD_URL` in profile/.envrc | Hardcode URLs in scripts |
-| OG images ≥ 1200×630 | Use small OG images |
+| OG images â‰¥ 1200Ã—630 | Use small OG images |
 | Animate with `transform`+`opacity` | Animate width/height/top |
 | Show loading/error/empty states | Leave users on blank screens |
 | `prefers-reduced-motion` for animations | Force motion on all users |
@@ -393,7 +393,7 @@ jobs:
 | Problem | Solution |
 |---------|----------|
 | OG tags missing in raw HTML | Use `export const metadata` in Next.js |
-| `Disallow: /` in robots.txt | Blocks all crawlers — use specific paths |
+| `Disallow: /` in robots.txt | Blocks all crawlers â€” use specific paths |
 | Cards different heights in grid | Use `display: grid` with equal-height rows, not flex |
 | Text overflows card | Add `text-overflow: ellipsis` + `overflow: hidden` |
 | Animation jank | Animate `transform` not `width`/`height` |
@@ -411,8 +411,8 @@ jobs:
 
 - All `qa:*` functions are read-only (tsc, lint, test, build, curl, grep)
 - `PROD_URL` and `QA_AUTH_HEADER` only for environments you own
-- Basic secret scanning in `git diff` — for prod, use `trufflehog`/`git-secrets`
-- Auth tests with real credentials against prod is destructive — use staging
+- Basic secret scanning in `git diff` â€” for prod, use `trufflehog`/`git-secrets`
+- Auth tests with real credentials against prod is destructive â€” use staging
 
 ---
 
@@ -421,7 +421,7 @@ jobs:
 - Passing all phases reduces risk but doesn't eliminate production bugs
 - Some checks depend on project-specific tooling (Prisma, NextAuth, etc.)
 - Manual UX testing still required for critical user journeys
-- SEO checks verify raw HTML only — not social preview rendering
+- SEO checks verify raw HTML only â€” not social preview rendering
 - Route checks verify status codes, not content correctness
 
 ---
@@ -453,7 +453,7 @@ jobs:
 - [ ] Homepage + key pages 200, og:image loads
 
 ### Phase 9: Speed
-- [ ] Lighthouse ≥ 90, lazy images, dynamic imports, font-display: swap
+- [ ] Lighthouse â‰¥ 90, lazy images, dynamic imports, font-display: swap
 
 ### Phase 10: Clean
 - [ ] No vulns, no debug artifacts, unused deps pruned
@@ -466,3 +466,4 @@ jobs:
 
 ### Phase 13: Secure Rendering
 - [ ] No secrets in client, no XSS, no stack leaks, UUIDs
+

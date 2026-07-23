@@ -1,11 +1,11 @@
----
+﻿---
 name: audit-skills
 description: "Expert security auditor for AI Skills and Bundles. Performs non-intrusive static analysis to identify malicious patterns, data leaks, system stability risks, and obfuscated payloads across Windows, macOS, Linux/Unix, and Mobile (Android/iOS)."
 category: security
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [security, audit, skills, bundles, cross-platform]
 tools: [claude, gemini, gpt, llama, mistral, etc]
 ---
@@ -104,13 +104,13 @@ Generates a security report with a score (0-10), platform target identification,
 
 ## Best Practices
 
-- ✅ Perform non-intrusive analysis
-- ✅ Check for privilege escalation patterns
-- ✅ Look for information disclosure vulnerabilities
-- ✅ Analyze cross-platform threats
-- ❌ Don't execute potentially malicious code during audit
-- ❌ Don't modify the code being audited
-- ❌ Don't ignore mobile-specific security concerns
+- âœ… Perform non-intrusive analysis
+- âœ… Check for privilege escalation patterns
+- âœ… Look for information disclosure vulnerabilities
+- âœ… Analyze cross-platform threats
+- âŒ Don't execute potentially malicious code during audit
+- âŒ Don't modify the code being audited
+- âŒ Don't ignore mobile-specific security concerns
 
 ## Common Pitfalls
 
@@ -131,3 +131,4 @@ Generates a security report with a score (0-10), platform target identification,
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,9 +1,9 @@
----
+﻿---
 name: api-fuzzing-bug-bounty
 description: "Provide comprehensive techniques for testing REST, SOAP, and GraphQL APIs during bug bounty hunting and penetration testing engagements. Covers vulnerability discovery, authentication bypass, IDOR exploitation, and API-specific attack vectors."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -74,7 +74,7 @@ python3 json2paths.py swagger.json
 /api/admin/login
 
 # Check rate limiting on auth endpoints
-# If no rate limit → brute force possible
+# If no rate limit â†’ brute force possible
 
 # Test mobile vs web API separately
 # Don't assume same security controls
@@ -86,7 +86,7 @@ Insecure Direct Object Reference is the most common API vulnerability:
 
 ```bash
 # Basic IDOR
-GET /api/users/1234 → GET /api/users/1235
+GET /api/users/1234 â†’ GET /api/users/1235
 
 # Even if ID is email-based, try numeric
 /?user_id=111 instead of /?user_id=user@mail.com
@@ -98,10 +98,10 @@ GET /api/users/1234 → GET /api/users/1235
 
 ```bash
 # Wrap ID in array
-{"id":111} → {"id":[111]}
+{"id":111} â†’ {"id":[111]}
 
 # JSON wrap
-{"id":111} → {"id":{"id":111}}
+{"id":111} â†’ {"id":{"id":111}}
 
 # Send ID twice
 URL?id=<LEGIT>&id=<VICTIM>
@@ -119,18 +119,18 @@ URL?id=<LEGIT>&id=<VICTIM>
 **SQL Injection in JSON:**
 
 ```json
-{"id":"56456"}                    → OK
-{"id":"56456 AND 1=1#"}           → OK  
-{"id":"56456 AND 1=2#"}           → OK
-{"id":"56456 AND 1=3#"}           → ERROR (vulnerable!)
-{"id":"56456 AND sleep(15)#"}     → SLEEP 15 SEC
+{"id":"56456"}                    â†’ OK
+{"id":"56456 AND 1=1#"}           â†’ OK  
+{"id":"56456 AND 1=2#"}           â†’ OK
+{"id":"56456 AND 1=3#"}           â†’ ERROR (vulnerable!)
+{"id":"56456 AND sleep(15)#"}     â†’ SLEEP 15 SEC
 ```
 
 **Command Injection:**
 
 ```bash
 # Ruby on Rails
-?url=Kernel#open → ?url=|ls
+?url=Kernel#open â†’ ?url=|ls
 
 # Linux command injection
 api.url.com/endpoint?name=file.txt;ls%20/
@@ -170,7 +170,7 @@ DELETE /api/v1/users/1
 PATCH /api/v1/users/1
 
 # Switch content type
-Content-Type: application/json → application/xml
+Content-Type: application/json â†’ application/xml
 ```
 
 ---
@@ -274,7 +274,7 @@ When receiving 403/401, try these bypasses:
 
 ```bash
 # Original blocked request
-/api/v1/users/sensitivedata → 403
+/api/v1/users/sensitivedata â†’ 403
 
 # Bypass attempts
 /api/v1/users/sensitivedata.json
@@ -335,7 +335,7 @@ When receiving 403/401, try these bypasses:
 | Race Conditions | TOCTOU vulnerabilities |
 | XXE Injection | XML parser exploitation |
 | Content Type Issues | Switching between JSON/XML |
-| HTTP Method Tampering | GET→DELETE/PUT abuse |
+| HTTP Method Tampering | GETâ†’DELETE/PUT abuse |
 
 ---
 
@@ -349,7 +349,7 @@ When receiving 403/401, try these bypasses:
 | XXE | DOCTYPE with ENTITY | High |
 | SSRF | Internal IP in params | High |
 | Rate Limit Bypass | Batch requests | Medium |
-| Method Tampering | GET→DELETE | High |
+| Method Tampering | GETâ†’DELETE | High |
 
 ---
 
@@ -437,3 +437,4 @@ curl -X POST https://target.com/graphql \
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

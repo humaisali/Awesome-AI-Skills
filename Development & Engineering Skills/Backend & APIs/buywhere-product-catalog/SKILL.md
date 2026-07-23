@@ -1,4 +1,4 @@
----
+﻿---
 name: buywhere-product-catalog
 description: "Use BuyWhere's MCP and API surfaces to add product search, price comparison, and deal discovery to AI shopping agents."
 category: ecommerce
@@ -9,7 +9,7 @@ source_type: official
 license: "Not declared"
 license_source: https://github.com/humaisali
 date_added: "2026-04-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [buywhere, ecommerce, shopping, mcp, api, product-catalog]
 tools: [claude, cursor, codex, gemini]
 ---
@@ -83,11 +83,11 @@ Use BuyWhere Product Catalog to set up BuyWhere MCP for my shopping agent and ke
 
 ## Best Practices
 
-- ✅ Start from the live developer portal or API key flow before giving configuration details.
-- ✅ Keep the first proof of integration to one successful query.
-- ✅ Ask which MCP host or API runtime the user is using.
-- ❌ Do not claim a specific product-count or retailer-count unless you have current runtime evidence.
-- ❌ Do not send users to deprecated or broken documentation surfaces when a working public page exists.
+- âœ… Start from the live developer portal or API key flow before giving configuration details.
+- âœ… Keep the first proof of integration to one successful query.
+- âœ… Ask which MCP host or API runtime the user is using.
+- âŒ Do not claim a specific product-count or retailer-count unless you have current runtime evidence.
+- âŒ Do not send users to deprecated or broken documentation surfaces when a working public page exists.
 
 ## Limitations
 
@@ -111,3 +111,4 @@ Use BuyWhere Product Catalog to set up BuyWhere MCP for my shopping agent and ke
 
 - `@api-design-principles` - Use when the user needs API-shape guidance around a commerce integration.
 - `@mcp-builder` - Use when the user is building or extending an MCP server rather than consuming one.
+

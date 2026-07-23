@@ -1,4 +1,4 @@
----
+﻿---
 name: crossframe-critical
 description: "Use only when the user explicitly names crossframe-critical for a Chinese structural critique dossier, article plan, or long-form critical essay."
 category: content
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: xi-kari/crossframe-skill
 source_type: community
 date_added: 2026-06-16
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: MIT
 license_source: https://github.com/humaisali
 tools:
@@ -41,7 +41,7 @@ This AAS-ready copy preserves the original CrossFrame skill body below. Chinese 
 - Use only after explicit CrossFrame invocation or `crossframe-suite` routing; do not apply it as a generic default reasoning layer.
 - It structures analysis, drafting, and review, but does not replace source verification, domain expertise, or legal, medical, or financial judgment.
 
-> **本 skill 不独立触发。** 所有 CrossFrame 任务统一从 `crossframe-suite` 入口调度。用户无需直接调用本 skill；suite 根据路由规则在需要时自动加载。
+> **æœ¬ skill ä¸ç‹¬ç«‹è§¦å‘ã€‚** æ‰€æœ‰ CrossFrame ä»»åŠ¡ç»Ÿä¸€ä»Ž `crossframe-suite` å…¥å£è°ƒåº¦ã€‚ç”¨æˆ·æ— éœ€ç›´æŽ¥è°ƒç”¨æœ¬ skillï¼›suite æ ¹æ®è·¯ç”±è§„åˆ™åœ¨éœ€è¦æ—¶è‡ªåŠ¨åŠ è½½ã€‚
 
 This is a parallel local test skill. It does not replace `crossframe`, `crossframe-essay`, `crossframe-public`, or `crossframe-suite`.
 
@@ -61,7 +61,7 @@ On every trigger, read:
 4. `protocols/critical-article-protocol.md`
 5. `references/critical-matrix.md`
 6. `references/example-and-evidence-rules.md`
-7. 若涉及真实公共对象、最新事实、机构、平台、政策、人物、公司、数据、AI/过程性产物或强判断，读取 `../crossframe/references/source-ledger-workflow.md` 并建立来源台账。
+7. è‹¥æ¶‰åŠçœŸå®žå…¬å…±å¯¹è±¡ã€æœ€æ–°äº‹å®žã€æœºæž„ã€å¹³å°ã€æ”¿ç­–ã€äººç‰©ã€å…¬å¸ã€æ•°æ®ã€AI/è¿‡ç¨‹æ€§äº§ç‰©æˆ–å¼ºåˆ¤æ–­ï¼Œè¯»å– `../crossframe/references/source-ledger-workflow.md` å¹¶å»ºç«‹æ¥æºå°è´¦ã€‚
 8. `templates/critical-output-template.md`
 
 If the topic needs long-form style control, also read `../crossframe-essay/SKILL.md` and reuse only its article discipline, not its whole output contract.
@@ -79,9 +79,9 @@ If the topic needs long-form style control, also read `../crossframe-essay/SKILL
 Default output has exactly three visible sections:
 
 ```text
-# 批判底稿
-# 篇章方案
-# 正文
+# æ‰¹åˆ¤åº•ç¨¿
+# ç¯‡ç« æ–¹æ¡ˆ
+# æ­£æ–‡
 ```
 
 Do not collapse the result into a short answer, checklist, memo, or diagnosis summary unless the user explicitly asks for that.
@@ -94,3 +94,4 @@ Do not collapse the result into a short answer, checklist, memo, or diagnosis su
 - Use at least two concrete examples in the essay body unless the user provides a single narrowly bounded case and asks not to expand.
 - Include at least one countercondition, evidence gap, or withdrawal condition.
 - Do not use Marxist terms as prestige vocabulary. If a term cannot be translated into who pays, who benefits, what is hidden, and how the condition repeats, remove it.
+

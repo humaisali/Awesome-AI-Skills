@@ -1,9 +1,9 @@
----
+﻿---
 name: network-101
 description: "Configure and test common network services (HTTP, HTTPS, SNMP, SMB) for penetration testing lab environments. Enable hands-on practice with service enumeration, log analysis, and security testing against properly configured target systems."
 risk: unknown
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -37,7 +37,7 @@ Set up a basic HTTP web server for testing:
 
 **Windows IIS Setup:**
 1. Open IIS Manager (Internet Information Services)
-2. Right-click Sites → Add Website
+2. Right-click Sites â†’ Add Website
 3. Configure site name and physical path
 4. Bind to IP address and port 80
 
@@ -131,9 +131,9 @@ sudo systemctl restart snmpd
 ```
 
 **Windows SNMP Setup:**
-1. Open Server Manager → Add Features
+1. Open Server Manager â†’ Add Features
 2. Select SNMP Service
-3. Configure community strings in Services → SNMP Service → Properties
+3. Configure community strings in Services â†’ SNMP Service â†’ Properties
 
 **SNMP Enumeration Commands:**
 
@@ -160,7 +160,7 @@ Set up SMB file shares for enumeration:
 
 **Windows SMB Share:**
 1. Create folder to share
-2. Right-click → Properties → Sharing → Advanced Sharing
+2. Right-click â†’ Properties â†’ Sharing â†’ Advanced Sharing
 3. Enable sharing and set permissions
 4. Configure NTFS permissions
 
@@ -343,3 +343,4 @@ smbclient //localhost/anonymous -N
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

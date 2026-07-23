@@ -1,4 +1,4 @@
----
+﻿---
 name: conductor-setup
 description: Configure a Rails project to work with Conductor (parallel coding agents)
 allowed-tools: Bash(chmod *), Bash(bundle *), Bash(npm *), Bash(script/server)
@@ -6,7 +6,7 @@ context: fork
 risk: unknown
 source: https://github.com/humaisali
 metadata:
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   version: "1.0"
 ---
 
@@ -123,3 +123,4 @@ After creating the files:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

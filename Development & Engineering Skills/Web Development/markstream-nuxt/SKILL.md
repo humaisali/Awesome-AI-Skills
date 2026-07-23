@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-nuxt
 description: "Integrate markstream-vue into Nuxt 3 or 4 with SSR-safe client boundaries, renderer modes, explicit CSS, and browser-only optional peers."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [nuxt, vue, ssr, markdown, streaming]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -69,3 +69,4 @@ defineProps<{ markdown: string; done: boolean }>()
 ## Security & Safety Notes
 
 Do not expose trusted HTML or loose Mermaid settings to untrusted model output. Review dependency and runtime-boundary changes.
+

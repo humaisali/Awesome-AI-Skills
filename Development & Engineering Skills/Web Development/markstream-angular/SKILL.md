@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-angular
 description: "Integrate the alpha markstream-angular renderer into Angular 20+ applications with standalone components, signals, safe HTML defaults, and optional peer features."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [angular, markdown, streaming, ai-chat, frontend]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -74,3 +74,4 @@ export class AnswerComponent {
 ## Security & Safety Notes
 
 Review dependency changes before installation. Never broaden HTML or Mermaid trust settings for untrusted model output.
+

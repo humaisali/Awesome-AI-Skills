@@ -1,11 +1,11 @@
----
+﻿---
 name: seek-and-analyze-video
 description: "Seek and analyze video content using Memories.ai Large Visual Memory Model for persistent video intelligence"
 category: data-ai
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-09"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [video, ai, memories, social-media, youtube, tiktok, analysis]
 tools: [claude, cursor, gemini]
 ---
@@ -96,3 +96,4 @@ Agent: uploads recording -> waits -> gets transcript -> uses chat_video for stru
 
 - Video analysis tools for one-shot analysis
 - Web search skills for non-video content research
+

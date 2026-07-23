@@ -1,10 +1,10 @@
----
+﻿---
 name: "terraform-patterns"
 description: "Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security hardening, policy-as-code with Sentinel/OPA, and CI/CD plan/apply workflows. Use when: user wants to design Terraform modules, manage state backends, review Terraform security, implement multi-region deployments, or follow IaC best practices."
 license: MIT
 metadata:
   version: 1.0.0
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: engineering
   updated: 2026-03-15
 ---
@@ -15,7 +15,7 @@ metadata:
 
 Opinionated Terraform workflow that turns sprawling HCL into well-structured, secure, production-grade infrastructure code. Covers module design, state management, provider patterns, security hardening, and CI/CD integration.
 
-Not a Terraform tutorial — a set of concrete decisions about how to write infrastructure code that doesn't break at 3 AM.
+Not a Terraform tutorial â€” a set of concrete decisions about how to write infrastructure code that doesn't break at 3 AM.
 
 ---
 
@@ -43,13 +43,13 @@ Recognize these patterns from the user:
 - "Terraform CI/CD pipeline"
 - Any request involving: `.tf` files, HCL, Terraform modules, state management, provider configuration, infrastructure-as-code
 
-If the user has `.tf` files or wants to provision infrastructure with Terraform → this skill applies.
+If the user has `.tf` files or wants to provision infrastructure with Terraform â†’ this skill applies.
 
 ---
 
 ## Workflow
 
-### `/terraform:review` — Terraform Code Review
+### `/terraform:review` â€” Terraform Code Review
 
 1. **Analyze current state**
    - Read all `.tf` files in the target directory
@@ -61,31 +61,31 @@ If the user has `.tf` files or wants to provision infrastructure with Terraform 
 
    ```
    MODULE STRUCTURE
-   ├── Variables have descriptions and type constraints
-   ├── Outputs expose only what consumers need
-   ├── Resources use consistent naming: {provider}_{type}_{purpose}
-   ├── Locals used for computed values and DRY expressions
-   └── No hardcoded values — everything parameterized or in locals
+   â”œâ”€â”€ Variables have descriptions and type constraints
+   â”œâ”€â”€ Outputs expose only what consumers need
+   â”œâ”€â”€ Resources use consistent naming: {provider}_{type}_{purpose}
+   â”œâ”€â”€ Locals used for computed values and DRY expressions
+   â””â”€â”€ No hardcoded values â€” everything parameterized or in locals
 
    STATE & BACKEND
-   ├── Remote backend configured (S3, GCS, Azure Blob, Terraform Cloud)
-   ├── State locking enabled (DynamoDB for S3, native for others)
-   ├── State encryption at rest enabled
-   ├── No secrets stored in state (or state access is restricted)
-   └── Workspaces or directory isolation for environments
+   â”œâ”€â”€ Remote backend configured (S3, GCS, Azure Blob, Terraform Cloud)
+   â”œâ”€â”€ State locking enabled (DynamoDB for S3, native for others)
+   â”œâ”€â”€ State encryption at rest enabled
+   â”œâ”€â”€ No secrets stored in state (or state access is restricted)
+   â””â”€â”€ Workspaces or directory isolation for environments
 
    PROVIDERS
-   ├── Version constraints use pessimistic operator: ~> 5.0
-   ├── Required providers block in terraform {} block
-   ├── Provider aliases for multi-region or multi-account
-   └── No provider configuration in child modules
+   â”œâ”€â”€ Version constraints use pessimistic operator: ~> 5.0
+   â”œâ”€â”€ Required providers block in terraform {} block
+   â”œâ”€â”€ Provider aliases for multi-region or multi-account
+   â””â”€â”€ No provider configuration in child modules
 
    SECURITY
-   ├── No hardcoded secrets, keys, or passwords
-   ├── IAM follows least-privilege principle
-   ├── Encryption enabled for storage, databases, secrets
-   ├── Security groups are not overly permissive (no 0.0.0.0/0 ingress on sensitive ports)
-   └── Sensitive variables marked with sensitive = true
+   â”œâ”€â”€ No hardcoded secrets, keys, or passwords
+   â”œâ”€â”€ IAM follows least-privilege principle
+   â”œâ”€â”€ Encryption enabled for storage, databases, secrets
+   â”œâ”€â”€ Security groups are not overly permissive (no 0.0.0.0/0 ingress on sensitive ports)
+   â””â”€â”€ Sensitive variables marked with sensitive = true
    ```
 
 3. **Generate report**
@@ -98,7 +98,7 @@ If the user has `.tf` files or wants to provision infrastructure with Terraform 
    python3 scripts/tf_security_scanner.py ./terraform
    ```
 
-### `/terraform:module` — Module Design
+### `/terraform:module` â€” Module Design
 
 1. **Identify module scope**
    - Single responsibility: one module = one logical grouping
@@ -109,33 +109,33 @@ If the user has `.tf` files or wants to provision infrastructure with Terraform 
 
    ```
    STRUCTURE
-   ├── main.tf        — Primary resources
-   ├── variables.tf   — All input variables with descriptions and types
-   ├── outputs.tf     — All outputs with descriptions
-   ├── versions.tf    — terraform {} block with required_providers
-   ├── locals.tf      — Computed values and naming conventions
-   ├── data.tf        — Data sources (if any)
-   └── README.md      — Usage examples and variable documentation
+   â”œâ”€â”€ main.tf        â€” Primary resources
+   â”œâ”€â”€ variables.tf   â€” All input variables with descriptions and types
+   â”œâ”€â”€ outputs.tf     â€” All outputs with descriptions
+   â”œâ”€â”€ versions.tf    â€” terraform {} block with required_providers
+   â”œâ”€â”€ locals.tf      â€” Computed values and naming conventions
+   â”œâ”€â”€ data.tf        â€” Data sources (if any)
+   â””â”€â”€ README.md      â€” Usage examples and variable documentation
 
    VARIABLES
-   ├── Every variable has: description, type, validation (where applicable)
-   ├── Sensitive values marked: sensitive = true
-   ├── Defaults provided for optional settings
-   ├── Use object types for related settings: variable "config" { type = object({...}) }
-   └── Validate with: validation { condition = ... }
+   â”œâ”€â”€ Every variable has: description, type, validation (where applicable)
+   â”œâ”€â”€ Sensitive values marked: sensitive = true
+   â”œâ”€â”€ Defaults provided for optional settings
+   â”œâ”€â”€ Use object types for related settings: variable "config" { type = object({...}) }
+   â””â”€â”€ Validate with: validation { condition = ... }
 
    OUTPUTS
-   ├── Output IDs, ARNs, endpoints — things consumers need
-   ├── Include description on every output
-   ├── Mark sensitive outputs: sensitive = true
-   └── Don't output entire resources — only specific attributes
+   â”œâ”€â”€ Output IDs, ARNs, endpoints â€” things consumers need
+   â”œâ”€â”€ Include description on every output
+   â”œâ”€â”€ Mark sensitive outputs: sensitive = true
+   â””â”€â”€ Don't output entire resources â€” only specific attributes
 
    COMPOSITION
-   ├── Root module calls child modules
-   ├── Child modules never call other child modules
-   ├── Pass values explicitly — no hidden data source lookups in child modules
-   ├── Provider configuration only in root module
-   └── Use module "name" { source = "./modules/name" }
+   â”œâ”€â”€ Root module calls child modules
+   â”œâ”€â”€ Child modules never call other child modules
+   â”œâ”€â”€ Pass values explicitly â€” no hidden data source lookups in child modules
+   â”œâ”€â”€ Provider configuration only in root module
+   â””â”€â”€ Use module "name" { source = "./modules/name" }
    ```
 
 3. **Generate module scaffold**
@@ -143,7 +143,7 @@ If the user has `.tf` files or wants to provision infrastructure with Terraform 
    - Include variable validation blocks
    - Add lifecycle rules where appropriate
 
-### `/terraform:security` — Security Audit
+### `/terraform:security` â€” Security Audit
 
 1. **Code-level audit**
 
@@ -236,12 +236,12 @@ python3 scripts/tf_security_scanner.py ./terraform --strict
 
 ```
 infrastructure/
-├── main.tf          # All resources
-├── variables.tf     # All inputs
-├── outputs.tf       # All outputs
-├── versions.tf      # Provider requirements
-├── terraform.tfvars # Environment values (not committed)
-└── backend.tf       # Remote state configuration
+â”œâ”€â”€ main.tf          # All resources
+â”œâ”€â”€ variables.tf     # All inputs
+â”œâ”€â”€ outputs.tf       # All outputs
+â”œâ”€â”€ versions.tf      # Provider requirements
+â”œâ”€â”€ terraform.tfvars # Environment values (not committed)
+â””â”€â”€ backend.tf       # Remote state configuration
 ```
 
 Best for: Single application, < 20 resources, one team owns everything.
@@ -250,25 +250,25 @@ Best for: Single application, < 20 resources, one team owns everything.
 
 ```
 infrastructure/
-├── environments/
-│   ├── dev/
-│   │   ├── main.tf          # Calls modules with dev params
-│   │   ├── backend.tf       # Dev state backend
-│   │   └── terraform.tfvars
-│   ├── staging/
-│   │   └── ...
-│   └── prod/
-│       └── ...
-├── modules/
-│   ├── networking/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── compute/
-│   │   └── ...
-│   └── database/
-│       └── ...
-└── versions.tf
+â”œâ”€â”€ environments/
+â”‚   â”œâ”€â”€ dev/
+â”‚   â”‚   â”œâ”€â”€ main.tf          # Calls modules with dev params
+â”‚   â”‚   â”œâ”€â”€ backend.tf       # Dev state backend
+â”‚   â”‚   â””â”€â”€ terraform.tfvars
+â”‚   â”œâ”€â”€ staging/
+â”‚   â”‚   â””â”€â”€ ...
+â”‚   â””â”€â”€ prod/
+â”‚       â””â”€â”€ ...
+â”œâ”€â”€ modules/
+â”‚   â”œâ”€â”€ networking/
+â”‚   â”‚   â”œâ”€â”€ main.tf
+â”‚   â”‚   â”œâ”€â”€ variables.tf
+â”‚   â”‚   â””â”€â”€ outputs.tf
+â”‚   â”œâ”€â”€ compute/
+â”‚   â”‚   â””â”€â”€ ...
+â”‚   â””â”€â”€ database/
+â”‚       â””â”€â”€ ...
+â””â”€â”€ versions.tf
 ```
 
 Best for: Multiple environments, shared infrastructure patterns, team collaboration.
@@ -277,20 +277,20 @@ Best for: Multiple environments, shared infrastructure patterns, team collaborat
 
 ```
 infrastructure/
-├── terragrunt.hcl           # Root config
-├── modules/                  # Reusable modules
-│   ├── vpc/
-│   ├── eks/
-│   └── rds/
-├── dev/
-│   ├── terragrunt.hcl       # Dev overrides
-│   ├── vpc/
-│   │   └── terragrunt.hcl   # Module invocation
-│   └── eks/
-│       └── terragrunt.hcl
-└── prod/
-    ├── terragrunt.hcl
-    └── ...
+â”œâ”€â”€ terragrunt.hcl           # Root config
+â”œâ”€â”€ modules/                  # Reusable modules
+â”‚   â”œâ”€â”€ vpc/
+â”‚   â”œâ”€â”€ eks/
+â”‚   â””â”€â”€ rds/
+â”œâ”€â”€ dev/
+â”‚   â”œâ”€â”€ terragrunt.hcl       # Dev overrides
+â”‚   â”œâ”€â”€ vpc/
+â”‚   â”‚   â””â”€â”€ terragrunt.hcl   # Module invocation
+â”‚   â””â”€â”€ eks/
+â”‚       â””â”€â”€ terragrunt.hcl
+â””â”€â”€ prod/
+    â”œâ”€â”€ terragrunt.hcl
+    â””â”€â”€ ...
 ```
 
 Best for: Large-scale, many environments, DRY configuration, team-level isolation.
@@ -356,25 +356,25 @@ provider "aws" {
 
 ```
 Single developer, small project?
-├── Yes → Local state (but migrate to remote ASAP)
-└── No
-    ├── Using Terraform Cloud/Enterprise?
-    │   └── Yes → TF Cloud native backend (built-in locking, encryption, RBAC)
-    └── No
-        ├── AWS?
-        │   └── S3 + DynamoDB (encryption, locking, versioning)
-        ├── GCP?
-        │   └── GCS bucket (native locking, encryption)
-        ├── Azure?
-        │   └── Azure Blob Storage (native locking, encryption)
-        └── Other?
-            └── Consul or PostgreSQL backend
+â”œâ”€â”€ Yes â†’ Local state (but migrate to remote ASAP)
+â””â”€â”€ No
+    â”œâ”€â”€ Using Terraform Cloud/Enterprise?
+    â”‚   â””â”€â”€ Yes â†’ TF Cloud native backend (built-in locking, encryption, RBAC)
+    â””â”€â”€ No
+        â”œâ”€â”€ AWS?
+        â”‚   â””â”€â”€ S3 + DynamoDB (encryption, locking, versioning)
+        â”œâ”€â”€ GCP?
+        â”‚   â””â”€â”€ GCS bucket (native locking, encryption)
+        â”œâ”€â”€ Azure?
+        â”‚   â””â”€â”€ Azure Blob Storage (native locking, encryption)
+        â””â”€â”€ Other?
+            â””â”€â”€ Consul or PostgreSQL backend
 
 Environment isolation strategy:
-├── Separate state files per environment (recommended)
-│   ├── Option A: Separate directories (dev/, staging/, prod/)
-│   └── Option B: Terraform workspaces (simpler but less isolation)
-└── Single state file for all environments (never do this)
+â”œâ”€â”€ Separate state files per environment (recommended)
+â”‚   â”œâ”€â”€ Option A: Separate directories (dev/, staging/, prod/)
+â”‚   â””â”€â”€ Option B: Terraform workspaces (simpler but less isolation)
+â””â”€â”€ Single state file for all environments (never do this)
 ```
 
 ---
@@ -437,7 +437,7 @@ jobs:
           terraform plan -detailed-exitcode -out=drift.tfplan 2>&1 | tee drift.log
           EXIT_CODE=$?
           if [ $EXIT_CODE -eq 2 ]; then
-            echo "DRIFT DETECTED — review drift.log"
+            echo "DRIFT DETECTED â€” review drift.log"
             # Send alert (Slack, PagerDuty, etc.)
           fi
 ```
@@ -448,14 +448,14 @@ jobs:
 
 Flag these without being asked:
 
-- **No remote backend configured** → Migrate to S3/GCS/Azure Blob with locking and encryption.
-- **Provider without version constraint** → Add `version = "~> X.0"` to prevent breaking upgrades.
-- **Hardcoded secrets in .tf files** → Use variables with `sensitive = true`, or integrate Vault/SSM.
-- **IAM policy with `"Action": "*"`** → Scope to specific actions. No wildcard actions in production.
-- **Security group open to 0.0.0.0/0 on SSH/RDP** → Restrict to bastion CIDR or use SSM Session Manager.
-- **No state locking** → Enable DynamoDB table for S3 backend, or use TF Cloud.
-- **Resources without tags** → Add default_tags in provider block. Tags are mandatory for cost tracking.
-- **Missing `prevent_destroy` on databases/storage** → Add lifecycle block to prevent accidental deletion.
+- **No remote backend configured** â†’ Migrate to S3/GCS/Azure Blob with locking and encryption.
+- **Provider without version constraint** â†’ Add `version = "~> X.0"` to prevent breaking upgrades.
+- **Hardcoded secrets in .tf files** â†’ Use variables with `sensitive = true`, or integrate Vault/SSM.
+- **IAM policy with `"Action": "*"`** â†’ Scope to specific actions. No wildcard actions in production.
+- **Security group open to 0.0.0.0/0 on SSH/RDP** â†’ Restrict to bastion CIDR or use SSM Session Manager.
+- **No state locking** â†’ Enable DynamoDB table for S3 backend, or use TF Cloud.
+- **Resources without tags** â†’ Add default_tags in provider block. Tags are mandatory for cost tracking.
+- **Missing `prevent_destroy` on databases/storage** â†’ Add lifecycle block to prevent accidental deletion.
 
 ---
 
@@ -537,7 +537,7 @@ OpenTofu is an open-source fork of Terraform maintained by the Linux Foundation 
 brew install opentofu        # macOS
 snap install --classic tofu  # Linux
 
-# 2. Replace the binary — state files are compatible
+# 2. Replace the binary â€” state files are compatible
 tofu init                    # Re-initializes with OpenTofu
 tofu plan                    # Identical plan output
 tofu apply                   # Same apply workflow
@@ -562,7 +562,7 @@ OpenTofu tracks Terraform 1.6.x features. Key additions unique to OpenTofu:
 
 - You need a fully open-source license for your supply chain.
 - You want client-side state encryption without Terraform Cloud.
-- Otherwise, either tool works — the HCL syntax and provider ecosystem are identical.
+- Otherwise, either tool works â€” the HCL syntax and provider ecosystem are identical.
 
 ---
 
@@ -602,7 +602,7 @@ jobs:
 ### Budget Thresholds and Cost Policy
 
 ```yaml
-# infracost.yml — policy file
+# infracost.yml â€” policy file
 version: 2.9.0
 policies:
   - path: "*"
@@ -734,7 +734,8 @@ clawhub install terraform-patterns
 
 ## Related Skills
 
-- **senior-devops** — Broader DevOps scope (CI/CD, monitoring, containerization). Complementary — use terraform-patterns for IaC-specific work, senior-devops for pipeline and infrastructure operations.
-- **aws-solution-architect** — AWS architecture design. Complementary — terraform-patterns implements the infrastructure, aws-solution-architect designs it.
-- **senior-security** — Application security. Complementary — terraform-patterns covers infrastructure security posture, senior-security covers application-level threats.
-- **ci-cd-pipeline-builder** — Pipeline construction. Complementary — terraform-patterns defines infrastructure, ci-cd-pipeline-builder automates deployment.
+- **senior-devops** â€” Broader DevOps scope (CI/CD, monitoring, containerization). Complementary â€” use terraform-patterns for IaC-specific work, senior-devops for pipeline and infrastructure operations.
+- **aws-solution-architect** â€” AWS architecture design. Complementary â€” terraform-patterns implements the infrastructure, aws-solution-architect designs it.
+- **senior-security** â€” Application security. Complementary â€” terraform-patterns covers infrastructure security posture, senior-security covers application-level threats.
+- **ci-cd-pipeline-builder** â€” Pipeline construction. Complementary â€” terraform-patterns defines infrastructure, ci-cd-pipeline-builder automates deployment.
+

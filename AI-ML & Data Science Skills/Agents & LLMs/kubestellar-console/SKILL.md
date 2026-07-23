@@ -1,4 +1,4 @@
----
+﻿---
 name: kubestellar-console
 description: "Multi-cluster Kubernetes dashboard with AI-powered operations via MCP server and 10+ built-in agent skills"
 category: devops
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: kubestellar/console
 source_type: community
 date_added: "2026-04-27"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [kubernetes, multi-cluster, mcp, dashboard, cncf, devops, observability]
 tools: [claude, cursor, gemini, codex]
 license: "Apache-2.0"
@@ -52,14 +52,14 @@ This bridges the active kubeconfig context to any MCP-compatible coding agent. D
 
 The project ships with agent skills accessible via `CLAUDE.md` and `AGENTS.md`:
 
-- **@perf-test** — Dashboard performance testing and TTFI analysis
-- **@cache-test** — Card cache compliance testing (IndexedDB warm return)
-- **@nav-test** — Navigation performance testing
-- **@ui-compliance-test** — Card loading compliance (8 criteria, 150+ cards)
-- **@ci-status** — CI pipeline monitoring and status checks
-- **@rca** — Root cause analysis for CI/test failures
-- **@tdd** — Test-driven development workflow
-- **@k8s-debug** — Kubernetes debugging and troubleshooting
+- **@perf-test** â€” Dashboard performance testing and TTFI analysis
+- **@cache-test** â€” Card cache compliance testing (IndexedDB warm return)
+- **@nav-test** â€” Navigation performance testing
+- **@ui-compliance-test** â€” Card loading compliance (8 criteria, 150+ cards)
+- **@ci-status** â€” CI pipeline monitoring and status checks
+- **@rca** â€” Root cause analysis for CI/test failures
+- **@tdd** â€” Test-driven development workflow
+- **@k8s-debug** â€” Kubernetes debugging and troubleshooting
 
 ## Key Features
 
@@ -103,3 +103,4 @@ The project ships with agent skills accessible via `CLAUDE.md` and `AGENTS.md`:
 - [Website](https://console.kubestellar.io)
 - [CLAUDE.md](https://github.com/kubestellar/console/blob/main/CLAUDE.md)
 - [AGENTS.md](https://github.com/kubestellar/console/blob/main/AGENTS.md)
+

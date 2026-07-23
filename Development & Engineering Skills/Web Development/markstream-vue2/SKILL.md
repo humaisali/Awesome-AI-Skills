@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-vue2
 description: "Integrate markstream-vue2 into Vue 2.6 or 2.7 with correct Composition API decisions, CSS, streaming state, optional peers, and scoped overrides."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [vue2, markdown, streaming, compatibility, frontend]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -68,3 +68,4 @@ export default {
 ## Security & Safety Notes
 
 Review dependency and compatibility changes. Do not relax rendering safety for untrusted content.
+

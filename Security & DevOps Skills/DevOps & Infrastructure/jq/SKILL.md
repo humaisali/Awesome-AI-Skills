@@ -1,16 +1,16 @@
----
+﻿---
 name: jq
 description: "Expert jq usage for JSON querying, filtering, transformation, and pipeline integration. Practical patterns for real shell workflows."
 category: development
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-28"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [jq, json, shell, cli, data-transformation, bash]
 tools: [claude, cursor, gemini]
 ---
 
-# jq — JSON Querying and Transformation
+# jq â€” JSON Querying and Transformation
 
 ## Overview
 
@@ -238,7 +238,7 @@ jq -n 'env.API_KEY'
 ## Best Practices
 
 - Always use `-r` (raw output) when passing `jq` results to shell variables or other commands to strip JSON string quotes
-- Use `--arg` / `--argjson` to inject shell variables safely — never interpolate shell variables directly into filter strings
+- Use `--arg` / `--argjson` to inject shell variables safely â€” never interpolate shell variables directly into filter strings
 - Prefer `map(f)` over `[.[] | f]` for readability
 - Use `-c` (compact) for newline-delimited JSON pipelines; omit it for human-readable debugging
 - Test filters interactively with `jq -n` and literal input before embedding in scripts
@@ -246,7 +246,7 @@ jq -n 'env.API_KEY'
 
 ## Security & Safety Notes
 
-- `jq` is read-only by design — it cannot write files or execute commands
+- `jq` is read-only by design â€” it cannot write files or execute commands
 - Avoid embedding untrusted JSON field values directly into shell commands; always quote or use `--arg`
 
 ## Common Pitfalls
@@ -268,11 +268,12 @@ jq -n 'env.API_KEY'
 
 ## Related Skills
 
-- `@bash-pro` — Wrapping jq calls in robust shell scripts
-- `@bash-linux` — General shell pipeline patterns
-- `@github-automation` — Using jq with GitHub CLI JSON output
+- `@bash-pro` â€” Wrapping jq calls in robust shell scripts
+- `@bash-linux` â€” General shell pipeline patterns
+- `@github-automation` â€” Using jq with GitHub CLI JSON output
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

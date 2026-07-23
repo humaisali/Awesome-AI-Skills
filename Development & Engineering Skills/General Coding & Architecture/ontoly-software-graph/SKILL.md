@@ -1,4 +1,4 @@
----
+﻿---
 name: ontoly-software-graph
 description: "Use Ontoly's deterministic Software Graph, MCP server, and agent skills for architecture review, request tracing, impact analysis, and dependency analysis."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: 0xsarwagya/ontoly
 source_type: community
 date_added: "2026-07-14"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [software-graph, codebase-analysis, mcp, typescript, architecture, impact-analysis]
 tools: [claude, cursor, gemini, codex, antigravity]
 license: MIT
@@ -158,3 +158,4 @@ Workflow:
 - `@developer-onboarding` - Use for broad onboarding when Ontoly is unavailable.
 - `@sdk-dx` - Use for SDK design and developer experience reviews after Ontoly identifies public APIs.
 - `@api-onboarding` - Use for API-specific onboarding when route and operation evidence is available.
+

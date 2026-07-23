@@ -1,14 +1,14 @@
----
+﻿---
 name: wechat-official-account-strategist
-description: "Grow WeChat Official Accounts (微信公众号) with high-conversion content strategy, title formulas, article architecture, and Mini-Program integration."
+description: "Grow WeChat Official Accounts (å¾®ä¿¡å…¬ä¼—å·) with high-conversion content strategy, title formulas, article architecture, and Mini-Program integration."
 category: marketing
 risk: safe
 source: https://github.com/humaisali
 source_repo: demo112/yunqu-ai-skills
 source_type: community
 date_added: "2026-05-13"
-author: Humais Ali
-tags: [wechat, chinese-market, content-strategy, marketing, 公众号, 微信]
+Maintained & Curated by: Humais Ali
+tags: [wechat, chinese-market, content-strategy, marketing, å…¬ä¼—å·, å¾®ä¿¡]
 tools: [claude, cursor, gemini]
 ---
 
@@ -16,9 +16,9 @@ tools: [claude, cursor, gemini]
 
 ## Overview
 
-Expert strategist for WeChat Official Accounts (微信公众号), China's most powerful content marketing channel with 1.3 billion WeChat users. Creates high-conversion article strategies with proven title formulas, reading-flow optimization, and Mini-Program integration paths.
+Expert strategist for WeChat Official Accounts (å¾®ä¿¡å…¬ä¼—å·), China's most powerful content marketing channel with 1.3 billion WeChat users. Creates high-conversion article strategies with proven title formulas, reading-flow optimization, and Mini-Program integration paths.
 
-This skill understands the unique WeChat ecosystem: closed garden distribution, Moments sharing mechanics, subscription vs. service account differences, and the critical role of the first fold (首屏) in reader retention.
+This skill understands the unique WeChat ecosystem: closed garden distribution, Moments sharing mechanics, subscription vs. service account differences, and the critical role of the first fold (é¦–å±) in reader retention.
 
 ## When to Use This Skill
 
@@ -26,42 +26,42 @@ This skill understands the unique WeChat ecosystem: closed garden distribution, 
 - Use when planning WeChat content strategy or editorial calendar
 - Use when optimizing article open rates and sharing rates
 - Use when designing WeChat-driven sales funnels
-- Use when converting readers to Mini-Program users or private traffic (私域流量)
+- Use when converting readers to Mini-Program users or private traffic (ç§åŸŸæµé‡)
 
 ## How It Works
 
 ### Step 1: Account Type Analysis
 
 Identify the account type and its constraints:
-- **Subscription Account (订阅号)**: 1 push per day, folded in subscription folder
-- **Service Account (服务号)**: 4 pushes per month, appears in main chat list
+- **Subscription Account (è®¢é˜…å·)**: 1 push per day, folded in subscription folder
+- **Service Account (æœåŠ¡å·)**: 4 pushes per month, appears in main chat list
 - **Enterprise Account**: Internal communication and CRM
 
 ### Step 2: Title Engineering
 
 Apply proven title formulas for WeChat:
 
-1. **Curiosity Gap**: "为什么XXX却YYY？" (Why X but Y?)
-2. **Counter-intuitive**: "一直以为XXX，原来YYY" (Always thought X, turns out Y)
-3. **Social Proof**: "XXX万人都在用的..." (X million people use this)
-4. **Urgency**: "再不看就晚了！" (Read before it's too late)
-5. **Value Promise**: "看完这篇，你就懂了..." (After reading this, you'll understand)
-6. **Identity**: "XXX的人，都有一共性" (People who X share this trait)
+1. **Curiosity Gap**: "ä¸ºä»€ä¹ˆXXXå´YYYï¼Ÿ" (Why X but Y?)
+2. **Counter-intuitive**: "ä¸€ç›´ä»¥ä¸ºXXXï¼ŒåŽŸæ¥YYY" (Always thought X, turns out Y)
+3. **Social Proof**: "XXXä¸‡äººéƒ½åœ¨ç”¨çš„..." (X million people use this)
+4. **Urgency**: "å†ä¸çœ‹å°±æ™šäº†ï¼" (Read before it's too late)
+5. **Value Promise**: "çœ‹å®Œè¿™ç¯‡ï¼Œä½ å°±æ‡‚äº†..." (After reading this, you'll understand)
+6. **Identity**: "XXXçš„äººï¼Œéƒ½æœ‰ä¸€å…±æ€§" (People who X share this trait)
 
 ### Step 3: Article Architecture
 
 Structure for WeChat's reading behavior:
-1. **First Fold (首屏)** - Hook + value promise (visible without scrolling)
-2. **Ramp (铺垫)** - Build context, establish credibility
-3. **Core Content (核心)** - Deliver the promised value
-4. **Emotional Peak (情感高潮)** - Create sharing motivation
-5. **CTA (行动呼唤)** - Clear next step (follow, share, click Mini-Program)
+1. **First Fold (é¦–å±)** - Hook + value promise (visible without scrolling)
+2. **Ramp (é“ºåž«)** - Build context, establish credibility
+3. **Core Content (æ ¸å¿ƒ)** - Deliver the promised value
+4. **Emotional Peak (æƒ…æ„Ÿé«˜æ½®)** - Create sharing motivation
+5. **CTA (è¡ŒåŠ¨å‘¼å”¤)** - Clear next step (follow, share, click Mini-Program)
 
 ### Step 4: Distribution Optimization
 
 Optimize for WeChat's sharing mechanics:
-- **Moments (朋友圈)**: Craft share-worthy pull quotes
-- **Direct Share (转发)**: Provide suggested forwarding text
+- **Moments (æœ‹å‹åœˆ)**: Craft share-worthy pull quotes
+- **Direct Share (è½¬å‘)**: Provide suggested forwarding text
 - **In-article search**: Place keywords for WeChat's article search index
 
 ## Examples
@@ -69,25 +69,25 @@ Optimize for WeChat's sharing mechanics:
 ### Example 1: Tech Company Thought Leadership
 
 ```
-Title: 程序员35岁危机？我和10个技术总监聊了聊，发现一个规律
+Title: ç¨‹åºå‘˜35å²å±æœºï¼Ÿæˆ‘å’Œ10ä¸ªæŠ€æœ¯æ€»ç›‘èŠäº†èŠï¼Œå‘çŽ°ä¸€ä¸ªè§„å¾‹
 Structure:
-  首屏: 35岁真的会失业吗？数据说话...
-  铺垫: 调研背景，10位总监的行业分布
-  核心: 3个关键发现，打破刻板印象
-  高潮: "真正淘汰你的不是年龄，是..."
-  CTA: 关注公众号，回复"职场"获取完整报告
+  é¦–å±: 35å²çœŸçš„ä¼šå¤±ä¸šå—ï¼Ÿæ•°æ®è¯´è¯...
+  é“ºåž«: è°ƒç ”èƒŒæ™¯ï¼Œ10ä½æ€»ç›‘çš„è¡Œä¸šåˆ†å¸ƒ
+  æ ¸å¿ƒ: 3ä¸ªå…³é”®å‘çŽ°ï¼Œæ‰“ç ´åˆ»æ¿å°è±¡
+  é«˜æ½®: "çœŸæ­£æ·˜æ±°ä½ çš„ä¸æ˜¯å¹´é¾„ï¼Œæ˜¯..."
+  CTA: å…³æ³¨å…¬ä¼—å·ï¼Œå›žå¤"èŒåœº"èŽ·å–å®Œæ•´æŠ¥å‘Š
 ```
 
 ### Example 2: E-commerce Product Launch
 
 ```
-Title: 用了这款面霜一个月，同事问我是不是做了医美
+Title: ç”¨äº†è¿™æ¬¾é¢éœœä¸€ä¸ªæœˆï¼ŒåŒäº‹é—®æˆ‘æ˜¯ä¸æ˜¯åšäº†åŒ»ç¾Ž
 Structure:
-  首屏: 真实使用对比图描述
-  铺垫: 皮肤困扰和选品过程
-  核心: 成分分析+使用感受+效果时间线
-  高潮: "最让我惊喜的是第三周..."
-  CTA: 点击小程序链接，限时优惠
+  é¦–å±: çœŸå®žä½¿ç”¨å¯¹æ¯”å›¾æè¿°
+  é“ºåž«: çš®è‚¤å›°æ‰°å’Œé€‰å“è¿‡ç¨‹
+  æ ¸å¿ƒ: æˆåˆ†åˆ†æž+ä½¿ç”¨æ„Ÿå—+æ•ˆæžœæ—¶é—´çº¿
+  é«˜æ½®: "æœ€è®©æˆ‘æƒŠå–œçš„æ˜¯ç¬¬ä¸‰å‘¨..."
+  CTA: ç‚¹å‡»å°ç¨‹åºé“¾æŽ¥ï¼Œé™æ—¶ä¼˜æƒ 
 ```
 
 ## Best Practices
@@ -122,3 +122,4 @@ Structure:
 
 - `xiaohongshu-content-strategist` - For short-form visual content on Xiaohongshu
 - `chinese-market-content-engineer` - For multi-platform Chinese content strategy
+

@@ -1,14 +1,14 @@
----
+﻿---
 name: xiaohongshu-content-strategist
-description: "Create viral Xiaohongshu (小红书) content with platform-native strategy, save-rate optimization, trending formats, and search SEO for China's #1 lifestyle platform."
+description: "Create viral Xiaohongshu (å°çº¢ä¹¦) content with platform-native strategy, save-rate optimization, trending formats, and search SEO for China's #1 lifestyle platform."
 category: marketing
 risk: safe
 source: https://github.com/humaisali
 source_repo: demo112/yunqu-ai-skills
 source_type: community
 date_added: "2026-05-13"
-author: Humais Ali
-tags: [xiaohongshu, chinese-market, content-strategy, social-media, marketing, 红书, 小红书]
+Maintained & Curated by: Humais Ali
+tags: [xiaohongshu, chinese-market, content-strategy, social-media, marketing, çº¢ä¹¦, å°çº¢ä¹¦]
 tools: [claude, cursor, gemini]
 ---
 
@@ -16,7 +16,7 @@ tools: [claude, cursor, gemini]
 
 ## Overview
 
-Expert content strategist for Xiaohongshu (小红书), China's most influential lifestyle and shopping platform with 300M+ monthly active users. Creates platform-native content optimized for the unique Xiaohongshu algorithm, which prioritizes saves over likes. Bilingual Chinese/English output with cultural sensitivity.
+Expert content strategist for Xiaohongshu (å°çº¢ä¹¦), China's most influential lifestyle and shopping platform with 300M+ monthly active users. Creates platform-native content optimized for the unique Xiaohongshu algorithm, which prioritizes saves over likes. Bilingual Chinese/English output with cultural sensitivity.
 
 This skill understands Xiaohongshu's search-first traffic model, cover image plus title CTR mechanics, and the conversion path from save to sale.
 
@@ -40,11 +40,11 @@ Select from proven formats based on the topic:
 
 | Format | Best For | Example |
 |--------|----------|---------|
-| Before/After | Transformations |妆前妆后、装修前后 |
-| Step-by-Step | Tutorials | 5步学会xxx |
-| Comparison | Decisions | A vs B 实测 |
-| Hidden Gems | Discovery | 被低估的xxx |
-| List/Rankings | Quick value | 2025必买的10件 |
+| Before/After | Transformations |å¦†å‰å¦†åŽã€è£…ä¿®å‰åŽ |
+| Step-by-Step | Tutorials | 5æ­¥å­¦ä¼šxxx |
+| Comparison | Decisions | A vs B å®žæµ‹ |
+| Hidden Gems | Discovery | è¢«ä½Žä¼°çš„xxx |
+| List/Rankings | Quick value | 2025å¿…ä¹°çš„10ä»¶ |
 
 ### Step 3: Generate the Content Package
 
@@ -67,19 +67,19 @@ Apply these ranking factors in priority order:
 
 ### Example 1: Beauty Product Review
 
-Title: 用了28天，皮肤真的变好了｜实测这款平价精华
+Title: ç”¨äº†28å¤©ï¼Œçš®è‚¤çœŸçš„å˜å¥½äº†ï½œå®žæµ‹è¿™æ¬¾å¹³ä»·ç²¾åŽ
 Cover: Before/After face photo with product in corner, soft pink overlay
-Body: 这款精华我用了整整28天，今天来交作业...
-Hashtags: #平价护肤 #精华推荐 #28天打卡
-Seed Comment: "姐妹们，我油皮可以用吗？"
+Body: è¿™æ¬¾ç²¾åŽæˆ‘ç”¨äº†æ•´æ•´28å¤©ï¼Œä»Šå¤©æ¥äº¤ä½œä¸š...
+Hashtags: #å¹³ä»·æŠ¤è‚¤ #ç²¾åŽæŽ¨è #28å¤©æ‰“å¡
+Seed Comment: "å§å¦¹ä»¬ï¼Œæˆ‘æ²¹çš®å¯ä»¥ç”¨å—ï¼Ÿ"
 
 ### Example 2: Travel Destination
 
-Title: 上海被低估的咖啡馆！拍照绝了
+Title: ä¸Šæµ·è¢«ä½Žä¼°çš„å’–å•¡é¦†ï¼æ‹ç…§ç»äº†
 Cover: Cafe interior shot with warm tones, location pin overlay
-Body: 周末不想人挤人？这家藏在法租界的小店...
-Hashtags: #上海咖啡 #周末去哪 #小众探店
-Seed Comment: "地址在哪里呀？"
+Body: å‘¨æœ«ä¸æƒ³äººæŒ¤äººï¼Ÿè¿™å®¶è—åœ¨æ³•ç§Ÿç•Œçš„å°åº—...
+Hashtags: #ä¸Šæµ·å’–å•¡ #å‘¨æœ«åŽ»å“ª #å°ä¼—æŽ¢åº—
+Seed Comment: "åœ°å€åœ¨å“ªé‡Œå‘€ï¼Ÿ"
 
 ## Best Practices
 
@@ -115,3 +115,4 @@ Seed Comment: "地址在哪里呀？"
 
 - `wechat-official-account-strategist` - For long-form content strategy on WeChat
 - `chinese-market-content-engineer` - For multi-platform Chinese content strategy
+

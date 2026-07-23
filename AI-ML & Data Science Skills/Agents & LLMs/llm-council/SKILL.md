@@ -1,4 +1,4 @@
----
+﻿---
 name: llm-council
 description: "Run Fireworks-hosted open-weight model councils that compare responses and synthesize a final answer."
 allowed-tools: Read, Write, Bash, AskUserQuestion
@@ -8,7 +8,7 @@ source: https://github.com/humaisali
 source_repo: "dair-ai/dair-academy-plugins"
 source_type: "official"
 date_added: "2026-06-19"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: "MIT"
 license_source: https://github.com/humaisali
 tags:
@@ -602,3 +602,4 @@ PYEOF
 - Requires the upstream tool, account, API key, or local setup when the workflow names one.
 - Does not authorize destructive, production, paid, or external-message actions without explicit user approval.
 - Validate generated artifacts or recommendations against the user's real sources before treating them as final.
+

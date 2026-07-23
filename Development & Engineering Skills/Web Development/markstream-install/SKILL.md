@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-install
 description: "Install and configure Markstream streaming Markdown renderers for Vue, React, Svelte, Angular, Nuxt, Next.js, and Vue 2 applications."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-19"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [markdown, streaming, vue, react, svelte, angular, ai-chat]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -187,3 +187,4 @@ Setting `final=true` tells the parser that the document is complete; disabling p
 - [Performance](https://markstream.simonhe.me/guide/performance)
 - [Troubleshooting](https://markstream.simonhe.me/guide/troubleshooting)
 - [Component overrides](https://markstream.simonhe.me/guide/component-overrides)
+

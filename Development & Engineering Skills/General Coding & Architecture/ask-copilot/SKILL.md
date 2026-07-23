@@ -1,4 +1,4 @@
----
+﻿---
 name: ask-copilot
 description: "Use GitHub Copilot CLI in non-interactive mode to ask questions, review code, or generate snippets without manual interaction."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: cshara1/antigravity-awesome-skills
 source_type: self
 date_added: "2026-07-08"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [copilot, github, cli, review, prompt]
 tools: [claude, cursor, gemini]
 ---
@@ -80,14 +80,14 @@ copilot -p "Summarize the prior advice in this session." -s --resume "my-session
 
 ## Best Practices
 
-- ✅ **Do:** Ask for user consent before uploading any project files to third-party endpoints.
-- ✅ **Do:** Send only the approved, redacted excerpt; keep Copilot out of the broader workspace.
-- ✅ **Do:** Keep untrusted values in quoted variables or command input, never in shell source.
-- ✅ **Do:** Use `-s` (silent) to suppress metadata and statistics, leaving only clean output.
-- ❌ **Don't:** Automatically trigger this skill for background second opinions without the user's explicit ask.
-- ❌ **Don't:** Send files, logs, environment details, or private repository context to Copilot without explicit approval.
-- ❌ **Don't:** use `--allow-all-paths` for a review, or interpolate untrusted text inside `copilot -p "..."`.
-- ❌ **Don't:** Run `copilot` without permission-bypass flags in background tasks, as it will hang waiting for interactive input.
+- âœ… **Do:** Ask for user consent before uploading any project files to third-party endpoints.
+- âœ… **Do:** Send only the approved, redacted excerpt; keep Copilot out of the broader workspace.
+- âœ… **Do:** Keep untrusted values in quoted variables or command input, never in shell source.
+- âœ… **Do:** Use `-s` (silent) to suppress metadata and statistics, leaving only clean output.
+- âŒ **Don't:** Automatically trigger this skill for background second opinions without the user's explicit ask.
+- âŒ **Don't:** Send files, logs, environment details, or private repository context to Copilot without explicit approval.
+- âŒ **Don't:** use `--allow-all-paths` for a review, or interpolate untrusted text inside `copilot -p "..."`.
+- âŒ **Don't:** Run `copilot` without permission-bypass flags in background tasks, as it will hang waiting for interactive input.
 
 ## Limitations
 
@@ -110,3 +110,4 @@ copilot -p "Summarize the prior advice in this session." -s --resume "my-session
 ## Related Skills
 
 - `@cli-assistant` - How to interact with CLI tools in general.
+

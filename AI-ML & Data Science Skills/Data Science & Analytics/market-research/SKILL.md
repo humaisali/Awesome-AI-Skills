@@ -1,8 +1,8 @@
----
+﻿---
 name: market-research
-description: Use when doing upstream market-research methodology — sizing a market as TAM/SAM/SOM computed BOTH top-down and bottoms-up (never a single unsourced number), planning a survey sample size with finite-population correction and per-segment minimums, or scoring candidate market segments against Kotler's measurable/substantial/accessible/differentiable/actionable criteria. Outputs always show the method and the assumptions. For market-research analysts and product-marketing at the sizing/survey/segmentation moment. Distinct from marketing-skill (campaign analytics, attribution, demand-gen) — this is the evidence-building methodology, not live-campaign optimization.
+description: Use when doing upstream market-research methodology â€” sizing a market as TAM/SAM/SOM computed BOTH top-down and bottoms-up (never a single unsourced number), planning a survey sample size with finite-population correction and per-segment minimums, or scoring candidate market segments against Kotler's measurable/substantial/accessible/differentiable/actionable criteria. Outputs always show the method and the assumptions. For market-research analysts and product-marketing at the sizing/survey/segmentation moment. Distinct from marketing-skill (campaign analytics, attribution, demand-gen) â€” this is the evidence-building methodology, not live-campaign optimization.
 version: 2.9.0
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: MIT
 tags: [research-ops, market-research, tam-sam-som, market-sizing, survey, sampling, segmentation, competitive-intelligence]
 compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
@@ -18,9 +18,9 @@ Market-research analysts, product marketers, and strategy teams need rigorous ev
 
 Three deterministic tools:
 
-1. `market_sizer.py` — Computes TAM/SAM/SOM by **both** top-down and bottoms-up methods side-by-side, reports the divergence, and flags failed triangulation. Never returns a single number.
-2. `sample_size_planner.py` — Survey sample size from confidence, margin of error, and expected proportion, with the finite-population correction and **per-segment minimums** (a survey powered overall is not powered per reported segment).
-3. `segmentation_scorer.py` — Scores candidate segments against Kotler's five criteria and enforces a substantiality + accessibility gate; a slice that is too small or unreachable is dropped.
+1. `market_sizer.py` â€” Computes TAM/SAM/SOM by **both** top-down and bottoms-up methods side-by-side, reports the divergence, and flags failed triangulation. Never returns a single number.
+2. `sample_size_planner.py` â€” Survey sample size from confidence, margin of error, and expected proportion, with the finite-population correction and **per-segment minimums** (a survey powered overall is not powered per reported segment).
+3. `segmentation_scorer.py` â€” Scores candidate segments against Kotler's five criteria and enforces a substantiality + accessibility gate; a slice that is too small or unreachable is dropped.
 
 ## When to use
 
@@ -31,15 +31,15 @@ Invoke this skill when:
 - You have a list of candidate segments and need to know which are real markets vs demographic slices.
 - You are synthesizing competitive intelligence and need a methodological backbone.
 
-**Do NOT use this skill to**: measure a live campaign (attribution, ROAS, CPA → `marketing-skill/campaign-analytics`), build demand-gen / paid-media plans (`marketing-skill/marketing-demand-acquisition`), set positioning / GTM strategy (`marketing-skill/marketing-strategy-pmm`), or set pricing (`commercial/pricing-strategist`).
+**Do NOT use this skill to**: measure a live campaign (attribution, ROAS, CPA â†’ `marketing-skill/campaign-analytics`), build demand-gen / paid-media plans (`marketing-skill/marketing-demand-acquisition`), set positioning / GTM strategy (`marketing-skill/marketing-strategy-pmm`), or set pricing (`commercial/pricing-strategist`).
 
 ## Workflow
 
-1. **Write the brief** — Fill `assets/market_research_brief_template.md` (objective, the decision this informs, sizing approach, sampling plan, assumptions register).
-2. **Size the market** — Run `market_sizer.py --input market.json --method both --profile {b2b-saas|consumer|enterprise|marketplace|hardware|services}`. Reconcile the top-down/bottoms-up delta before quoting anything.
-3. **Plan the survey** — Run `sample_size_planner.py --input survey.json`. Fund the per-segment floors, not just the overall n.
-4. **Score the segments** — Run `segmentation_scorer.py --input segments.json --profile <same>`. Drop segments failing the substantiality/accessibility gate.
-5. **Assemble the evidence pack** — Combine into a brief. Every number carries its method + assumptions + confidence.
+1. **Write the brief** â€” Fill `assets/market_research_brief_template.md` (objective, the decision this informs, sizing approach, sampling plan, assumptions register).
+2. **Size the market** â€” Run `market_sizer.py --input market.json --method both --profile {b2b-saas|consumer|enterprise|marketplace|hardware|services}`. Reconcile the top-down/bottoms-up delta before quoting anything.
+3. **Plan the survey** â€” Run `sample_size_planner.py --input survey.json`. Fund the per-segment floors, not just the overall n.
+4. **Score the segments** â€” Run `segmentation_scorer.py --input segments.json --profile <same>`. Drop segments failing the substantiality/accessibility gate.
+5. **Assemble the evidence pack** â€” Combine into a brief. Every number carries its method + assumptions + confidence.
 
 ## Scripts
 
@@ -53,7 +53,7 @@ All three: stdlib-only, `--help`, `--sample`, `--output {human,json}`.
 
 ## Onboarding & customization
 
-Run the onboarding questionnaire **once before you start** — it captures your defaults so every tool in this skill is pre-configured. Customization is the point: the answers actually change tool behavior.
+Run the onboarding questionnaire **once before you start** â€” it captures your defaults so every tool in this skill is pre-configured. Customization is the point: the answers actually change tool behavior.
 
 ```bash
 python3 scripts/onboard.py            # interactive (also: --defaults, --set key=value, --reset)
@@ -62,7 +62,7 @@ python3 scripts/onboard.py --show     # see the questions + current effective co
 
 Answers are saved to `~/.config/research-ops/market-research.json` (global) or `./.research-ops/market-research.json` (`--scope project`) and are read automatically by `config_loader.py`. They set the default market **profile**, the default survey **confidence** and **margin of error**, and the default **sizing method**. CLI flags always override saved config; `RESEARCH_OPS_NO_CONFIG=1` ignores it.
 
-**The four questions:** market profile · survey confidence · margin of error · sizing method.
+**The four questions:** market profile Â· survey confidence Â· margin of error Â· sizing method.
 
 ## Optimize with autoresearch (opt-in)
 
@@ -76,20 +76,20 @@ This skill ships an **isolated, opt-in** bridge to `engineering/autoresearch-age
 /ar:loop custom/tam-triangulation
 ```
 
-Isolated: no hard dependency — autoresearch runs only on demand, and the loop edits `market.json`, never the evaluator.
+Isolated: no hard dependency â€” autoresearch runs only on demand, and the loop edits `market.json`, never the evaluator.
 
 ## References
 
-- `references/market_sizing_canon.md` — TAM/SAM/SOM frameworks (Bessemer, a16z); top-down vs bottoms-up; Fermi estimation; market-model conventions; common sizing fallacies.
-- `references/survey_methodology.md` — Cochran *Sampling Techniques*; Dillman *Tailored Design Method*; Groves *Survey Methodology*; question-wording bias (Schuman & Presser); AAPOR standards.
-- `references/segmentation_and_ci.md` — Kotler segmentation criteria; needs-based vs firmographic; Porter Five Forces; SCIP ethics; Christensen JTBD; conjoint/MaxDiff primer.
+- `references/market_sizing_canon.md` â€” TAM/SAM/SOM frameworks (Bessemer, a16z); top-down vs bottoms-up; Fermi estimation; market-model conventions; common sizing fallacies.
+- `references/survey_methodology.md` â€” Cochran *Sampling Techniques*; Dillman *Tailored Design Method*; Groves *Survey Methodology*; question-wording bias (Schuman & Presser); AAPOR standards.
+- `references/segmentation_and_ci.md` â€” Kotler segmentation criteria; needs-based vs firmographic; Porter Five Forces; SCIP ethics; Christensen JTBD; conjoint/MaxDiff primer.
 
 ## Assumptions
 
-- The sizer reports both methods but cannot validate your inputs — a top-down "1% of a $40B market" is only as good as the cited source and the serviceable fraction.
+- The sizer reports both methods but cannot validate your inputs â€” a top-down "1% of a $40B market" is only as good as the cited source and the serviceable fraction.
 - Sample-size uses the conservative p=0.5 (maximum variance) unless you supply an expected proportion.
 - Segment scores are inputs you provide; the tool enforces the gates and the weighting, it does not gather the underlying evidence.
-- Competitive intelligence must follow the SCIP code of ethics — no misrepresentation, no protected information.
+- Competitive intelligence must follow the SCIP code of ethics â€” no misrepresentation, no protected information.
 
 ## Anti-patterns
 
@@ -123,15 +123,15 @@ The sample market triangulates a ~$1.47B top-down SAM against the bottoms-up fig
 
 Walked one at a time by `/cs:grill-research-ops` or the orchestrator. Recommended answer + canon citation per question. Never bundled.
 
-1. **"Is your TAM top-down or bottoms-up — and have you computed it both ways to triangulate?"**
+1. **"Is your TAM top-down or bottoms-up â€” and have you computed it both ways to triangulate?"**
    Recommended: both; reconcile the delta before quoting a number.
    Canon: Bessemer / a16z market-sizing; Fermi estimation.
 
-2. **"What decision will this market size actually drive — and at what precision does it matter?"**
+2. **"What decision will this market size actually drive â€” and at what precision does it matter?"**
    Recommended: size to the decision's tolerance, not to a spurious-precision number.
    Canon: market-model conventions (Gartner/Forrester); decision-driven analysis.
 
-3. **"What's your target margin of error and confidence — and does your sample clear it per segment, not just overall?"**
+3. **"What's your target margin of error and confidence â€” and does your sample clear it per segment, not just overall?"**
    Recommended: power each reported segment, not only the total.
    Canon: Cochran *Sampling Techniques*; AAPOR standards.
 
@@ -139,8 +139,9 @@ Walked one at a time by `/cs:grill-research-ops` or the orchestrator. Recommende
    Recommended: pre-test the wording; cite the bias source.
    Canon: Schuman & Presser; Dillman *Tailored Design Method*.
 
-5. **"Do your segments pass measurable / substantial / accessible / actionable — or are they just demographic slices?"**
+5. **"Do your segments pass measurable / substantial / accessible / actionable â€” or are they just demographic slices?"**
    Recommended: drop segments that fail substantiality or accessibility.
    Canon: Kotler segmentation criteria.
 
-Walk depth-first. Lock 1-2 before opening 3-5. After all are answered, invoke `market_sizer.py` → `sample_size_planner.py` → `segmentation_scorer.py`.
+Walk depth-first. Lock 1-2 before opening 3-5. After all are answered, invoke `market_sizer.py` â†’ `sample_size_planner.py` â†’ `segmentation_scorer.py`.
+

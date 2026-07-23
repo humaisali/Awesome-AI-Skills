@@ -1,4 +1,4 @@
----
+﻿---
 name: linkedin-post-writer
 description: "Draft LinkedIn posts from 16 tested hook formulas mapped to engagement goals (comments, reposts, likes, saves), with 2026 algorithm formatting rules and an AI-tell scrub pass before publishing."
 category: marketing
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: sergebulaev/linkedin-skills
 source_type: community
 date_added: "2026-07-06"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [linkedin, copywriting, hooks, social-media, personal-brand, content-marketing]
 tools: [claude, codex, cursor, gemini]
 license: "MIT"
@@ -120,14 +120,14 @@ Agent: Comment-earners are F4 Confession, F10 Contrarian, F12 Permission Slip.
 
 ## Best Practices
 
-- ✅ Pick the formula by engagement goal first, topic second
-- ✅ Lead with a real failure or a specific number in the first 3 lines
-- ✅ Include one moment of genuine vulnerability or concrete stakes; pure insight posts underperform in 2026
-- ❌ Don't blend two hook formulas in one post; it dilutes both
-- ❌ Don't use F5 Self-Proving Meta unless the user will actually keep the promise
-- ❌ Don't pair F7 Money Ledger with rounded or invented numbers; readers notice
-- ❌ Don't open with an all-caps line ("THIS CHANGED EVERYTHING")
-- ❌ Don't frame LinkedIn as inferior inside a LinkedIn post
+- âœ… Pick the formula by engagement goal first, topic second
+- âœ… Lead with a real failure or a specific number in the first 3 lines
+- âœ… Include one moment of genuine vulnerability or concrete stakes; pure insight posts underperform in 2026
+- âŒ Don't blend two hook formulas in one post; it dilutes both
+- âŒ Don't use F5 Self-Proving Meta unless the user will actually keep the promise
+- âŒ Don't pair F7 Money Ledger with rounded or invented numbers; readers notice
+- âŒ Don't open with an all-caps line ("THIS CHANGED EVERYTHING")
+- âŒ Don't frame LinkedIn as inferior inside a LinkedIn post
 
 ## Limitations
 
@@ -157,3 +157,4 @@ Agent: Comment-earners are F4 Confession, F10 Contrarian, F12 Permission Slip.
 
 - [Source repo with all 16 formula skeletons and worked examples](https://github.com/sergebulaev/linkedin-skills)
 - [Full 10-skill bundle install (Claude Code / Codex plugin)](https://github.com/sergebulaev/linkedin-skills#install)
+

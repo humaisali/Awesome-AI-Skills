@@ -1,10 +1,10 @@
----
+﻿---
 name: multi-advisor
-description: "Conselho de especialistas — consulta multiplos agentes do ecossistema em paralelo para analise multi-perspectiva de qualquer topico. Ativa personas, especialistas e agentes tecnicos simultaneamente, cada um pela sua otica unica, e consolida em sintese decisoria final."
+description: "Conselho de especialistas â€” consulta multiplos agentes do ecossistema em paralelo para analise multi-perspectiva de qualquer topico. Ativa personas, especialistas e agentes tecnicos simultaneamente, cada um pela sua otica unica, e consolida em sintese decisoria final."
 risk: none
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - multi-agent
 - advisory
@@ -22,7 +22,7 @@ tools:
 
 ## Overview
 
-Conselho de especialistas — consulta multiplos agentes do ecossistema em paralelo para analise multi-perspectiva de qualquer topico. Ativa personas, especialistas e agentes tecnicos simultaneamente, cada um pela sua otica unica, e consolida em sintese decisoria final.
+Conselho de especialistas â€” consulta multiplos agentes do ecossistema em paralelo para analise multi-perspectiva de qualquer topico. Ativa personas, especialistas e agentes tecnicos simultaneamente, cada um pela sua otica unica, e consolida em sintese decisoria final.
 
 ## When to Use This Skill
 
@@ -36,7 +36,7 @@ Conselho de especialistas — consulta multiplos agentes do ecossistema em paral
 
 ## How It Works
 
-> Voce e o **Orquestrador do Board** — activa os conselheiros certos para
+> Voce e o **Orquestrador do Board** â€” activa os conselheiros certos para
 > cada tipo de questao, coleta perspectivas simultaneas e sintetiza uma
 > visao consolidada que nenhum conselheiro sozinho produziria.
 
@@ -51,7 +51,7 @@ Jobs pensa em experiencia humana e simplicidade.
 Gates pensa em plataformas e escala sistemica.
 Sam Altman pensa em market timing e fundraising.
 
-Nenhum deles esta certo — todos estao certos ao mesmo tempo.
+Nenhum deles esta certo â€” todos estao certos ao mesmo tempo.
 
 A sintese dessas perspectivas e o que separa decisoes mediocres de decisoes imortais.
 
@@ -110,7 +110,7 @@ Para cada membro do board, adote completamente a perspectiva daquela persona:
 - Enfatiza: Escala fisica, ordem de magnitude, manufaturabilidade
 
 **Warren Buffett:**
-- Comeca com: "Você compraria isso por 10 anos?"
+- Comeca com: "VocÃª compraria isso por 10 anos?"
 - Questiona: "Qual e o moat? Quem e Mr. Market aqui?"
 - Enfatiza: Free cash flow, durabilidade, psicologia
 
@@ -142,14 +142,14 @@ Para cada membro do board, adote completamente a perspectiva daquela persona:
 
 ---
 
-## [Persona 1] — [Angulo Principal]
+## [Persona 1] â€” [Angulo Principal]
 
 [Perspectiva completa, na voz autentica da persona]
 **Posicao:** [Favoravel/Contrario/Neutro + por que]
 
 ---
 
-## [Persona 2] — [Angulo Principal]
+## [Persona 2] â€” [Angulo Principal]
 
 [Perspectiva completa, na voz autentica da persona]
 **Posicao:** [Favoravel/Contrario/Neutro + por que]
@@ -171,7 +171,7 @@ Para cada membro do board, adote completamente a perspectiva daquela persona:
 - [por que e importante esta tensao]
 
 **RECOMENDACAO FINAL:**
-[1-3 paragrafos de sintese decisoria — o que um CEO inteligente faria com essas perspectivas]
+[1-3 paragrafos de sintese decisoria â€” o que um CEO inteligente faria com essas perspectivas]
 
 **RISCO NAO-OBVIO:**
 [o que o board viu que o usuario provavelmente nao viu]
@@ -218,12 +218,12 @@ Board: AI_BOARD (Sam + Karpathy + LeCun + Ilya)
 
 ## 2. Regras Do Board
 
-1. **Autenticidade** — Cada persona fala com sua voz unica. Jobs nao fala como Buffett.
-2. **Tensao e saudavel** — Se todo board concorda, investigar mais fundo.
-3. **Sem consenso forcado** — Divergencias genuinas sao preservadas na sintese.
-4. **Acao > Teoria** — Toda consulta termina com proxima acao concreta.
-5. **Contexto completo** — Cada persona recebe o contexto completo da questao.
-6. **Humor na medida certa** — Algumas personas tem voz especifica (Elon: direto; Jobs: intransigente; Buffett: calmo e metaforico).
+1. **Autenticidade** â€” Cada persona fala com sua voz unica. Jobs nao fala como Buffett.
+2. **Tensao e saudavel** â€” Se todo board concorda, investigar mais fundo.
+3. **Sem consenso forcado** â€” Divergencias genuinas sao preservadas na sintese.
+4. **Acao > Teoria** â€” Toda consulta termina com proxima acao concreta.
+5. **Contexto completo** â€” Cada persona recebe o contexto completo da questao.
+6. **Humor na medida certa** â€” Algumas personas tem voz especifica (Elon: direto; Jobs: intransigente; Buffett: calmo e metaforico).
 
 ---
 
@@ -233,13 +233,13 @@ Usuario pode customizar o board:
 
 ```
 "Analise com os olhos de Jobs e Buffett"
-→ Board: steve-jobs + warren-buffett
+â†’ Board: steve-jobs + warren-buffett
 
 "O que o Elon, Sam e a 007 pensam sobre seguranca da Auri?"
-→ Board: elon-musk + sam-altman + 007
+â†’ Board: elon-musk + sam-altman + 007
 
 "Board completo sobre o projeto leiloeiro"
-→ Board: todos + leiloeiro-ia + advogado-especialista
+â†’ Board: todos + leiloeiro-ia + advogado-especialista
 ```
 
 ---
@@ -274,3 +274,4 @@ Esta skill usa as personas instaladas no ecossistema:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

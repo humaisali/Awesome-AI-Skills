@@ -1,4 +1,4 @@
----
+﻿---
 name: telegram-bot-messaging
 description: "Send Telegram messages, files, and alerts via bot API; ask questions with inline buttons and wait for the answer. Supports multiple bots, named chat targets, and CI/cron/hook notifications."
 category: productivity
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: sanjay3290/ai-skills
 source_type: community
 date_added: "2026-07-09"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [telegram, notifications, bots, approvals]
 tools: [claude, cursor, gemini]
 license: "Apache-2.0"
@@ -23,7 +23,7 @@ license_source: https://github.com/humaisali
 - Use when wiring "notify me when done" or "ask me before proceeding" behavior into automated sessions
 
 Send updates, alerts, and files to Telegram; read replies; run ask-and-wait
-approval flows. Pure bash + curl + jq — no install beyond a bot token.
+approval flows. Pure bash + curl + jq â€” no install beyond a bot token.
 
 First run: `bash scripts/telegram.sh setup` (guided BotFather walkthrough).
 
@@ -37,7 +37,7 @@ do not echo it, commit it, or place it in shell history.
 ## Commands
 
 ```bash
-bash scripts/telegram.sh send "Deploy finished ✅"                    # basic alert
+bash scripts/telegram.sh send "Deploy finished âœ…"                    # basic alert
 bash scripts/telegram.sh send "low priority" --silent                # no notification sound
 bash scripts/telegram.sh send "*bold* alert" --format md             # MarkdownV2 (falls back to plain)
 bash scripts/telegram.sh send "hi" --to alerts --bot work            # named target + named bot
@@ -73,9 +73,9 @@ Ping your phone when Claude needs input, and when it finishes:
 {
   "hooks": {
     "Notification": [{"hooks": [{"type": "command",
-      "command": "bash ~/.claude/skills/telegram/scripts/telegram.sh send \"🔔 Claude needs input in $(basename \\\"$PWD\\\")\""}]}],
+      "command": "bash ~/.claude/skills/telegram/scripts/telegram.sh send \"ðŸ”” Claude needs input in $(basename \\\"$PWD\\\")\""}]}],
     "Stop": [{"hooks": [{"type": "command",
-      "command": "bash ~/.claude/skills/telegram/scripts/telegram.sh send \"✅ Claude finished in $(basename \\\"$PWD\\\")\" --silent"}]}]
+      "command": "bash ~/.claude/skills/telegram/scripts/telegram.sh send \"âœ… Claude finished in $(basename \\\"$PWD\\\")\" --silent"}]}]
   }
 }
 ```
@@ -99,3 +99,4 @@ fi
   stdin rather than process arguments; rotate a token if exposure is suspected.
 - Do not use the examples to create unattended notifications or approval flows without the
   user's explicit, current authorization.
+

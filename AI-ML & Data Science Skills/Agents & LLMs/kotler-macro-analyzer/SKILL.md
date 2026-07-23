@@ -1,4 +1,4 @@
----
+﻿---
 name: kotler-macro-analyzer
 description: "Professional PESTEL/SWOT analysis agent based on Kotler's methodology for strategic market audits."
 category: business-strategy
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-04-17"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [marketing, economics, strategy, kotler, pestel]
 tools: [claude, cursor]
 ---
@@ -14,7 +14,7 @@ tools: [claude, cursor]
 # Kotler Macro-Environment Analyzer
 
 ## Overview
-This skill transforms the agent into a senior strategic consultant specializing in Philip Kotler’s macro-marketing environment analysis. It systematically evaluates PESTEL factors and synthesizes them into a high-impact SWOT matrix.
+This skill transforms the agent into a senior strategic consultant specializing in Philip Kotlerâ€™s macro-marketing environment analysis. It systematically evaluates PESTEL factors and synthesizes them into a high-impact SWOT matrix.
 
 ## When to Use This Skill
 - Use when conducting market entry research or a periodic strategic audit.
@@ -38,11 +38,12 @@ Macro-trends are mapped to Opportunities and Threats, while internal user data i
 "Analyze the current macro-environment for a retail chain in Ukraine. Identify threats from inflation and opportunities from shifting consumer displacement trends."
 
 ## Best Practices
-- ✅ Always use search tools to verify specific economic indicators (e.g., current central bank rates).
-- ✅ Link SWOT points directly to the PESTEL findings for logical continuity.
-- ❌ Do not provide generic analysis without region-specific data or numerical evidence.
+- âœ… Always use search tools to verify specific economic indicators (e.g., current central bank rates).
+- âœ… Link SWOT points directly to the PESTEL findings for logical continuity.
+- âŒ Do not provide generic analysis without region-specific data or numerical evidence.
 
 ## Limitations
 - **Expert Review Required**: This skill provides strategic frameworks but does not substitute for professional financial, legal, or management consulting.
 - **Data Freshness**: The quality of the output depends on the real-time availability of data from search tools; results may vary in rapidly shifting economic environments.
 - **Scope**: The analysis focuses on macro-level factors and does not include detailed internal operational auditing.
+

@@ -1,13 +1,13 @@
----
+﻿---
 name: socialclaw
-description: "Agent-first social media publishing skill — schedule and publish posts across 13 platforms (X, LinkedIn, Instagram, Facebook Pages, TikTok, Discord, Telegram, YouTube, Reddit, WordPress, Pinterest) via a single workspace API key."
+description: "Agent-first social media publishing skill â€” schedule and publish posts across 13 platforms (X, LinkedIn, Instagram, Facebook Pages, TikTok, Discord, Telegram, YouTube, Reddit, WordPress, Pinterest) via a single workspace API key."
 category: marketing
 risk: critical
 source: https://github.com/humaisali
 source_repo: ndesv21/socialclaw
 source_type: community
 date_added: "2026-05-25"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [social-media, publishing, scheduling, marketing, twitter, linkedin, instagram, tiktok, discord, telegram, reddit, wordpress, pinterest]
 tools: [claude]
 license: "MIT"
@@ -18,11 +18,11 @@ plugin:
     claude: blocked
 ---
 
-# SocialClaw — Social Media Publisher
+# SocialClaw â€” Social Media Publisher
 
 ## Overview
 
-SocialClaw is an agent-first social media publishing skill that lets you schedule and publish posts across 13 platforms using a single workspace API key. No per-platform OAuth setup required — one key covers everything.
+SocialClaw is an agent-first social media publishing skill that lets you schedule and publish posts across 13 platforms using a single workspace API key. No per-platform OAuth setup required â€” one key covers everything.
 
 ## When to Use
 
@@ -110,3 +110,4 @@ Website: [getsocialclaw.com](https://getsocialclaw.com)
 - Treat every publish, schedule, delete, or account-changing action as state-changing: show the target platforms, content, media, and timing, then wait for explicit user confirmation before calling the service.
 - Platform availability, rate limits, analytics fields, and scheduling behavior depend on the upstream SocialClaw service.
 - This skill describes the publishing workflow; it does not replace platform-specific compliance, brand review, or legal approval before posting.
+

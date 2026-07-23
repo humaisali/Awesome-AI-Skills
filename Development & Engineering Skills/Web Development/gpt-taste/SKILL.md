@@ -1,4 +1,4 @@
----
+﻿---
 name: gpt-taste
 description: "Use when generating elite GSAP-heavy frontend pages with strict AIDA structure, wide hero typography, and gapless bento grids."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Leonxlnx/taste-skill
 source_type: community
 date_added: "2026-04-17"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [frontend, design, gsap, motion]
 tools: [claude, cursor, codex, antigravity]
 ---
@@ -94,3 +94,4 @@ Before writing ANY React/UI code, you MUST output a `<design_plan>` block contai
 4. **Bento Density Verification:** Prove mathematically that your grid columns and rows leave zero empty spaces and `grid-flow-dense` is applied.
 5. **Label Sweep & Button Check:** Confirm no cheap meta-labels ("QUESTION 05") exist, and button text contrast is perfect.
 Only output the UI code after this rigorous verification is complete.
+

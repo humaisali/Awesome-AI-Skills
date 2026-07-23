@@ -1,11 +1,11 @@
----
+﻿---
 name: k6-load-testing
 description: "Comprehensive k6 load testing skill for API, browser, and scalability testing. Write realistic load scenarios, analyze results, and integrate with CI/CD."
 category: testing
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [k6, load-testing, performance, api-testing, ci-cd]
 tools: [claude, cursor, gemini]
 ---
@@ -630,3 +630,4 @@ export default function () {
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

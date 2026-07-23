@@ -1,4 +1,4 @@
----
+﻿---
 name: codex-profiles
 description: "Use codex-profiles to run Codex CLI or Codex Desktop with isolated CODEX_HOME profiles for separate accounts, projects, and local state."
 category: productivity
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Ducksss/codex-profiles
 source_type: community
 date_added: "2026-07-08"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [codex, codex-cli, profiles, code-home, account-isolation, desktop]
 tools: [codex]
 license: "MIT"
@@ -168,3 +168,4 @@ CODEX_HOME="$HOME/.codex-work" codex exec "review this change"
 - `@environment-setup-guide` - Use when installing or documenting local development tools.
 - `@codex-maintenance` - Use when maintaining local Codex Desktop, MCP, plugin, or cache surfaces.
 - `@filesystem-context` - Use when reasoning about local files, config paths, and workspace boundaries.
+

@@ -1,9 +1,9 @@
----
+﻿---
 name: smtp-penetration-testing
 description: "Conduct comprehensive security assessments of SMTP (Simple Mail Transfer Protocol) servers to identify vulnerabilities including open relays, user enumeration, weak authentication, and misconfiguration."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -58,11 +58,11 @@ msfconsole
 ### Phase 1: SMTP Architecture Understanding
 
 ```
-Components: MTA (transfer) → MDA (delivery) → MUA (client)
+Components: MTA (transfer) â†’ MDA (delivery) â†’ MUA (client)
 
 Ports: 25 (SMTP), 465 (SMTPS), 587 (submission), 2525 (alternative)
 
-Workflow: Sender MUA → Sender MTA → DNS/MX → Recipient MTA → MDA → Recipient MUA
+Workflow: Sender MUA â†’ Sender MTA â†’ DNS/MX â†’ Recipient MTA â†’ MDA â†’ Recipient MUA
 ```
 
 ### Phase 2: SMTP Service Discovery
@@ -504,3 +504,4 @@ nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@atta
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

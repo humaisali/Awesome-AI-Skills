@@ -1,4 +1,4 @@
----
+﻿---
 name: taisly-social-media-posting
 description: "Use Taisly Agent Kit to prepare and publish approved short-form video posts across TikTok, Instagram Reels, YouTube Shorts, X, and Facebook."
 category: marketing
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: taisly/agent
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [social-media, video, publishing, mcp, cli, sdk, tiktok, instagram, youtube-shorts, x, facebook]
 tools: [codex, claude]
 license: "MIT"
@@ -77,3 +77,4 @@ Set up a Taisly MCP publishing workflow for approved video assets in ./campaign.
 ## Source
 
 - GitHub: [taisly/agent](https://github.com/taisly/agent)
+

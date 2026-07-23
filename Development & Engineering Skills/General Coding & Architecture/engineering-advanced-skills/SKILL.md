@@ -1,8 +1,8 @@
----
+﻿---
 name: "engineering-advanced-skills"
 description: "Index of 37 advanced engineering agent skills for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. Use when browsing or choosing among the POWERFUL-tier engineering skills: agent design, RAG, MCP servers, CI/CD, database design, observability, security auditing, changelog/release automation, reliability (SLO/chaos/flags/operators), platform ops."
 version: 2.9.0
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: MIT
 tags:
   - engineering
@@ -60,7 +60,7 @@ npx agent-skills-cli add alirezarezvani/claude-skills/engineering
 | MCP Server Builder | `mcp-server-builder/` | MCP tool creation |
 | Migration Architect | `migration-architect/` | System migration planning |
 | Monorepo Navigator | `monorepo-navigator/` | Monorepo tooling |
-| Observability Designer | `observability-designer/` | Dashboards, alert noise (SLOs → slo-architect) |
+| Observability Designer | `observability-designer/` | Dashboards, alert noise (SLOs â†’ slo-architect) |
 | Performance Profiler | `performance-profiler/` | CPU, memory, load profiling |
 | PR Review Expert | `pr-review-expert/` | Pull request analysis |
 | RAG Architect | `rag-architect/` | RAG design, chunking, retrieval evaluation |
@@ -74,11 +74,12 @@ npx agent-skills-cli add alirezarezvani/claude-skills/engineering
 | Spec-Driven Workflow | `spec-driven-workflow/` | Spec-first development gates |
 | SQL Database Assistant | `sql-database-assistant/` | Query optimization, 4 dialects |
 | TC Tracker | `tc-tracker/` | Task context lifecycle + handoffs |
-| Tech Debt Tracker | `tech-debt-tracker/` | Debt scan → prioritize → dashboard |
+| Tech Debt Tracker | `tech-debt-tracker/` | Debt scan â†’ prioritize â†’ dashboard |
 
 Note: release management merged into `changelog-generator/` (version bumper + hotfix/rollback procedures live there now).
 
 ## Rules
 
 - Load only the specific skill SKILL.md you need
-- These are advanced skills — combine with engineering-team/ core skills as needed
+- These are advanced skills â€” combine with engineering-team/ core skills as needed
+

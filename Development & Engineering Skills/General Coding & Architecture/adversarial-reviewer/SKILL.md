@@ -1,10 +1,10 @@
----
+﻿---
 name: "adversarial-reviewer"
 description: "Adversarial code review that breaks the self-review monoculture. Use when you want a genuinely critical review of recent changes, before merging a PR, or when you suspect Claude is being too agreeable about code quality. Forces perspective shifts through hostile reviewer personas that catch blind spots the author's mental model shares with the reviewer."
 tier: "STANDARD"
 category: "Engineering / Code Quality"
 dependencies: "None (prompt-only, no external tools required)"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 version: "2.9.0"
 license: "MIT"
 ---
@@ -13,15 +13,15 @@ license: "MIT"
 
 ## Description
 
-Adversarial code review skill that forces genuine perspective shifts through three hostile reviewer personas (Saboteur, New Hire, Security Auditor). Each persona MUST find at least one issue — no "LGTM" escapes. Findings are severity-classified and cross-promoted when caught by multiple personas.
+Adversarial code review skill that forces genuine perspective shifts through three hostile reviewer personas (Saboteur, New Hire, Security Auditor). Each persona MUST find at least one issue â€” no "LGTM" escapes. Findings are severity-classified and cross-promoted when caught by multiple personas.
 
 ## Features
 
-- **Three adversarial personas** — Saboteur (production breaks), New Hire (maintainability), Security Auditor (OWASP-informed)
-- **Mandatory findings** — Each persona must surface at least one issue, eliminating rubber-stamp reviews
-- **Severity promotion** — Issues caught by 2+ personas are promoted one severity level
-- **Self-review trap breaker** — Concrete techniques to overcome shared mental model blind spots
-- **Structured verdicts** — BLOCK / CONCERNS / CLEAN with clear merge guidance
+- **Three adversarial personas** â€” Saboteur (production breaks), New Hire (maintainability), Security Auditor (OWASP-informed)
+- **Mandatory findings** â€” Each persona must surface at least one issue, eliminating rubber-stamp reviews
+- **Severity promotion** â€” Issues caught by 2+ personas are promoted one severity level
+- **Self-review trap breaker** â€” Concrete techniques to overcome shared mental model blind spots
+- **Structured verdicts** â€” BLOCK / CONCERNS / CLEAN with clear merge guidance
 
 ## Usage
 
@@ -45,7 +45,7 @@ Produces a structured report with findings from all three personas, deduplicated
 
 When Claude reviews code it wrote (or code it just read), it shares the same mental model, assumptions, and blind spots as the author. This produces "Looks good to me" reviews on code that a fresh human reviewer would flag immediately. Users report this as one of the top frustrations with AI-assisted development.
 
-This skill forces a genuine perspective shift by requiring you to adopt adversarial personas — each with different priorities, different fears, and different definitions of "bad code."
+This skill forces a genuine perspective shift by requiring you to adopt adversarial personas â€” each with different priorities, different fears, and different definitions of "bad code."
 
 ## Table of Contents
 
@@ -80,15 +80,15 @@ If no changes are found, stop and report: "Nothing to review."
 ### Step 2: Read the Full Context
 
 For every file in the diff:
-1. Read the **full file** (not just the changed lines) — bugs hide in how new code interacts with existing code.
+1. Read the **full file** (not just the changed lines) â€” bugs hide in how new code interacts with existing code.
 2. Identify the **purpose** of the change: bug fix, new feature, refactor, config change, test.
 3. Note any **project conventions** from CLAUDE.md, .editorconfig, linting configs, or existing patterns.
 
 ### Step 3: Run All Three Personas
 
-Execute each persona sequentially. Each persona MUST produce at least one finding. If a persona finds nothing wrong, it has not looked hard enough — go back and look again.
+Execute each persona sequentially. Each persona MUST produce at least one finding. If a persona finds nothing wrong, it has not looked hard enough â€” go back and look again.
 
-**IMPORTANT:** Do not soften findings. Do not hedge. Do not say "this might be fine but..." — either it's a problem or it isn't. Be direct.
+**IMPORTANT:** Do not soften findings. Do not hedge. Do not say "this might be fine but..." â€” either it's a problem or it isn't. Be direct.
 
 ### Step 4: Deduplicate and Synthesize
 
@@ -140,7 +140,7 @@ After all three personas have reported:
 1. Read each changed function as if you've never seen the codebase. Can you understand what it does from the name, parameters, and body alone?
 2. Trace one code path end-to-end. How many files do you need to open?
 3. Check: would a new contributor know where to add a similar feature?
-4. Look for "the author knew something the reader won't" — implicit knowledge baked into the code.
+4. Look for "the author knew something the reader won't" â€” implicit knowledge baked into the code.
 
 **You MUST find at least one issue. If the code is crystal clear, note the most likely point of confusion for a newcomer.**
 
@@ -154,13 +154,13 @@ After all three personas have reported:
 
 | Category | What to Look For |
 |----------|-----------------|
-| **Injection** | SQL, NoSQL, OS command, LDAP — any place user input reaches a query or command without parameterization |
+| **Injection** | SQL, NoSQL, OS command, LDAP â€” any place user input reaches a query or command without parameterization |
 | **Broken Auth** | Hardcoded credentials, missing auth checks on new endpoints, session tokens in URLs or logs |
 | **Data Exposure** | Sensitive data in error messages, logs, or API responses; missing encryption at rest or in transit |
 | **Insecure Defaults** | Debug mode left on, permissive CORS, wildcard permissions, default passwords |
 | **Missing Access Control** | IDOR (can user A access user B's data?), missing role checks, privilege escalation paths |
 | **Dependency Risk** | New dependencies with known CVEs, pinned to vulnerable versions, unnecessary transitive dependencies |
-| **Secrets** | API keys, tokens, passwords in code, config, or comments — even "temporary" ones |
+| **Secrets** | API keys, tokens, passwords in code, config, or comments â€” even "temporary" ones |
 
 **Review Process:**
 1. Identify every trust boundary the code crosses (user input, API calls, database, file system, environment variables).
@@ -191,7 +191,7 @@ Structure your review as follows:
 **Verdict:** BLOCK / CONCERNS / CLEAN
 
 ### Critical Findings
-[If any — these block the merge]
+[If any â€” these block the merge]
 
 ### Warnings
 [Should-fix items]
@@ -204,9 +204,9 @@ Structure your review as follows:
 ```
 
 **Verdict definitions:**
-- **BLOCK** — 1+ CRITICAL findings. Do not merge until resolved.
-- **CONCERNS** — No criticals but 2+ warnings. Merge at your own risk.
-- **CLEAN** — Only notes. Safe to merge.
+- **BLOCK** â€” 1+ CRITICAL findings. Do not merge until resolved.
+- **CONCERNS** â€” No criticals but 2+ warnings. Merge at your own risk.
+- **CLEAN** â€” Only notes. Safe to merge.
 
 ## Anti-Patterns
 
@@ -216,7 +216,7 @@ Structure your review as follows:
 |-------------|---------------|
 | "LGTM, no issues found" | If you found nothing, you didn't look hard enough. Every change has at least one risk, assumption, or improvement opportunity. |
 | Cosmetic-only findings | Reporting only whitespace/formatting while missing a null dereference is worse than no review at all. Substance first, style second. |
-| Pulling punches | "This might possibly be a minor concern..." — No. Be direct. "This will throw a NullPointerException when `user` is undefined." |
+| Pulling punches | "This might possibly be a minor concern..." â€” No. Be direct. "This will throw a NullPointerException when `user` is undefined." |
 | Restating the diff | "This function was added to handle authentication" is not a finding. What's WRONG with how it handles authentication? |
 | Ignoring test gaps | New code without tests is a finding. Always. Tests are not optional. |
 | Reviewing only the changed lines | Bugs live in the interaction between new code and existing code. Read the full file. |
@@ -230,18 +230,19 @@ You are likely reviewing code you just wrote or just read. Your brain (weights) 
 2. For each function, state its contract **before** reading the body. Does the body match?
 3. Assume every variable could be null/undefined until proven otherwise.
 4. Assume every external call will fail.
-5. Ask: "If I deleted this change entirely, what would break?" — if the answer is "nothing," the change might be unnecessary.
+5. Ask: "If I deleted this change entirely, what would break?" â€” if the answer is "nothing," the change might be unnecessary.
 
 ## When to Use This
 
-- **Before merging any PR** — especially self-authored PRs with no human reviewer
-- **After a long coding session** — fatigue produces blind spots; this skill compensates
-- **When Claude said "looks good"** — if you got an easy approval, run this for a second opinion
-- **On security-sensitive code** — auth, payments, data access, API endpoints
-- **When something "feels off"** — trust that instinct and run an adversarial review
+- **Before merging any PR** â€” especially self-authored PRs with no human reviewer
+- **After a long coding session** â€” fatigue produces blind spots; this skill compensates
+- **When Claude said "looks good"** â€” if you got an easy approval, run this for a second opinion
+- **On security-sensitive code** â€” auth, payments, data access, API endpoints
+- **When something "feels off"** â€” trust that instinct and run an adversarial review
 
 ## Cross-References
 
-- Related: `engineering-team/senior-security` — deep security analysis
-- Related: `engineering-team/code-reviewer` — general code quality review
-- Complementary: `ra-qm-team/` — quality management workflows
+- Related: `engineering-team/senior-security` â€” deep security analysis
+- Related: `engineering-team/code-reviewer` â€” general code quality review
+- Complementary: `ra-qm-team/` â€” quality management workflows
+

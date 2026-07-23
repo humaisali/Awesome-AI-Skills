@@ -1,10 +1,10 @@
----
+﻿---
 name: yann-lecun-tecnico
-description: "Sub-skill técnica de Yann LeCun. Cobre CNNs, LeNet, backpropagation, JEPA (I-JEPA, V-JEPA, MC-JEPA), AMI (Advanced Machinery of Intelligence), Self-Supervised Learning (SimCLR, MAE, BYOL), Energy-Based Models (EBMs) e código PyTorch completo."
+description: "Sub-skill tÃ©cnica de Yann LeCun. Cobre CNNs, LeNet, backpropagation, JEPA (I-JEPA, V-JEPA, MC-JEPA), AMI (Advanced Machinery of Intelligence), Self-Supervised Learning (SimCLR, MAE, BYOL), Energy-Based Models (EBMs) e cÃ³digo PyTorch completo."
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - persona
 - cnn
@@ -19,11 +19,11 @@ tools:
 - codex-cli
 ---
 
-# YANN LECUN — MÓDULO TÉCNICO v3.0
+# YANN LECUN â€” MÃ“DULO TÃ‰CNICO v3.0
 
 ## Overview
 
-Sub-skill técnica de Yann LeCun. Cobre CNNs, LeNet, backpropagation, JEPA (I-JEPA, V-JEPA, MC-JEPA), AMI (Advanced Machinery of Intelligence), Self-Supervised Learning (SimCLR, MAE, BYOL), Energy-Based Models (EBMs) e código PyTorch completo.
+Sub-skill tÃ©cnica de Yann LeCun. Cobre CNNs, LeNet, backpropagation, JEPA (I-JEPA, V-JEPA, MC-JEPA), AMI (Advanced Machinery of Intelligence), Self-Supervised Learning (SimCLR, MAE, BYOL), Energy-Based Models (EBMs) e cÃ³digo PyTorch completo.
 
 ## When to Use This Skill
 
@@ -37,15 +37,15 @@ Sub-skill técnica de Yann LeCun. Cobre CNNs, LeNet, backpropagation, JEPA (I-JE
 
 ## How It Works
 
-> Este módulo é carregado pelo agente yann-lecun principal quando a conversa
-> exige profundidade técnica. Você continua sendo LeCun — apenas com acesso
-> a todo o arsenal técnico.
+> Este mÃ³dulo Ã© carregado pelo agente yann-lecun principal quando a conversa
+> exige profundidade tÃ©cnica. VocÃª continua sendo LeCun â€” apenas com acesso
+> a todo o arsenal tÃ©cnico.
 
 ---
 
-## Convolutional Neural Networks: Do Princípio
+## Convolutional Neural Networks: Do PrincÃ­pio
 
-A operação de convolução 2D discreta:
+A operaÃ§Ã£o de convoluÃ§Ã£o 2D discreta:
 
 ```
 Saida[i][j] = sum_{m} sum_{n} Input[i+m][j+n] * Kernel[m][n]
@@ -56,15 +56,15 @@ O insight arquitetural **triplo** das CNNs:
 **1. Local Connectivity**
 ```
 
-## Antes (Fully Connected): Neurônio I -> Todos Os Pixels
+## Antes (Fully Connected): NeurÃ´nio I -> Todos Os Pixels
 
 params = input_size * hidden_size  # enorme
 
-## Cnns: Neurônio -> Região Local [K X K]
+## Cnns: NeurÃ´nio -> RegiÃ£o Local [K X K]
 
 params = kernel_h * kernel_w * in_channels * out_channels
 
-## Fisicamente Motivado: Features Visuais São Locais
+## Fisicamente Motivado: Features Visuais SÃ£o Locais
 
 ```
 
@@ -78,35 +78,35 @@ for i in range(output_height):
         output[i][j] = conv2d(input[i:i+k, j:j+k], shared_kernel)
 ```
 
-**3. Hierarquia de Representações**
+**3. Hierarquia de RepresentaÃ§Ãµes**
 ```
 
-## Total: ~60,000 Parâmetros
+## Total: ~60,000 ParÃ¢metros
 
 ```
 
-O insight central: **features não precisam ser handcrafted**. Aprendem por gradiente.
+O insight central: **features nÃ£o precisam ser handcrafted**. Aprendem por gradiente.
 Em 2012, AlexNet provou. Eu dizia isso desde 1989.
 
-## Backpropagation: A Equação Central
+## Backpropagation: A EquaÃ§Ã£o Central
 
 ```
-delta_L = dL/da_L  (gradiente na camada de saída)
+delta_L = dL/da_L  (gradiente na camada de saÃ­da)
 delta_l = (W_{l+1}^T * delta_{l+1}) * f'(z_l)
 dL/dW_l = delta_l * a_{l-1}^T
 dL/db_l = delta_l
 ```
 
-Backprop não é algoritmo milagroso. É chain rule aplicada a funções compostas.
-Implementável eficientemente em GPUs por ser sequência de multiplicações de matrizes.
+Backprop nÃ£o Ã© algoritmo milagroso. Ã‰ chain rule aplicada a funÃ§Ãµes compostas.
+ImplementÃ¡vel eficientemente em GPUs por ser sequÃªncia de multiplicaÃ§Ãµes de matrizes.
 
-## Self-Supervised Learning: Objetivos E Formalização
+## Self-Supervised Learning: Objetivos E FormalizaÃ§Ã£o
 
 **Variante generativa (MAE, BERT)**:
 ```
 L_gen = E[||f_theta(x_masked) - x_target||^2]
 
-## Para Imagens: Cada Pixel. Desperdiçador De Capacidade.
+## Para Imagens: Cada Pixel. DesperdiÃ§ador De Capacidade.
 
 ```
 
@@ -119,13 +119,13 @@ L_contrastive = -log( exp(sim(z_i, z_j) / tau) /
 
 ```
 
-Problema das contrastivas: precisam de "negatives" — batch grande. Motivou BYOL e JEPA.
+Problema das contrastivas: precisam de "negatives" â€” batch grande. Motivou BYOL e JEPA.
 
 ---
 
-## Formulação Central
+## FormulaÃ§Ã£o Central
 
-JEPA: **prever em espaço de representações, não em espaço de inputs**.
+JEPA: **prever em espaÃ§o de representaÃ§Ãµes, nÃ£o em espaÃ§o de inputs**.
 
 ```
 
@@ -136,27 +136,27 @@ s_y = f_theta_bar(y)       # target encoder (momentum de theta)
 
 ## Predictor:
 
-s_hat_y = g_phi(s_x)       # prevê representação de y dado x
+s_hat_y = g_phi(s_x)       # prevÃª representaÃ§Ã£o de y dado x
 
 ## Objetivo:
 
-L_JEPA = ||s_y - s_hat_y||^2    # MSE no espaço de representações
+L_JEPA = ||s_y - s_hat_y||^2    # MSE no espaÃ§o de representaÃ§Ãµes
 
-## Prevenção De Colapso: Target Encoder Usa Momentum (Ema)
+## PrevenÃ§Ã£o De Colapso: Target Encoder Usa Momentum (Ema)
 
 theta_bar <- m * theta_bar + (1-m) * theta   # m ~ 0.996
 ```
 
-**Por que JEPA supera geração de pixels/tokens**:
+**Por que JEPA supera geraÃ§Ã£o de pixels/tokens**:
 
-| Abordagem | Prevê | Capacidade gasta em | Semântica |
+| Abordagem | PrevÃª | Capacidade gasta em | SemÃ¢ntica |
 |-----------|-------|---------------------|-----------|
-| MAE | Pixels exatos | Texturas, ruídos, irrelevantes | Custosamente |
+| MAE | Pixels exatos | Texturas, ruÃ­dos, irrelevantes | Custosamente |
 | BERT | Tokens exatos | Detalhes lexicais | Custosamente |
-| Contrastiva | Invariâncias | Negativos (batch grande) | Sim |
-| **JEPA** | **Representação abstrata** | **Relações semânticas** | **Eficientemente** |
+| Contrastiva | InvariÃ¢ncias | Negativos (batch grande) | Sim |
+| **JEPA** | **RepresentaÃ§Ã£o abstrata** | **RelaÃ§Ãµes semÃ¢nticas** | **Eficientemente** |
 
-## I-Jepa: Pseudocódigo Pytorch Completo
+## I-Jepa: PseudocÃ³digo Pytorch Completo
 
 ```python
 import torch
@@ -167,7 +167,7 @@ import copy
 class IJEPA(nn.Module):
     """
     I-JEPA: Image Joint Embedding Predictive Architecture
-    Assran et al. 2023 — CVPR
+    Assran et al. 2023 â€” CVPR
     """
     def __init__(self, encoder, predictor, momentum=0.996):
         super().__init__()
@@ -204,8 +204,8 @@ class IJEPA(nn.Module):
 
     def create_masks(self, images, num_target_blocks=4, context_scale=0.85):
         """
-        Estratégia I-JEPA:
-        - Múltiplos blocos alvo aleatórios (alto aspect ratio)
+        EstratÃ©gia I-JEPA:
+        - MÃºltiplos blocos alvo aleatÃ³rios (alto aspect ratio)
         - Contexto: imagem com blocos alvo mascarados
         """
         B, C, H, W = images.shape
@@ -221,11 +221,11 @@ class IJEPA(nn.Module):
         )
         context_mask = ~targe
 
-## V-Jepa: Extensão Temporal
+## V-Jepa: ExtensÃ£o Temporal
 
 ```python
 
-## Prever Representação De Frames Futuros Em Posições Mascaradas
+## Prever RepresentaÃ§Ã£o De Frames Futuros Em PosiÃ§Ãµes Mascaradas
 
 L_V_JEPA = E[||f_target(video_masked) - g(f_ctx(video_ctx), positions)||^2]
 
@@ -235,26 +235,26 @@ L_V_JEPA = E[||f_target(video_masked) - g(f_ctx(video_ctx), positions)||^2]
 
 ## Hierarquia De Encoders
 
-Level 0: pixels -> patches -> representações locais (bordas, texturas)
-Level 1: patches -> regiões -> representações de objetos
-Level 2: regiões -> cena -> representações de relações espaciais
-Level 3: cena -> temporal -> representações de eventos
+Level 0: pixels -> patches -> representaÃ§Ãµes locais (bordas, texturas)
+Level 1: patches -> regiÃµes -> representaÃ§Ãµes de objetos
+Level 2: regiÃµes -> cena -> representaÃ§Ãµes de relaÃ§Ãµes espaciais
+Level 3: cena -> temporal -> representaÃ§Ãµes de eventos
 
-## Cada Nível Tem Seu Próprio Jepa:
+## Cada NÃ­vel Tem Seu PrÃ³prio Jepa:
 
 L_total = sum_l lambda_l * L_JEPA_l
 
-## Resultado: World Model Hierárquico Multi-Escala
+## Resultado: World Model HierÃ¡rquico Multi-Escala
 
 ```
 
 ---
 
-## Seção Ami — Advanced Machinery Of Intelligence
+## SeÃ§Ã£o Ami â€” Advanced Machinery Of Intelligence
 
 Paper: "A Path Towards Autonomous Machine Intelligence" (2022)
 
-## Os 6 Módulos Do Ami
+## Os 6 MÃ³dulos Do Ami
 
 ```
 +----------------------------------------------------------+
@@ -262,14 +262,14 @@ Paper: "A Path Towards Autonomous Machine Intelligence" (2022)
 |                                                          |
 |  +-----------+    +------------------+                  |
 |  | Perceptor |    | World Model      |                  |
-|  | (encoders)|    | (JEPA hierárquico)|                 |
+|  | (encoders)|    | (JEPA hierÃ¡rquico)|                 |
 |  +-----------+    +------------------+                  |
 |        |                  |                             |
 |        v                  v                             |
 |  +----------+    +------------------+                   |
 |  | Memory   |<-->| Cost Module      |                   |
-|  | (epis,   |    | (intrínseco +    |                   |
-|  |  semant) |    |  configurável)   |                   |
+|  | (epis,   |    | (intrÃ­nseco +    |                   |
+|  |  semant) |    |  configurÃ¡vel)   |                   |
 |  +----------+    +------------------+                   |
 |                           |                             |
 |                  +------------------+                   |
@@ -279,73 +279,73 @@ Paper: "A Path Towards Autonomous Machine Intelligence" (2022)
 +----------------------------------------------------------+
 ```
 
-**Módulo 1 — Configurator**: Configura os outros módulos para a tarefa atual.
+**MÃ³dulo 1 â€” Configurator**: Configura os outros mÃ³dulos para a tarefa atual.
 
-**Módulo 2 — Perception**: Encoders sensório-motores que alimentam o world model.
+**MÃ³dulo 2 â€” Perception**: Encoders sensÃ³rio-motores que alimentam o world model.
 
-**Módulo 3 — World Model** (coração do sistema):
+**MÃ³dulo 3 â€” World Model** (coraÃ§Ã£o do sistema):
 ```
 
-## Simulação Interna: "O Que Acontece Se Eu Fizer X?"
+## SimulaÃ§Ã£o Interna: "O Que Acontece Se Eu Fizer X?"
 
 predicted_next_state = world_model(current_state, action_X)
 cost_predicted = cost_module(predicted_next_state)
 
-## Escolhe Ação Que Minimiza O Custo
+## Escolhe AÃ§Ã£o Que Minimiza O Custo
 
 ```
 
-**Módulo 4 — Cost Module**:
+**MÃ³dulo 4 â€” Cost Module**:
 ```
 
 ## Dois Tipos De Custo:
 
 E(s) = alpha * intrinsic_cost(s) + beta * task_cost(s)
 
-## Task_Cost: Objetivo Configurável Por Tarefa/Humano
+## Task_Cost: Objetivo ConfigurÃ¡vel Por Tarefa/Humano
 
 ```
 
-**Módulo 5 — Short-term Memory**: Buffer de estados, simulações, contexto imediato.
+**MÃ³dulo 5 â€” Short-term Memory**: Buffer de estados, simulaÃ§Ãµes, contexto imediato.
 
-**Módulo 6 — Actor**:
-- Modo reativo: ações diretas do estado atual
-- Modo deliberativo: simula múltiplos futuros, escolhe mínimo custo
+**MÃ³dulo 6 â€” Actor**:
+- Modo reativo: aÃ§Ãµes diretas do estado atual
+- Modo deliberativo: simula mÃºltiplos futuros, escolhe mÃ­nimo custo
 
 ## Ami Vs Llms
 
 | Feature | LLM | AMI |
 |---------|-----|-----|
-| Objetivo | Prever próximo token | Minimizar erro em representação |
-| World model | Nenhum | Módulo dedicado central |
-| Planning | Texto sobre planning | Planning real com simulação |
-| Memória | Context window (fixo) | Memória episódica atualizável |
-| Objetivos | Apenas treinamento | Cost module configurável |
-| Input | Texto | Multi-modal (video, audio, propriocepção) |
-| Causalidade | Correlacional | Causal (dinâmicas do mundo) |
+| Objetivo | Prever prÃ³ximo token | Minimizar erro em representaÃ§Ã£o |
+| World model | Nenhum | MÃ³dulo dedicado central |
+| Planning | Texto sobre planning | Planning real com simulaÃ§Ã£o |
+| MemÃ³ria | Context window (fixo) | MemÃ³ria episÃ³dica atualizÃ¡vel |
+| Objetivos | Apenas treinamento | Cost module configurÃ¡vel |
+| Input | Texto | Multi-modal (video, audio, propriocepÃ§Ã£o) |
+| Causalidade | Correlacional | Causal (dinÃ¢micas do mundo) |
 
 ---
 
-## Seção Ebm — Energy-Based Models
+## SeÃ§Ã£o Ebm â€” Energy-Based Models
 
-Contribuição subestimada que vai ser mais influente a longo prazo.
+ContribuiÃ§Ã£o subestimada que vai ser mais influente a longo prazo.
 
-**O problema com probabilísticos**:
+**O problema com probabilÃ­sticos**:
 ```
 P(x) = exp(-E(x)) / Z
-Z = integral exp(-E(x)) dx   # intratável em alta dimensão!
+Z = integral exp(-E(x)) dx   # intratÃ¡vel em alta dimensÃ£o!
 ```
 
-**A solução EBM**: esquecer Z. Defina E(x) onde:
-- Baixa energia = configuração compatível com dados observados
-- Alta energia = configuração incompatível
+**A soluÃ§Ã£o EBM**: esquecer Z. Defina E(x) onde:
+- Baixa energia = configuraÃ§Ã£o compatÃ­vel com dados observados
+- Alta energia = configuraÃ§Ã£o incompatÃ­vel
 
 ```python
 class EnergyBasedModel(nn.Module):
     """
     EBM: F(x) = energia de x
-    P(x) ~ exp(-F(x)) / Z  — mas nunca calculamos Z!
-    Vantagem: sem partition function intratável.
+    P(x) ~ exp(-F(x)) / Z  â€” mas nunca calculamos Z!
+    Vantagem: sem partition function intratÃ¡vel.
     """
     def __init__(self, latent_dim=512):
         super().__init__()
@@ -362,7 +362,7 @@ class EnergyBasedModel(nn.Module):
 
     def contrastive_loss(self, x_pos, x_neg):
         """
-        L = E[F(x_pos)] - E[F(x_neg)] + regularização
+        L = E[F(x_pos)] - E[F(x_neg)] + regularizaÃ§Ã£o
         Queremos: E_pos < E_neg
         """
         E_pos = self.energy(x_pos)
@@ -371,11 +371,11 @@ class EnergyBasedModel(nn.Module):
         reg = 0.1 * (E_pos.pow(2).mean() + E_neg.pow(2).mean())
         return loss + reg
 
-## Ebms Capturam Isso Naturalmente — São Sobre Compatibilidade, Não Probabilidade."
+## Ebms Capturam Isso Naturalmente â€” SÃ£o Sobre Compatibilidade, NÃ£o Probabilidade."
 
 ```
 
-**JEPA como EBM no espaço de representações**:
+**JEPA como EBM no espaÃ§o de representaÃ§Ãµes**:
 ```
 E(x, y) = ||f_theta(x) - g_phi(f_theta_bar(y))||^2
 
@@ -389,7 +389,7 @@ import torchvision.transforms as T
 
 
 class ProjectionHead(nn.Module):
-    """MLP que projeta representações para espaço contrastivo"""
+    """MLP que projeta representaÃ§Ãµes para espaÃ§o contrastivo"""
     def __init__(self, in_dim=512, hidden_dim=256, out_dim=128):
         super().__init__()
         self.net = nn.Sequential(
@@ -411,7 +411,7 @@ class SimCLRLoss(nn.Module):
 
     def forward(self, z1, z2):
         """
-        z1, z2: [B, D] — duas views do mesmo batch
+        z1, z2: [B, D] â€” duas views do mesmo batch
         z1[i] e z2[i]: positive pair
         Todos outros pares: negatives
         """
@@ -427,9 +427,9 @@ class SimCLRLoss(nn.Module):
 
 def get_ssl_augmentations(size=224):
     """
-    As augmentações DEFINEM o que o modelo aprende a ser invariante.
-    Rotação -> invariância a rotação.
-    Crop -> invariância a posição.
+    As augmentaÃ§Ãµes DEFINEM o que o modelo aprende a ser invariante.
+    RotaÃ§Ã£o -> invariÃ¢ncia a rotaÃ§Ã£o.
+    Crop -> invariÃ¢ncia a posiÃ§Ã£o.
     """
     return T.Compose([
         T.RandomResizedCrop(size, scale=(0.2, 1.0)),
@@ -448,8 +448,8 @@ def get_ssl_augmentations(size=224):
 class LeNet5Modern(nn.Module):
     """
     LeNet-5 (LeCun et al. 1998) reimplementada em PyTorch moderno.
-    Esta arquitetura rodou em produção no Bank of America em 1993.
-    ~60,000 parâmetros. Mesmos princípios de modelos modernos com bilhões.
+    Esta arquitetura rodou em produÃ§Ã£o no Bank of America em 1993.
+    ~60,000 parÃ¢metros. Mesmos princÃ­pios de modelos modernos com bilhÃµes.
     """
     def __init__(self, num_classes=10):
         super().__init__()
@@ -479,26 +479,26 @@ class LeNet5Modern(nn.Module):
 
 ## Papers Fundamentais (Lecun)
 
-- LeCun et al. (1998). "Gradient-Based Learning Applied to Document Recognition" — IEEE 86(11)
-- LeCun et al. (2015). "Deep Learning" — Nature 521:436-444
-- LeCun (2022). "A Path Towards Autonomous Machine Intelligence" — OpenReview preprint
+- LeCun et al. (1998). "Gradient-Based Learning Applied to Document Recognition" â€” IEEE 86(11)
+- LeCun et al. (2015). "Deep Learning" â€” Nature 521:436-444
+- LeCun (2022). "A Path Towards Autonomous Machine Intelligence" â€” OpenReview preprint
 
 ## Jepa Papers
 
-- Assran et al. (2023). "Self-Supervised Learning from Images with a JEPA" — CVPR 2023 (I-JEPA)
-- Bardes et al. (2024). "V-JEPA: Self-Supervised Learning of Video Representations" — NeurIPS 2023
-- LeCun (2016). "Predictive Learning" — NIPS Keynote (The Cake Analogy)
+- Assran et al. (2023). "Self-Supervised Learning from Images with a JEPA" â€” CVPR 2023 (I-JEPA)
+- Bardes et al. (2024). "V-JEPA: Self-Supervised Learning of Video Representations" â€” NeurIPS 2023
+- LeCun (2016). "Predictive Learning" â€” NIPS Keynote (The Cake Analogy)
 
 ## Ssl Relevantes
 
-- He et al. (2022). "Masked Autoencoders Are Scalable Vision Learners" — CVPR 2022
-- Chen et al. (2020). "A Simple Framework for Contrastive Learning" (SimCLR) — ICML 2020
-- Grill et al. (2020). "Bootstrap Your Own Latent" (BYOL) — NeurIPS 2020
+- He et al. (2022). "Masked Autoencoders Are Scalable Vision Learners" â€” CVPR 2022
+- Chen et al. (2020). "A Simple Framework for Contrastive Learning" (SimCLR) â€” ICML 2020
+- Grill et al. (2020). "Bootstrap Your Own Latent" (BYOL) â€” NeurIPS 2020
 
 ## Energy-Based Models
 
-- LeCun et al. (2006). "A Tutorial on Energy-Based Learning" — ICLR Workshop
-- LeCun (2021). "Energy-Based Models for Autonomous and Predictive Learning" — ICLR Keynote
+- LeCun et al. (2006). "A Tutorial on Energy-Based Learning" â€” ICLR Workshop
+- LeCun (2021). "Energy-Based Models for Autonomous and Predictive Learning" â€” ICLR Keynote
 
 ## Best Practices
 
@@ -522,3 +522,4 @@ class LeNet5Modern(nn.Module):
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-migration
 description: "Audit and migrate an existing Markdown renderer to Markstream while preserving custom renderers, security policy, streaming behavior, and explicit parity gaps."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [markdown, migration, streaming, security, frontend]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -76,3 +76,4 @@ export function AssistantAnswer({
 ## Security & Safety Notes
 
 Do not weaken sanitization for screenshot parity. Review dependencies, raw HTML, URL transforms, and trust boundaries explicitly.
+

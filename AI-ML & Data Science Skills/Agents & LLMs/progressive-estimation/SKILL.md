@@ -1,11 +1,11 @@
----
+﻿---
 name: progressive-estimation
 description: "Estimate AI-assisted and hybrid human+agent development work with research-backed PERT statistics and calibration feedback loops"
 category: project-management
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-10"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
   - estimation
   - project-management
@@ -22,7 +22,7 @@ Estimate AI-assisted and hybrid human+agent development work using research-back
 
 ## Overview
 
-Progressive Estimation adapts to your team's working mode — human-only, hybrid, or agent-first — applying the right velocity model and multipliers for each. It produces statistical estimates rather than gut feelings.
+Progressive Estimation adapts to your team's working mode â€” human-only, hybrid, or agent-first â€” applying the right velocity model and multipliers for each. It produces statistical estimates rather than gut feelings.
 
 ## When to Use This Skill
 
@@ -34,13 +34,13 @@ Progressive Estimation adapts to your team's working mode — human-only, hybrid
 
 ## How It Works
 
-1. **Mode Detection** — Determines if the team works human-only, hybrid, or agent-first
-2. **Task Classification** — Categorizes by size (XS–XL), complexity, and risk
-3. **Formula Application** — Applies research-backed multipliers grounded in empirical studies
-4. **PERT Calculation** — Produces expected values using three-point estimation
-5. **Confidence Bands** — Generates P50, P75, P90 intervals
-6. **Output Formatting** — Formats for Linear, JIRA, ClickUp, GitHub Issues, Monday, or GitLab
-7. **Calibration** — Feeds back actuals to improve future estimates
+1. **Mode Detection** â€” Determines if the team works human-only, hybrid, or agent-first
+2. **Task Classification** â€” Categorizes by size (XSâ€“XL), complexity, and risk
+3. **Formula Application** â€” Applies research-backed multipliers grounded in empirical studies
+4. **PERT Calculation** â€” Produces expected values using three-point estimation
+5. **Confidence Bands** â€” Generates P50, P75, P90 intervals
+6. **Output Formatting** â€” Formats for Linear, JIRA, ClickUp, GitHub Issues, Monday, or GitLab
+7. **Calibration** â€” Feeds back actuals to improve future estimates
 
 ## Examples
 
@@ -66,7 +66,7 @@ Progressive Estimation adapts to your team's working mode — human-only, hybrid
   **Solution:** Use P75 or P90 for commitments, not P50
 
 - **Problem:** Missing context
-  **Solution:** The skill asks clarifying questions — provide team size and agent usage
+  **Solution:** The skill asks clarifying questions â€” provide team size and agent usage
 
 - **Problem:** Stale calibration
   **Solution:** Re-calibrate when team composition or tooling changes significantly
@@ -87,3 +87,4 @@ Progressive Estimation adapts to your team's working mode — human-only, hybrid
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,13 +1,13 @@
----
+﻿---
 name: sshepherd
-description: "Zero-knowledge SSH ops CLI — server health checks, docker/systemd control, log tailing, Postgres introspection, and declarative deploys, without ever exposing credentials to the agent."
+description: "Zero-knowledge SSH ops CLI â€” server health checks, docker/systemd control, log tailing, Postgres introspection, and declarative deploys, without ever exposing credentials to the agent."
 category: devops
 risk: critical
 source: https://github.com/humaisali
 source_repo: Antheurus/sshepherd
 source_type: community
 date_added: "2026-07-15"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [ssh, devops, cli, server-ops, postgres, deploy, zero-knowledge]
 tools: [claude, cursor, gemini, codex]
 license: "MIT"
@@ -26,12 +26,12 @@ plugin:
 
 ## Overview
 
-`sshepherd` is a compiled Bun/TypeScript CLI that lets an agent operate a real remote server over SSH — health checks, docker/systemd service control, log tailing, config file edits, read-only Postgres introspection, and declarative deploys — without ever seeing a password, private key, hostname, username, or port. Every operation shells out to the system `ssh` binary through a single transport path and returns the same typed `Envelope<T>` (`ok`, `alias`, `data`, `error`), never a raw terminal dump. The agent passes only a *name* — an ssh alias, a Postgres target, or a deploy recipe — that resolves entirely outside the process.
+`sshepherd` is a compiled Bun/TypeScript CLI that lets an agent operate a real remote server over SSH â€” health checks, docker/systemd service control, log tailing, config file edits, read-only Postgres introspection, and declarative deploys â€” without ever seeing a password, private key, hostname, username, or port. Every operation shells out to the system `ssh` binary through a single transport path and returns the same typed `Envelope<T>` (`ok`, `alias`, `data`, `error`), never a raw terminal dump. The agent passes only a *name* â€” an ssh alias, a Postgres target, or a deploy recipe â€” that resolves entirely outside the process.
 
 ## When to Use This Skill
 
 - Use when you need to check a remote server's health (disk, memory, CPU, ports, OOM history) without handing the agent SSH credentials.
-- Use when working with remote docker or systemd services — listing, inspecting, or restarting them — or tailing their logs.
+- Use when working with remote docker or systemd services â€” listing, inspecting, or restarting them â€” or tailing their logs.
 - Use when the user asks to read or edit a remote config file, run a declarative deploy from a named recipe, introspect a remote Postgres database read-only, or audit SSH/security posture on a box.
 
 ## How It Works
@@ -48,7 +48,7 @@ This repository does not ship the `sshepherd` executable. The user must install 
 sshepherd <group> <action> [positionals...] [--flag value]
 ```
 
-Nine command groups — `hosts`, `check`, `logs`, `services`, `deploy`, `config`, `db`, `files`, `security` — 52 ops total. Output is JSON to stdout by default; add `--pretty` for a human-readable table/key-value view. The response only ever echoes back the `alias` it was given — there is no host/user/port/ip field anywhere in the response type, structurally.
+Nine command groups â€” `hosts`, `check`, `logs`, `services`, `deploy`, `config`, `db`, `files`, `security` â€” 52 ops total. Output is JSON to stdout by default; add `--pretty` for a human-readable table/key-value view. The response only ever echoes back the `alias` it was given â€” there is no host/user/port/ip field anywhere in the response type, structurally.
 
 ### Step 3: Discover the command surface
 
@@ -65,7 +65,7 @@ Nine command groups — `hosts`, `check`, `logs`, `services`, `deploy`, `config`
 "/absolute/path/to/sshepherd" check overview lms-server
 ```
 
-Returns a JSON envelope with disk, memory, CPU, listening ports, and OOM history for the host behind the `lms-server` alias — the agent never learns the host's address.
+Returns a JSON envelope with disk, memory, CPU, listening ports, and OOM history for the host behind the `lms-server` alias â€” the agent never learns the host's address.
 
 ### Example 2: Restart a docker service and tail its logs
 
@@ -80,15 +80,15 @@ Returns a JSON envelope with disk, memory, CPU, listening ports, and OOM history
 "/absolute/path/to/sshepherd" db tables prod
 ```
 
-`prod` is a pg-target name that resolves to *how* to reach `psql` on a host — never a database password. `psql` runs inside the target container, authenticated by peer/trust/`.pgpass` already on the remote.
+`prod` is a pg-target name that resolves to *how* to reach `psql` on a host â€” never a database password. `psql` runs inside the target container, authenticated by peer/trust/`.pgpass` already on the remote.
 
 ## Best Practices
 
-- ✅ Declare every alias/target/recipe ahead of time in `~/.ssh/config` / `targets.toml` / recipe TOML — never inline connection details.
-- ✅ Pass only names (alias, pg-target, recipe) to the CLI; let OpenSSH own authentication.
-- ✅ Use `--pretty` for human review and default JSON output for machine parsing.
-- ❌ Don't try to inject a hostname, user, port, or password into a command — the CLI has no field for them.
-- ❌ Don't reach for the `ssh2` npm library or hand-rolled SSH; the whole point is delegating to the trusted system `ssh` binary.
+- âœ… Declare every alias/target/recipe ahead of time in `~/.ssh/config` / `targets.toml` / recipe TOML â€” never inline connection details.
+- âœ… Pass only names (alias, pg-target, recipe) to the CLI; let OpenSSH own authentication.
+- âœ… Use `--pretty` for human review and default JSON output for machine parsing.
+- âŒ Don't try to inject a hostname, user, port, or password into a command â€” the CLI has no field for them.
+- âŒ Don't reach for the `ssh2` npm library or hand-rolled SSH; the whole point is delegating to the trusted system `ssh` binary.
 
 ## Limitations
 
@@ -102,7 +102,7 @@ Returns a JSON envelope with disk, memory, CPU, listening ports, and OOM history
 - **Zero-knowledge credential model:** the agent never sees a password, private key, hostname, username, or port. It only ever passes an ssh alias, a pg-target name, or a recipe name; the real connection tuple is resolved by OpenSSH outside the process, and every response echoes back only the alias.
 - **Never reads private key material.** Authentication happens entirely inside OpenSSH's own trusted code path.
 - **Confirmation gate on mutations:** destructive/mutating actions (service restart, config write, deploy) require an explicit `--yes` confirm flag.
-- **Human-only credential entry:** the separate `setup ssh-alias install` action opens a one-shot local browser form that only a human can type a password into — the agent can trigger and wait on it but never sees, logs, or relays the password.
+- **Human-only credential entry:** the separate `setup ssh-alias install` action opens a one-shot local browser form that only a human can type a password into â€” the agent can trigger and wait on it but never sees, logs, or relays the password.
 - Environment expectation: run against hosts you are authorized to operate.
 
 ## Common Pitfalls
@@ -110,8 +110,9 @@ Returns a JSON envelope with disk, memory, CPU, listening ports, and OOM history
 - **Problem:** Trying to pass a hostname or password directly to a command.
   **Solution:** Register the target first (`setup ssh-alias register` / `setup db-target`), then reference it only by name.
 - **Problem:** A mutating action returns without doing anything.
-  **Solution:** Add the `--yes` confirm flag — mutations are gated by design.
+  **Solution:** Add the `--yes` confirm flag â€” mutations are gated by design.
 
 ## Related Skills
 
 - `@devops-automation` - When you need broader CI/CD or infrastructure-as-code automation beyond SSH ops.
+

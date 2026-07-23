@@ -1,15 +1,15 @@
----
+﻿---
 name: "agenthub"
-description: "Multi-agent collaboration plugin that spawns N parallel subagents competing on the same task via git worktree isolation. Agents work independently, results are evaluated by metric or LLM judge, and the best branch is merged. Use when: user wants multiple approaches tried in parallel — code optimization, content variation, research exploration, or any task that benefits from parallel competition. Requires: a git repo."
+description: "Multi-agent collaboration plugin that spawns N parallel subagents competing on the same task via git worktree isolation. Agents work independently, results are evaluated by metric or LLM judge, and the best branch is merged. Use when: user wants multiple approaches tried in parallel â€” code optimization, content variation, research exploration, or any task that benefits from parallel competition. Requires: a git repo."
 license: MIT
 metadata:
   version: 2.1.2
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: engineering
   updated: 2026-03-17
 ---
 
-# AgentHub — Multi-Agent Collaboration
+# AgentHub â€” Multi-Agent Collaboration
 
 Spawn N parallel AI agents that compete on the same task. Each agent works in an isolated git worktree. The coordinator evaluates results and merges the winner.
 
@@ -17,13 +17,13 @@ Spawn N parallel AI agents that compete on the same task. Each agent works in an
 
 | Command | Description |
 |---------|-------------|
-| `/hub:init` | Create a new collaboration session — task, agent count, eval criteria |
+| `/hub:init` | Create a new collaboration session â€” task, agent count, eval criteria |
 | `/hub:spawn` | Launch N parallel subagents in isolated worktrees |
 | `/hub:status` | Show DAG state, agent progress, branch status |
 | `/hub:eval` | Rank agent results by metric or LLM judge |
 | `/hub:merge` | Merge winning branch, archive losers |
 | `/hub:board` | Read/write the agent message board |
-| `/hub:run` | One-shot lifecycle: init → baseline → spawn → eval → merge |
+| `/hub:run` | One-shot lifecycle: init â†’ baseline â†’ spawn â†’ eval â†’ merge |
 
 ## Agent Templates
 
@@ -31,10 +31,10 @@ When spawning with `--template`, agents follow a predefined iteration pattern:
 
 | Template | Pattern | Use Case |
 |----------|---------|----------|
-| `optimizer` | Edit → eval → keep/discard → repeat x10 | Performance, latency, size |
-| `refactorer` | Restructure → test → iterate until green | Code quality, tech debt |
-| `test-writer` | Write tests → measure coverage → repeat | Test coverage gaps |
-| `bug-fixer` | Reproduce → diagnose → fix → verify | Bug fix approaches |
+| `optimizer` | Edit â†’ eval â†’ keep/discard â†’ repeat x10 | Performance, latency, size |
+| `refactorer` | Restructure â†’ test â†’ iterate until green | Code quality, tech debt |
+| `test-writer` | Write tests â†’ measure coverage â†’ repeat | Test coverage gaps |
+| `bug-fixer` | Reproduce â†’ diagnose â†’ fix â†’ verify | Bug fix approaches |
 
 Templates are defined in `references/agent-templates.md`.
 
@@ -57,15 +57,15 @@ Trigger phrases:
 The main Claude Code session is the coordinator. It follows this lifecycle:
 
 ```
-INIT → DISPATCH → MONITOR → EVALUATE → MERGE
+INIT â†’ DISPATCH â†’ MONITOR â†’ EVALUATE â†’ MERGE
 ```
 
 ### 1. Init
 
 Run `/hub:init` to create a session. This generates:
-- `.agenthub/sessions/{session-id}/config.yaml` — task config
-- `.agenthub/sessions/{session-id}/state.json` — state machine
-- `.agenthub/board/` — message board channels
+- `.agenthub/sessions/{session-id}/config.yaml` â€” task config
+- `.agenthub/sessions/{session-id}/state.json` â€” state machine
+- `.agenthub/board/` â€” message board channels
 
 ### 2. Dispatch
 
@@ -105,7 +105,7 @@ Your task: {task description}
 
 Instructions:
 1. Read your assignment at .agenthub/board/dispatch/{seq}-agent-{i}.md
-2. Work in your worktree — make changes, run tests, iterate
+2. Work in your worktree â€” make changes, run tests, iterate
 3. Commit all changes with descriptive messages
 4. Write your result summary to .agenthub/board/results/agent-{i}-result.md
 5. Exit when done
@@ -156,7 +156,7 @@ Location: `.agenthub/board/`
 
 ```markdown
 ---
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 timestamp: 2026-03-17T14:30:22Z
 channel: results
 parent: null
@@ -164,10 +164,10 @@ parent: null
 
 ## Result Summary
 
-- **Approach**: Replaced O(n²) sort with hash map
+- **Approach**: Replaced O(nÂ²) sort with hash map
 - **Files changed**: 3
 - **Metric**: 142ms (baseline: 180ms, delta: -38ms)
-- **Confidence**: High — all tests pass
+- **Confidence**: High â€” all tests pass
 ```
 
 ### Board Rules
@@ -206,8 +206,8 @@ Run metric first. If top agents are within 10% of each other, use LLM judge to b
 ## Session Lifecycle
 
 ```
-init → running → evaluating → merged
-                            → archived (if no winner)
+init â†’ running â†’ evaluating â†’ merged
+                            â†’ archived (if no winner)
 ```
 
 State transitions managed by `session_manager.py`:
@@ -252,6 +252,7 @@ clawhub install agenthub
 
 ## Related Skills
 
-- **autoresearch-agent** — Single-agent optimization loop (use AgentHub when you want N agents competing)
-- **self-improving-agent** — Self-modifying agent (use AgentHub when you want external competition)
-- **git-worktree-manager** — Git worktree utilities (AgentHub uses worktrees internally)
+- **autoresearch-agent** â€” Single-agent optimization loop (use AgentHub when you want N agents competing)
+- **self-improving-agent** â€” Self-modifying agent (use AgentHub when you want external competition)
+- **git-worktree-manager** â€” Git worktree utilities (AgentHub uses worktrees internally)
+

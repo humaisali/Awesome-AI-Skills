@@ -1,4 +1,4 @@
----
+﻿---
 name: news-sentiment-engine
 description: Multi-source RSS news aggregation with Claude-powered sentiment analysis and structured briefing output
 category: research
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: tellmefrankie/news-engine
 source_type: community
 date_added: "2026-05-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [news, rss, sentiment-analysis, briefing, research]
 tools: [claude, websearch]
 plugin:
@@ -47,7 +47,7 @@ Output as a structured briefing card.
 ## Example Output
 
 ```
-AI/Tech News Briefing — 2026-05-13
+AI/Tech News Briefing â€” 2026-05-13
 
 1. OpenAI announces GPT-5 with 2M context window
    Source: https://github.com/humaisali
@@ -104,9 +104,10 @@ No paid APIs required for free tier. Anthropic API key only.
 
 Free tier covers news collection and basic analysis.
 
-**Full bundle — $29 one-time**: Investment-grade analysis (portfolio impact scoring, options flow correlation, earnings catalyst detection), Telegram auto-delivery.
-→ https://jaehyunpark.gumroad.com/l/tcyahy
+**Full bundle â€” $29 one-time**: Investment-grade analysis (portfolio impact scoring, options flow correlation, earnings catalyst detection), Telegram auto-delivery.
+â†’ https://jaehyunpark.gumroad.com/l/tcyahy
 
 ## Author
 
 Core module from a production news analysis engine processing 50+ articles daily since 2026.
+

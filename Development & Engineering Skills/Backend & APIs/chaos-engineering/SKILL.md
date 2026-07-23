@@ -1,9 +1,9 @@
----
+﻿---
 name: chaos-engineering
 description: Use when planning, running, or learning from chaos engineering experiments. Triggers on "chaos experiment", "fault injection", "gameday", "resilience test", "blast radius", "steady state", "abort criteria", "Chaos Toolkit", "Chaos Mesh", "Litmus", "Gremlin", "AWS FIS", or any deliberate failure-injection question. Ships experiment designer, blast-radius calculator, and postmortem generator (all stdlib Python), 4 references on chaos principles + experiment design + attack taxonomy + tooling landscape, and a /chaos-experiment slash command. Composes with feature-flags-architect (kill switches as abort triggers) and kubernetes-operator (common chaos targets).
 context: fork
 version: 2.9.0
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: MIT
 tags: [chaos-engineering, resilience, fault-injection, gameday, sre, reliability, chaos-toolkit, chaos-mesh, litmus, gremlin, aws-fis]
 compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
@@ -11,7 +11,7 @@ compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini
 
 # Chaos Engineering
 
-Design experiments that surface real weaknesses in production systems — without becoming outages. Most "chaos engineering" attempts skip steady-state measurement, define no abort criteria, and have no blast-radius bound. This skill enforces the discipline that makes chaos experiments safe and useful.
+Design experiments that surface real weaknesses in production systems â€” without becoming outages. Most "chaos engineering" attempts skip steady-state measurement, define no abort criteria, and have no blast-radius bound. This skill enforces the discipline that makes chaos experiments safe and useful.
 
 ## When to use
 
@@ -26,7 +26,7 @@ Design experiments that surface real weaknesses in production systems — withou
 
 - General incident response (use `incident-response`)
 - Threat hunting / red-team (use `red-team`, `threat-detection`)
-- Performance load testing (different goal — chaos is about failure modes, not capacity)
+- Performance load testing (different goal â€” chaos is about failure modes, not capacity)
 - Production debugging (chaos discovers weaknesses preemptively, not after-the-fact)
 
 ## Core principle: chaos without abort criteria is an outage
@@ -121,7 +121,7 @@ Different attacks reveal different weaknesses. See `references/attack_taxonomy.m
 | **Time** | Clock skew, NTP issues | libfaketime, Chaos Mesh `TimeChaos` |
 | **Infrastructure** (kill instance) | Auto-recovery, failover | AWS FIS, Chaos Monkey |
 
-Pick the attack that matches the hypothesis. "What happens if X is slow?" → latency. "What happens if X loses network?" → partition.
+Pick the attack that matches the hypothesis. "What happens if X is slow?" â†’ latency. "What happens if X loses network?" â†’ partition.
 
 ## Tooling chooser
 
@@ -135,10 +135,10 @@ Pick the attack that matches the hypothesis. "What happens if X is slow?" → la
 | **Custom** | Niche needs, single-cloud, low budget | None | Any |
 
 Decision rules:
-- k8s-only stack + OSS → Chaos Mesh or Litmus (Litmus has bigger experiment library)
-- Multi-cloud + OSS → Chaos Toolkit
-- AWS-heavy + simple needs → AWS FIS
-- Enterprise + audit/compliance → Gremlin
+- k8s-only stack + OSS â†’ Chaos Mesh or Litmus (Litmus has bigger experiment library)
+- Multi-cloud + OSS â†’ Chaos Toolkit
+- AWS-heavy + simple needs â†’ AWS FIS
+- Enterprise + audit/compliance â†’ Gremlin
 
 See `references/tooling_landscape.md` for trade-offs.
 
@@ -148,8 +148,8 @@ See `references/tooling_landscape.md` for trade-offs.
 
 ```
 1. State a hypothesis: "When [fault], steady-state metric X stays within Y."
-2. Identify the steady-state metric — must be measurable BEFORE the experiment.
-3. Run blast_radius_calculator.py — confirm GREEN before proceeding.
+2. Identify the steady-state metric â€” must be measurable BEFORE the experiment.
+3. Run blast_radius_calculator.py â€” confirm GREEN before proceeding.
 4. Run experiment_designer.py to produce the plan.
 5. Get a peer review of the plan; confirm abort criteria are concrete.
 6. Notify the on-call team in #incidents (or whatever channel).
@@ -172,7 +172,7 @@ See `references/tooling_landscape.md` for trade-offs.
 8. Track follow-up actions in a board with owners.
 ```
 
-### Workflow 3: Continuous chaos (game days → daily)
+### Workflow 3: Continuous chaos (game days â†’ daily)
 
 ```
 1. Start: weekly Game Day in staging.
@@ -194,31 +194,31 @@ This skill explicitly composes with two others in this library:
 
 ## Anti-patterns
 
-- **No hypothesis** — "let's break things" is sabotage, not engineering
-- **No steady-state metric** — without a baseline, you can't tell if X broke
-- **No blast radius bound** — full-prod experiment without limits = outage
-- **No abort criteria** — see above; this is mandatory
-- **No on-call coverage** — chaos without monitoring is unmonitored production
-- **Chaos in staging only** — staging never has prod failure modes
-- **Chaos in dev** — useless; dev has different failure modes from prod
-- **One-off chaos** — single experiment is a press release; learning requires recurrence
-- **Blame-laden postmortem** — record causes, not blame; teams stop running chaos otherwise
+- **No hypothesis** â€” "let's break things" is sabotage, not engineering
+- **No steady-state metric** â€” without a baseline, you can't tell if X broke
+- **No blast radius bound** â€” full-prod experiment without limits = outage
+- **No abort criteria** â€” see above; this is mandatory
+- **No on-call coverage** â€” chaos without monitoring is unmonitored production
+- **Chaos in staging only** â€” staging never has prod failure modes
+- **Chaos in dev** â€” useless; dev has different failure modes from prod
+- **One-off chaos** â€” single experiment is a press release; learning requires recurrence
+- **Blame-laden postmortem** â€” record causes, not blame; teams stop running chaos otherwise
 
 ## References
 
-- `references/chaos_principles.md` — the 4 principles, history, when to start
-- `references/experiment_design.md` — hypothesis structure, steady-state metrics, abort criteria
-- `references/attack_taxonomy.md` — 7 attack types with examples and tooling
-- `references/tooling_landscape.md` — Chaos Toolkit / Mesh / Litmus / Gremlin / FIS / DIY
+- `references/chaos_principles.md` â€” the 4 principles, history, when to start
+- `references/experiment_design.md` â€” hypothesis structure, steady-state metrics, abort criteria
+- `references/attack_taxonomy.md` â€” 7 attack types with examples and tooling
+- `references/tooling_landscape.md` â€” Chaos Toolkit / Mesh / Litmus / Gremlin / FIS / DIY
 
 ## Slash command
 
-`/chaos-experiment` — interactive experiment design wizard that runs all 3 tools.
+`/chaos-experiment` â€” interactive experiment design wizard that runs all 3 tools.
 
 ## Asset templates
 
-- `assets/experiment_template.md` — fill-in plan template
-- `assets/postmortem_template.md` — structured postmortem template
+- `assets/experiment_template.md` â€” fill-in plan template
+- `assets/postmortem_template.md` â€” structured postmortem template
 
 ## Verifiable success
 
@@ -227,5 +227,6 @@ A team using this skill should achieve:
 - 100% of chaos experiments have a written hypothesis, abort criteria, and blast-radius calculation
 - Blast radius for any single experiment never exceeds 10% of error budget
 - Mean time between chaos experiments <14 days (continuous, not one-off)
-- Each experiment produces ≥1 follow-up action that gets shipped
+- Each experiment produces â‰¥1 follow-up action that gets shipped
 - No chaos experiment escalates to a customer-impacting incident in trailing 90 days
+

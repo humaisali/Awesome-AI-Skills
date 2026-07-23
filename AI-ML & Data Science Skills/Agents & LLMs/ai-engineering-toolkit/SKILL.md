@@ -1,11 +1,11 @@
----
+﻿---
 name: ai-engineering-toolkit
 description: "6 production-ready AI engineering workflows: prompt evaluation (8-dimension scoring), context budget planning, RAG pipeline design, agent security audit (65-point checklist), eval harness building, and product sense coaching."
 category: data-ai
 risk: offensive
 source: https://github.com/humaisali
 date_added: "2026-03-15"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [prompt-engineering, rag, security, evaluation, ai-engineering, llm]
 tools: [claude, cursor, gemini, copilot]
 ---
@@ -14,7 +14,7 @@ tools: [claude, cursor, gemini, copilot]
 
 ## Overview
 
-A collection of 6 structured, expert-level workflows that turn your AI coding assistant into a senior AI engineering partner. Each skill encodes a repeatable methodology — not just "ask AI to help," but a step-by-step decision framework with quantitative scoring, checklists, and decision trees.
+A collection of 6 structured, expert-level workflows that turn your AI coding assistant into a senior AI engineering partner. Each skill encodes a repeatable methodology â€” not just "ask AI to help," but a step-by-step decision framework with quantitative scoring, checklists, and decision trees.
 
 The key difference from ad-hoc AI assistance: **every workflow produces consistent, reproducible results** regardless of who runs it or when. You can use the scoring systems as team baselines and write them into CI/CD pipelines.
 
@@ -35,15 +35,15 @@ Scores prompts across 8 dimensions (Clarity, Specificity, Completeness, Concisen
 
 ### Skill 2: Context Budget Planner
 
-Analyzes token distribution across 5 context zones (System, Few-shot, User input, Retrieval, Output) and produces an optimized allocation plan. Includes a compression strategy decision tree for each zone. Common finding: output zone squeezed to under 6% — this skill catches that before truncation happens.
+Analyzes token distribution across 5 context zones (System, Few-shot, User input, Retrieval, Output) and produces an optimized allocation plan. Includes a compression strategy decision tree for each zone. Common finding: output zone squeezed to under 6% â€” this skill catches that before truncation happens.
 
 ### Skill 3: RAG Pipeline Architect
 
-Walks through a complete architecture decision tree: document format → parsing strategy → chunking approach (fixed/semantic/recursive) → embedding model selection → retrieval method (vector/keyword/hybrid) → evaluation metrics (Faithfulness, Relevancy, Context Precision). Covers Naive RAG, Advanced RAG, and Modular RAG patterns.
+Walks through a complete architecture decision tree: document format â†’ parsing strategy â†’ chunking approach (fixed/semantic/recursive) â†’ embedding model selection â†’ retrieval method (vector/keyword/hybrid) â†’ evaluation metrics (Faithfulness, Relevancy, Context Precision). Covers Naive RAG, Advanced RAG, and Modular RAG patterns.
 
 ### Skill 4: Agent Safety Guard
 
-> **⚠️ AUTHORIZED USE ONLY**
+> **âš ï¸ AUTHORIZED USE ONLY**
 > This skill is for educational purposes or authorized security assessments only.
 > You must have explicit, written permission from the system owner before using this tool.
 > Misuse of this tool is illegal and strictly prohibited.
@@ -56,7 +56,7 @@ Designs evaluation metric systems for LLM applications. Includes LLM-as-Judge sc
 
 ### Skill 6: Product Sense Coach
 
-A 5-phase guided conversation framework: dig into motivation → assess market opportunity → find the path → design scenarios → analyze competition. Useful for thinking through "should we build this?" before writing any code.
+A 5-phase guided conversation framework: dig into motivation â†’ assess market opportunity â†’ find the path â†’ design scenarios â†’ analyze competition. Useful for thinking through "should we build this?" before writing any code.
 
 ## Examples
 
@@ -78,17 +78,17 @@ Result: 65 tests executed. 3 critical failures found: Base64-encoded instruction
 
 ## Best Practices
 
-- ✅ Run prompt-evaluator before any production deployment — set a team baseline (e.g., ≥70/100)
-- ✅ Use context-budget-planner early in development, not after hitting truncation issues
-- ✅ Run agent-safety-guard as a pre-launch gate, not post-incident
-- ✅ Combine skills in sequence: RAG design → context optimization → prompt polish → security audit → eval setup
-- ❌ Don't rely on a single dimension score — look at the full profile
-- ❌ Don't skip the security audit because "it's just an internal tool"
+- âœ… Run prompt-evaluator before any production deployment â€” set a team baseline (e.g., â‰¥70/100)
+- âœ… Use context-budget-planner early in development, not after hitting truncation issues
+- âœ… Run agent-safety-guard as a pre-launch gate, not post-incident
+- âœ… Combine skills in sequence: RAG design â†’ context optimization â†’ prompt polish â†’ security audit â†’ eval setup
+- âŒ Don't rely on a single dimension score â€” look at the full profile
+- âŒ Don't skip the security audit because "it's just an internal tool"
 
 ## Security & Safety Notes
 
 - All skills are read-only analysis and advisory workflows. No skills modify files or make network requests.
-- The agent-safety-guard skill constructs adversarial test prompts for evaluation purposes only — these are contained within the evaluation context and do not interact with external systems.
+- The agent-safety-guard skill constructs adversarial test prompts for evaluation purposes only â€” these are contained within the evaluation context and do not interact with external systems.
 - **agent-safety-guard is classified as an offensive skill**: it generates attack payloads (prompt injection, SQL injection, command injection) for authorized security testing. The skill requires explicit user confirmation before executing each test phase. Run in a sandboxed environment when possible.
 - No weaponized payloads are included. All adversarial prompts are educational in nature.
 
@@ -110,3 +110,4 @@ cp -r ai-engineering-toolkit/skills/* ~/.claude/skills/
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

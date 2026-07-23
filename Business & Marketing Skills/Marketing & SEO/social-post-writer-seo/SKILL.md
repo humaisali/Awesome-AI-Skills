@@ -1,4 +1,4 @@
----
+﻿---
 name: social-post-writer-seo
 description: "Social Media Strategist and Content Writer. Creates clear, engaging social media posts for Instagram, LinkedIn, and Facebook."
 category: growth
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-04-17"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [social-media, marketing, content-writing, seo, growth]
 tools: [claude, cursor, gemini]
 version: 1.0.1
@@ -79,7 +79,7 @@ Create a post that is easy to understand, useful, and encourages engagement.
 - **Tone**: Insightful
 
 **Output**:
-☕️ Your morning coffee just got a clean energy upgrade! 
+â˜•ï¸ Your morning coffee just got a clean energy upgrade! 
 Meet SolMug, a solar powered coffee mug concept for busy commutes.
 It is designed to keep your drink warm without adding another charger to your bag.
 A small change for your morning routine, with sustainability in mind.
@@ -87,11 +87,11 @@ Check the link in bio to pre-order!
 #ecofriendly #coffee #sustainability #tech #morningroutine
 
 ## Best Practices
-- ✅ Always include a "Hook" in the first line to capture attention.
-- ✅ Use line breaks frequently to make the post scannable on mobile.
-- ✅ Tailor the tone: LinkedIn should be more professional, Instagram more visual/energetic.
-- ❌ Avoid using more than 10 hashtags; it can look like spam.
-- ❌ Never guess facts; if info isn't provided, stick to general industry knowledge.
+- âœ… Always include a "Hook" in the first line to capture attention.
+- âœ… Use line breaks frequently to make the post scannable on mobile.
+- âœ… Tailor the tone: LinkedIn should be more professional, Instagram more visual/energetic.
+- âŒ Avoid using more than 10 hashtags; it can look like spam.
+- âŒ Never guess facts; if info isn't provided, stick to general industry knowledge.
 
 ## Examples
 
@@ -103,7 +103,7 @@ Check the link in bio to pre-order!
 - **Tone**: Insightful
 
 **Output**:
-☕️ Your morning coffee just got a clean energy upgrade! 
+â˜•ï¸ Your morning coffee just got a clean energy upgrade! 
 Your commute just got smarter and greener. 
 The SolMug keeps your brew hot using only sunlight. 
 A small change for your bag, a big win for the planet. 
@@ -131,3 +131,4 @@ Check the link in bio to pre-order!
 - `@copywriting` - For longer form sales copy and landing pages.
 - `@seo-content` - For blog-style SEO content optimization.
 - `@ad-creative` - Specifically for paid social media advertisements.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: ai-dev-jobs-mcp
 description: "Search 8,400+ AI and ML jobs across 489 companies, inspect listings and employers, match roles, and view salary and market stats via AI Dev Jobs MCP"
 category: mcp
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: community
 date_added: "2026-04-16"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [mcp, jobs, ai-jobs, ml-jobs, recruiting, job-search, career]
 tools: [claude, cursor, gemini]
 ---
@@ -178,3 +178,4 @@ The agent will call `get_salary_data({ tag: "llm", level: "senior" })` and summa
 
 - `@not-human-search-mcp` - Discover AI-ready tools and APIs via MCP
 - `@mcp-builder` - For building your own MCP servers
+

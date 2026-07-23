@@ -1,4 +1,4 @@
----
+﻿---
 name: linkedin-content-generator
 description: "AI-powered LinkedIn content suite: generate posts, carousels, newsletters, and 30-day calendars with niche-specific SEO rules and a reinforcement-learning personal memory system."
 category: marketing
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: sarveshtalele/linkedin-content-skill
 source_type: community
 date_added: "2026-06-04"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [linkedin, content-creation, social-media, marketing, newsletter, carousel, content-calendar, reinforcement-learning, seo, copywriting]
 tools: [claude]
 license: "MIT"
@@ -20,7 +20,7 @@ license_source: https://github.com/humaisali
 
 A full LinkedIn content-creation suite for Claude Code that turns a topic and niche into
 publish-ready posts, multi-slide carousels, long-form newsletter editions, and 30-day content
-calendars — all wired through a personal reinforcement-learning memory system so every output
+calendars â€” all wired through a personal reinforcement-learning memory system so every output
 improves as you give feedback.
 
 Seven coordinated commands cover the full content workflow:
@@ -75,21 +75,21 @@ No API keys, external services, or network access are needed.
 
 ```
 User command (/generate-post ...)
-        │
-        ▼
+        â”‚
+        â–¼
 SKILL.md parses $ARGUMENTS
-        │
-        ▼
+        â”‚
+        â–¼
 Python script builds prompt
-  • Injects LinkedIn SEO rules
-  • Injects memory.md preferences
-        │
-        ▼
+  â€¢ Injects LinkedIn SEO rules
+  â€¢ Injects memory.md preferences
+        â”‚
+        â–¼
 Claude generates publish-ready output
-        │
-        ▼
-/feedback saves what worked → memory.md
-        (loop — every future output improves)
+        â”‚
+        â–¼
+/feedback saves what worked â†’ memory.md
+        (loop â€” every future output improves)
 ```
 
 ### Step 1: Set Up Your Niche (One-Time)
@@ -99,7 +99,7 @@ Open `~/.claude/skills/linkedin-content-generator/scripts/memory.md` and update 
 
 ```markdown
 ## Core Identity & Tone
-- **Primary Niche:** AI & Technology   ← change this
+- **Primary Niche:** AI & Technology   â† change this
 ```
 
 This field is injected into every prompt. Without it, the skill defaults to
@@ -123,7 +123,7 @@ generation prompts.
 
 ## Commands Reference
 
-### `/generate-post` — Single LinkedIn Post
+### `/generate-post` â€” Single LinkedIn Post
 
 Generates a scroll-stopping, SEO-optimised LinkedIn text post.
 
@@ -138,8 +138,8 @@ Generates a scroll-stopping, SEO-optimised LinkedIn text post.
 |---|---|---|
 | `topic` | required | any subject |
 | `niche` | `"AI & Technology"` | any industry |
-| `tone` | `professional` | `professional` · `storytelling` · `controversial` · `educational` · `motivational` |
-| `style` | `list-based` | `list-based` · `text-only` · `storytelling` · `data-driven` · `contrarian` |
+| `tone` | `professional` | `professional` Â· `storytelling` Â· `controversial` Â· `educational` Â· `motivational` |
+| `style` | `list-based` | `list-based` Â· `text-only` Â· `storytelling` Â· `data-driven` Â· `contrarian` |
 
 **Examples:**
 
@@ -157,15 +157,15 @@ Generates a scroll-stopping, SEO-optimised LinkedIn text post.
 
 **Output structure:**
 1. Scroll-stopping hook (2 lines, triggers "see more")
-2. Context / problem setup (2–3 short sentences)
+2. Context / problem setup (2â€“3 short sentences)
 3. Core value (numbered list or bullets, max 7 items)
-4. Key takeaway (1–2 punchy sentences)
+4. Key takeaway (1â€“2 punchy sentences)
 5. Specific call to action
-6. 3–5 hashtags (broad + niche + community mix)
+6. 3â€“5 hashtags (broad + niche + community mix)
 
 ---
 
-### `/generate-carousel` — LinkedIn Carousel
+### `/generate-carousel` â€” LinkedIn Carousel
 
 Generates numbered slide content plus a ready-to-use LinkedIn caption.
 
@@ -180,18 +180,18 @@ Generates numbered slide content plus a ready-to-use LinkedIn caption.
 |---|---|---|
 | `topic` | required | any subject |
 | `niche` | `"AI & Technology"` | any industry |
-| `slides` | `7` | `3`–`12` |
-| `style` | `listicle` | `how-to` · `listicle` · `myth-busting` · `framework` · `story-arc` |
+| `slides` | `7` | `3`â€“`12` |
+| `style` | `listicle` | `how-to` Â· `listicle` Â· `myth-busting` Â· `framework` Â· `story-arc` |
 
 **Style guide:**
 
 | Style | Structure |
 |---|---|
-| `how-to` | Slide 1 = problem → slides 2–N = steps → last = result / CTA |
-| `listicle` | Each slide = one item with bold title + 1–2 sentence explanation |
-| `myth-busting` | Each slide = `MYTH: [belief]` → `TRUTH: [reality]` |
+| `how-to` | Slide 1 = problem â†’ slides 2â€“N = steps â†’ last = result / CTA |
+| `listicle` | Each slide = one item with bold title + 1â€“2 sentence explanation |
+| `myth-busting` | Each slide = `MYTH: [belief]` â†’ `TRUTH: [reality]` |
 | `framework` | Introduce a proprietary framework; each slide = one component |
-| `story-arc` | Slide 1 = before → middle = journey → last = after + CTA |
+| `story-arc` | Slide 1 = before â†’ middle = journey â†’ last = after + CTA |
 
 **Examples:**
 
@@ -208,11 +208,11 @@ Generates numbered slide content plus a ready-to-use LinkedIn caption.
 ```
 
 **Output:** Slides numbered `1` through `N`, followed by a LinkedIn caption with hook,
-teaser context, "Swipe →" prompt, and hashtags.
+teaser context, "Swipe â†’" prompt, and hashtags.
 
 ---
 
-### `/generate-newsletter` — LinkedIn Newsletter Edition
+### `/generate-newsletter` â€” LinkedIn Newsletter Edition
 
 Generates a complete long-form newsletter edition structured for the LinkedIn Newsletter
 editor.
@@ -228,7 +228,7 @@ editor.
 |---|---|---|
 | `topic` | required | any subject |
 | `niche` | `"AI & Technology"` | any industry |
-| `length` | `medium` | `short` (~700 w) · `medium` (~1,200 w) · `long` (~2,000 w) |
+| `length` | `medium` | `short` (~700 w) Â· `medium` (~1,200 w) Â· `long` (~2,000 w) |
 | `title` | auto-generated | optional series name |
 
 **Examples:**
@@ -245,13 +245,13 @@ editor.
 1. SEO-optimised H1 headline
 2. Opening hook (personal anecdote, statistic, or bold claim)
 3. Body sections with H2 subheadings
-4. Key takeaways (3–5 bullets)
+4. Key takeaways (3â€“5 bullets)
 5. One specific action step for this week
 6. Engagement question to spark comments
 
 ---
 
-### `/generate-calendar` — 30-Day Content Calendar
+### `/generate-calendar` â€” 30-Day Content Calendar
 
 Generates a Markdown table calendar with monthly theme, SEO keywords, and format breakdown.
 
@@ -267,7 +267,7 @@ Generates a Markdown table calendar with monthly theme, SEO keywords, and format
 | `niche` | required | any industry |
 | `days` | `30` | any positive integer |
 | `frequency` | `"3 times a week"` | any posting cadence |
-| `goal` | `growth` | `awareness` · `engagement` · `leads` · `authority` · `growth` |
+| `goal` | `growth` | `awareness` Â· `engagement` Â· `leads` Â· `authority` Â· `growth` |
 
 **Goal guide:**
 
@@ -294,7 +294,7 @@ top 5 SEO keywords + format breakdown summary.
 
 ---
 
-### `/show-memory` — Display Preferences
+### `/show-memory` â€” Display Preferences
 
 Displays current memory contents: niche, tone, style, and all saved feedback entries.
 
@@ -307,7 +307,7 @@ Displays current memory contents: niche, tone, style, and all saved feedback ent
 
 ---
 
-### `/feedback` — Save Successful Patterns
+### `/feedback` â€” Save Successful Patterns
 
 Appends a labelled feedback entry to `memory.md`. Future outputs automatically incorporate
 saved patterns.
@@ -333,7 +333,7 @@ saved patterns.
 
 ---
 
-### `/clear-memory` — Reset Memory
+### `/clear-memory` â€” Reset Memory
 
 Resets `memory.md` to factory defaults. The command asks for confirmation before
 executing.
@@ -357,32 +357,32 @@ optional; they are part of the prompt engineering that makes outputs platform-na
 
 ### Readability Rules
 - Maximum 2 sentences per paragraph.
-- Aggressive line breaks — white space wins on LinkedIn.
+- Aggressive line breaks â€” white space wins on LinkedIn.
 - Bold used sparingly, only for critical points.
 - Target reading level: Grade 8 or below.
 
 ### Hashtag Strategy
 - 1 broad hashtag (`#AI`, `#Marketing`, `#Leadership`).
 - 2 niche hashtags (`#AIAgents`, `#ContentMarketing`, `#StartupLife`).
-- 1–2 community hashtags (`#LinkedInTips`, `#PersonalBranding`).
+- 1â€“2 community hashtags (`#LinkedInTips`, `#PersonalBranding`).
 - Hard limit: **never more than 5** total.
 
 ## Best Practices
 
-- ✅ Set `Primary Niche` in `memory.md` before generating any content.
-- ✅ Run `/feedback` after any post that performs well — the memory compounds over time.
-- ✅ Use `/generate-calendar` first when planning a content sprint; it provides topics
+- âœ… Set `Primary Niche` in `memory.md` before generating any content.
+- âœ… Run `/feedback` after any post that performs well â€” the memory compounds over time.
+- âœ… Use `/generate-calendar` first when planning a content sprint; it provides topics
   for `/generate-post` and `/generate-carousel` runs.
-- ✅ Mix carousel styles across a calendar period: listicle, myth-busting, and
+- âœ… Mix carousel styles across a calendar period: listicle, myth-busting, and
   story-arc perform differently and prevent audience fatigue.
-- ✅ Test the `controversial` tone on topics where you have a genuine, defensible stance;
+- âœ… Test the `controversial` tone on topics where you have a genuine, defensible stance;
   avoid it for topics where nuance is more valuable than edge.
-- ❌ Do not skip the `/feedback` loop — without it, every output starts from generic
+- âŒ Do not skip the `/feedback` loop â€” without it, every output starts from generic
   LinkedIn best practices rather than your specific audience data.
-- ❌ Do not post more than 5 hashtags; LinkedIn's algorithm penalises hashtag stuffing.
-- ❌ Do not use the `data-driven` style without real statistics to cite; fabricated
+- âŒ Do not post more than 5 hashtags; LinkedIn's algorithm penalises hashtag stuffing.
+- âŒ Do not use the `data-driven` style without real statistics to cite; fabricated
   numbers destroy credibility faster than any other LinkedIn mistake.
-- ❌ Do not generate a 30-day calendar without specifying `goal`; the default `growth`
+- âŒ Do not generate a 30-day calendar without specifying `goal`; the default `growth`
   goal mixes formats broadly and may not match a specific campaign objective.
 
 ## Limitations
@@ -396,7 +396,7 @@ optional; they are part of the prompt engineering that makes outputs platform-na
   evolves.
 - Calendar output does not auto-schedule posts or integrate with scheduling tools
   (Buffer, Hootsuite, etc.). It produces a Markdown table for manual import.
-- The `slides` parameter is clamped to the range `3–12`. Carousels outside this range
+- The `slides` parameter is clamped to the range `3â€“12`. Carousels outside this range
   will silently be adjusted to the nearest boundary.
 - `memory.md` grows unbounded as feedback accumulates. Very large memory files (500+
   entries) may exceed prompt context limits and cause truncation. Periodically archive
@@ -432,20 +432,20 @@ python3 "${SKILL_SCRIPTS}/memory_manager.py" read
 python3 "${SKILL_SCRIPTS}/memory_manager.py" clear
 ```
 
-<!-- security-allowlist: approved — all commands are local Python script invocations with no network access, no credential handling, and writes scoped to the skill's own bundled scripts/memory.md only -->
+<!-- security-allowlist: approved â€” all commands are local Python script invocations with no network access, no credential handling, and writes scoped to the skill's own bundled scripts/memory.md only -->
 
 ## Common Pitfalls
 
 - **Problem:** Script exits with `ModuleNotFoundError` or `No module named 'utils'`.
   **Solution:** Each script uses `sys.path.insert(0, SCRIPT_DIR)` to locate `utils.py`
-  relative to itself, so they must be invoked with an absolute path — not from inside
+  relative to itself, so they must be invoked with an absolute path â€” not from inside
   the `scripts/` directory. Use
   `python3 "${HOME}/.claude/skills/linkedin-content-generator/scripts/generate_post.py" ...`.
 
 - **Problem:** Memory is not being applied to generated content.
   **Solution:** Check that `memory.md` exists at
   `~/.claude/skills/linkedin-content-generator/scripts/memory.md`. Run `/show-memory`
-  to confirm. If missing, run any generator command once — it auto-creates the file from
+  to confirm. If missing, run any generator command once â€” it auto-creates the file from
   the bundled template.
 
 - **Problem:** Calendar output is missing days or the table is malformed.
@@ -470,18 +470,18 @@ python3 "${SKILL_SCRIPTS}/memory_manager.py" clear
 
 ## Related Skills
 
-- `@content-creator` — Broader brand voice analysis, SEO optimisation, and
+- `@content-creator` â€” Broader brand voice analysis, SEO optimisation, and
   cross-platform content frameworks. Use when building a full content marketing system
   beyond LinkedIn alone.
-- `@content-strategy` — Topic cluster planning, editorial roadmap, and content mix
+- `@content-strategy` â€” Topic cluster planning, editorial roadmap, and content mix
   strategy. Use before running `/generate-calendar` when you need to define pillar topics
   first.
-- `@content-marketer` — Campaign-level content planning across channels. Complements
+- `@content-marketer` â€” Campaign-level content planning across channels. Complements
   this skill when LinkedIn is one channel in a broader multi-platform launch.
-- `@linkedin-automation` — Programmatic LinkedIn post publishing via the Composio/Rube
+- `@linkedin-automation` â€” Programmatic LinkedIn post publishing via the Composio/Rube
   MCP. Use alongside this skill when you want to automate the publishing step after
   generating content here.
-- `@linkedin-profile-optimizer` — LinkedIn profile and personal brand optimisation.
+- `@linkedin-profile-optimizer` â€” LinkedIn profile and personal brand optimisation.
   Use before running this skill to align generated content voice with your profile's
   headline, summary, and featured section.
 
@@ -489,4 +489,5 @@ python3 "${SKILL_SCRIPTS}/memory_manager.py" clear
 
 - [LinkedIn Algorithm Guide (Official)](https://www.linkedin.com/help/linkedin/answer/a522537)
 - [LinkedIn Newsletter Best Practices](https://www.linkedin.com/help/linkedin/answer/a544800)
-- [Source Repository — linkedin-content-skill](https://github.com/sarveshtalele/linkedin-content-skill)
+- [Source Repository â€” linkedin-content-skill](https://github.com/sarveshtalele/linkedin-content-skill)
+

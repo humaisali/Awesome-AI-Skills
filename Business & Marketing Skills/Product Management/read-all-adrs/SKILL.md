@@ -1,4 +1,4 @@
----
+﻿---
 name: read-all-adrs
 description: "Read every ADR in a project before summarizing architectural context or decisions."
 category: productivity
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [adr, documentation, architecture]
 tools: [claude, codex]
 license: "MIT"
@@ -33,3 +33,4 @@ Read every single ADR file, for this project, in full.
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

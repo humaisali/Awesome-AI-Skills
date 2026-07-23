@@ -1,4 +1,4 @@
----
+﻿---
 name: design-thinking
 description: Direction and intent for frontend design. Use with design when defining purpose, tone, domain, color world, and review bar; includes cross-domain lens from cinema, architecture, marketing, UX, automotive, industrial design.
 risk: unknown
@@ -8,7 +8,7 @@ source_type: community
 date_added: 2026-07-01
 license: MIT
 license_source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 ---
 
 # Design thinking
@@ -22,7 +22,7 @@ Apply with the **design** skill on every design task. Do this before coding.
 ## Design thinking (before coding)
 
 - **Purpose**: What problem does this interface solve? Who uses it?
-- **Tone**: Pick an extreme and execute with intention — e.g. brutally minimal, maximalist, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian.
+- **Tone**: Pick an extreme and execute with intention â€” e.g. brutally minimal, maximalist, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian.
 - **Constraints**: Framework, performance, accessibility.
 - **Differentiation**: One thing that makes it unforgettable.
 
@@ -30,12 +30,12 @@ Commit to one bold direction. Intentionality over intensity.
 
 ## Reserve impact for punctuation (use sparingly for effect)
 
-High-impact devices — full-bleed media, dramatic motion, oversized type, a saturated accent, parallax — lose their force the moment they become the default. If every section is a full-screen video, none of them land. Choose 1–2 moments to go big (the hero, the payoff) and make everything else quiet and contained, so the big moments read as deliberate punctuation rather than noise. Restraint is what gives the rare full-bleed beat its hit; wall-to-wall intensity reads as flat. This is the luxury of reduction — a single bold gesture in generous negative space beats maximalism. Applies equally to scale, color (one accent, not five), and motion (one signature move, not constant animation).
+High-impact devices â€” full-bleed media, dramatic motion, oversized type, a saturated accent, parallax â€” lose their force the moment they become the default. If every section is a full-screen video, none of them land. Choose 1â€“2 moments to go big (the hero, the payoff) and make everything else quiet and contained, so the big moments read as deliberate punctuation rather than noise. Restraint is what gives the rare full-bleed beat its hit; wall-to-wall intensity reads as flat. This is the luxury of reduction â€” a single bold gesture in generous negative space beats maximalism. Applies equally to scale, color (one accent, not five), and motion (one signature move, not constant animation).
 
 ## Domain and color
 
 - **Domain**: 5+ concepts, metaphors, or vocabulary from the product's world (territory, not features).
-- **Color world**: 5+ colors that "belong" in that world — what you'd see if this product were a physical space. Not "warm" or "cool"; name actual colors from that domain.
+- **Color world**: 5+ colors that "belong" in that world â€” what you'd see if this product were a physical space. Not "warm" or "cool"; name actual colors from that domain.
 - **Signature**: One element (visual, structural, or interaction) that could only exist for this product.
 
 ## Review bar
@@ -44,21 +44,21 @@ Ask: "Would I put my name on this?" Design-lead review means: not "does it work?
 
 Non-negotiable craft invariants (a single failure fails the review):
 
-- **No font pop-in. Ever.** Title/display text must never flash a fallback face or reflow as the webfont loads. Gate it on `document.fonts.ready` and fade in. See design-system → *Never let fonts pop in*.
-- **First seen, first loaded.** Whatever is in the opening viewport (hero text, hero media, brand mark) must be prioritized to paint complete and correct before anything below the fold loads. See design-system → *Loading order*.
+- **No font pop-in. Ever.** Title/display text must never flash a fallback face or reflow as the webfont loads. Gate it on `document.fonts.ready` and fade in. See design-system â†’ *Never let fonts pop in*.
+- **First seen, first loaded.** Whatever is in the opening viewport (hero text, hero media, brand mark) must be prioritized to paint complete and correct before anything below the fold loads. See design-system â†’ *Loading order*.
 
 ---
 
 ## Cross-domain lens
 
-When defining direction, choose which disciplines fit the product and apply 2–3 principles from each. Examples: dashboard → UX + automotive; brand campaign → cinema + marketing; app → UX + industrial design.
+When defining direction, choose which disciplines fit the product and apply 2â€“3 principles from each. Examples: dashboard â†’ UX + automotive; brand campaign â†’ cinema + marketing; app â†’ UX + industrial design.
 
 ### Cinema
 
 - **Framing and composition**: Viewport as frame; rule of thirds, leading lines, foreground/mid/background depth. What's in focus = primary hierarchy.
 - **Pacing and rhythm**: Sequence of reveals (like editing). One well-orchestrated load or scroll beat beats scattered motion.
 - **Color and mood**: Color grading = mood; consistent palette as "look."
-- **Focus and depth**: Focal plane and depth of field → visual hierarchy and layering (blur, opacity, scale).
+- **Focus and depth**: Focal plane and depth of field â†’ visual hierarchy and layering (blur, opacity, scale).
 
 ### Architecture
 
@@ -66,7 +66,7 @@ When defining direction, choose which disciplines fit the product and apply 2–
 - **Wayfinding**: User always knows where they are and where they can go (orientation, nav, breadcrumbs).
 - **Material and light**: Texture and shadow create depth; light direction implies elevation and emphasis.
 - **Negative space**: Intentional emptiness; space as structure, not leftover.
-- **Thresholds**: Entrance and transition moments (landing → app, modal open) as deliberate "crossings."
+- **Thresholds**: Entrance and transition moments (landing â†’ app, modal open) as deliberate "crossings."
 
 ### Marketing
 
@@ -107,3 +107,4 @@ When defining direction, choose which disciplines fit the product and apply 2–
 - Use this skill only when the task clearly matches its upstream source and local project context.
 - Verify commands, generated code, dependencies, credentials, and external service behavior before applying changes.
 - Do not treat examples as a substitute for environment-specific tests, security review, or user approval for destructive or costly actions.
+

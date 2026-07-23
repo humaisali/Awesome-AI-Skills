@@ -1,9 +1,9 @@
----
+﻿---
 name: top-web-vulnerabilities
 description: "Provide a comprehensive, structured reference for the 100 most critical web application vulnerabilities organized by category. This skill enables systematic vulnerability identification, impact assessment, and remediation guidance across the full spectrum of web security threats."
 risk: unknown
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -545,3 +545,4 @@ Permissions-Policy: geolocation=(), microphone=()
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

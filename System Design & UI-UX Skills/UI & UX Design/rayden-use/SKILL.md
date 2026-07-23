@@ -1,4 +1,4 @@
----
+﻿---
 name: rayden-use
 description: Build and maintain Rayden UI components and screens in Figma via Figma MCP with full design token enforcement
 category: design
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: community
 date_added: 2026-04-10
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: figma, design-system, ui, components, mcp, rayden, rayna-ui
 tools: mcp__claude_ai_Figma__use_figma, mcp__claude_ai_Figma__get_screenshot, mcp__claude_ai_Figma__whoami, Read
 ---
@@ -15,7 +15,7 @@ tools: mcp__claude_ai_Figma__use_figma, mcp__claude_ai_Figma__get_screenshot, mc
 
 ## Overview
 
-Build and maintain Rayden UI components and screens directly in Figma using the Figma MCP. The skill enforces the Rayna UI design system — resolved design tokens, craft rules, anti-pattern detection, and visual validation — so every output is mechanically correct and visually premium. Supports three style modes (conservative, balanced, expressive) and includes a dedicated subagent for full-page screen composition.
+Build and maintain Rayden UI components and screens directly in Figma using the Figma MCP. The skill enforces the Rayna UI design system â€” resolved design tokens, craft rules, anti-pattern detection, and visual validation â€” so every output is mechanically correct and visually premium. Supports three style modes (conservative, balanced, expressive) and includes a dedicated subagent for full-page screen composition.
 
 ## When to Use This Skill
 
@@ -27,13 +27,13 @@ Build and maintain Rayden UI components and screens directly in Figma using the 
 
 ## How It Works
 
-1. **Verifies environment** — Checks Figma MCP connection and write access via `whoami`
-2. **Loads component data** — Reads Rayden component specs, anatomy, and tokens from the `@raydenui/ai` MCP server or installed package
-3. **Loads craft rules** — Reads supporting files: resolved token values, craft rules, anti-patterns, and screen layout patterns
-4. **Identifies task type** — Determines if building a single component, composing a screen, auditing, or adding variants
-5. **Applies style mode** — Adjusts spacing, shadow, typography, and visual weight based on conservative/balanced/expressive mode
-6. **Builds with helpers** — Generates Figma Plugin API code using mandatory helper functions (hexToRgb, loadFonts, applyShadow, applyBorder) with auto layout on every frame
-7. **Visual validation** — Takes screenshots after each build stage and validates against 8 acceptance criteria (alignment, spacing, color accuracy, hierarchy, radius, shadow, primary action count)
+1. **Verifies environment** â€” Checks Figma MCP connection and write access via `whoami`
+2. **Loads component data** â€” Reads Rayden component specs, anatomy, and tokens from the `@raydenui/ai` MCP server or installed package
+3. **Loads craft rules** â€” Reads supporting files: resolved token values, craft rules, anti-patterns, and screen layout patterns
+4. **Identifies task type** â€” Determines if building a single component, composing a screen, auditing, or adding variants
+5. **Applies style mode** â€” Adjusts spacing, shadow, typography, and visual weight based on conservative/balanced/expressive mode
+6. **Builds with helpers** â€” Generates Figma Plugin API code using mandatory helper functions (hexToRgb, loadFonts, applyShadow, applyBorder) with auto layout on every frame
+7. **Visual validation** â€” Takes screenshots after each build stage and validates against 8 acceptance criteria (alignment, spacing, color accuracy, hierarchy, radius, shadow, primary action count)
 
 ## Examples
 
@@ -51,7 +51,7 @@ Build and maintain Rayden UI components and screens directly in Figma using the 
 /rayden-use dashboard-screen balanced https://figma.com/file/abc123
 ```
 
-**Use case:** You're designing an analytics dashboard and need a sidebar layout with KPI cards, a data table, and an activity feed — all using consistent Rayden tokens and spacing.
+**Use case:** You're designing an analytics dashboard and need a sidebar layout with KPI cards, a data table, and an activity feed â€” all using consistent Rayden tokens and spacing.
 
 ### Build a marketing landing page
 
@@ -75,38 +75,39 @@ Build and maintain Rayden UI components and screens directly in Figma using the 
 /rayden-use add-variants Input https://figma.com/file/abc123
 ```
 
-**Use case:** The Input component exists in your Figma file but is missing error and success states — the skill reads the existing structure and extends it.
+**Use case:** The Input component exists in your Figma file but is missing error and success states â€” the skill reads the existing structure and extends it.
 
 ## Best Practices
 
 - Always provide a Figma file URL as the last argument
 - Use `balanced` mode (default) for most use cases; `conservative` for dense admin UIs, `expressive` for marketing pages
-- Let the skill take screenshots between build stages — this is how it validates output quality
+- Let the skill take screenshots between build stages â€” this is how it validates output quality
 - Install `@raydenui/ai` as an MCP server for the richest component data access
-- Review the generated output in Figma after completion — the skill validates mechanically but human judgment on aesthetics is still valuable
+- Review the generated output in Figma after completion â€” the skill validates mechanically but human judgment on aesthetics is still valuable
 
 ## Security & Safety Notes
 
-- This skill only reads local supporting files and calls the Figma MCP — no external network requests beyond Figma's API
+- This skill only reads local supporting files and calls the Figma MCP â€” no external network requests beyond Figma's API
 - Requires Figma Dev or Full seat with write access to the target file
 - Does not modify files outside of the target Figma document
-- All design tokens are bundled in the skill's supporting files — no secrets or credentials involved
+- All design tokens are bundled in the skill's supporting files â€” no secrets or credentials involved
 
 ## Common Pitfalls
 
 | Problem | Solution |
 |---------|----------|
-| "Font not found" error | The skill falls back to Roboto if Inter is unavailable — ensure Inter is loaded in your Figma file for best results |
+| "Font not found" error | The skill falls back to Roboto if Inter is unavailable â€” ensure Inter is loaded in your Figma file for best results |
 | Components don't combine as variants | All components must share the same parent frame before calling `combineAsVariants` |
 | Colors look wrong | Verify you're using resolved token hex values from tokens.md, not approximations |
 | Figma permission denied | Check that your Figma seat is Dev or Full (not Viewer) and the file isn't view-only |
 
 ## Related Skills
 
-- `rayden-code` — Generate React code with Rayden UI components (included in the same package)
-- `rayden-compose` — Dedicated subagent for composing full-page Figma screens (included in this skill package)
+- `rayden-code` â€” Generate React code with Rayden UI components (included in the same package)
+- `rayden-compose` â€” Dedicated subagent for composing full-page Figma screens (included in this skill package)
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

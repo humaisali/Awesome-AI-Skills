@@ -1,4 +1,4 @@
----
+﻿---
 name: tokenwise
 description: "Measurement-driven model router for Claude Code. Routes Haiku/Sonnet/Opus per task class, logs every routed task with real $ numbers, and A/B tests cheaper tiers before you trust the savings."
 category: developer-tools
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: CodeShuX/tokenwise
 source_type: community
 date_added: "2026-05-12"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [model-routing, token-optimization, cost-reduction, anthropic, haiku, sonnet, opus, claude-code, ab-testing, measurement]
 tools: [claude]
 license: "MIT"
@@ -18,11 +18,11 @@ plugin:
     claude: blocked
 ---
 
-# TokenWise — Measurement-Driven Model Router
+# TokenWise â€” Measurement-Driven Model Router
 
 ## Overview
 
-A Claude Code skill that auto-routes subtasks to the cheapest model that can handle them (Haiku for grunt work, Sonnet for scoped reasoning, Opus only for synthesis), then logs every routed task to a local NDJSON with real token + cost numbers. Includes an A/B test subcommand that runs the same task across multiple tiers and scores quality, so the routing decisions are verified against the user's real workload — not estimated.
+A Claude Code skill that auto-routes subtasks to the cheapest model that can handle them (Haiku for grunt work, Sonnet for scoped reasoning, Opus only for synthesis), then logs every routed task to a local NDJSON with real token + cost numbers. Includes an A/B test subcommand that runs the same task across multiple tiers and scores quality, so the routing decisions are verified against the user's real workload â€” not estimated.
 
 Anthropic's own bug tracker (Issue #27665) reports 93.8% of Max-subscriber Claude Code tokens flow to Opus. Existing routers (claude-router, wshobson, VoltAgent) either pin models statically or route by vibes-based heuristics with no measurement. TokenWise fills the measurement gap.
 
@@ -35,11 +35,11 @@ Anthropic's own bug tracker (Issue #27665) reports 93.8% of Max-subscriber Claud
 
 ## Subcommands
 
-- `/tokenwise:install` — guided installer with diff preview, automatic backups, and `--dry-run` mode
-- `/tokenwise:report` — per-session token + cost summary vs all-Opus baseline
-- `/tokenwise:summary [--week|--month|--all]` — historical aggregate with trend
-- `/tokenwise:ab "<task>"` — A/B test the same task at multiple tiers, generates a markdown comparison
-- `/tokenwise:undo` — restore CLAUDE.md / settings.json from backup
+- `/tokenwise:install` â€” guided installer with diff preview, automatic backups, and `--dry-run` mode
+- `/tokenwise:report` â€” per-session token + cost summary vs all-Opus baseline
+- `/tokenwise:summary [--week|--month|--all]` â€” historical aggregate with trend
+- `/tokenwise:ab "<task>"` â€” A/B test the same task at multiple tiers, generates a markdown comparison
+- `/tokenwise:undo` â€” restore CLAUDE.md / settings.json from backup
 
 ## Routing taxonomy
 
@@ -52,7 +52,7 @@ Anthropic's own bug tracker (Issue #27665) reports 93.8% of Max-subscriber Claud
 Safety caps:
 - Haiku never spawns further subagents
 - Max spawn depth = 2
-- Subagents that need a smarter model return to parent — they never escalate on their own
+- Subagents that need a smarter model return to parent â€” they never escalate on their own
 - Tasks under 100 chars with no file context run inline (subagent overhead > savings)
 - Subagent context >30k tokens bumps a tier
 
@@ -73,13 +73,14 @@ Then run `/tokenwise:install` and follow the guided prompts.
 
 ## Limitations
 
-- Token counts approximate to ±2% vs Anthropic billing
-- A/B test mode costs extra tokens (one task × N tiers) — intentional one-time validation
+- Token counts approximate to Â±2% vs Anthropic billing
+- A/B test mode costs extra tokens (one task Ã— N tiers) â€” intentional one-time validation
 - Anthropic-only by design (use LiteLLM or OpenRouter for cross-vendor)
-- Subagent `model:` param has known silent-fail bugs on some Claude Code builds — skill probes for this at install and refuses to configure if routing is broken
+- Subagent `model:` param has known silent-fail bugs on some Claude Code builds â€” skill probes for this at install and refuses to configure if routing is broken
 
 ## Source
 
 - Repo: https://github.com/CodeShuX/tokenwise
 - License: MIT
 - Author: CodeShuX
+

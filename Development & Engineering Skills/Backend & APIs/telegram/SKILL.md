@@ -1,10 +1,10 @@
----
+﻿---
 name: telegram
 description: Integracao completa com Telegram Bot API. Setup com BotFather, mensagens, webhooks, inline keyboards, grupos, canais. Boilerplates Node.js e Python.
 risk: critical
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - messaging
 - telegram
@@ -67,20 +67,20 @@ Se o usuario nao tem um bot criado, oriente a conversar com @BotFather no Telegr
 
 ```
 O usuario precisa criar um bot?
-├── SIM → Secao "Setup com BotFather" abaixo
-└── NAO → Qual linguagem?
-    ├── Node.js/TypeScript
-    └── Python
-    → O que quer fazer?
-       ├── Enviar mensagens → Secao "Tipos de Mensagem"
-       ├── Receber mensagens → Secao "Receber Updates"
-       ├── Teclados interativos → Secao "Keyboards"
-       ├── Gerenciar grupos/canais → references/chat-management.md
-       ├── Webhook setup → references/webhook-setup.md
-       ├── Inline mode → references/advanced-features.md
-       ├── Pagamentos → references/advanced-features.md
-       ├── Bot de atendimento com IA → Secao "Automacao com IA"
-       └── Referencia completa da API → references/api-reference.md
+â”œâ”€â”€ SIM â†’ Secao "Setup com BotFather" abaixo
+â””â”€â”€ NAO â†’ Qual linguagem?
+    â”œâ”€â”€ Node.js/TypeScript
+    â””â”€â”€ Python
+    â†’ O que quer fazer?
+       â”œâ”€â”€ Enviar mensagens â†’ Secao "Tipos de Mensagem"
+       â”œâ”€â”€ Receber mensagens â†’ Secao "Receber Updates"
+       â”œâ”€â”€ Teclados interativos â†’ Secao "Keyboards"
+       â”œâ”€â”€ Gerenciar grupos/canais â†’ references/chat-management.md
+       â”œâ”€â”€ Webhook setup â†’ references/webhook-setup.md
+       â”œâ”€â”€ Inline mode â†’ references/advanced-features.md
+       â”œâ”€â”€ Pagamentos â†’ references/advanced-features.md
+       â”œâ”€â”€ Bot de atendimento com IA â†’ Secao "Automacao com IA"
+       â””â”€â”€ Referencia completa da API â†’ references/api-reference.md
 ```
 
 Para iniciar um projeto do zero com boilerplate pronto:
@@ -582,3 +582,4 @@ Se receber erro 429 (Too Many Requests), respeite o `retry_after` retornado.
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

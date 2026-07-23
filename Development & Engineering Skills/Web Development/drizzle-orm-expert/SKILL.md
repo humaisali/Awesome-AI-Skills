@@ -1,6 +1,6 @@
----
+﻿---
 name: drizzle-orm-expert
-description: "Expert in Drizzle ORM for TypeScript — schema design, relational queries, migrations, and serverless database integration. Use when building type-safe database layers with Drizzle."
+description: "Expert in Drizzle ORM for TypeScript â€” schema design, relational queries, migrations, and serverless database integration. Use when building type-safe database layers with Drizzle."
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-04"
@@ -24,11 +24,11 @@ You are a production-grade Drizzle ORM expert. You help developers build type-sa
 
 ### Why Drizzle
 
-Drizzle ORM is a TypeScript-first ORM that generates zero runtime overhead. Unlike Prisma (which uses a query engine binary), Drizzle compiles to raw SQL — making it ideal for edge runtimes and serverless. Key advantages:
+Drizzle ORM is a TypeScript-first ORM that generates zero runtime overhead. Unlike Prisma (which uses a query engine binary), Drizzle compiles to raw SQL â€” making it ideal for edge runtimes and serverless. Key advantages:
 
 - **SQL-like API**: If you know SQL, you know Drizzle
 - **Zero dependencies**: Tiny bundle, works in Cloudflare Workers, Vercel Edge, Deno
-- **Full type inference**: Schema → types → queries are all connected at compile time
+- **Full type inference**: Schema â†’ types â†’ queries are all connected at compile time
 - **Relational Query API**: Prisma-like nested includes without N+1 problems
 
 ## Schema Design Patterns
@@ -73,7 +73,7 @@ export const usersRelations = relations(users, ({ many }) => ({
 }));
 
 export const postsRelations = relations(posts, ({ one }) => ({
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
     fields: [posts.authorId],
     references: [users.id],
   }),
@@ -83,7 +83,7 @@ export const postsRelations = relations(posts, ({ one }) => ({
 ### Type Inference
 
 ```typescript
-// Infer types directly from your schema — no separate type files needed
+// Infer types directly from your schema â€” no separate type files needed
 import type { InferSelectModel, InferInsertModel } from "drizzle-orm";
 
 export type User = InferSelectModel<typeof users>;
@@ -133,7 +133,7 @@ const postCounts = await db
 ### Relational Queries (Prisma-like API)
 
 ```typescript
-// Nested includes — Drizzle resolves in a single query
+// Nested includes â€” Drizzle resolves in a single query
 const usersWithPosts = await db.query.users.findMany({
   with: {
     posts: {
@@ -207,7 +207,7 @@ export default defineConfig({
 # Generate migration SQL from schema changes
 npx drizzle-kit generate
 
-# Push schema directly to database (development only — skips migration files)
+# Push schema directly to database (development only â€” skips migration files)
 npx drizzle-kit push
 
 # Run pending migrations (production)
@@ -340,16 +340,16 @@ export async function createUser(formData: FormData) {
 
 ## Best Practices
 
-- ✅ **Do:** Keep all schema definitions in a single `db/schema.ts` or split by domain (`db/schema/users.ts`, `db/schema/posts.ts`)
-- ✅ **Do:** Use `InferSelectModel` and `InferInsertModel` for type safety instead of manual interfaces
-- ✅ **Do:** Use the relational query API (`db.query.*`) for nested data to avoid N+1 problems
-- ✅ **Do:** Use prepared statements for frequently executed queries in production
-- ✅ **Do:** Use `drizzle-kit generate` + `migrate` in production (never `push`)
-- ✅ **Do:** Pass `{ schema }` to `drizzle()` to enable the relational query API
-- ❌ **Don't:** Use `drizzle-kit push` in production — it can cause data loss
-- ❌ **Don't:** Write raw SQL when the Drizzle query builder supports the operation
-- ❌ **Don't:** Forget to define `relations()` if you want to use `db.query.*` with `with`
-- ❌ **Don't:** Create a new database connection per request in serverless — use connection pooling
+- âœ… **Do:** Keep all schema definitions in a single `db/schema.ts` or split by domain (`db/schema/users.ts`, `db/schema/posts.ts`)
+- âœ… **Do:** Use `InferSelectModel` and `InferInsertModel` for type safety instead of manual interfaces
+- âœ… **Do:** Use the relational query API (`db.query.*`) for nested data to avoid N+1 problems
+- âœ… **Do:** Use prepared statements for frequently executed queries in production
+- âœ… **Do:** Use `drizzle-kit generate` + `migrate` in production (never `push`)
+- âœ… **Do:** Pass `{ schema }` to `drizzle()` to enable the relational query API
+- âŒ **Don't:** Use `drizzle-kit push` in production â€” it can cause data loss
+- âŒ **Don't:** Write raw SQL when the Drizzle query builder supports the operation
+- âŒ **Don't:** Forget to define `relations()` if you want to use `db.query.*` with `with`
+- âŒ **Don't:** Create a new database connection per request in serverless â€” use connection pooling
 
 ## Troubleshooting
 
@@ -366,3 +366,4 @@ export async function createUser(formData: FormData) {
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

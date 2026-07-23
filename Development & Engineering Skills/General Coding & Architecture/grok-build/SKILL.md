@@ -1,4 +1,4 @@
----
+﻿---
 name: grok-build
 description: "Delegate well-specified implementation tasks to xAI's Grok Build CLI running headlessly while the orchestrating agent plans, writes task specs, reviews every diff, and owns the result."
 category: agent-orchestration
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: sanjay3290/ai-skills
 source_type: community
 date_added: "2026-07-09"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [grok, delegation, code-generation, xai]
 tools: [claude, cursor, gemini]
 license: "Apache-2.0"
@@ -42,27 +42,27 @@ or a destructive recovery command without separate, explicit approval.
 | Boilerplate, scaffolding, CRUD | Deep cross-file debugging |
 | Mechanical refactors | Security-sensitive code |
 | Test writing from clear specs | Anything touching production infrastructure |
-| UI components from mockups/specs | Tasks where writing the spec ≈ doing the work |
+| UI components from mockups/specs | Tasks where writing the spec â‰ˆ doing the work |
 
 When in doubt, keep it with the orchestrator.
 
 ## Session preflight (once, before the first dispatch)
 
-1. `grok update --check --json` — if `updateAvailable` is true, tell the user. Run
+1. `grok update --check --json` â€” if `updateAvailable` is true, tell the user. Run
    `grok update` only after explicit approval, then confirm with `grok --version`.
-2. `grok models` — if it errors or reports logged out, STOP and ask the user to run
+2. `grok models` â€” if it errors or reports logged out, STOP and ask the user to run
    `grok login`.
 
-## Per-task loop (sequential — the default)
+## Per-task loop (sequential â€” the default)
 
 1. **Spec.** Write a self-contained task file (template below) to a temp directory
-   OUTSIDE the target repo — the harness scratchpad if one is available, else the OS
+   OUTSIDE the target repo â€” the harness scratchpad if one is available, else the OS
    temp dir. Never write it inside the target repo. Grok has zero conversation context:
    no one-liner prompts, ever.
    - POSIX: `mkdir -p "${TMPDIR:-/tmp}/grok-specs"`, then write `task.md` there.
    - Windows (PowerShell): `New-Item -ItemType Directory -Force "$env:TEMP\grok-specs"`,
      then write `task.md` there.
-2. **Clean state.** No uncommitted *source* changes — commit or stash first, so the
+2. **Clean state.** No uncommitted *source* changes â€” commit or stash first, so the
    post-run diff is exactly Grok's work. Ignore build artifacts (`__pycache__`, `dist/`,
    etc.); if they show in `git status`, they're usually just un-gitignored, not your
    concern. Never dispatch on a dirty source tree.
@@ -78,7 +78,7 @@ When in doubt, keep it with the orchestrator.
      --cwd <repo>
    ```
 
-   Windows (PowerShell) — backtick line-continuation:
+   Windows (PowerShell) â€” backtick line-continuation:
 
    ```powershell
    grok --prompt-file <task-file> `
@@ -89,16 +89,16 @@ When in doubt, keep it with the orchestrator.
    ```
 
    Parse the JSON output and save `sessionId`. (`--always-approve` is required for
-   headless runs — `--permission-mode acceptEdits` silently cancels edits with no
+   headless runs â€” `--permission-mode acceptEdits` silently cancels edits with no
    interactive approver. Use it only after the user explicitly approves Grok editing this
    exact scoped worktree. See `references/cli.md`.) For a high-stakes task, add `--check`
    so Grok self-verifies before you review; skip it otherwise (it ~doubles latency).
-4. **Review gate — non-negotiable.**
+4. **Review gate â€” non-negotiable.**
    - Read the diff yourself (`git diff -- <files from the spec>` to skip artifact noise):
      does it do the task, only the task, and match repo conventions?
    - Run the acceptance commands from the spec.
-   - **Pass** → commit with a clear message following the repo's convention → next task.
-   - **Fail** → ask the user before a fix-up or any reset. Never run `git checkout -- .` or
+   - **Pass** â†’ commit with a clear message following the repo's convention â†’ next task.
+   - **Fail** â†’ ask the user before a fix-up or any reset. Never run `git checkout -- .` or
      `git clean -fd` automatically; preserve the diff for review and use a non-destructive
      recovery plan unless the user explicitly authorizes otherwise.
 
@@ -108,7 +108,7 @@ When in doubt, keep it with the orchestrator.
 # Task: <one-line title>
 
 ## Context
-- Repo: <path> — <one line on what the project is>
+- Repo: <path> â€” <one line on what the project is>
 - Conventions: <test runner, formatter, a good example file to imitate>
 
 ## Files
@@ -129,7 +129,7 @@ When in doubt, keep it with the orchestrator.
 ## Executing a Markdown implementation plan
 
 - One plan task per dispatch, in order.
-- Check off the plan's task checkboxes (`- [ ]` → `- [x]`) as each task lands and passes
+- Check off the plan's task checkboxes (`- [ ]` â†’ `- [x]`) as each task lands and passes
   the review gate.
 - If the plan explicitly marks tasks as independent, see Parallel dispatch below;
   otherwise stay sequential.
@@ -138,14 +138,14 @@ When in doubt, keep it with the orchestrator.
 
 Only when a plan explicitly marks tasks independent: dispatch each with
 `--worktree=<task-slug>`, run concurrently, then review and merge one worktree at a
-time through the same review gate. Merge conflicts usually eat the savings — prefer
+time through the same review gate. Merge conflicts usually eat the savings â€” prefer
 sequential.
 
 ## Failure handling
 
 | Failure | Action |
 |---|---|
-| `stopReason: "Cancelled"`, empty text, no diff | Missing `--always-approve` — retry with it |
+| `stopReason: "Cancelled"`, empty text, no diff | Missing `--always-approve` â€” retry with it |
 | CLI error / timeout | Retry once; then do the task yourself and note the fallback |
 | Auth expired | Stop; ask the user to run `grok login` |
 | 2 fix-up rounds exhausted | Preserve the diff, ask the user for a recovery decision, then finish the task manually if authorized |
@@ -165,3 +165,4 @@ sequential.
 ## Models
 
 Default `grok-4.5`. Add `-m grok-composer-2.5-fast` only for trivial mechanical tasks.
+

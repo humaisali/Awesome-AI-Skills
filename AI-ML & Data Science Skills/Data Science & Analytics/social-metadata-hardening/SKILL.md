@@ -1,4 +1,4 @@
----
+﻿---
 name: social-metadata-hardening
 description: "Fix social sharing previews so URLs render as rich cards on Facebook, LinkedIn, X/Twitter, WhatsApp, Telegram, and more. Covers OG tags, Twitter cards, absolute image URLs, and debugging."
 category: seo
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-05-31"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [seo, open-graph, twitter-card, social-sharing, og-image, nextjs, metadata]
 tools: [claude, cursor, gemini, claude-code]
 version: 1.0.0
@@ -32,7 +32,7 @@ Fix social sharing so every important URL unfurls as a rich card across all plat
 |---------|-----------|
 | No preview at all | Missing og:title, og:description, or og:image |
 | Broken image | Relative URL (must be absolute) |
-| Wrong image size | Image not 1200×630px (OG standard) |
+| Wrong image size | Image not 1200Ã—630px (OG standard) |
 | Plain text card | Twitter card type missing or set to `summary` |
 | Stale preview | Platform caching old metadata |
 | Metadata missing on crawl | Tags added by client-side JS (crawlers don't run JS) |
@@ -44,7 +44,7 @@ Fix social sharing so every important URL unfurls as a rich card across all plat
 Every shareable page needs ALL of these in static HTML:
 
 ```js
-// Next.js App Router — lib/socialMetadata.js
+// Next.js App Router â€” lib/socialMetadata.js
 export function buildSocialMetadata({
   title,
   description,
@@ -84,7 +84,7 @@ export function buildSocialMetadata({
       }],
     },
     twitter: {
-      card: 'summary_large_image',  // NOT 'summary' — that shows a tiny image
+      card: 'summary_large_image',  // NOT 'summary' â€” that shows a tiny image
       title,
       description,
       images: [imageUrl],
@@ -133,7 +133,7 @@ export async function generateMetadata({ params }) {
 export const metadata = {
   metadataBase: new URL('https://www.yourdomain.com'), // REQUIRED for absolute URLs
   ...buildSocialMetadata({
-    title: 'My Site — Tagline Here',
+    title: 'My Site â€” Tagline Here',
     description: 'Site-wide description.',
     path: '/',
     image: '/images/og/home.jpg',
@@ -141,14 +141,14 @@ export const metadata = {
 };
 ```
 
-> ⚠️ **Set `metadataBase` when using relative metadata URLs.** If your helper already outputs absolute canonical/OG URLs, previews can still work without it.
+> âš ï¸ **Set `metadataBase` when using relative metadata URLs.** If your helper already outputs absolute canonical/OG URLs, previews can still work without it.
 
 ---
 
 ## OG Image Checklist
 
 Good OG images:
-- **1200 × 630px** (2:1 ratio — works on all platforms)
+- **1200 Ã— 630px** (2:1 ratio â€” works on all platforms)
 - **Under 8MB** (Facebook limit)
 - Served over **HTTPS**
 - File name has **no spaces** (use hyphens)
@@ -165,8 +165,8 @@ curl -sI https://www.yourdomain.com/images/og/home.jpg | grep -i "content-type\|
 ## Platform-Specific Notes
 
 ### Facebook / Meta
-- Caches aggressively — use the [Sharing Debugger](https://developers.facebook.com/tools/debug/) to force recrawl
-- Minimum image: 200×200px (but use 1200×630 for quality)
+- Caches aggressively â€” use the [Sharing Debugger](https://developers.facebook.com/tools/debug/) to force recrawl
+- Minimum image: 200Ã—200px (but use 1200Ã—630 for quality)
 - Needs: `og:title`, `og:description`, `og:image`, `og:url`
 
 ### X / Twitter
@@ -175,9 +175,9 @@ curl -sI https://www.yourdomain.com/images/og/home.jpg | grep -i "content-type\|
 - Use the [Card Validator](https://cards-dev.twitter.com/validator) to test
 
 ### LinkedIn
-- Caches hard — use [Post Inspector](https://www.linkedin.com/post-inspector/) to refresh
+- Caches hard â€” use [Post Inspector](https://www.linkedin.com/post-inspector/) to refresh
 - Respects `og:` tags; ignores `twitter:` tags
-- Image must be ≥1.91:1 aspect ratio
+- Image must be â‰¥1.91:1 aspect ratio
 
 ### WhatsApp / Telegram
 - Read OG tags on first share; cache can last hours
@@ -195,7 +195,7 @@ curl -sI https://www.yourdomain.com/images/og/home.jpg | grep -i "content-type\|
 ```bash
 curl -s https://www.yourdomain.com/blog/my-post | grep -i "og:\|twitter:"
 ```
-If tags don't appear → they're being added by JavaScript (not crawlable). Fix: move to `export const metadata` or `generateMetadata`.
+If tags don't appear â†’ they're being added by JavaScript (not crawlable). Fix: move to `export const metadata` or `generateMetadata`.
 
 ### 2. Validate with platform tools
 
@@ -217,7 +217,7 @@ After deploying fixes, paste the URL into each platform's debugger and click "Fe
 - [ ] All shareable pages use shared `buildSocialMetadata` helper
 - [ ] OG image URLs are absolute (start with `https://`)
 - [ ] `secureUrl` set equal to `url` in OG image block
-- [ ] Image is 1200×630px, under 8MB, HTTPS
+- [ ] Image is 1200Ã—630px, under 8MB, HTTPS
 - [ ] `twitter:card` is `summary_large_image` (not `summary`)
 - [ ] Image alt text present
 - [ ] Tags visible in raw HTML (not JavaScript-rendered)
@@ -229,3 +229,4 @@ After deploying fixes, paste the URL into each platform's debugger and click "Fe
 - Cannot force immediate cache refresh on every social platform; some previews may remain stale after a correct fix.
 - Requires publicly reachable deployed URLs for reliable validation with platform debuggers.
 - Does not replace brand, accessibility, or legal review of image text, alt text, and preview copy.
+

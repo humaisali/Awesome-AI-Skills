@@ -1,9 +1,9 @@
----
+﻿---
 name: slo-architect
-description: Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE workbook", "multi-window burn-rate alert", or any reliability-target question. Ships SLO designer, error-budget calculator with multi-window burn-rate thresholds, and SLO reviewer that catches the common bugs (target too aggressive, window too short, conflicting SLOs, no SLI definition). 4 references on SLO principles + SLI design + error budget math + composition with feature-flags-architect/chaos-engineering/kubernetes-operator. NOT a generic observability skill — specifically the SLO discipline.
+description: Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE workbook", "multi-window burn-rate alert", or any reliability-target question. Ships SLO designer, error-budget calculator with multi-window burn-rate thresholds, and SLO reviewer that catches the common bugs (target too aggressive, window too short, conflicting SLOs, no SLI definition). 4 references on SLO principles + SLI design + error budget math + composition with feature-flags-architect/chaos-engineering/kubernetes-operator. NOT a generic observability skill â€” specifically the SLO discipline.
 context: fork
 version: 2.9.0
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: MIT
 tags: [slo, sli, sla, error-budget, burn-rate, sre, reliability, google-sre-workbook, observability]
 compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
@@ -11,7 +11,7 @@ compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini
 
 # SLO Architect
 
-Define SLOs that mean something. Most "SLOs" in the wild are arbitrary numbers no one believes — 99.9% on every endpoint, no SLI definition, no error budget, no policy for what happens when budget burns. This skill enforces the discipline from Google's SRE Workbook: pick the right SLI, set a target users actually care about, calculate the error budget, wire multi-window burn-rate alerts, and have a written policy for when budget runs out.
+Define SLOs that mean something. Most "SLOs" in the wild are arbitrary numbers no one believes â€” 99.9% on every endpoint, no SLI definition, no error budget, no policy for what happens when budget burns. This skill enforces the discipline from Google's SRE Workbook: pick the right SLI, set a target users actually care about, calculate the error budget, wire multi-window burn-rate alerts, and have a written policy for when budget runs out.
 
 ## When to use
 
@@ -19,31 +19,31 @@ Define SLOs that mean something. Most "SLOs" in the wild are arbitrary numbers n
 - Reviewing existing SLOs for common bugs
 - Picking the right SLI (event-based vs time-window based vs request-based)
 - Computing error budgets and burn-rate alert thresholds
-- Tying SLOs to existing controls — feature flags abort, chaos blast radius, operator capability levels
+- Tying SLOs to existing controls â€” feature flags abort, chaos blast radius, operator capability levels
 
 ## When NOT to use
 
-- General observability strategy (metrics + logs + traces) → use `observability-designer`
-- Customer-facing SLAs with legal teeth → that's contract drafting, not engineering
-- Performance load testing (capacity, not reliability) → use `performance-profiler`
-- Active incident response → use `incident-response`
+- General observability strategy (metrics + logs + traces) â†’ use `observability-designer`
+- Customer-facing SLAs with legal teeth â†’ that's contract drafting, not engineering
+- Performance load testing (capacity, not reliability) â†’ use `performance-profiler`
+- Active incident response â†’ use `incident-response`
 
 ## Core principle: an SLO is a promise about user experience
 
 ```
-SLI  ⟶  measurable signal of user-perceived health (e.g., HTTP 2xx rate)
-SLO  ⟶  target for the SLI over a window (e.g., 99.9% over 30 days)
-SLA  ⟶  customer-facing commitment with consequences (separate concern)
-EB   ⟶  error budget: 100% − SLO target = how much "bad" you can spend
-BR   ⟶  burn rate: how fast you're consuming the error budget
+SLI  âŸ¶  measurable signal of user-perceived health (e.g., HTTP 2xx rate)
+SLO  âŸ¶  target for the SLI over a window (e.g., 99.9% over 30 days)
+SLA  âŸ¶  customer-facing commitment with consequences (separate concern)
+EB   âŸ¶  error budget: 100% âˆ’ SLO target = how much "bad" you can spend
+BR   âŸ¶  burn rate: how fast you're consuming the error budget
 ```
 
 The four cardinal mistakes:
 
-1. **Target too high** (99.99%+ on services that can't support it) — every minor blip violates SLO; alerts become noise.
-2. **Wrong SLI** (CPU usage as proxy for user experience) — system can be "green" while users suffer.
-3. **No error budget policy** — burning budget means nothing if there's no agreed action.
-4. **Single-window burn-rate alert** — either too noisy (page on a 5-min spike) or too slow (notice budget exhausted after the fact).
+1. **Target too high** (99.99%+ on services that can't support it) â€” every minor blip violates SLO; alerts become noise.
+2. **Wrong SLI** (CPU usage as proxy for user experience) â€” system can be "green" while users suffer.
+3. **No error budget policy** â€” burning budget means nothing if there's no agreed action.
+4. **Single-window burn-rate alert** â€” either too noisy (page on a 5-min spike) or too slow (notice budget exhausted after the fact).
 
 The 3 tools below catch each of these.
 
@@ -85,11 +85,11 @@ python scripts/slo_designer.py \
 ```
 
 **SLI types supported:**
-- `request-success-rate` — `(total_requests - bad_requests) / total_requests`
-- `request-latency` — `count(requests < threshold) / total_requests`
-- `availability-time` — `(window - downtime) / window`
-- `data-freshness` — `count(data_age < threshold) / total_data_points`
-- `correctness` — `count(correct_outputs) / total_outputs`
+- `request-success-rate` â€” `(total_requests - bad_requests) / total_requests`
+- `request-latency` â€” `count(requests < threshold) / total_requests`
+- `availability-time` â€” `(window - downtime) / window`
+- `data-freshness` â€” `count(data_age < threshold) / total_data_points`
+- `correctness` â€” `count(correct_outputs) / total_outputs`
 
 Output is markdown by default with all required fields filled or marked `<must define>`. JSON output (`--format json`) is consumed by `slo_review.py`.
 
@@ -98,8 +98,8 @@ Output is markdown by default with all required fields filled or marked `<must d
 Given target availability + window, computes:
 - Allowed downtime in the window
 - Multi-window burn-rate thresholds per Google SRE Workbook (Chapter 5):
-  - **Fast burn** — page if 2% of monthly budget consumed in 1 hour
-  - **Slow burn** — page if 10% consumed in 6 hours, ticket if 10% in 3 days
+  - **Fast burn** â€” page if 2% of monthly budget consumed in 1 hour
+  - **Slow burn** â€” page if 10% consumed in 6 hours, ticket if 10% in 3 days
 - Recommended alerting rules (PromQL-shaped output)
 
 ```bash
@@ -116,8 +116,8 @@ python scripts/slo_review.py --slo-doc docs/slos/
 ```
 
 **Checks:**
-- `target_too_high`: target ≥ 99.99% (sustainable only with massive engineering investment)
-- `target_too_low`: target ≤ 99.0% (probably wrong SLI; users will notice)
+- `target_too_high`: target â‰¥ 99.99% (sustainable only with massive engineering investment)
+- `target_too_low`: target â‰¤ 99.0% (probably wrong SLI; users will notice)
 - `window_too_short`: window < 7 days (statistical noise dominates)
 - `window_too_long`: window > 90 days (slow feedback)
 - `no_sli_definition`: SLI section missing or vague ("everything OK")
@@ -139,9 +139,9 @@ See `references/sli_design.md` for examples and anti-patterns.
 ## Error budget math (the basics)
 
 For 99.9% SLO over 30 days:
-- Allowed unavailability: `0.1% × 30 × 24 × 60 = 43.2 minutes`
-- 1-hour fast-burn threshold (2% of monthly budget burned): `2% × 43.2 / 60 ≈ 1.44 ratio multiplier`
-- 6-hour slow-burn threshold (10% in 6h): `10% × 43.2 / 360 ≈ 0.6 ratio multiplier`
+- Allowed unavailability: `0.1% Ã— 30 Ã— 24 Ã— 60 = 43.2 minutes`
+- 1-hour fast-burn threshold (2% of monthly budget burned): `2% Ã— 43.2 / 60 â‰ˆ 1.44 ratio multiplier`
+- 6-hour slow-burn threshold (10% in 6h): `10% Ã— 43.2 / 360 â‰ˆ 0.6 ratio multiplier`
 
 `error_budget_calculator.py` does this math for you and emits ready-to-paste alert rules.
 
@@ -152,7 +152,7 @@ This skill explicitly composes with three others:
 | Skill | Composition |
 |---|---|
 | `feature-flags-architect` | Rollout abort criteria reference SLO burn-rate thresholds |
-| `chaos-engineering` | Blast-radius calculator already takes monthly error budget as input — define it here |
+| `chaos-engineering` | Blast-radius calculator already takes monthly error budget as input â€” define it here |
 | `kubernetes-operator` | Operator capability L4 (Deep Insights) requires SLOs + Prometheus rules |
 
 The `error_budget_calculator.py` output is in the same shape `engineering/skills/chaos-engineering/scripts/blast_radius_calculator.py` expects on stdin.
@@ -166,24 +166,24 @@ The `error_budget_calculator.py` output is in the same shape `engineering/skills
 2. Choose SLI type (request-success-rate, latency, availability, freshness, correctness).
 3. Define the SLI precisely: numerator/denominator with concrete labels.
 4. Pick a target by measuring 30 days of historical SLI value:
-     target = floor(p50 of last 30 days × 100) / 100
+     target = floor(p50 of last 30 days Ã— 100) / 100
    This avoids targets the system has never sustained.
 5. Pick a window (28 days = 4 calendar weeks, recommended).
 6. Run slo_designer.py to render the SLO definition.
 7. Run error_budget_calculator.py to get burn-rate alerts.
 8. Write the error budget policy (what happens when budget burns).
-9. Run slo_review.py — must pass before the SLO is "live".
+9. Run slo_review.py â€” must pass before the SLO is "live".
 ```
 
 ### Workflow 2: Quarterly SLO review
 
 ```
-1. For every active SLO, run slo_review.py — fix any FAIL findings.
+1. For every active SLO, run slo_review.py â€” fix any FAIL findings.
 2. Look at last quarter's data:
    - Was the SLO too easy (never burned budget)? Tighten target.
    - Was it too hard (frequently burned)? Loosen target OR fix the system.
    - Did burn-rate alerts fire usefully (not too noisy, not too late)? Adjust thresholds.
-3. Audit error budget policies — were they actually followed when budget burned?
+3. Audit error budget policies â€” were they actually followed when budget burned?
 4. Commit revised SLOs; archive old versions with date stamps.
 ```
 
@@ -198,30 +198,30 @@ The `error_budget_calculator.py` output is in the same shape `engineering/skills
 
 ## References
 
-- `references/slo_principles.md` — SLI vs SLO vs SLA, Google SRE Workbook canon
-- `references/sli_design.md` — picking the right SLI; 5 types with examples
-- `references/error_budget.md` — error budget math, burn-rate alerts, budget policy
-- `references/composition.md` — how SLOs feed feature flags, chaos, operators
+- `references/slo_principles.md` â€” SLI vs SLO vs SLA, Google SRE Workbook canon
+- `references/sli_design.md` â€” picking the right SLI; 5 types with examples
+- `references/error_budget.md` â€” error budget math, burn-rate alerts, budget policy
+- `references/composition.md` â€” how SLOs feed feature flags, chaos, operators
 
 ## Slash command
 
-`/slo-design` — interactive SLO design wizard that runs all 3 tools.
+`/slo-design` â€” interactive SLO design wizard that runs all 3 tools.
 
 ## Asset templates
 
-- `assets/slo_template.yaml` — fillable SLO YAML
-- `assets/error_budget_policy.md` — fillable policy template
+- `assets/slo_template.yaml` â€” fillable SLO YAML
+- `assets/error_budget_policy.md` â€” fillable policy template
 
 ## Anti-patterns
 
-- **99.99% on every endpoint** — copy-paste SLOs that nobody verified the system can sustain
-- **CPU usage as SLI** — system metrics aren't user experience
-- **Single-window burn-rate alert** — too noisy if 5-min, too slow if 30-day
-- **No error budget policy** — burning budget means nothing without an action
-- **SLOs without owners** — no one is responsible; they bit-rot
-- **SLOs reviewed once a year** — system characteristics change faster than that
-- **SLAs in the SLO doc** — different audience, different stakes; keep them separate
-- **SLO target = SLA target** — SLO must be tighter (you should beat your contract before customers notice)
+- **99.99% on every endpoint** â€” copy-paste SLOs that nobody verified the system can sustain
+- **CPU usage as SLI** â€” system metrics aren't user experience
+- **Single-window burn-rate alert** â€” too noisy if 5-min, too slow if 30-day
+- **No error budget policy** â€” burning budget means nothing without an action
+- **SLOs without owners** â€” no one is responsible; they bit-rot
+- **SLOs reviewed once a year** â€” system characteristics change faster than that
+- **SLAs in the SLO doc** â€” different audience, different stakes; keep them separate
+- **SLO target = SLA target** â€” SLO must be tighter (you should beat your contract before customers notice)
 
 ## Verifiable success
 
@@ -229,6 +229,7 @@ A team using this skill should achieve:
 
 - 100% of SLOs pass `slo_review.py` with 0 FAIL findings
 - Every SLO has a documented owner, error budget, burn-rate alerts, and policy
-- Burn-rate alerts fire ≤2 times/month per SLO that's hit (signal, not noise)
+- Burn-rate alerts fire â‰¤2 times/month per SLO that's hit (signal, not noise)
 - Mean time to detect SLO violation: <30 min (multi-window burn-rate alerts working)
 - Quarterly SLO review happens every quarter (not annually)
+

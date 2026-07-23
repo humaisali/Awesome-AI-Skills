@@ -1,4 +1,4 @@
----
+﻿---
 name: global-chat-agent-discovery
 description: "Discover and search 18K+ MCP servers and AI agents across 6+ registries using Global Chat's cross-protocol directory and MCP server."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: pumanitro/global-chat
 source_type: community
 date_added: "2026-04-06"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [mcp, ai-agents, agent-discovery, agents-txt, a2a, developer-tools]
 tools: [claude, cursor, gemini, codex]
 ---
@@ -78,8 +78,8 @@ If you maintain an `agents.txt` file, use the free validator:
 ```
 You: "Find MCP servers that can convert PDF files to text"
 Agent (via Global Chat MCP): Searching across 6 registries...
-  - @anthropic/pdf-tools (mcpservers.org) — PDF parsing and text extraction
-  - pdf-converter-mcp (mcp.so) — Convert PDF to text, markdown, or HTML
+  - @anthropic/pdf-tools (mcpservers.org) â€” PDF parsing and text extraction
+  - pdf-converter-mcp (mcp.so) â€” Convert PDF to text, markdown, or HTML
   - ...
 ```
 
@@ -102,7 +102,7 @@ Agent (via Global Chat MCP): 4 registries carry Kubernetes-related agents (23 to
 - Use the MCP server for automated workflows and agent-to-agent discovery
 - Use the web directory for manual exploration and comparison
 - Validate your agents.txt before publishing to ensure maximum discoverability
-- Check multiple registries — coverage varies significantly by domain
+- Check multiple registries â€” coverage varies significantly by domain
 
 ## Common Pitfalls
 
@@ -122,3 +122,4 @@ Agent (via Global Chat MCP): 4 registries carry Kubernetes-related agents (23 to
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,10 +1,10 @@
----
+﻿---
 name: claude-monitor
 description: Monitor de performance do Claude Code e sistema local. Diagnostica lentidao, mede CPU/RAM/disco, verifica API latency e gera relatorios de saude do sistema.
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - monitoring
 - performance
@@ -18,7 +18,7 @@ tools:
 - codex-cli
 ---
 
-# Claude Monitor — Diagnóstico de Performance
+# Claude Monitor â€” DiagnÃ³stico de Performance
 
 ## Overview
 
@@ -41,18 +41,18 @@ Monitor de performance do Claude Code e sistema local. Diagnostica lentidao, med
 
 ## How It Works
 
-Skill para diagnosticar e resolver problemas de lentidão no Claude Code e no sistema.
-Determina se o gargalo é local (PC) ou remoto (API Claude) e sugere ações corretivas.
+Skill para diagnosticar e resolver problemas de lentidÃ£o no Claude Code e no sistema.
+Determina se o gargalo Ã© local (PC) ou remoto (API Claude) e sugere aÃ§Ãµes corretivas.
 
 ## Quando Usar
 
-- Usuário reclama que o Claude Code está lento ou travando
-- Troca de sessões de conversa demora para carregar
+- UsuÃ¡rio reclama que o Claude Code estÃ¡ lento ou travando
+- Troca de sessÃµes de conversa demora para carregar
 - Respostas do Claude demoram muito
 - PC parece lento enquanto usa o Claude Code
-- Qualquer menção a performance, lag, lentidão
+- Qualquer menÃ§Ã£o a performance, lag, lentidÃ£o
 
-## 1. Diagnóstico Rápido (Health_Check.Py)
+## 1. DiagnÃ³stico RÃ¡pido (Health_Check.Py)
 
 Rode SEMPRE como primeiro passo:
 
@@ -61,13 +61,13 @@ python C:\Users\renat\skills\claude-monitor\scripts\health_check.py
 ```
 
 O script analisa em ~3 segundos:
-- **CPU**: Uso atual e por core. >80% = gargalo provável
-- **RAM**: Total, usada, disponível. >85% = pressão de memória
+- **CPU**: Uso atual e por core. >80% = gargalo provÃ¡vel
+- **RAM**: Total, usada, disponÃ­vel. >85% = pressÃ£o de memÃ³ria
 - **Browsers**: Processos e RAM por browser. >5GB total = excesso de abas
 - **Claude Code**: Processos e RAM consumida
-- **Disco**: Espaço livre. <10% = impacto em swap/performance
-- **Rede**: Latência ao endpoint da API Claude
-- **Diagnóstico**: Classificação automática do problema com sugestões
+- **Disco**: EspaÃ§o livre. <10% = impacto em swap/performance
+- **Rede**: LatÃªncia ao endpoint da API Claude
+- **DiagnÃ³stico**: ClassificaÃ§Ã£o automÃ¡tica do problema com sugestÃµes
 
 ## 2. Interpretar O Resultado
 
@@ -75,95 +75,95 @@ O script retorna um JSON com `diagnosis` contendo:
 
 - `bottleneck`: "cpu" | "ram" | "browsers" | "disk" | "network" | "claude_api" | "ok"
 - `severity`: "critical" | "warning" | "ok"
-- `suggestions`: Lista de ações recomendadas
-- `summary`: Resumo em português para mostrar ao usuário
+- `suggestions`: Lista de aÃ§Ãµes recomendadas
+- `summary`: Resumo em portuguÃªs para mostrar ao usuÃ¡rio
 
-**Mostre o `summary` ao usuário** e ofereça executar as sugestões.
+**Mostre o `summary` ao usuÃ¡rio** e ofereÃ§a executar as sugestÃµes.
 
-## 3. Ações Corretivas Automáticas
+## 3. AÃ§Ãµes Corretivas AutomÃ¡ticas
 
-Baseado no diagnóstico, ofereça ao usuário:
+Baseado no diagnÃ³stico, ofereÃ§a ao usuÃ¡rio:
 
 #### Se CPU alta (>80%):
 - Listar processos consumindo mais CPU
-- Sugerir fechar processos pesados desnecessários
-- Verificar se Windows Update está rodando em background
+- Sugerir fechar processos pesados desnecessÃ¡rios
+- Verificar se Windows Update estÃ¡ rodando em background
 
 #### Se browsers pesados (>5GB RAM ou >40 processos):
 ```bash
 python C:\Users\renat\skills\claude-monitor\scripts\health_check.py --browsers-detail
 ```
-Mostra RAM por browser e sugere quais fechar. **Nunca fechar processos sem permissão explícita do usuário.**
+Mostra RAM por browser e sugere quais fechar. **Nunca fechar processos sem permissÃ£o explÃ­cita do usuÃ¡rio.**
 
 #### Se disco cheio (>85%):
 - Mostrar pastas maiores
 - Sugerir limpeza de Temp, cache de browsers, lixeira
 
-#### Se rede lenta (latência >500ms):
-- Testar conexão com api.anthropic.com
-- Sugerir verificar VPN, proxy, ou conexão WiFi
+#### Se rede lenta (latÃªncia >500ms):
+- Testar conexÃ£o com api.anthropic.com
+- Sugerir verificar VPN, proxy, ou conexÃ£o WiFi
 
-## 4. Monitor Contínuo (Opcional)
+## 4. Monitor ContÃ­nuo (Opcional)
 
-Se o usuário quiser monitoramento em background:
+Se o usuÃ¡rio quiser monitoramento em background:
 
 ```bash
 python C:\Users\renat\skills\claude-monitor\scripts\monitor.py --interval 30 --duration 300
 ```
 
-Parâmetros:
+ParÃ¢metros:
 - `--interval`: Segundos entre cada amostra (default: 30)
-- `--duration`: Duração total em segundos (default: 300 = 5 min)
+- `--duration`: DuraÃ§Ã£o total em segundos (default: 300 = 5 min)
 - `--output`: Caminho do arquivo de log (default: monitor_log.json)
 - `--alert-cpu`: Threshold de CPU para alerta (default: 80)
 - `--alert-ram`: Threshold de RAM % para alerta (default: 85)
 
-O monitor salva snapshots periódicos e gera um relatório ao final com:
+O monitor salva snapshots periÃ³dicos e gera um relatÃ³rio ao final com:
 - Picos de CPU e RAM
-- Tendência (melhorando/piorando/estável)
+- TendÃªncia (melhorando/piorando/estÃ¡vel)
 - Eventos de alerta detectados
-- Recomendação final
+- RecomendaÃ§Ã£o final
 
 ## 5. Benchmark Da Api Claude (Opcional)
 
-Para testar se a lentidão é da API:
+Para testar se a lentidÃ£o Ã© da API:
 
 ```bash
 python C:\Users\renat\skills\claude-monitor\scripts\api_bench.py
 ```
 
-Mede o tempo de resposta do processo Claude Code local (não faz chamadas à API).
-Compara com tempos típicos e indica se está dentro do esperado.
+Mede o tempo de resposta do processo Claude Code local (nÃ£o faz chamadas Ã  API).
+Compara com tempos tÃ­picos e indica se estÃ¡ dentro do esperado.
 
-## Thresholds De Referência
+## Thresholds De ReferÃªncia
 
-| Métrica | OK | Warning | Critical |
+| MÃ©trica | OK | Warning | Critical |
 |---------|-----|---------|----------|
 | CPU % | <60% | 60-85% | >85% |
 | RAM usada % | <70% | 70-85% | >85% |
 | RAM browsers | <3 GB | 3-6 GB | >6 GB |
 | Processos browser | <30 | 30-60 | >60 |
 | Disco livre | >15% | 10-15% | <10% |
-| Latência rede | <200ms | 200-500ms | >500ms |
+| LatÃªncia rede | <200ms | 200-500ms | >500ms |
 
-## Dicas Para O Usuário
+## Dicas Para O UsuÃ¡rio
 
-Quando apresentar o diagnóstico, inclua estas dicas contextuais:
+Quando apresentar o diagnÃ³stico, inclua estas dicas contextuais:
 
-- **Muitas abas = muito CPU/RAM**: Cada aba de browser é um processo separado.
+- **Muitas abas = muito CPU/RAM**: Cada aba de browser Ã© um processo separado.
   50 abas = 50 processos competindo por recursos.
-- **Claude Code é pesado**: Ele roda vários processos Electron. É normal consumir 3-5 GB.
-  Mas se estiver usando >6 GB com várias sessões, considere fechar sessões antigas.
-- **Troca de sessão lenta**: Geralmente causada por CPU alta ou muitos processos competindo.
-  A sessão precisa carregar o histórico da conversa, e se o CPU está ocupado, demora.
-- **Disco quase cheio**: Afeta a velocidade do swap (memória virtual) e pode causar
-  lentidão generalizada.
+- **Claude Code Ã© pesado**: Ele roda vÃ¡rios processos Electron. Ã‰ normal consumir 3-5 GB.
+  Mas se estiver usando >6 GB com vÃ¡rias sessÃµes, considere fechar sessÃµes antigas.
+- **Troca de sessÃ£o lenta**: Geralmente causada por CPU alta ou muitos processos competindo.
+  A sessÃ£o precisa carregar o histÃ³rico da conversa, e se o CPU estÃ¡ ocupado, demora.
+- **Disco quase cheio**: Afeta a velocidade do swap (memÃ³ria virtual) e pode causar
+  lentidÃ£o generalizada.
 
-## Dependências
+## DependÃªncias
 
 - Python 3.10+
-- psutil (instalado automaticamente pelo script se não disponível)
-- Nenhuma API key necessária
+- psutil (instalado automaticamente pelo script se nÃ£o disponÃ­vel)
+- Nenhuma API key necessÃ¡ria
 
 ## Best Practices
 
@@ -181,3 +181,4 @@ Quando apresentar o diagnóstico, inclua estas dicas contextuais:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: feature-tracking
 description: "Maintain durable feature-level memory across AI coding sessions with lightweight Markdown tracks for status, source-of-truth docs, decisions, risks, and changes."
 category: project-management
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: JunsW/feature-track
 source_type: community
 date_added: "2026-07-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [feature-tracking, project-memory, documentation, ai-agents, session-handoff]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -51,13 +51,13 @@ Use lowercase hyphen-case for feature ids:
 
 ```text
 docs/features/
-├── README.md
-└── <feature-id>/
-    ├── README.md
-    ├── prd/
-    ├── api/
-    ├── plans/
-    └── archive/
+â”œâ”€â”€ README.md
+â””â”€â”€ <feature-id>/
+    â”œâ”€â”€ README.md
+    â”œâ”€â”€ prd/
+    â”œâ”€â”€ api/
+    â”œâ”€â”€ plans/
+    â””â”€â”€ archive/
 ```
 
 For an existing repository, create only the directories needed now. Link useful documents where they already live before considering a migration.
@@ -163,16 +163,16 @@ Agent workflow:
 
 ## Best Practices
 
-- ✅ Keep the global index brief and scannable.
-- ✅ Link detailed evidence instead of copying full specifications into the track.
-- ✅ Describe current verified behavior separately from planned behavior.
-- ✅ Add short, factual, dated changelog entries.
-- ✅ Preserve project-local terminology, statuses, and documentation conventions.
-- ✅ Start with one to three high-value active features in a brownfield repository.
-- ❌ Do not invent status, ownership, decisions, or test results.
-- ❌ Do not turn the track into a transcript or exhaustive activity log.
-- ❌ Do not treat stale plans as completed behavior.
-- ❌ Do not migrate or archive documentation solely to make the directory tree look uniform.
+- âœ… Keep the global index brief and scannable.
+- âœ… Link detailed evidence instead of copying full specifications into the track.
+- âœ… Describe current verified behavior separately from planned behavior.
+- âœ… Add short, factual, dated changelog entries.
+- âœ… Preserve project-local terminology, statuses, and documentation conventions.
+- âœ… Start with one to three high-value active features in a brownfield repository.
+- âŒ Do not invent status, ownership, decisions, or test results.
+- âŒ Do not turn the track into a transcript or exhaustive activity log.
+- âŒ Do not treat stale plans as completed behavior.
+- âŒ Do not migrate or archive documentation solely to make the directory tree look uniform.
 
 ## Limitations
 
@@ -220,3 +220,4 @@ Agent workflow:
 
 - [Feature Track repository](https://github.com/JunsW/feature-track)
 - [Feature Track specification](https://github.com/JunsW/feature-track/blob/main/spec/feature-track-spec.md)
+

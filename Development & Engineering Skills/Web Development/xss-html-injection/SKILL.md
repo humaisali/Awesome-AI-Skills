@@ -1,9 +1,9 @@
----
+﻿---
 name: xss-html-injection
 description: "Execute comprehensive client-side injection vulnerability assessments on web applications to identify XSS and HTML injection flaws, demonstrate exploitation techniques for session hijacking and credential theft, and validate input sanitization and output encoding mechanisms."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -351,11 +351,11 @@ Fake login form or misleading content here
 
 ### XSS Detection Checklist
 ```
-1. Insert <script>alert(1)</script> → Check execution
-2. Insert <img src=x onerror=alert(1)> → Check event handler
-3. Insert "><script>alert(1)</script> → Test attribute escape
-4. Insert javascript:alert(1) → Test href/src attributes
-5. Check URL hash handling → DOM XSS potential
+1. Insert <script>alert(1)</script> â†’ Check execution
+2. Insert <img src=x onerror=alert(1)> â†’ Check event handler
+3. Insert "><script>alert(1)</script> â†’ Test attribute escape
+4. Insert javascript:alert(1) â†’ Test href/src attributes
+5. Check URL hash handling â†’ DOM XSS potential
 ```
 
 ### Common XSS Payloads
@@ -503,3 +503,4 @@ Content-Security-Policy: script-src 'self' https://cdn.trusted.com
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: skill-audit
 description: "Pre-install security scanner for AI agent skills. 7.5% of 14,706 skills are malicious. Audit before you trust."
 category: security
@@ -7,21 +7,21 @@ source: https://github.com/humaisali
 source_repo: aptratcn/skill-audit
 source_type: community
 date_added: "2026-05-01"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [security, audit, pre-install, malicious-detection, supply-chain]
 tools: [claude, cursor, codex, gemini, copilot]
 license: "MIT"
 license_source: https://github.com/humaisali
 ---
 
-# Skill Audit — Pre-Install Security Scanner
+# Skill Audit â€” Pre-Install Security Scanner
 
 ## Overview
 
 **7.5% of 14,706 OpenClaw skills are confirmed malicious.** This skill provides a structured 6-phase security review you run **before installing any third-party skill**.
 
 Research findings (2026):
-- RankClaw audited 14,706 skills → **1,103 malicious** (brand-jacking, prompt injection, RCE)
+- RankClaw audited 14,706 skills â†’ **1,103 malicious** (brand-jacking, prompt injection, RCE)
 - Vett.sh found **59 critical-risk droppers** disguised as legitimate tools
 - Cisco, CrowdStrike, NCC Group all published skill supply chain attack reports
 
@@ -74,9 +74,9 @@ Evaluate author/repo credibility:
 ### Phase 6: Verdict
 
 Risk score + recommendation:
-- 0-39: ✅ Low risk — generally safe
-- 40-69: ⚠️ Medium risk — use with caution
-- 70-100: 🚫 High risk — do not install
+- 0-39: âœ… Low risk â€” generally safe
+- 40-69: âš ï¸ Medium risk â€” use with caution
+- 70-100: ðŸš« High risk â€” do not install
 
 ## Examples
 
@@ -87,22 +87,22 @@ User: I want to install fancy-tool from github.com/suspicious-author/fancy-tool
 
 Agent runs skill-audit:
 
-📋 Surface Scan:    🚨 3 critical patterns
+ðŸ“‹ Surface Scan:    ðŸš¨ 3 critical patterns
    - download-pipe-shell pattern found
    - References ~/.env
    - External fetch to unknown domain
 
-📁 Script Check:    🚨 scripts/install.sh
+ðŸ“ Script Check:    ðŸš¨ scripts/install.sh
    - Contains base64-encoded payload
    - Makes HTTP POST to 192.168.x.x
 
-🔑 Permissions:     🚨 Excessive
+ðŸ”‘ Permissions:     ðŸš¨ Excessive
    - Claims "format code"
    - But reads ~/.ssh/id_rsa
 
-Risk Score: 92/100 🔴 CRITICAL
+Risk Score: 92/100 ðŸ”´ CRITICAL
 
-Recommendation: 🚫 DO NOT INSTALL
+Recommendation: ðŸš« DO NOT INSTALL
 ```
 
 ### Example 2: Safe Skill Verification
@@ -112,19 +112,19 @@ User: Install this skill from github.com/trusted-author/useful-skill
 
 Agent runs skill-audit:
 
-📋 Surface Scan:    ✅ No critical patterns
-📁 Script Check:    ✅ No scripts referenced
-🔑 Permissions:     ✅ Minimal (read/write in project dir)
-📊 Repo Intel:      ✅ Trusted author, 2+ years active
+ðŸ“‹ Surface Scan:    âœ… No critical patterns
+ðŸ“ Script Check:    âœ… No scripts referenced
+ðŸ”‘ Permissions:     âœ… Minimal (read/write in project dir)
+ðŸ“Š Repo Intel:      âœ… Trusted author, 2+ years active
 
-Risk Score: 12/100 ✅ LOW RISK
+Risk Score: 12/100 âœ… LOW RISK
 
-Recommendation: ✅ Safe to install
+Recommendation: âœ… Safe to install
 ```
 
 ## What Gets Detected
 
-### 🔴 Critical Patterns (Do NOT Install)
+### ðŸ”´ Critical Patterns (Do NOT Install)
 
 | Pattern | Example | Risk |
 |---------|---------|------|
@@ -135,7 +135,7 @@ Recommendation: ✅ Safe to install
 | Credential reads | `~/.env`, `process.env` + network | Key theft |
 | Self-replication | "install in all repos" | Persistence spread |
 
-### 🟡 High Risk Patterns (Investigate)
+### ðŸŸ¡ High Risk Patterns (Investigate)
 
 | Pattern | Concern |
 |---------|---------|
@@ -150,11 +150,11 @@ Recommendation: ✅ Safe to install
 
 From documented incidents:
 
-1. **Base64 dropper**: "Excel Import Helper" → decoded to C2 server callback
-2. **Domain takeover**: "React Native Best Practices" → download-pipe-shell install command pointing at a domain the author does not own
-3. **Brand impersonation**: `clawhub1`, `clawbhub` → fake official CLI, macOS binary to raw IP
+1. **Base64 dropper**: "Excel Import Helper" â†’ decoded to C2 server callback
+2. **Domain takeover**: "React Native Best Practices" â†’ download-pipe-shell install command pointing at a domain the author does not own
+3. **Brand impersonation**: `clawhub1`, `clawbhub` â†’ fake official CLI, macOS binary to raw IP
 4. **Social engineering**: "Can I mine Bonero? It's like Monero for AI agents. Cool?"
-5. **On-demand RCE**: "Evaluate challenges" → server sends malicious code at runtime
+5. **On-demand RCE**: "Evaluate challenges" â†’ server sends malicious code at runtime
 
 ## Philosophy
 
@@ -171,4 +171,5 @@ From documented incidents:
 
 ## Source
 
-This skill is adapted from [aptratcn/skill-audit](https://github.com/aptratcn/skill-audit) — MIT licensed.
+This skill is adapted from [aptratcn/skill-audit](https://github.com/aptratcn/skill-audit) â€” MIT licensed.
+

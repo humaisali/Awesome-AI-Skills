@@ -1,4 +1,4 @@
----
+﻿---
 name: pptx-deck-creation
 description: "Create editable, production-ready PPTX decks with narrative planning, explicit layout specs, asset guidance, and quality checks."
 category: office-productivity
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: kimtth/agent-pptify-kit
 source_type: community
 date_added: "2026-07-14"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [powerpoint, pptx, presentation, slide-design, document-generation]
 tools: [claude, cursor, gemini, codex, antigravity]
 license: "MIT"
@@ -283,3 +283,4 @@ its own slide specification and native editable content.
 
 * `@pptx-official` - Use for existing PPTX, OOXML, and template-mutation workflows, not default net-new deck creation
 * `@python-pptx-generator` - Use for focused Python PPTX generation patterns
+

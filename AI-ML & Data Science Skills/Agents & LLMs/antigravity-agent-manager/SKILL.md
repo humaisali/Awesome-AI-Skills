@@ -1,4 +1,4 @@
----
+﻿---
 name: antigravity-agent-manager
 description: "Configure and orchestrate parallel agents using the standalone Antigravity 2.0 Agent Manager and Antigravity IDE."
 category: general
@@ -6,7 +6,7 @@ risk: critical
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-06-04"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [agent-manager, orchestration, multi-agent, setup]
 tools: [antigravity, gemini]
 ---
@@ -32,8 +32,8 @@ Starting with version 2.0, Google decoupled the Agent Manager from the main IDE 
 1. **Keep your current Antigravity IDE**: Do not uninstall the classic IDE (black icon).
 2. **Download Antigravity 2.0**: Fetch the standalone Agent Manager application from the official Antigravity downloads page.
 3. **Install**: Run the installer. It will install alongside your existing IDE without overwriting it. You should now have both:
-   - **Antigravity IDE** (Black Icon) — Your code editor and manual development workspace.
-   - **Antigravity 2.0** (White Icon) — Your multi-agent orchestrator dashboard.
+   - **Antigravity IDE** (Black Icon) â€” Your code editor and manual development workspace.
+   - **Antigravity 2.0** (White Icon) â€” Your multi-agent orchestrator dashboard.
 
 ### Step 2: Dual-Workspace Setup
 
@@ -87,11 +87,11 @@ git commit -m "feat: synchronize parallel front-end and back-end agent changes"
 
 ## Best Practices
 
-- ✅ **Do:** Run both applications simultaneously side-by-side.
-- ✅ **Do:** Enforce strict folder-level boundaries (scopes) for each agent in the Agent Manager.
-- ✅ **Do:** Use git branches or commits to checkpoint progress before letting agents perform massive rewrites.
-- ❌ **Don't:** Let multiple agents edit the same file at the same time, as it causes write conflicts and git merge conflicts.
-- ❌ **Don't:** Search for the "Open Agent Manager" button in the black icon IDE; use the standalone white icon application instead.
+- âœ… **Do:** Run both applications simultaneously side-by-side.
+- âœ… **Do:** Enforce strict folder-level boundaries (scopes) for each agent in the Agent Manager.
+- âœ… **Do:** Use git branches or commits to checkpoint progress before letting agents perform massive rewrites.
+- âŒ **Don't:** Let multiple agents edit the same file at the same time, as it causes write conflicts and git merge conflicts.
+- âŒ **Don't:** Search for the "Open Agent Manager" button in the black icon IDE; use the standalone white icon application instead.
 
 ## Limitations
 

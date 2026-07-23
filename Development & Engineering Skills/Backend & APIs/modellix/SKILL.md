@@ -1,4 +1,4 @@
----
+﻿---
 name: modellix
 description: "Integrate Modellix unified API/CLI for async AI image and video generation (model run --wait, task download)."
 category: creative
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Modellix/modellix-skill
 source_type: official
 date_added: "2026-07-16"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [image-generation, video-generation, modellix, cli, api]
 tools: [claude, cursor, gemini]
 license: "MIT"
@@ -18,7 +18,7 @@ license_source: https://github.com/humaisali
 
 ## Overview
 
-Modellix is a Model-as-a-Service platform for AI image and video generation. This skill teaches agents to use the official `modellix-cli` workflow (doctor → model run --wait → task download).
+Modellix is a Model-as-a-Service platform for AI image and video generation. This skill teaches agents to use the official `modellix-cli` workflow (doctor â†’ model run --wait â†’ task download).
 
 Upstream package: https://github.com/Modellix/modellix-skill/tree/main/modellix-skill
 
@@ -62,7 +62,7 @@ modellix-cli model run \
 - Prefer CLI `model run --wait` over hand-rolled polling
 - Before a paid submission, disclose the provider, model, prompt or source media that will leave the machine, expected cost, and output path; obtain explicit user approval
 - Prefer session-scoped API-key use; run `modellix-cli auth login` only when the user approves persistent local credential storage
-- Do not blindly retry paid submissions after unknown outcomes — check `task history`
+- Do not blindly retry paid submissions after unknown outcomes â€” check `task history`
 - Confirm the destination and overwrite policy before `task download`; never replace an existing file without explicit approval
 - Fetch request schemas from `model describe` `docs_url` or https://docs.modellix.ai/llms.txt
 
@@ -78,3 +78,4 @@ modellix-cli model run \
 - Model availability, request schemas, pricing, quotas, moderation, and generation time are controlled by Modellix and may change.
 - Generated outputs require human review for quality, rights, privacy, and policy compliance before publication.
 - This skill documents the CLI workflow only; it does not define a REST fallback or guarantee that a completed remote task downloads successfully.
+

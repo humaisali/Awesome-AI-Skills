@@ -1,9 +1,9 @@
----
+﻿---
 name: idor-testing
 description: "Provide systematic methodologies for identifying and exploiting Insecure Direct Object Reference (IDOR) vulnerabilities in web applications."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -113,11 +113,11 @@ Cookie: session=attacker_session
 #### HTTP Method Switching
 ```
 # Original GET request may be protected
-GET /api/admin/users/1000 → 403 Forbidden
+GET /api/admin/users/1000 â†’ 403 Forbidden
 
 # Try alternative methods
-POST /api/admin/users/1000 → 200 OK (Vulnerable!)
-PUT /api/admin/users/1000 → 200 OK (Vulnerable!)
+POST /api/admin/users/1000 â†’ 200 OK (Vulnerable!)
+PUT /api/admin/users/1000 â†’ 200 OK (Vulnerable!)
 ```
 
 ### 4. Exploitation with Burp Suite
@@ -151,9 +151,9 @@ PUT /api/admin/users/1000 → 200 OK (Vulnerable!)
 #### Battering Ram Attack for Multiple Positions
 ```
 # When same ID appears in multiple locations
-PUT /api/addresses/§5§/update HTTP/1.1
+PUT /api/addresses/Â§5Â§/update HTTP/1.1
 
-{"id": §5§, "userId": 3}
+{"id": Â§5Â§, "userId": 3}
 
 Attack Type: Battering Ram
 Payload: Numbers 1-1000
@@ -308,7 +308,7 @@ Cookie: session=attacker_session
 ### Example 4: Burp Intruder Enumeration
 ```
 # Configure Intruder attack
-Target: PUT /api/addresses/§1§/update
+Target: PUT /api/addresses/Â§1Â§/update
 Payload Position: Address ID in URL and body
 
 Attack Configuration:
@@ -317,7 +317,7 @@ Attack Configuration:
 
 Body Template:
 {
-  "id": §1§,
+  "id": Â§1Â§,
   "userId": 3
 }
 
@@ -329,9 +329,9 @@ Body Template:
 ### Example 5: Horizontal to Vertical Escalation
 ```
 # Step 1: Enumerate user roles
-GET /api/user/1 → {"role": "user", "id": 1}
-GET /api/user/2 → {"role": "user", "id": 2}
-GET /api/user/3 → {"role": "admin", "id": 3}
+GET /api/user/1 â†’ {"role": "user", "id": 1}
+GET /api/user/2 â†’ {"role": "user", "id": 2}
+GET /api/user/3 â†’ {"role": "admin", "id": 3}
 
 # Step 2: Access admin functions with discovered ID
 GET /api/admin/dashboard?userId=3 HTTP/1.1
@@ -347,7 +347,7 @@ Cookie: session=regular_user_session
 **Solution**:
 ```
 # Try alternative attack vectors:
-1. HTTP method switching (GET → POST → PUT)
+1. HTTP method switching (GET â†’ POST â†’ PUT)
 2. Add X-Original-URL or X-Rewrite-URL headers
 3. Try parameter pollution: ?id=1001&id=1000
 4. URL encoding variations: %31%30%30%30 for "1000"
@@ -446,3 +446,4 @@ def download_receipt(request, receipt_id):
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

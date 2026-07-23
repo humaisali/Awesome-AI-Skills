@@ -1,4 +1,4 @@
----
+﻿---
 name: wordpress-plugin-development
 description: "WordPress plugin development workflow covering plugin architecture, hooks, admin interfaces, REST API, security best practices, and WordPress 7.0 features: Real-Time Collaboration, AI Connectors, Abilities API, DataViews, and PHP-only blocks."
 category: granular-workflow-bundle
@@ -75,7 +75,7 @@ Description: A WordPress 7.0 compatible plugin with AI and RTC support
 Version: 1.0.0
 Requires at least: 6.0
 Requires PHP: 7.4
-Author: Humais Ali
+Maintained & Curated by: Humais Ali
 License: GPL2+
 */
 ```
@@ -446,25 +446,25 @@ Use @test-automator to set up plugin testing
 
 ```
 plugin-name/
-├── plugin-name.php
-├── includes/
-│   ├── class-plugin.php
-│   ├── class-loader.php
-│   ├── class-activator.php
-│   └── class-deactivator.php
-├── admin/
-│   ├── class-plugin-admin.php
-│   ├── css/
-│   └── js/
-├── public/
-│   ├── class-plugin-public.php
-│   ├── css/
-│   └── js/
-├── blocks/           # PHP-only blocks (WP 7.0)
-├── abilities/        # Abilities API
-├── ai/               # AI Connector integration
-├── languages/
-└── vendor/
+â”œâ”€â”€ plugin-name.php
+â”œâ”€â”€ includes/
+â”‚   â”œâ”€â”€ class-plugin.php
+â”‚   â”œâ”€â”€ class-loader.php
+â”‚   â”œâ”€â”€ class-activator.php
+â”‚   â””â”€â”€ class-deactivator.php
+â”œâ”€â”€ admin/
+â”‚   â”œâ”€â”€ class-plugin-admin.php
+â”‚   â”œâ”€â”€ css/
+â”‚   â””â”€â”€ js/
+â”œâ”€â”€ public/
+â”‚   â”œâ”€â”€ class-plugin-public.php
+â”‚   â”œâ”€â”€ css/
+â”‚   â””â”€â”€ js/
+â”œâ”€â”€ blocks/           # PHP-only blocks (WP 7.0)
+â”œâ”€â”€ abilities/        # Abilities API
+â”œâ”€â”€ ai/               # AI Connector integration
+â”œâ”€â”€ languages/
+â””â”€â”€ vendor/
 ```
 
 ## WordPress 7.0 Compatibility Checklist
@@ -499,3 +499,4 @@ plugin-name/
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

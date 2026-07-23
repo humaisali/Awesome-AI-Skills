@@ -1,4 +1,4 @@
----
+﻿---
 name: pre-release-review
 description: "Run a read-only pre-release review for deploy readiness, migrations, config, secrets, rollout order, rollback risk, and launch blockers."
 category: operations
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: chaunsin/agent-skills
 source_type: community
 date_added: "2026-06-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [release, deploy-readiness, ci-cd, rollback, production]
 tools: [git, gh, rg]
 license: "Apache-2.0"
@@ -196,3 +196,4 @@ Use these prompts to validate the skill behavior:
 - "Review PR #123 before release. Check migrations, configs, and cache work."
 - "This repo has no tags. Use the default strategy and audit release readiness."
 - "Check `v1.2.3..HEAD` for backend go-live blockers."
+

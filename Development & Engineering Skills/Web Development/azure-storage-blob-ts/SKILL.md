@@ -1,4 +1,4 @@
----
+﻿---
 name: azure-storage-blob-ts
 description: Azure Blob Storage JavaScript/TypeScript SDK (@azure/storage-blob) for blob operations. Use for uploading, downloading, listing, and managing blobs and containers.
 risk: unknown
@@ -8,7 +8,7 @@ date_added: '2026-02-27'
 
 # @azure/storage-blob (TypeScript/JavaScript)
 
-SDK for Azure Blob Storage operations — upload, download, list, and manage blobs and containers.
+SDK for Azure Blob Storage operations â€” upload, download, list, and manage blobs and containers.
 
 ## Installation
 
@@ -85,11 +85,11 @@ const client = new BlobServiceClient(
 
 ```
 BlobServiceClient (account level)
-└── ContainerClient (container level)
-    └── BlobClient (blob level)
-        ├── BlockBlobClient (block blobs - most common)
-        ├── AppendBlobClient (append-only blobs)
-        └── PageBlobClient (page blobs - VHDs)
+â””â”€â”€ ContainerClient (container level)
+    â””â”€â”€ BlobClient (blob level)
+        â”œâ”€â”€ BlockBlobClient (block blobs - most common)
+        â”œâ”€â”€ AppendBlobClient (append-only blobs)
+        â””â”€â”€ PageBlobClient (page blobs - VHDs)
 ```
 
 ## Container Operations
@@ -275,7 +275,7 @@ console.log("ETag:", properties.etag);
 
 ```typescript
 await blobClient.setMetadata({
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: "documents",
 });
 ```
@@ -460,27 +460,27 @@ import {
 
 ## Best Practices
 
-1. **Use DefaultAzureCredential** — Prefer AAD over connection strings/keys
-2. **Use streaming for large files** — `uploadStream`/`downloadToFile` for files > 256MB
-3. **Set appropriate content types** — Use `setHTTPHeaders` for correct MIME types
-4. **Use SAS tokens for client access** — Generate short-lived tokens for browser uploads
-5. **Handle errors gracefully** — Check `RestError.statusCode` for specific handling
-6. **Use `*IfNotExists` methods** — For idempotent container/blob creation
-7. **Close clients** — Not required but good practice in long-running apps
+1. **Use DefaultAzureCredential** â€” Prefer AAD over connection strings/keys
+2. **Use streaming for large files** â€” `uploadStream`/`downloadToFile` for files > 256MB
+3. **Set appropriate content types** â€” Use `setHTTPHeaders` for correct MIME types
+4. **Use SAS tokens for client access** â€” Generate short-lived tokens for browser uploads
+5. **Handle errors gracefully** â€” Check `RestError.statusCode` for specific handling
+6. **Use `*IfNotExists` methods** â€” For idempotent container/blob creation
+7. **Close clients** â€” Not required but good practice in long-running apps
 
 ## Platform Differences
 
 | Feature | Node.js | Browser |
 |---------|---------|---------|
-| `StorageSharedKeyCredential` | ✅ | ❌ |
-| `uploadFile()` | ✅ | ❌ |
-| `uploadStream()` | ✅ | ❌ |
-| `downloadToFile()` | ✅ | ❌ |
-| `downloadToBuffer()` | ✅ | ❌ |
-| `uploadData()` | ✅ | ✅ |
-| SAS generation | ✅ | ❌ |
-| DefaultAzureCredential | ✅ | ❌ |
-| Anonymous/SAS access | ✅ | ✅ |
+| `StorageSharedKeyCredential` | âœ… | âŒ |
+| `uploadFile()` | âœ… | âŒ |
+| `uploadStream()` | âœ… | âŒ |
+| `downloadToFile()` | âœ… | âŒ |
+| `downloadToBuffer()` | âœ… | âŒ |
+| `uploadData()` | âœ… | âœ… |
+| SAS generation | âœ… | âŒ |
+| DefaultAzureCredential | âœ… | âŒ |
+| Anonymous/SAS access | âœ… | âœ… |
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
@@ -489,3 +489,4 @@ This skill is applicable to execute the workflow or actions described in the ove
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

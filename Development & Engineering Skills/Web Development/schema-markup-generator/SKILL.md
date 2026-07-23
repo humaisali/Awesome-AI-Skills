@@ -1,4 +1,4 @@
----
+﻿---
 name: schema-markup-generator
 description: "Generate and implement JSON-LD structured data for web apps, blogs, FAQs, and SaaS sites. Supports WebSite, SoftwareApplication, BlogPosting, FAQPage, HowTo, and more."
 category: seo
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-05-31"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [seo, schema, json-ld, structured-data, rich-results, nextjs, technical-seo]
 tools: [claude, cursor, gemini, claude-code]
 version: 1.0.0
@@ -281,7 +281,7 @@ export default function ToolPage() {
 }
 ```
 
-Each schema lives in its own `<script>` tag — do NOT merge them into one object.
+Each schema lives in its own `<script>` tag â€” do NOT merge them into one object.
 
 ---
 
@@ -289,9 +289,9 @@ Each schema lives in its own `<script>` tag — do NOT merge them into one objec
 
 Always validate schema before deploying:
 
-1. **Google Rich Results Test** — https://search.google.com/test/rich-results
-2. **Schema.org Validator** — https://validator.schema.org/
-3. **Google Search Console** → Enhancements → check for warnings after deployment
+1. **Google Rich Results Test** â€” https://search.google.com/test/rich-results
+2. **Schema.org Validator** â€” https://validator.schema.org/
+3. **Google Search Console** â†’ Enhancements â†’ check for warnings after deployment
 
 ```bash
 # Quick check: schema appears in HTML
@@ -318,3 +318,4 @@ curl -s https://www.yourdomain.com/tools/keyword-density | grep -A 5 "applicatio
 - Does not guarantee rich-result eligibility or display; Google and other consumers decide whether to use valid schema.
 - Generated examples must be adapted to the site's real content, legal entity details, ratings, pricing, and availability.
 - Always validate deployed HTML, not only source code, because frameworks and rendering modes can change the final markup.
+

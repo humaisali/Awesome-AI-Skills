@@ -1,4 +1,4 @@
----
+﻿---
 name: geminiignore-finops
 description: "Configure and optimize .geminiignore files for AI context window efficiency and token cost reduction (FinOps)."
 category: context-optimization
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: iradoweck/antigravity-awesome-skills
 source_type: community
 date_added: "2026-05-25"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [finops, context-management, token-optimization, geminiignore]
 tools: [gemini, claude, cursor]
 license: "MIT"
@@ -74,7 +74,7 @@ $RECYCLE.BIN/
 local.properties
 .history/
 
-# 2. DEPENDÊNCIAS (ECONOMIA DE TOKENS EM LOCK FILES)
+# 2. DEPENDÃŠNCIAS (ECONOMIA DE TOKENS EM LOCK FILES)
 node_modules/
 package-lock.json
 yarn.lock
@@ -91,7 +91,7 @@ poetry.lock
 Cargo.lock
 pubspec.lock
 
-# 3. BUILDS E EXPORTAÇÕES
+# 3. BUILDS E EXPORTAÃ‡Ã•ES
 dist/
 build/
 out/
@@ -114,7 +114,7 @@ obj/
 storage/framework/
 storage/logs/
 
-# 5. ASSETS BINÁRIOS E MULTIMÍDIA EXTREMOS
+# 5. ASSETS BINÃRIOS E MULTIMÃDIA EXTREMOS
 *.png
 *.jpg
 *.jpeg
@@ -157,10 +157,10 @@ __pycache__/
 
 ## Best Practices
 
-- ✅ **Ignore dependency lock files**: Standard lock files (e.g., `package-lock.json`, `yarn.lock`) contain thousands of lines of redundant package resolution trees. Ignoring them is the single largest FinOps win.
-- ✅ **Keep configurations visible**: Ensure manifests like `package.json`, `composer.json`, `Cargo.toml`, and `pyproject.toml` are NEVER ignored, as the AI needs them to understand dependencies.
-- ✅ **Whitelist config examples**: Use rules like `!.env.example` alongside `.env` ignores so the AI understands configuration structure without exposing credentials.
-- ❌ **Do not ignore source code**: Avoid overly broad folder patterns like `lib/` or `app/` if they contain primary source code. Be specific (e.g., block `vendor/bundle/` but not your actual code).
+- âœ… **Ignore dependency lock files**: Standard lock files (e.g., `package-lock.json`, `yarn.lock`) contain thousands of lines of redundant package resolution trees. Ignoring them is the single largest FinOps win.
+- âœ… **Keep configurations visible**: Ensure manifests like `package.json`, `composer.json`, `Cargo.toml`, and `pyproject.toml` are NEVER ignored, as the AI needs them to understand dependencies.
+- âœ… **Whitelist config examples**: Use rules like `!.env.example` alongside `.env` ignores so the AI understands configuration structure without exposing credentials.
+- âŒ **Do not ignore source code**: Avoid overly broad folder patterns like `lib/` or `app/` if they contain primary source code. Be specific (e.g., block `vendor/bundle/` but not your actual code).
 
 ## Limitations
 
@@ -171,3 +171,4 @@ __pycache__/
 
 - `@context-optimization` - Broad tactics for context window management.
 - `@clean-code` - Architectural practices for clean, human-readable codebases.
+

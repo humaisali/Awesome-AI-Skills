@@ -1,9 +1,9 @@
----
+﻿---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -409,3 +409,4 @@ For advanced techniques including Lambda/API Gateway exploitation, Secrets Manag
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

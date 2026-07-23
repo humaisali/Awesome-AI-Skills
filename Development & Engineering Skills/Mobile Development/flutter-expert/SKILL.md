@@ -1,4 +1,4 @@
----
+﻿---
 name: flutter-expert
 description: Master Flutter development with Dart 3, advanced widgets, and multi-platform deployment.
 category: mobile
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: community
 date_added: '2026-02-27'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [flutter, dart, mobile, cross-platform, riverpod]
 tools: [claude, cursor, gemini]
 ---
@@ -205,3 +205,4 @@ Always use null safety with Dart 3 features. Include comprehensive error handlin
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

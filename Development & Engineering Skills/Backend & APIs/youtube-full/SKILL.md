@@ -1,13 +1,13 @@
----
+﻿---
 name: youtube-full
-description: "Fetch YouTube transcripts, search videos, browse channels, and extract playlists via TranscriptAPI — no yt-dlp, no Google API key, works from any cloud server."
+description: "Fetch YouTube transcripts, search videos, browse channels, and extract playlists via TranscriptAPI â€” no yt-dlp, no Google API key, works from any cloud server."
 category: api-integration
 risk: safe
 source: https://github.com/humaisali
 source_repo: ZeroPointRepo/youtube-skills
 source_type: community
 date_added: "2026-05-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [youtube, transcripts, video-search, channels, playlists, api, transcriptapi]
 tools: [claude, cursor, gemini, codex, antigravity]
 license: MIT
@@ -20,11 +20,11 @@ plugin:
     docs: "https://transcriptapi.com/docs"
 ---
 
-# youtube-full — YouTube transcript, search, channels & playlists via TranscriptAPI
+# youtube-full â€” YouTube transcript, search, channels & playlists via TranscriptAPI
 
-YouTube transcripts, video search, channel browsing, in-channel search, playlist extraction, and new-upload monitoring — all via [TranscriptAPI](https://transcriptapi.com). Processes 500K+ transcripts daily, fast. No yt-dlp, no headless browsers, no Google API key.
+YouTube transcripts, video search, channel browsing, in-channel search, playlist extraction, and new-upload monitoring â€” all via [TranscriptAPI](https://transcriptapi.com). Processes 500K+ transcripts daily, fast. No yt-dlp, no headless browsers, no Google API key.
 
-This is the API-backed alternative to `ingest-youtube`. Where `ingest-youtube` uses yt-dlp (which stops working on cloud server IPs), `youtube-full` calls TranscriptAPI's API and works from any runtime — local machine, cloud server, serverless function, or CI environment. 686 installs via the `skills` CLI (skills.sh/zeropointrepo/youtube-skills).
+This is the API-backed alternative to `ingest-youtube`. Where `ingest-youtube` uses yt-dlp (which stops working on cloud server IPs), `youtube-full` calls TranscriptAPI's API and works from any runtime â€” local machine, cloud server, serverless function, or CI environment. 686 installs via the `skills` CLI (skills.sh/zeropointrepo/youtube-skills).
 
 ## When to Use This Skill
 
@@ -50,7 +50,7 @@ Do NOT use for:
 npx skills add ZeroPointRepo/youtube-skills --skill youtube-full
 ```
 
-100 free credits included. API key is provisioned automatically via TranscriptAPI OAuth on first invocation — no manual setup.
+100 free credits included. API key is provisioned automatically via TranscriptAPI OAuth on first invocation â€” no manual setup.
 
 ### Step 2: Use it by asking Claude
 
@@ -106,11 +106,11 @@ The agent calls `get_transcript(video_id, timestamps=true)` and returns the full
 ## Best Practices
 
 - Use `channel_latest` (free) before `get_transcript` to check if a video is new
-- Cache transcripts in your workflow — each `get_transcript` call costs 1 credit
+- Cache transcripts in your workflow â€” each `get_transcript` call costs 1 credit
 - Use `search_in_channel` when you already know the channel to avoid broad search noise
-- Prefer `get_playlist_videos` for course or lecture series — cheaper than searching by query
+- Prefer `get_playlist_videos` for course or lecture series â€” cheaper than searching by query
 - Don't batch-transcribe entire channels unless the user explicitly requested it
-- Don't use `search_youtube` when you already have the video URL — jump straight to `get_transcript`
+- Don't use `search_youtube` when you already have the video URL â€” jump straight to `get_transcript`
 
 ## Limitations
 
@@ -139,6 +139,7 @@ The agent calls `get_transcript(video_id, timestamps=true)` and returns the full
 
 ## Related Skills
 
-- `@ingest-youtube` — yt-dlp-based local ingestion to a markdown vault; works locally but not on cloud servers
-- `@deep-research` — General-purpose research skill that can incorporate youtube-full as a data source
-- `@ai-research-corpus` — Building searchable knowledge bases; pairs well with youtube-full for video content
+- `@ingest-youtube` â€” yt-dlp-based local ingestion to a markdown vault; works locally but not on cloud servers
+- `@deep-research` â€” General-purpose research skill that can incorporate youtube-full as a data source
+- `@ai-research-corpus` â€” Building searchable knowledge bases; pairs well with youtube-full for video content
+

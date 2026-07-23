@@ -1,4 +1,4 @@
----
+﻿---
 name: mock-hunter
 description: "Audit a live web page in five phases (catalog, click, trace, classify, report) to identify mock data, hardcoded values, LLM-generated metrics, and broken endpoints. Outputs a markdown report with REAL/MOCK/LLM/HARDCODED/BROKEN/UNKNOWN verdicts per visible value."
 category: testing
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: CodeShuX/mockhunter
 source_type: community
 date_added: "2026-05-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [testing, qa, playwright, mock-detection, web-audit, ai-testing, vibe-coding, claude-code]
 tools: [claude]
 license: "MIT"
@@ -18,7 +18,7 @@ plugin:
     claude: blocked
 ---
 
-# MockHunter — Live Page Reality Check
+# MockHunter â€” Live Page Reality Check
 
 ## Overview
 
@@ -33,7 +33,7 @@ Because this workflow drives a real browser against live pages, treat it as an i
 - Use when auditing an AI-generated UI to find out which values are actually wired up
 - Use when reviewing a contractor or teammate's deliverable before sign-off
 - Use before showing a vibe-coded MVP to a customer or investor
-- Use when a dashboard "looks too clean" — every metric uniformly round, all timestamps clustered, no variance — and you suspect seeded data
+- Use when a dashboard "looks too clean" â€” every metric uniformly round, all timestamps clustered, no variance â€” and you suspect seeded data
 
 ## How It Works
 
@@ -66,19 +66,19 @@ For every visible value, run this decision tree:
 
 ```
 Did any network request return this value?
-├── YES — found in a response:
-│   ├── Status 4xx/5xx → BROKEN
-│   ├── Endpoint matches /ai|openai|generate|llm|chat → LLM
-│   ├── Response shape matches mock library (faker, MSW, mockoon) → MOCK
-│   ├── Uniformity flags trigger → MOCK or LLM (review)
-│   ├── DB connection provided?
-│   │   ├── Run read-only SELECT, value matches DB row → REAL
-│   │   └── Value not in DB → MOCK
-│   └── No DB → UNKNOWN (best-guess)
-└── NO — value not in any network response:
-    ├── String literal in DOM source → HARDCODED
-    ├── Computed from Math.random / Date.now / faker → MOCK
-    └── Cannot determine → UNKNOWN
+â”œâ”€â”€ YES â€” found in a response:
+â”‚   â”œâ”€â”€ Status 4xx/5xx â†’ BROKEN
+â”‚   â”œâ”€â”€ Endpoint matches /ai|openai|generate|llm|chat â†’ LLM
+â”‚   â”œâ”€â”€ Response shape matches mock library (faker, MSW, mockoon) â†’ MOCK
+â”‚   â”œâ”€â”€ Uniformity flags trigger â†’ MOCK or LLM (review)
+â”‚   â”œâ”€â”€ DB connection provided?
+â”‚   â”‚   â”œâ”€â”€ Run read-only SELECT, value matches DB row â†’ REAL
+â”‚   â”‚   â””â”€â”€ Value not in DB â†’ MOCK
+â”‚   â””â”€â”€ No DB â†’ UNKNOWN (best-guess)
+â””â”€â”€ NO â€” value not in any network response:
+    â”œâ”€â”€ String literal in DOM source â†’ HARDCODED
+    â”œâ”€â”€ Computed from Math.random / Date.now / faker â†’ MOCK
+    â””â”€â”€ Cannot determine â†’ UNKNOWN
 ```
 
 Uniformity heuristics flag suspicious data:
@@ -105,10 +105,10 @@ Generate `mockhunter-report.md` with:
 User: /mockhunter audit https://my-app.lovable.app/admin
 Skill: [Phase 1] Stack detected: Lovable. Auth: skip. DB: no.
        [Phase 2] Catalog: 6 stat cards, 4 verification queues, 8 activity items.
-       [Phase 3] Search box: NO-OP (zero network requests). Activity link → 404.
+       [Phase 3] Search box: NO-OP (zero network requests). Activity link â†’ 404.
        [Phase 4] Bundle 2.7 MB. Zero /api/, zero supabase, zero axios.
-                 "$42,850" → string literal in JSX → HARDCODED.
-                 "+12% vs last month" → string literal → HARDCODED.
+                 "$42,850" â†’ string literal in JSX â†’ HARDCODED.
+                 "+12% vs last month" â†’ string literal â†’ HARDCODED.
        [Phase 5] Verdict: 23 HARDCODED, 1 BROKEN, 1 NO-OP, 0 REAL.
                  Report written to ./mockhunter-report.md
 ```
@@ -125,20 +125,20 @@ Skill: ...
 
 ## Best Practices
 
-- ✅ Provide DB access when available — lifts UNKNOWN verdicts to REAL or MOCK
-- ✅ Use a dedicated test account for form-login auth
-- ✅ Run cold-start tests (zero data) — many vibe-coded apps fail there
-- ✅ Tell the skill if specific sections are intentionally AI-generated, so it doesn't false-flag them
-- ❌ Don't run active interaction on apps you don't own without permission — live clicks and form submissions can mutate state
-- ❌ Don't trust a destructive-button exclusion list by itself — localized labels, icons, aria text, and backend routes can hide mutating actions
-- ❌ Don't trust the audit if the page failed to load — check console first
+- âœ… Provide DB access when available â€” lifts UNKNOWN verdicts to REAL or MOCK
+- âœ… Use a dedicated test account for form-login auth
+- âœ… Run cold-start tests (zero data) â€” many vibe-coded apps fail there
+- âœ… Tell the skill if specific sections are intentionally AI-generated, so it doesn't false-flag them
+- âŒ Don't run active interaction on apps you don't own without permission â€” live clicks and form submissions can mutate state
+- âŒ Don't trust a destructive-button exclusion list by itself â€” localized labels, icons, aria text, and backend routes can hide mutating actions
+- âŒ Don't trust the audit if the page failed to load â€” check console first
 
 ## Limitations
 
-- Single-page audit per run — no multi-page crawl in v0.1.0
-- Form-login only for auth — no OAuth, magic-link, or 2FA in v0.1.0
+- Single-page audit per run â€” no multi-page crawl in v0.1.0
+- Form-login only for auth â€” no OAuth, magic-link, or 2FA in v0.1.0
 - Caps at ~30 most-prominent buttons per page
-- Markdown report only — no JSON output yet
+- Markdown report only â€” no JSON output yet
 - DB verification supports any DB reachable via shell command (psql, mysql, mongosh, wrangler, supabase REST), but not Firestore directly
 
 ## Security & Safety Notes
@@ -147,4 +147,5 @@ Skill: ...
 - Skips destructive-looking, ambiguous, icon-only, localized, or external-write controls unless the user has explicitly allowlisted the exact control and environment
 - Never submits forms that look like payment, account deletion, external write operations, account changes, invites, publishing, deployment, messaging, or money movement
 - Uses placeholder credentials (`mockhunter@example.com`) for any throwaway form tests, never the user's real credentials
-- All Playwright actions happen in a controlled MCP browser context — no headless escalation
+- All Playwright actions happen in a controlled MCP browser context â€” no headless escalation
+

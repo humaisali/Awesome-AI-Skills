@@ -1,4 +1,4 @@
----
+﻿---
 name: before-you-build
 description: "Review product risk before coding by checking demand, alternatives, channels, switching costs, and failure signals."
 category: product
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: bin1874/before-you-build-skill
 source_type: community
 date_added: "2026-07-02"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [product-validation, planning, ai-coding, risk-review]
 tools: [claude, cursor, codex, gemini, antigravity]
 license: "MIT"
@@ -76,12 +76,12 @@ Before coding, check:
 
 ## Best Practices
 
-- ✅ Ask for the user, job, current alternative, and switching reason before implementation.
-- ✅ Separate product risk from engineering risk so the team does not solve the wrong problem well.
-- ✅ Recommend small validation steps when the idea has weak demand evidence.
-- ✅ Keep product names, numbers, and claims grounded in what the user provides.
-- ❌ Do not present a generic checklist as proof that an idea is validated.
-- ❌ Do not fabricate market size, revenue, competitor traction, or buyer quotes.
+- âœ… Ask for the user, job, current alternative, and switching reason before implementation.
+- âœ… Separate product risk from engineering risk so the team does not solve the wrong problem well.
+- âœ… Recommend small validation steps when the idea has weak demand evidence.
+- âœ… Keep product names, numbers, and claims grounded in what the user provides.
+- âŒ Do not present a generic checklist as proof that an idea is validated.
+- âŒ Do not fabricate market size, revenue, competitor traction, or buyer quotes.
 
 ## Limitations
 
@@ -109,3 +109,4 @@ Before coding, check:
 
 - `@saas-mvp-launcher` - Use when moving from validation into MVP planning and launch execution.
 - `@ux-research-methodology` - Use when the next step needs structured user research.
+

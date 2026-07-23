@@ -1,10 +1,10 @@
----
+﻿---
 name: codebase-to-wordpress-converter
 description: "Expert skill for converting any codebase (React/HTML/Next.js) into a pixel-perfect, SEO-optimized, and dynamic WordPress theme."
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-04-12"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 ---
 
 # Codebase to WordPress Converter
@@ -54,9 +54,9 @@ Ensure every theme includes the foundational WordPress hooks correctly:
 
 ### 4. Validation & Live Tracker
 Maintain a live tracker of Total Issues, Fixed, and Remaining. Every fix must be followed by a confirmation:
-- ✅ No UI change
-- ✅ No DOM change
-- ✅ No class change
+- âœ… No UI change
+- âœ… No DOM change
+- âœ… No class change
 
 ## Examples
 
@@ -83,11 +83,11 @@ wp_nav_menu([
 
 ## Best Practices
 
-- ✅ **Do:** Use `get_page_by_path()` for robust internal linking.
-- ✅ **Do:** Implement ACF (Advanced Custom Fields) fallbacks in `functions.php`.
-- ✅ **Do:** Keep the Tailwind configuration in the `header.php` to ensure global styles are active.
-- ❌ **Don't:** Add "div" wrappers or rename classes to "clean up" the code.
-- ❌ **Don't:** Use standard WordPress default styles if they conflict with the original design.
+- âœ… **Do:** Use `get_page_by_path()` for robust internal linking.
+- âœ… **Do:** Implement ACF (Advanced Custom Fields) fallbacks in `functions.php`.
+- âœ… **Do:** Keep the Tailwind configuration in the `header.php` to ensure global styles are active.
+- âŒ **Don't:** Add "div" wrappers or rename classes to "clean up" the code.
+- âŒ **Don't:** Use standard WordPress default styles if they conflict with the original design.
 
 ## Additional Resources
 
@@ -99,3 +99,4 @@ wp_nav_menu([
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

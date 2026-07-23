@@ -1,4 +1,4 @@
----
+﻿---
 name: nextjs-seo-indexing
 description: "Fix SEO indexing issues, crawl budget problems, and Search Console coverage errors for Next.js apps. Covers canonical tags, noindex audits, sitemap health, static rendering, and internal linking."
 category: seo
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-05-31"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [seo, indexing, nextjs, search-console, crawl-budget, canonical, sitemap]
 tools: [claude, cursor, gemini, claude-code]
 version: 1.0.0
@@ -30,18 +30,18 @@ Fix Google Search Console coverage issues, canonical problems, sitemap errors, a
 
 | Status | Meaning | Fix |
 |--------|---------|-----|
-| Crawled – not indexed | Google crawled but chose not to index | Improve content quality + canonical + internal links |
+| Crawled â€“ not indexed | Google crawled but chose not to index | Improve content quality + canonical + internal links |
 | Duplicate without canonical | Multiple URLs serve same content, no canonical | Add explicit canonical to the preferred URL |
 | Excluded by noindex | `noindex` tag present | Remove noindex if page should be indexed |
 | Duplicate, Google chose different canonical | Google prefers a different URL than you specified | Align canonical with the URL Google naturally picks |
-| Alternative page with proper canonical | Correct — non-preferred duplicate pointing to canonical | Expected behavior, not a problem |
+| Alternative page with proper canonical | Correct â€” non-preferred duplicate pointing to canonical | Expected behavior, not a problem |
 | Not found 404 | Page deleted or URL changed | Add redirect or restore page |
-| Discovered – not indexed | Google knows it exists but hasn't crawled it | Improve internal linking + crawl budget |
+| Discovered â€“ not indexed | Google knows it exists but hasn't crawled it | Improve internal linking + crawl budget |
 | Page with redirect | Redirect chain or redirect to wrong target | Shorten redirect chain, verify destination |
 
 ---
 
-## Step 1 — Canonical Audit
+## Step 1 â€” Canonical Audit
 
 ### Next.js App Router (metadata export)
 ```js
@@ -67,19 +67,19 @@ export async function generateMetadata({ params }) {
 
 ### Common canonical mistakes to fix:
 ```js
-// ❌ WRONG — relative URL
+// âŒ WRONG â€” relative URL
 canonical: '/blog/my-post'
 
-// ❌ WRONG — missing trailing slash inconsistency  
+// âŒ WRONG â€” missing trailing slash inconsistency  
 // (pick one and stick with it sitewide)
 
-// ✓ CORRECT — absolute URL, consistent scheme + subdomain
+// âœ“ CORRECT â€” absolute URL, consistent scheme + subdomain
 canonical: 'https://www.yourdomain.com/blog/my-post'
 ```
 
 ---
 
-## Step 2 — Noindex Audit
+## Step 2 â€” Noindex Audit
 
 Find pages that are accidentally noindexed:
 
@@ -87,25 +87,25 @@ Find pages that are accidentally noindexed:
 # Search for noindex in metadata
 rg -n --glob '*.{js,ts,jsx,tsx}' 'noindex|robots.*noindex' app pages
 
-# Check layout.js — a noindex here affects ALL pages
+# Check layout.js â€” a noindex here affects ALL pages
 grep -n "robots" app/layout.js
 ```
 
 In Next.js App Router, `robots` in the root layout applies globally. Only set it there if you want the whole site affected.
 
 ```js
-// app/layout.js — only set robots if you need sitewide control
+// app/layout.js â€” only set robots if you need sitewide control
 export const metadata = {
-  // ✓ Allow indexing
+  // âœ“ Allow indexing
   robots: { index: true, follow: true },
-  // ❌ This would noindex the entire site:
+  // âŒ This would noindex the entire site:
   // robots: { index: false }
 };
 ```
 
 ---
 
-## Step 3 — Sitemap Health
+## Step 3 â€” Sitemap Health
 
 ### Verify sitemap routes return 200 + valid XML
 ```bash
@@ -147,22 +147,22 @@ export default async function sitemap() {
 
 ---
 
-## Step 4 — Static Rendering Verification
+## Step 4 â€” Static Rendering Verification
 
 Pages must be statically generated (or SSR with metadata in HTML) for Google to see SEO tags.
 
 ```bash
-# Check build output — pages should show ● (static) not λ (dynamic)
-npm run build 2>&1 | grep -E "○|●|λ|/blog|/tools"
+# Check build output â€” pages should show â— (static) not Î» (dynamic)
+npm run build 2>&1 | grep -E "â—‹|â—|Î»|/blog|/tools"
 ```
 
 ```text
-○  /about             (static)
-●  /blog/[slug]       (SSG)  ← good
-λ  /api/data          (serverless) ← expected for APIs
+â—‹  /about             (static)
+â—  /blog/[slug]       (SSG)  â† good
+Î»  /api/data          (serverless) â† expected for APIs
 ```
 
-If important pages are `λ` (fully dynamic with no static generation), add:
+If important pages are `Î»` (fully dynamic with no static generation), add:
 
 ```js
 // app/blog/[slug]/page.js
@@ -174,7 +174,7 @@ export async function generateStaticParams() {
 
 ---
 
-## Step 5 — Internal Linking Audit
+## Step 5 â€” Internal Linking Audit
 
 Pages with zero internal links are rarely indexed. Every important page should be reachable from:
 1. Homepage or navigation
@@ -183,25 +183,25 @@ Pages with zero internal links are rarely indexed. Every important page should b
 
 ```bash
 # Find pages that have no inbound links from other pages
-# (manual check — grep for the slug across all files)
+# (manual check â€” grep for the slug across all files)
 grep -r "/blog/my-orphan-post" --include="*.{js,ts,jsx,tsx,md}" . | grep -v "sitemap\|the-page-itself"
 ```
 
 ---
 
-## Step 6 — Redirect Audit
+## Step 6 â€” Redirect Audit
 
 ```bash
 # Find all redirects in Next.js config
 grep -A 3 "redirects" next.config.js
 
-# Check for redirect chains (A → B → C — should be A → C)
+# Check for redirect chains (A â†’ B â†’ C â€” should be A â†’ C)
 # Test a suspected chain:
 curl -sI https://www.yourdomain.com/old-url | grep -i location
 ```
 
 ```js
-// next.config.js — keep redirects flat (no chains)
+// next.config.js â€” keep redirects flat (no chains)
 async redirects() {
   return [
     {
@@ -215,19 +215,19 @@ async redirects() {
 
 ---
 
-## Step 7 — robots.txt Check
+## Step 7 â€” robots.txt Check
 
 ```bash
 curl -s https://www.yourdomain.com/robots.txt
 ```
 
 ```text
-# ✓ Good
+# âœ“ Good
 User-agent: *
 Allow: /
 Sitemap: https://www.yourdomain.com/sitemap.xml
 
-# ❌ Bad — disallows crawling of important content
+# âŒ Bad â€” disallows crawling of important content
 Disallow: /blog/
 Disallow: /tools/
 ```
@@ -250,10 +250,10 @@ export default function robots() {
 - [ ] No important pages accidentally noindexed
 - [ ] Sitemap routes return 200 with valid XML
 - [ ] Sitemap submitted to Google Search Console
-- [ ] Important pages statically generated (●) in build output
-- [ ] No redirect chains (A→B→C should be A→C)
+- [ ] Important pages statically generated (â—) in build output
+- [ ] No redirect chains (Aâ†’Bâ†’C should be Aâ†’C)
 - [ ] robots.txt allows important content
-- [ ] Every important page has ≥1 internal inbound link
+- [ ] Every important page has â‰¥1 internal inbound link
 - [ ] `generateStaticParams` added for dynamic routes with known slugs
 
 ## Limitations
@@ -261,3 +261,4 @@ export default function robots() {
 - Does not guarantee Google will index a page; final indexing decisions remain with the search engine.
 - Requires access to the codebase, deployed URLs, and ideally Google Search Console data for confident diagnosis.
 - Treat recommendations that change URL structure, redirects, or canonical policy as production-impacting and review them before deployment.
+

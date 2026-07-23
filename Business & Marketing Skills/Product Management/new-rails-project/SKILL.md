@@ -1,4 +1,4 @@
----
+﻿---
 name: new-rails-project
 argument-hint: [project name]
 description: Create a new Rails project
@@ -7,7 +7,7 @@ context: fork
 risk: unknown
 source: https://github.com/humaisali
 metadata:
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   version: "1.0"
 ---
 
@@ -68,3 +68,4 @@ Verify the boilerplate is working by running `bin/rails server` and accessing th
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

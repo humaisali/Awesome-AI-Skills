@@ -1,4 +1,4 @@
----
+﻿---
 name: grilling
 description: Interview the user relentlessly about a plan or design. Use when the user wants to stress-test a plan before building, or uses any 'grill' trigger phrases.
 category: "productivity"
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: "mattpocock/skills"
 source_type: "community"
 date_added: "2026-06-19"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: "MIT"
 license_source: https://github.com/humaisali
 tags:
@@ -37,3 +37,4 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - Requires the upstream tool, account, API key, or local setup when the workflow names one.
 - Does not authorize destructive, production, paid, or external-message actions without explicit user approval.
 - Validate generated artifacts or recommendations against the user's real sources before treating them as final.
+

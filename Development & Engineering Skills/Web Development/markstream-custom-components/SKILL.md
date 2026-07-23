@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-custom-components
 description: "Override Markstream node renderers and add trusted custom tags across Vue, React, Svelte, and Angular using scoped or renderer-local mappings."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [markdown, components, vue, react, svelte, angular]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -72,3 +72,4 @@ export function Answer({ markdown }: { markdown: string }) {
 ## Security & Safety Notes
 
 Treat custom HTML-like tags as trusted input only. Keep safe HTML enabled and do not pass unsanitized attributes into host components.
+

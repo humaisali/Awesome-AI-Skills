@@ -1,11 +1,11 @@
----
+﻿---
 name: gdb-cli
 description: "GDB debugging assistant for AI agents - analyze core dumps, debug live processes, investigate crashes and deadlocks with source code correlation"
 category: development
 risk: critical
 source: https://github.com/humaisali
 date_added: "2026-03-22"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - debugging
 - gdb
@@ -94,7 +94,7 @@ gdb-cli registers -s $SESSION
 
 For each frame in the backtrace:
 1. **Extract frame info**: `{file}:{line} in {function}`
-2. **Read source context**: Get ±20 lines around the crash point
+2. **Read source context**: Get Â±20 lines around the crash point
 3. **Get local variables**: `gdb-cli locals-cmd -s $SESSION --frame <N>`
 4. **Analyze**: Correlate code logic with variable values
 
@@ -242,3 +242,4 @@ gdb-cli thread-apply -s b2c3d4 bt --all
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

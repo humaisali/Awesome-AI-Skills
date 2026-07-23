@@ -1,10 +1,10 @@
----
+﻿---
 name: skill-sentinel
 description: Auditoria e evolucao do ecossistema de skills. Qualidade de codigo, seguranca, custos, gaps, duplicacoes, dependencias e relatorios de saude.
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - governance
 - audit
@@ -66,33 +66,33 @@ e recomenda novas skills especialistas.
 
 ```
 C:\Users\renat\skills\skill-sentinel\
-├── SKILL.md
-├── scripts/
-│   ├── requirements.txt
-│   ├── config.py
-│   ├── db.py
-│   ├── governance.py
-│   ├── scanner.py
-│   ├── analyzers/
-│   │   ├── code_quality.py
-│   │   ├── security.py
-│   │   ├── performance.py
-│   │   ├── governance_audit.py
-│   │   ├── documentation.py
-│   │   ├── dependencies.py
-│   │   └── cross_skill.py
-│   ├── recommender.py
-│   ├── cost_optimizer.py
-│   ├── report_generator.py
-│   └── run_audit.py
-├── references/
-│   ├── analysis_criteria.md
-│   ├── security_patterns.md
-│   ├── skill_template.md
-│   └── schema.md
-└── data/
-    ├── sentinel.db
-    └── reports/
+â”œâ”€â”€ SKILL.md
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ requirements.txt
+â”‚   â”œâ”€â”€ config.py
+â”‚   â”œâ”€â”€ db.py
+â”‚   â”œâ”€â”€ governance.py
+â”‚   â”œâ”€â”€ scanner.py
+â”‚   â”œâ”€â”€ analyzers/
+â”‚   â”‚   â”œâ”€â”€ code_quality.py
+â”‚   â”‚   â”œâ”€â”€ security.py
+â”‚   â”‚   â”œâ”€â”€ performance.py
+â”‚   â”‚   â”œâ”€â”€ governance_audit.py
+â”‚   â”‚   â”œâ”€â”€ documentation.py
+â”‚   â”‚   â”œâ”€â”€ dependencies.py
+â”‚   â”‚   â””â”€â”€ cross_skill.py
+â”‚   â”œâ”€â”€ recommender.py
+â”‚   â”œâ”€â”€ cost_optimizer.py
+â”‚   â”œâ”€â”€ report_generator.py
+â”‚   â””â”€â”€ run_audit.py
+â”œâ”€â”€ references/
+â”‚   â”œâ”€â”€ analysis_criteria.md
+â”‚   â”œâ”€â”€ security_patterns.md
+â”‚   â”œâ”€â”€ skill_template.md
+â”‚   â””â”€â”€ schema.md
+â””â”€â”€ data/
+    â”œâ”€â”€ sentinel.db
+    â””â”€â”€ reports/
 ```
 
 ## Instalacao
@@ -280,3 +280,4 @@ Para detalhes tecnicos, consultar:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

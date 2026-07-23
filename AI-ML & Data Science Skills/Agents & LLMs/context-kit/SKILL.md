@@ -1,4 +1,4 @@
----
+﻿---
 name: context-kit
 description: "Evaluate, adapt, and safely install Context Kit personal context artifacts for Claude Code or adjacent agent workflows."
 category: productivity
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: JDDavenport/context-kit
 source_type: community
 date_added: "2026-07-04"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [personal-context, claude-code, memory, knowledge-management, agent-workflows]
 tools: [claude, codex, cursor, gemini]
 ---
@@ -133,3 +133,4 @@ section immediately.
 - It does not replace a dedicated secrets manager, CRM, password vault, or medical record system.
 - It is for local personal context hygiene, not for collecting private information about other people
   without a legitimate reason.
+

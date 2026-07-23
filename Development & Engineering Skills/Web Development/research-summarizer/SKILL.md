@@ -1,10 +1,10 @@
----
+﻿---
 name: "research-summarizer"
 description: "Structured research summarization agent skill for non-dev users. Handles academic papers, web articles, reports, and documentation. Extracts key findings, generates comparative analyses, and produces properly formatted citations. Use when: user wants to summarize a research paper, compare multiple sources, extract citations from documents, or create structured research briefs. Plugin for Claude Code, Codex, Gemini CLI, and OpenClaw."
 license: MIT
 metadata:
   version: 1.0.0
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: product
   updated: 2026-03-16
 ---
@@ -15,18 +15,18 @@ metadata:
 
 Structured research summarization workflow that turns dense source material into actionable briefs. Built for product managers, analysts, founders, and anyone who reads more than they should have to.
 
-Not a generic "summarize this" — a repeatable framework that extracts what matters, compares across sources, and formats citations properly.
+Not a generic "summarize this" â€” a repeatable framework that extracts what matters, compares across sources, and formats citations properly.
 
 ---
 
-## Scope — Distinct From the research/ Domain
+## Scope â€” Distinct From the research/ Domain
 
 This skill summarizes **documents the user already has** (papers, articles, reports pasted or attached). It performs no web search and needs no MCP server. It is NOT:
 
-- `research/litreview` — academic literature *discovery* and review-guide generation (finds papers via Consensus/academic APIs)
-- `research/dossier` — entity due-diligence built from live web research
-- `research/notebooklm` — drives Google's NotebookLM product UI
-- `research/research` — the router for open-ended "research [topic]" requests that require searching
+- `research/litreview` â€” academic literature *discovery* and review-guide generation (finds papers via Consensus/academic APIs)
+- `research/dossier` â€” entity due-diligence built from live web research
+- `research/notebooklm` â€” drives Google's NotebookLM product UI
+- `research/research` â€” the router for open-ended "research [topic]" requests that require searching
 
 If the user asks you to *find* sources rather than digest supplied ones, route to the research/ domain instead.
 
@@ -44,21 +44,21 @@ Recognize these patterns from the user:
 - "Break down this whitepaper"
 - Any request involving: summarize, research brief, literature review, citation, source comparison
 
-If the user has a document and wants structured understanding → this skill applies.
+If the user has a document and wants structured understanding â†’ this skill applies.
 
 ---
 
 ## Workflow
 
-### Workflow 1 — Single Source Summary
+### Workflow 1 â€” Single Source Summary
 
 1. **Identify source type**
-   - Academic paper → use IMRAD structure (Introduction, Methods, Results, Analysis, Discussion)
-   - Web article → use claim-evidence-implication structure
-   - Technical report → use executive summary structure
-   - Documentation → use reference summary structure
+   - Academic paper â†’ use IMRAD structure (Introduction, Methods, Results, Analysis, Discussion)
+   - Web article â†’ use claim-evidence-implication structure
+   - Technical report â†’ use executive summary structure
+   - Documentation â†’ use reference summary structure
 
-2. **Scaffold the brief** — `python3 scripts/format_summary.py --template academic` (or `article`/`report`/`executive` per source type), then fill in every section from the source:
+2. **Scaffold the brief** â€” `python3 scripts/format_summary.py --template academic` (or `article`/`report`/`executive` per source type), then fill in every section from the source:
    ```
    Title: [exact title]
    Author(s): [names]
@@ -74,7 +74,7 @@ If the user has a document and wants structured understanding → this skill app
    3. [Finding with supporting evidence]
 
    ## Methodology
-   [How they arrived at these findings — data sources, sample size, approach]
+   [How they arrived at these findings â€” data sources, sample size, approach]
 
    ## Limitations
    - [What the source doesn't cover or gets wrong]
@@ -92,7 +92,7 @@ If the user has a document and wants structured understanding → this skill app
    - Recency (when published, still relevant?)
    - Bias indicators (funding source, author affiliation, methodology gaps)
 
-### Workflow 2 — Multi-Source Comparison
+### Workflow 2 â€” Multi-Source Comparison
 
 1. **Collect sources** (2-5 documents)
 2. **Summarize each** using the single-source workflow above
@@ -129,9 +129,9 @@ If the user has a document and wants structured understanding → this skill app
    [Based on weight of evidence, what should the reader believe/do?]
    ```
 
-### Workflow 3 — Citation Extraction
+### Workflow 3 â€” Citation Extraction
 
-1. **Run the extractor** — `python3 scripts/extract_citations.py document.txt --output json` detects DOI/URL/author-year/numbered citations and deduplicates them
+1. **Run the extractor** â€” `python3 scripts/extract_citations.py document.txt --output json` detects DOI/URL/author-year/numbered citations and deduplicates them
 2. **Review and format** the extracted list in the requested style (APA 7 default); manually catch citations the regex missed
 3. **Classify citations** by type:
    - Primary sources (original research, data)
@@ -140,11 +140,11 @@ If the user has a document and wants structured understanding → this skill app
 4. **Output** sorted bibliography with classification tags
 
 Supported citation formats:
-- **APA 7** (default) — social sciences, business
-- **IEEE** — engineering, computer science
-- **Chicago** — humanities, history
-- **Harvard** — general academic
-- **MLA 9** — arts, humanities
+- **APA 7** (default) â€” social sciences, business
+- **IEEE** â€” engineering, computer science
+- **Chicago** â€” humanities, history
+- **Harvard** â€” general academic
+- **MLA 9** â€” arts, humanities
 
 ---
 
@@ -177,7 +177,7 @@ cat paper.txt | python3 scripts/extract_citations.py --stdin
 
 ### `scripts/format_summary.py`
 
-CLI utility that emits **blank structured summary scaffolds** — you (the model) fill them in from the source. It does not analyze content itself.
+CLI utility that emits **blank structured summary scaffolds** â€” you (the model) fill them in from the source. It does not analyze content itself.
 
 **Features:**
 - 6 templates: academic, article, report, executive, comparison, literature
@@ -213,9 +213,9 @@ Rate every source on four dimensions:
 | **Objectivity** | No conflicts, balanced view | Minor affiliations disclosed | Funded by interested party, one-sided |
 
 **Overall Rating:**
-- 4 Highs = Strong source — cite with confidence
-- 2+ Mediums = Adequate source — cite with caveats
-- 2+ Lows = Weak source — verify independently before citing
+- 4 Highs = Strong source â€” cite with confidence
+- 2+ Mediums = Adequate source â€” cite with caveats
+- 2+ Lows = Weak source â€” verify independently before citing
 
 ---
 
@@ -239,12 +239,12 @@ See `references/citation-formats.md` for:
 
 Flag these without being asked:
 
-- **Source has no date** → Note it. Undated sources lose credibility points.
-- **Source contradicts other sources** → Highlight the contradiction explicitly. Don't paper over disagreements.
-- **Source is behind a paywall** → Note limited access. Suggest alternatives if known.
-- **User provides only one source for a compare** → Ask for at least one more. Comparison needs 2+.
-- **Citations are incomplete** → Flag missing fields (year, author, title). Don't invent metadata.
-- **Source is 5+ years old in a fast-moving field** → Warn about potential obsolescence.
+- **Source has no date** â†’ Note it. Undated sources lose credibility points.
+- **Source contradicts other sources** â†’ Highlight the contradiction explicitly. Don't paper over disagreements.
+- **Source is behind a paywall** â†’ Note limited access. Suggest alternatives if known.
+- **User provides only one source for a compare** â†’ Ask for at least one more. Comparison needs 2+.
+- **Citations are incomplete** â†’ Flag missing fields (year, author, title). Don't invent metadata.
+- **Source is 5+ years old in a fast-moving field** â†’ Warn about potential obsolescence.
 
 ---
 
@@ -272,17 +272,18 @@ clawhub install cs-research-summarizer
 
 Before delivering any brief, check:
 
-1. Every Key Finding cites a location in the source (section, page, or quote) — no unanchored claims.
+1. Every Key Finding cites a location in the source (section, page, or quote) â€” no unanchored claims.
 2. `python3 scripts/extract_citations.py <file> --output json` exits 0 and its `total` matches the bibliography count in your output (investigate any gap).
 3. Each source carries a 4-dimension quality rating (table above); weak sources are flagged, not silently included.
-4. For comparisons: the matrix has one row per dimension and one column per source — no source skipped.
+4. For comparisons: the matrix has one row per dimension and one column per source â€” no source skipped.
 5. Nothing was invented: missing metadata is marked "not stated", never filled in.
 
 ---
 
 ## Related Skills
 
-- **product-analytics** — Quantitative analysis. Complementary — use research-summarizer for qualitative sources, product-analytics for metrics.
-- **competitive-teardown** — Competitive research. Complementary — use research-summarizer for individual source analysis, competitive-teardown for market landscape.
-- **content-production** — Content writing. Research-summarizer feeds content-production — summarize sources first, then write.
-- **product-discovery** — Discovery frameworks. Complementary — research-summarizer for desk research, product-discovery for user research.
+- **product-analytics** â€” Quantitative analysis. Complementary â€” use research-summarizer for qualitative sources, product-analytics for metrics.
+- **competitive-teardown** â€” Competitive research. Complementary â€” use research-summarizer for individual source analysis, competitive-teardown for market landscape.
+- **content-production** â€” Content writing. Research-summarizer feeds content-production â€” summarize sources first, then write.
+- **product-discovery** â€” Discovery frameworks. Complementary â€” research-summarizer for desk research, product-discovery for user research.
+

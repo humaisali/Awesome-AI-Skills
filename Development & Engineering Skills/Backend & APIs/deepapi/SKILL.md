@@ -1,4 +1,4 @@
----
+﻿---
 name: deepapi
 description: "Use DeepAPI for supported scraping, research, and email workflows with explicit credentials and approval."
 category: research
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [deepapi, scraping, email, api]
 tools: [claude, codex]
 license: "MIT"
@@ -647,3 +647,4 @@ Example query: `waitForFinishSecs=60`
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

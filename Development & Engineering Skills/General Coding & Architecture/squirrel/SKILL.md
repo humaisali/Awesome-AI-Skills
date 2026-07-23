@@ -1,4 +1,4 @@
----
+﻿---
 name: squirrel
 description: "Full-cycle AI coding skill: plans, builds, tests, lints, fixes bugs, and writes production-grade docs. Auto-detects project state and adapts its 8-phase pipeline."
 category: development
@@ -9,12 +9,12 @@ source_type: community
 license: "Apache-2.0"
 license_source: https://github.com/humaisali
 date_added: "2026-04-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [development, testing, planning, code-review, documentation, ci-cd]
 tools: [claude, cursor, codex, antigravity, gemini, windsurf, opencode, copilot]
 ---
 
-# Squirrel — Full-Cycle Software Development Skill
+# Squirrel â€” Full-Cycle Software Development Skill
 
 ## Overview
 
@@ -44,14 +44,14 @@ Squirrel classifies the project directory:
 
 ### The 8-Phase Pipeline
 
-1. **Discover** — Understand the project (audit existing code or gather requirements)
-2. **Plan** — Concrete task list with dependencies and done-criteria
-3. **Build** — Write or modify code (parallel sub-agents when supported)
-4. **Test** — Run existing tests, write new ones, 70%+ coverage target
-5. **Bug Hunt** — Static analysis + manual review
-6. **Polish** — Lint, format, type check, remove dead code
-7. **Document** — README + inline docs (update existing, don't overwrite)
-8. **Ship** — Final checklist: tests green, no secrets, CI configured
+1. **Discover** â€” Understand the project (audit existing code or gather requirements)
+2. **Plan** â€” Concrete task list with dependencies and done-criteria
+3. **Build** â€” Write or modify code (parallel sub-agents when supported)
+4. **Test** â€” Run existing tests, write new ones, 70%+ coverage target
+5. **Bug Hunt** â€” Static analysis + manual review
+6. **Polish** â€” Lint, format, type check, remove dead code
+7. **Document** â€” README + inline docs (update existing, don't overwrite)
+8. **Ship** â€” Final checklist: tests green, no secrets, CI configured
 
 ### Failure Recovery (3-Strike Rule)
 
@@ -75,19 +75,19 @@ Squirrel auto-detects greenfield mode and runs all 8 phases.
 > fix this bug in src/auth/login.py
 ```
 
-Squirrel enters targeted mode — abbreviated audit, scoped fix, verify.
+Squirrel enters targeted mode â€” abbreviated audit, scoped fix, verify.
 
 ### Example 3: Improve existing project
 
 ```text
-> squirrel this project — add tests, fix lint errors, write README
+> squirrel this project â€” add tests, fix lint errors, write README
 ```
 
 Squirrel audits the existing codebase, then applies phases 4-8.
 
 ## Best Practices
 
-- Respects existing code — matches naming conventions, test framework, import style, and architecture
+- Respects existing code â€” matches naming conventions, test framework, import style, and architecture
 - Reads 2-3 similar files before writing a new one
 - Never suppresses type errors with `as any` or `@ts-ignore`
 - Never deletes failing tests to "pass"
@@ -116,3 +116,4 @@ npx skills add flyingsquirrel0419/squirrel-skill
 - `@brainstorming` - For planning before implementation
 - `@test-driven-development` - For TDD-oriented workflows
 - `@systematic-debugging` - For methodical problem-solving
+

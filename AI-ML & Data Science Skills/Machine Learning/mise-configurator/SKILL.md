@@ -1,4 +1,4 @@
----
+﻿---
 name: mise-configurator
 description: "Generate production-ready mise.toml setups for local development, CI/CD pipelines, and toolchain standardization."
 category: devops
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-04-16"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [mise, devops, ci-cd, toolchain, runtimes, automation]
 tools: [claude, cursor, gemini]
 ---
@@ -94,21 +94,21 @@ steps:
 
 ## Best Practices
 
-- ✅ Respect versions already pinned in the repository
+- âœ… Respect versions already pinned in the repository
     
-- ✅ Keep configs minimal and readable
+- âœ… Keep configs minimal and readable
     
-- ✅ Prefer stable runtime releases
+- âœ… Prefer stable runtime releases
     
-- ✅ Generate CI examples with caching
+- âœ… Generate CI examples with caching
 
-- ✅ Ask for target versions before pinning when the repository does not already declare them
+- âœ… Ask for target versions before pinning when the repository does not already declare them
 
-- ❌ Do not use floating `latest` or `lts` aliases in shared production configs unless explicitly requested
+- âŒ Do not use floating `latest` or `lts` aliases in shared production configs unless explicitly requested
     
-- ❌ Do not over-engineer unnecessary tool entries
+- âŒ Do not over-engineer unnecessary tool entries
     
-- ❌ Do not ignore existing lockfiles or version files
+- âŒ Do not ignore existing lockfiles or version files
     
 
 ## Limitations
@@ -152,3 +152,4 @@ steps:
 - `@github-actions-templates` - Use for advanced workflow automation
     
 - `@monorepo-architect` - Use for large multi-package repositories
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: diagnose-android-overheating
 description: "Use when diagnosing Android overheating, idle heat, thermal throttling, charging or radio heat, or abnormal battery drain with read-only ADB evidence and approval gates."
 category: debugging
@@ -6,7 +6,7 @@ risk: critical
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-07-16"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [android, adb, overheating, thermal, battery, diagnostics]
 tools: [claude, cursor, gemini, antigravity, codex]
 ---
@@ -34,7 +34,7 @@ Stop software diagnosis when the device shows battery swelling, smoke, hissing, 
 Before collecting data:
 
 1. Confirm the user owns or is authorized to inspect the device.
-2. Ask what “hot” means: location on the handset, activity, charging state, network type, onset, duration, and whether the heat also occurs while idle.
+2. Ask what â€œhotâ€ means: location on the handset, activity, charging state, network type, onset, duration, and whether the heat also occurs while idle.
 3. Record the device model, Android version, recent OS/app changes, charger and cable, ambient conditions, and visible thermal warnings.
 4. Explain that an attached USB cable can charge and warm the device. Use wireless ADB or short capture windows when possible, and compare with the cable disconnected.
 5. Select a specific device serial when more than one ADB target is present. Never assume the first listed device is the intended phone.
@@ -188,7 +188,7 @@ Record charger/cable context, battery state, temperature trend, plugged source, 
 - **Filtering `thermalservice` down to one word:** Preserve the complete output; status, sensor type, throttling severity, and vendor omissions all matter.
 - **Calling the top CPU process the cause from one sample:** Sample across the heat window and correlate with thermal change.
 - **Resetting Batterystats immediately:** Save the pre-existing history first; reset only for an explicitly approved controlled capture.
-- **Applying several “optimizations” together:** Test one reversible hypothesis at a time and verify the symptom, not just the setting.
+- **Applying several â€œoptimizationsâ€ together:** Test one reversible hypothesis at a time and verify the symptom, not just the setting.
 - **Treating missing OEM data as evidence of no problem:** Report the blind spot and use an independent comparison or escalate.
 
 ## Related Skills
@@ -196,3 +196,4 @@ Record charger/cable context, battery state, temperature trend, plugged source, 
 - `@android-cli` - Use for Android SDK, emulator, deployment, screenshots, and general device interaction.
 - `@android-dev` - Use when the root cause is in Android application source code and the user wants an implementation fix.
 - `@mobile-developer` - Use for broader mobile application development rather than handset-level diagnosis.
+

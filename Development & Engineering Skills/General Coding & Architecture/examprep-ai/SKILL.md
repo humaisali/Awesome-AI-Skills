@@ -1,11 +1,11 @@
----
+﻿---
 name: examprep-ai
-description: "Exam preparation assistant that converts syllabi, past papers, or notes into a ranked High Score Roadmap. Covers theory, numericals, MCQs, coding, and lab prep, ordered Easy → Medium → Hard. Use for last-minute revision, important topics, and question prediction."
+description: "Exam preparation assistant that converts syllabi, past papers, or notes into a ranked High Score Roadmap. Covers theory, numericals, MCQs, coding, and lab prep, ordered Easy â†’ Medium â†’ Hard. Use for last-minute revision, important topics, and question prediction."
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-06-05"
 allowed-tools: Read, Glob, Grep
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 user-invokable: true
 tags:
   - education
@@ -27,7 +27,7 @@ Use this skill when you need to:
 - Create flashcards, predicted exam papers, or check your overall exam readiness.
 - Perform last-minute revision or deep-dive into important exam topics.
 
-## 🎯 Selective Reading Rule — Read ONLY the section matching the request
+## ðŸŽ¯ Selective Reading Rule â€” Read ONLY the section matching the request
 
 | What the student asks for | Jump to |
 |--------------------------|---------|
@@ -54,42 +54,42 @@ Skip everything else. Do not load all sections for a focused request.
 
 | Level | Signal Words | Student Goal |
 |-------|-------------|--------------|
-| 🟩 Easy | define, state, list, name, identify, what is | Guaranteed marks — study first |
-| 🟨 Medium | explain, describe, compare, calculate, implement, trace | Mid-paper marks |
-| 🟥 Hard | derive, prove, optimize, analyze, evaluate, design, why | Score separators — study last |
+| ðŸŸ© Easy | define, state, list, name, identify, what is | Guaranteed marks â€” study first |
+| ðŸŸ¨ Medium | explain, describe, compare, calculate, implement, trace | Mid-paper marks |
+| ðŸŸ¥ Hard | derive, prove, optimize, analyze, evaluate, design, why | Score separators â€” study last |
 
-**Order rule:** Always present Easy → Medium → Hard. Never reverse.
+**Order rule:** Always present Easy â†’ Medium â†’ Hard. Never reverse.
 
 ### Intake (ask once, then proceed)
 
 1. Collect at least one of: syllabus, past question papers, notes, or subject name + university.
-2. Confirm course code if OCR confidence < 80%: *"I detected [X] — is this correct?"*
-3. Ask time available. If no answer → default **Standard Mode (6–12 hrs)** and state the assumption.
+2. Confirm course code if OCR confidence < 80%: *"I detected [X] â€” is this correct?"*
+3. Ask time available. If no answer â†’ default **Standard Mode (6â€“12 hrs)** and state the assumption.
 
 ### Study Modes
 
 | Mode | Time | Load |
 |------|------|------|
-| 🚨 Emergency | 1–2 hrs | 🟩 Easy only, top 10 questions |
-| ⚡ Sprint | 3–5 hrs | 🟩 + 🟨, top 25 questions |
-| 📚 Standard *(default)* | 6–12 hrs | All difficulties, full roadmap |
-| 🗓️ Advance | Days+ | Daily schedule + mock papers |
+| ðŸš¨ Emergency | 1â€“2 hrs | ðŸŸ© Easy only, top 10 questions |
+| âš¡ Sprint | 3â€“5 hrs | ðŸŸ© + ðŸŸ¨, top 25 questions |
+| ðŸ“š Standard *(default)* | 6â€“12 hrs | All difficulties, full roadmap |
+| ðŸ—“ï¸ Advance | Days+ | Daily schedule + mock papers |
 
 ### Syllabus Guardrail
 
-- Map every question to a syllabus unit (≥ 70% match → `[IN SYLLABUS]`).
+- Map every question to a syllabus unit (â‰¥ 70% match â†’ `[IN SYLLABUS]`).
 - Never generate content for topics absent from the uploaded syllabus.
-- Out-of-syllabus items → flag, ask student before including.
+- Out-of-syllabus items â†’ flag, ask student before including.
 
 ### Probability Score
 
 ```
-Score = (Frequency × 0.40) + (Recency × 0.30) + (Unit Weight × 0.20) + (Marks × 0.10)
+Score = (Frequency Ã— 0.40) + (Recency Ã— 0.30) + (Unit Weight Ã— 0.20) + (Marks Ã— 0.10)
 ```
-- Frequency: appearances ÷ max appearances × 100
-- Recency: last 2 yrs = 100 · 3–4 yrs = 60 · older = 30
-- Unit Weight: core = 100 · elective = 50
-- Marks: 10+ = 100 · 5–9 = 60 · 2–4 = 30 · MCQ = 20
+- Frequency: appearances Ã· max appearances Ã— 100
+- Recency: last 2 yrs = 100 Â· 3â€“4 yrs = 60 Â· older = 30
+- Unit Weight: core = 100 Â· elective = 50
+- Marks: 10+ = 100 Â· 5â€“9 = 60 Â· 2â€“4 = 30 Â· MCQ = 20
 
 ## Limitations
 
@@ -111,38 +111,38 @@ Score = (Frequency × 0.40) + (Recency × 0.30) + (Unit Weight × 0.20) + (Marks
 
 > Use when: student uploads syllabus + past papers, or asks "what should I study?"
 
-**Step 1 — Extract.** Pull all questions; note year/source for each.
-Confirm: *"Extracted [N] questions from [M] papers for [Course]. Found: 📝[A] 🔢[B] 🔘[C] 💻[D] 🧪[E]. Proceed?"*
+**Step 1 â€” Extract.** Pull all questions; note year/source for each.
+Confirm: *"Extracted [N] questions from [M] papers for [Course]. Found: ðŸ“[A] ðŸ”¢[B] ðŸ”˜[C] ðŸ’»[D] ðŸ§ª[E]. Proceed?"*
 
-**Step 2 — Classify + tag difficulty.** Use the five-type table:
+**Step 2 â€” Classify + tag difficulty.** Use the five-type table:
 
 | Type | Identify By |
 |------|------------|
-| 📝 Theory | define, explain, discuss, compare, differentiate |
-| 🔢 Numerical | calculate, find, solve, derive, prove, numbers in question |
-| 🔘 MCQ/T-F | options listed, "true or false", "which of the following" |
-| 💻 Coding | write a program, implement, trace output, algorithm, flowchart |
-| 🧪 Lab | experiment, procedure, observation, aim, apparatus, viva |
+| ðŸ“ Theory | define, explain, discuss, compare, differentiate |
+| ðŸ”¢ Numerical | calculate, find, solve, derive, prove, numbers in question |
+| ðŸ”˜ MCQ/T-F | options listed, "true or false", "which of the following" |
+| ðŸ’» Coding | write a program, implement, trace output, algorithm, flowchart |
+| ðŸ§ª Lab | experiment, procedure, observation, aim, apparatus, viva |
 
-**Step 3 — Build ranked tables (one per type):**
+**Step 3 â€” Build ranked tables (one per type):**
 
 ```
 | # | Question | Times | Marks | Difficulty | Unit | Priority |
 |---|----------|-------|-------|------------|------|----------|
-| 1 | [question text] | [N]× | [X] | 🟩/🟨/🟥 | Unit [X] | 🔥 Must / ✅ Do |
+| 1 | [question text] | [N]Ã— | [X] | ðŸŸ©/ðŸŸ¨/ðŸŸ¥ | Unit [X] | ðŸ”¥ Must / âœ… Do |
 ```
 
-**Step 4 — Generate notes** using the matching type section below.
-Order: Easy across all types first → then Medium → then Hard.
+**Step 4 â€” Generate notes** using the matching type section below.
+Order: Easy across all types first â†’ then Medium â†’ then Hard.
 
-**Step 5 — Coverage tracker:**
+**Step 5 â€” Coverage tracker:**
 ```
-Unit 1: [Name]  →  📝✅  🔢✅  🔘⚠️ PREDICTED  💻—  🧪—
-Legend: ✅ past paper  ⚠️ predicted  — not applicable
+Unit 1: [Name]  â†’  ðŸ“âœ…  ðŸ”¢âœ…  ðŸ”˜âš ï¸ PREDICTED  ðŸ’»â€”  ðŸ§ªâ€”
+Legend: âœ… past paper  âš ï¸ predicted  â€” not applicable
 ```
-For any gap: generate one predicted question + note, label `[PREDICTED — not from past papers]`.
+For any gap: generate one predicted question + note, label `[PREDICTED â€” not from past papers]`.
 
-**Step 6 — Offer:** *"Would you like (a) Flashcards, (b) Predicted Exam Paper, or (c) Readiness Dashboard?"*
+**Step 6 â€” Offer:** *"Would you like (a) Flashcards, (b) Predicted Exam Paper, or (c) Readiness Dashboard?"*
 
 ---
 
@@ -150,36 +150,36 @@ For any gap: generate one predicted question + note, label `[PREDICTED — not f
 
 > Use when: student asks about definitions, explanations, long-answer questions.
 
-**🟩 Easy — Definition / List (30 sec)**
+**ðŸŸ© Easy â€” Definition / List (30 sec)**
 ```
-📝🟩 [Question] | [N]× | [X] marks
-─────────────────────────────────
-ANSWER: [2–4 bullets max]
+ðŸ“ðŸŸ© [Question] | [N]Ã— | [X] marks
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ANSWER: [2â€“4 bullets max]
 KEY TERM: [single most important word]
 MEMORY HOOK: [one-liner trick]
 ```
 
-**🟨 Medium — Explanation / Comparison (2 min)**
+**ðŸŸ¨ Medium â€” Explanation / Comparison (2 min)**
 ```
-📝🟨 [Question] | [N]× | [X] marks
-─────────────────────────────────
+ðŸ“ðŸŸ¨ [Question] | [N]Ã— | [X] marks
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 DEFINITION: [1 sentence]
-MAIN POINTS: • P1 • P2 • P3 • P4
-DIAGRAM: [text description — student sketches from this]
+MAIN POINTS: â€¢ P1 â€¢ P2 â€¢ P3 â€¢ P4
+DIAGRAM: [text description â€” student sketches from this]
 EXAM TIP: [what examiner rewards]
 ```
 
-**🟥 Hard — Discussion / Evaluation (5 min read · 10 min write)**
+**ðŸŸ¥ Hard â€” Discussion / Evaluation (5 min read Â· 10 min write)**
 ```
-📝🟥 [Question] | [N]× | [X] marks | Unit [X]
-─────────────────────────────────────────────
-INTRO: [2–3 sentences]
-SECTION 1 — [subtopic]: • point • point
-SECTION 2 — [subtopic]: • point • point
-SECTION 3 — [subtopic]: • point • point
+ðŸ“ðŸŸ¥ [Question] | [N]Ã— | [X] marks | Unit [X]
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+INTRO: [2â€“3 sentences]
+SECTION 1 â€” [subtopic]: â€¢ point â€¢ point
+SECTION 2 â€” [subtopic]: â€¢ point â€¢ point
+SECTION 3 â€” [subtopic]: â€¢ point â€¢ point
 DIAGRAM: [sketch description]
-CONCLUSION: [1–2 lines]
-MARKS HINT: Intro ~2 · each section ~3 · diagram ~2 · conclusion ~1
+CONCLUSION: [1â€“2 lines]
+MARKS HINT: Intro ~2 Â· each section ~3 Â· diagram ~2 Â· conclusion ~1
 MEMORY: [acronym or order trick]
 ```
 
@@ -189,12 +189,12 @@ MEMORY: [acronym or order trick]
 
 > Use when: student asks for calculation problems, derivations, formulas.
 
-**🟩 Easy — Direct formula plug-in**
+**ðŸŸ© Easy â€” Direct formula plug-in**
 ```
-🔢🟩 [Problem Type] | [N]× | [X] marks
-──────────────────────────────────────
+ðŸ”¢ðŸŸ© [Problem Type] | [N]Ã— | [X] marks
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 FORMULA:        [clearly written]
-GIVEN → FIND:   [what's given / what to find]
+GIVEN â†’ FIND:   [what's given / what to find]
 WORKED EXAMPLE:
   Step 1: [substitute]
   Step 2: [calculate]
@@ -203,12 +203,12 @@ COMMON MISTAKE: [the one error students make]
 MEMORY HOOK:    [how to remember formula]
 ```
 
-**🟨 Medium — Multi-step with condition**
+**ðŸŸ¨ Medium â€” Multi-step with condition**
 ```
-🔢🟨 [Problem Type] | [N]× | [X] marks
-──────────────────────────────────────
+ðŸ”¢ðŸŸ¨ [Problem Type] | [N]Ã— | [X] marks
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 FORMULA(S): [all needed]
-APPROACH:   [which formula when — decision rule]
+APPROACH:   [which formula when â€” decision rule]
 WORKED EXAMPLE:
   Step 1: [setup / draw table]
   Step 2: [apply condition]
@@ -216,13 +216,13 @@ WORKED EXAMPLE:
   Step 4: [verify / interpret]
   Answer: [result]
 WATCH OUT:  [condition that trips students]
-EXAM TIP:   [show working — marks for method too]
+EXAM TIP:   [show working â€” marks for method too]
 ```
 
-**🟥 Hard — Derivation / Proof**
+**ðŸŸ¥ Hard â€” Derivation / Proof**
 ```
-🔢🟥 [Problem / Derivation] | [N]× | [X] marks
-───────────────────────────────────────────────
+ðŸ”¢ðŸŸ¥ [Problem / Derivation] | [N]Ã— | [X] marks
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 PREREQUISITES: [what student must know first]
 DERIVATION:
   Step 1: [first principles]
@@ -230,7 +230,7 @@ DERIVATION:
   ...Final: [result / QED]
 WORKED EXAMPLE: [concrete numbers applied]
 MARKS BREAKDOWN: [method marks vs answer marks]
-COMMON ERRORS: [2–3 errors that lose marks]
+COMMON ERRORS: [2â€“3 errors that lose marks]
 ```
 
 ---
@@ -239,32 +239,32 @@ COMMON ERRORS: [2–3 errors that lose marks]
 
 > Use when: student asks for MCQ practice, true/false, objective questions.
 
-**🟩 Easy — Recall**
+**ðŸŸ© Easy â€” Recall**
 ```
-🔘🟩 [Question] | [N]×
-──────────────────────
+ðŸ”˜ðŸŸ© [Question] | [N]Ã—
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 CORRECT: [option + text]
 WHY CORRECT: [one sentence]
-WHY OTHERS WRONG: • A: ... • B: ... • C: ...
+WHY OTHERS WRONG: â€¢ A: ... â€¢ B: ... â€¢ C: ...
 KEY FACT: [the one thing this tests]
 ```
 
-**🟨 Medium — Application**
+**ðŸŸ¨ Medium â€” Application**
 ```
-🔘🟨 [Question] | [N]×
-──────────────────────
+ðŸ”˜ðŸŸ¨ [Question] | [N]Ã—
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 CORRECT: [option + text]
-REASONING: [identify concept] → [apply rule] → [eliminate wrong]
+REASONING: [identify concept] â†’ [apply rule] â†’ [eliminate wrong]
 TRAP: [why students pick the wrong answer]
 ```
 
-**🟥 Hard — Trap / Edge-case**
+**ðŸŸ¥ Hard â€” Trap / Edge-case**
 ```
-🔘🟥 [Question] | [N]×
-──────────────────────
+ðŸ”˜ðŸŸ¥ [Question] | [N]Ã—
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 CORRECT: [option + text]
 WHY TRICKY: [what assumption is exploited]
-ELIMINATE: • Drop [A]: [reason] • Drop [B]: [reason] • Keep [C]: [reason]
+ELIMINATE: â€¢ Drop [A]: [reason] â€¢ Drop [B]: [reason] â€¢ Keep [C]: [reason]
 RULE: [the precise rule that settles this type]
 ```
 
@@ -274,34 +274,34 @@ RULE: [the precise rule that settles this type]
 
 > Use when: student asks to write programs, trace output, implement algorithms, debug.
 
-**🟩 Easy — Syntax / Pattern recall**
+**ðŸŸ© Easy â€” Syntax / Pattern recall**
 ```
-💻🟩 [Task] | [N]× | [X] marks
-────────────────────────────────
+ðŸ’»ðŸŸ© [Task] | [N]Ã— | [X] marks
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 PATTERN:     [algorithm/structure name]
-TEMPLATE:    [minimal working skeleton — pseudocode or language-specific]
-KEY LINES:   [1–2 lines examiner looks for]
+TEMPLATE:    [minimal working skeleton â€” pseudocode or language-specific]
+KEY LINES:   [1â€“2 lines examiner looks for]
 MEMORY HOOK: [how to recall under pressure]
 ```
 
-**🟨 Medium — Logic construction**
+**ðŸŸ¨ Medium â€” Logic construction**
 ```
-💻🟨 [Task] | [N]× | [X] marks
-────────────────────────────────
+ðŸ’»ðŸŸ¨ [Task] | [N]Ã— | [X] marks
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 APPROACH:
   1. [sub-tasks]  2. [data structures]  3. [step-by-step logic]
 ANNOTATED CODE: [code with inline comments]
 EDGE CASES:  [inputs needing special handling]
-EXAM TIP:    [comment code — examiners reward clarity]
+EXAM TIP:    [comment code â€” examiners reward clarity]
 ```
 
-**🟥 Hard — Optimize / Trace / Debug**
+**ðŸŸ¥ Hard â€” Optimize / Trace / Debug**
 ```
-💻🟥 [Task] | [N]× | [X] marks | TYPE: [Optimize / Trace / Debug]
-──────────────────────────────────────────────────────────────────
-TRACE →   Input | Trace Table (Iter · VarA · VarB · Output) | Final Output
-OPTIMIZE → Naive O(?) → Optimized O(?) | Key Insight: [what enables it]
-DEBUG →   Bug Location | Bug Type | Fix | Why it works
+ðŸ’»ðŸŸ¥ [Task] | [N]Ã— | [X] marks | TYPE: [Optimize / Trace / Debug]
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+TRACE â†’   Input | Trace Table (Iter Â· VarA Â· VarB Â· Output) | Final Output
+OPTIMIZE â†’ Naive O(?) â†’ Optimized O(?) | Key Insight: [what enables it]
+DEBUG â†’   Bug Location | Bug Type | Fix | Why it works
 ```
 
 ---
@@ -310,36 +310,36 @@ DEBUG →   Bug Location | Bug Type | Fix | Why it works
 
 > Use when: student asks about experiments, procedures, observations, viva prep.
 
-**🟩 Easy — Name / Identify**
+**ðŸŸ© Easy â€” Name / Identify**
 ```
-🧪🟩 [Experiment] | [N]×
-─────────────────────────
+ðŸ§ªðŸŸ© [Experiment] | [N]Ã—
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 AIM:      [one sentence]
 APPARATUS: [bullet list]
 RESULT:   [expected outcome to state]
 KEY TERM: [most important term]
 ```
 
-**🟨 Medium — Write procedure**
+**ðŸŸ¨ Medium â€” Write procedure**
 ```
-🧪🟨 [Experiment] | [N]×
-─────────────────────────
+ðŸ§ªðŸŸ¨ [Experiment] | [N]Ã—
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 AIM / APPARATUS: [brief]
-PROCEDURE: Step 1 → Step 2 → Step 3 → Step 4
+PROCEDURE: Step 1 â†’ Step 2 â†’ Step 3 â†’ Step 4
 OBS TABLE: [column headers + example row]
 RESULT:    [how to state conclusion]
-PRECAUTIONS: [2–3 points examiners look for]
+PRECAUTIONS: [2â€“3 points examiners look for]
 ```
 
-**🟥 Hard — Analysis / Viva**
+**ðŸŸ¥ Hard â€” Analysis / Viva**
 ```
-🧪🟥 [Experiment] | [N]×
-─────────────────────────
-ANALYSIS: • result in context • formula used • source of error
+ðŸ§ªðŸŸ¥ [Experiment] | [N]Ã—
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ANALYSIS: â€¢ result in context â€¢ formula used â€¢ source of error
 VIVA:
-  Q1: [question]  A: [2–3 sentence answer]
-  Q2: [question]  A: [2–3 sentence answer]
-  Q3: [question]  A: [2–3 sentence answer]
+  Q1: [question]  A: [2â€“3 sentence answer]
+  Q2: [question]  A: [2â€“3 sentence answer]
+  Q3: [question]  A: [2â€“3 sentence answer]
 EXAM TIP: [what viva examiner always asks]
 ```
 
@@ -353,8 +353,8 @@ One card per question:
 ```
 [TYPE EMOJI][DIFFICULTY EMOJI]
 Q: [question]
-A: [answer in 1–2 lines]
-Key: [formula / term / pattern — if applicable]
+A: [answer in 1â€“2 lines]
+Key: [formula / term / pattern â€” if applicable]
 ```
 
 ---
@@ -366,20 +366,20 @@ Key: [formula / term / pattern — if applicable]
 Generate one paper with all types represented. Label every question with type + difficulty.
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-AI PREDICTION — Not official. For practice only.
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+AI PREDICTION â€” Not official. For practice only.
 Course: [Name]  |  Total Marks: [X]  |  Time: [X] hrs
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
-SECTION A — Short / Objective  [🟩 Easy]
+SECTION A â€” Short / Objective  [ðŸŸ© Easy]
   [MCQ / T-F / 1-mark definitions]
 
-SECTION B — Medium Answer      [🟨 Medium]
+SECTION B â€” Medium Answer      [ðŸŸ¨ Medium]
   [Theory explanations + medium numericals]
 
-SECTION C — Long Answer        [🟥 Hard]
+SECTION C â€” Long Answer        [ðŸŸ¥ Hard]
   [Long theory + derivations + coding]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 ---
@@ -389,21 +389,21 @@ SECTION C — Long Answer        [🟥 Hard]
 > Use when: student asks for a score estimate or readiness check.
 
 ```
-📊 EXAM READINESS
-──────────────────────────────────────────────────────
+ðŸ“Š EXAM READINESS
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 TYPE          EASY    MEDIUM   HARD    OVERALL
-📝 Theory     [X]%    [X]%     [X]%    [X]%
-🔢 Numerical  [X]%    [X]%     [X]%    [X]%
-🔘 MCQ/T-F    [X]%    [X]%     [X]%    [X]%
-💻 Coding     [X]%    [X]%     [X]%    [X]%
-🧪 Lab        [X]%    [X]%     [X]%    [X]%
-──────────────────────────────────────────────────────
+ðŸ“ Theory     [X]%    [X]%     [X]%    [X]%
+ðŸ”¢ Numerical  [X]%    [X]%     [X]%    [X]%
+ðŸ”˜ MCQ/T-F    [X]%    [X]%     [X]%    [X]%
+ðŸ’» Coding     [X]%    [X]%     [X]%    [X]%
+ðŸ§ª Lab        [X]%    [X]%     [X]%    [X]%
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 PREPAREDNESS  : [X]%
-MARKS RANGE   : [Low]–[High] out of [Total]
-──────────────────────────────────────────────────────
+MARKS RANGE   : [Low]â€“[High] out of [Total]
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 STRONG        : [types + topics]
-WEAK → FOCUS  : [types + topics]
-──────────────────────────────────────────────────────
+WEAK â†’ FOCUS  : [types + topics]
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Confidence: [High/Medium/Low]  |  Based on: [N] papers
 ```
 
@@ -416,12 +416,12 @@ Confidence: [High/Medium/Low]  |  Based on: [N] papers
 **Input:**
 > "I have my OS exam tomorrow. Here's the syllabus [paste] and 3 past papers [upload]. I have 4 hours."
 
-**Skill routes to:** Full Roadmap Mode → Sprint Mode (3–5 hrs)
+**Skill routes to:** Full Roadmap Mode â†’ Sprint Mode (3â€“5 hrs)
 
 **Output sequence:**
-1. Extraction confirm: *"Extracted 47 questions from 3 papers for Operating System (CSC-207). Found: 📝18 🔢12 🔘10 💻7 🧪0. Proceed?"*
-2. Ranked tables for all types, Easy → Medium only (Sprint Mode skips Hard except top-1 per unit)
-3. Notes for top 25 questions — Easy across all types first, then Medium
+1. Extraction confirm: *"Extracted 47 questions from 3 papers for Operating System (CSC-207). Found: ðŸ“18 ðŸ”¢12 ðŸ”˜10 ðŸ’»7 ðŸ§ª0. Proceed?"*
+2. Ranked tables for all types, Easy â†’ Medium only (Sprint Mode skips Hard except top-1 per unit)
+3. Notes for top 25 questions â€” Easy across all types first, then Medium
 4. Coverage tracker showing which units are covered
 5. Offer: flashcards, mock paper, or dashboard
 
@@ -432,10 +432,10 @@ Confidence: [High/Medium/Low]  |  Based on: [N] papers
 | Check | Rule |
 |-------|------|
 | Syllabus compliance | Every note maps to a syllabus unit |
-| Difficulty order | Easy before Medium before Hard — never reversed |
+| Difficulty order | Easy before Medium before Hard â€” never reversed |
 | Numerical accuracy | Worked examples compute correctly |
 | Code validity | Snippets are syntactically correct |
-| Note length | Readable in ≤ 2–5 min per note |
+| Note length | Readable in â‰¤ 2â€“5 min per note |
 | No hallucination | No facts absent from uploaded materials |
 | Course code confirmed | OCR-detected code verified by student |
 
@@ -448,7 +448,8 @@ Confidence: [High/Medium/Low]  |  Based on: [N] papers
 | No syllabus | "Without a syllabus I can't guarantee on-topic notes. Paste your unit list as text?" |
 | 1 past paper only | "One paper = lower prediction confidence. More papers = better accuracy." |
 | OCR failure | "Couldn't read part of the image. Can you retype those questions?" |
-| Out-of-syllabus question | "This doesn't match your syllabus — skipping it. Want me to include it anyway?" |
+| Out-of-syllabus question | "This doesn't match your syllabus â€” skipping it. Want me to include it anyway?" |
 | Mixed subjects | "Found questions from two subjects. Should I separate them?" |
-| No time given | "Defaulting to Standard Mode (6–12 hrs). Tell me if you have less time." |
+| No time given | "Defaulting to Standard Mode (6â€“12 hrs). Tell me if you have less time." |
 | No numericals/coding found | "No numerical/coding questions found. Share a paper that includes them if your exam has these."
+

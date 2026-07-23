@@ -1,4 +1,4 @@
----
+﻿---
 name: unship
 description: "Compare AI agent-made UI variants locally in a real app, then keep one and clean up unused temporary code."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: mbenhard/unship
 source_type: community
 date_added: "2026-06-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [ui-variants, frontend, local-first, coding-agents]
 tools: [claude-code, antigravity, cursor, gemini-cli, codex-cli, opencode]
 license: "MIT"
@@ -142,3 +142,4 @@ Do not claim cleanup is complete until the check reports clean.
 
 - `@webapp-testing` - Use for browser-based functional checks after frontend changes.
 - `@mobile-design` - Use when comparing mobile-specific UI patterns and platform constraints.
+

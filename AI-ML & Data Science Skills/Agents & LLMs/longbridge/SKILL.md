@@ -1,13 +1,13 @@
----
+﻿---
 name: longbridge
-description: "125+ agent skills for Longbridge Securities — real-time quotes, charts, fundamentals, portfolio analysis, options, and more for HK/US/A-share/SG markets. Trilingual: Simplified Chinese, Traditional Chinese, English."
+description: "125+ agent skills for Longbridge Securities â€” real-time quotes, charts, fundamentals, portfolio analysis, options, and more for HK/US/A-share/SG markets. Trilingual: Simplified Chinese, Traditional Chinese, English."
 category: finance
 risk: critical
 source: https://github.com/humaisali
 source_repo: longbridge/skills
 source_type: official
 date_added: "2026-05-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [finance, stocks, trading, portfolio, market-data]
 tools: [claude, cursor, gemini, codex]
 license: "MIT"
@@ -42,7 +42,7 @@ Source repository: [github.com/longbridge/skills](https://github.com/longbridge/
 longbridge --help
 ```
 
-List all available subcommands. Never hard-code subcommand names — the CLI evolves.
+List all available subcommands. Never hard-code subcommand names â€” the CLI evolves.
 
 ### Step 2: Check Subcommand Options
 
@@ -79,17 +79,18 @@ npx skills add https://github.com/longbridge/skills
 
 ## MCP Fallback
 
-If the `longbridge` CLI binary is not installed, fall back to MCP tools. Inspect available MCP tools at runtime — do not hard-code MCP tool names as they change with server versions.
+If the `longbridge` CLI binary is not installed, fall back to MCP tools. Inspect available MCP tools at runtime â€” do not hard-code MCP tool names as they change with server versions.
 
 ## Limitations
 
 - Portfolio and account features require login with Trade scope.
 - Real-time data is subject to Longbridge data subscription (delayed data available without subscription).
 - Crypto symbols use `.HAS` suffix on the Longbridge platform.
-- This skill does not place orders — read-only by default unless using the account write scope.
+- This skill does not place orders â€” read-only by default unless using the account write scope.
 
 ## Security & Safety Notes
 
 - All market data queries are read-only (no side effects).
 - Watchlist mutations and order-related features follow a preview + confirm two-step protocol.
 - Credentials are handled by the Longbridge auth system; this skill does not store or transmit tokens.
+

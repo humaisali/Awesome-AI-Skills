@@ -1,11 +1,11 @@
----
+﻿---
 name: issues
 description: Interact with GitHub issues - create, list, and view issues.
 allowed-tools: Bash(gh *)
 risk: unknown
 source: https://github.com/humaisali
 metadata:
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   version: "1.0"
 ---
 
@@ -268,3 +268,4 @@ If `gh` command fails:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

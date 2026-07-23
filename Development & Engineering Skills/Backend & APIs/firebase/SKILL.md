@@ -1,4 +1,4 @@
----
+﻿---
 name: firebase
 description: Firebase gives you a complete backend in minutes - auth, database,
   storage, functions, hosting. But the ease of setup hides real complexity.
@@ -213,7 +213,7 @@ const post = {
   content: '...',
 
   // Embed frequently-needed author data
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
     id: 'user456',
     name: 'Jane Doe',
     avatarUrl: '...'
@@ -693,3 +693,4 @@ Works well with: `nextjs-app-router`, `react-patterns`, `authentication-oauth`, 
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

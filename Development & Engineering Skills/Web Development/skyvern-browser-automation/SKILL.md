@@ -1,13 +1,13 @@
----
+﻿---
 name: skyvern-browser-automation
-description: "AI-powered browser automation — navigate sites, fill forms, extract structured data, log in with stored credentials, and build reusable workflows."
+description: "AI-powered browser automation â€” navigate sites, fill forms, extract structured data, log in with stored credentials, and build reusable workflows."
 category: browser-automation
 risk: safe
 source: https://github.com/humaisali
 source_repo: Skyvern-AI/skyvern
 source_type: official
 date_added: "2026-04-23"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [browser-automation, mcp, web-scraping, form-filling, ai-agents, workflow-automation]
 tools: [claude, cursor, gemini, codex]
 license: "AGPL-3.0"
@@ -128,7 +128,7 @@ skyvern browser run-task \
 Use `run-task` to prove feasibility or do one-off exploration. If the task becomes important enough
 to rerun, debug, or share, convert it to a workflow.
 
-### Multi-page or reusable automation — build a workflow with one block per step
+### Multi-page or reusable automation â€” build a workflow with one block per step
 
 ```bash
 skyvern workflow create --definition @checkout-workflow.yaml
@@ -259,3 +259,4 @@ Use `skyvern capabilities --json` for full command discovery. See [references/ag
 | [`references/tool-map.md`](https://github.com/Skyvern-AI/skyvern/blob/main/skyvern/cli/skills/skyvern/references/tool-map.md) | Complete tool inventory by outcome |
 | [`references/cli-parity.md`](https://github.com/Skyvern-AI/skyvern/blob/main/skyvern/cli/skills/skyvern/references/cli-parity.md) | CLI/MCP mapping and agent-aware features |
 | [`references/quick-start-patterns.md`](https://github.com/Skyvern-AI/skyvern/blob/main/skyvern/cli/skills/skyvern/references/quick-start-patterns.md) | Quick start examples, common patterns, and workflow templates |
+

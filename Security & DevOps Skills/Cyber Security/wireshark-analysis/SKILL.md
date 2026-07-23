@@ -1,9 +1,9 @@
----
+﻿---
 name: wireshark-analysis
 description: "Execute comprehensive network traffic analysis using Wireshark to capture, filter, and examine network packets for security investigations, performance optimization, and troubleshooting."
 risk: unknown
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -369,8 +369,8 @@ Categories:
 | Start/Stop capture | Ctrl+E |
 | Find packet | Ctrl+F |
 | Go to packet | Ctrl+G |
-| Next packet | ↓ |
-| Previous packet | ↑ |
+| Next packet | â†“ |
+| Previous packet | â†‘ |
 | First packet | Ctrl+Home |
 | Last packet | Ctrl+End |
 | Apply filter | Enter |
@@ -499,3 +499,4 @@ File > Export Packet Dissections   # Export as text/CSV
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: github-actions-debugger
 description: "Specialized skill for diagnosing, analyzing, and fixing failing GitHub Actions workflows by parsing run logs and pipeline definitions."
 category: devops
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: community
 date_added: "2026-06-25"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [github-actions, ci-cd, devops, debugging, workflows]
 tools: [claude, cursor, gemini, antigravity]
 ---
@@ -97,3 +97,4 @@ Error: API Key is required for deployment. Process exited with code 1.
 
 - `@devops-troubleshooter` - General DevOps and infrastructure issue resolution.
 - `@cicd-automation-workflow-automate` - For creating new CI/CD pipelines from scratch.
+

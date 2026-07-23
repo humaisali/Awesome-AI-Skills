@@ -1,13 +1,13 @@
----
+﻿---
 name: 2slides-ppt-generator
-description: "AI-powered presentation generation via the 2slides API — create slides from text, match a reference image style, summarize documents into decks, add AI voice narration, and export pages/audio. Use for any \"make slides\", \"create a deck\", or \"slides from this document\" request."
+description: "AI-powered presentation generation via the 2slides API â€” create slides from text, match a reference image style, summarize documents into decks, add AI voice narration, and export pages/audio. Use for any \"make slides\", \"create a deck\", or \"slides from this document\" request."
 category: api-integration
 risk: safe
 source: https://github.com/humaisali
 source_repo: 2slides/slides-generation-2slides-skills
 source_type: community
 date_added: "2026-06-05"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [presentations, slides, powerpoint, ai, api-integration, pdf, narration, document-summarization]
 tools: [claude, cursor, gemini, codex, antigravity]
 plugin:
@@ -72,27 +72,27 @@ Choose the appropriate approach based on the user's request:
 
 ```
 User Request
-│
-├─ "Create slides from this content/text"
-│  └─> Use Content-Based Generation (Section 1)
-│
-├─ "Create slides like this image"
-│  └─> Use Reference Image Generation (Section 2)
-│
-├─ "Create custom designed slides" or "Create PDF slides"
-│  └─> Use Custom PDF Generation (Section 3)
-│
-├─ "Create slides from this document"
-│  └─> Use Document Summarization (Section 4)
-│
-├─ "Add voice narration" or "Generate audio for slides"
-│  └─> Use Voice Narration (Section 5)
-│
-├─ "Download slides as images" or "Export slides and voices"
-│  └─> Use Download Export (Section 6)
-│
-└─ "Search for themes" or "What themes are available?"
-   └─> Use Theme Search (Section 7)
+â”‚
+â”œâ”€ "Create slides from this content/text"
+â”‚  â””â”€> Use Content-Based Generation (Section 1)
+â”‚
+â”œâ”€ "Create slides like this image"
+â”‚  â””â”€> Use Reference Image Generation (Section 2)
+â”‚
+â”œâ”€ "Create custom designed slides" or "Create PDF slides"
+â”‚  â””â”€> Use Custom PDF Generation (Section 3)
+â”‚
+â”œâ”€ "Create slides from this document"
+â”‚  â””â”€> Use Document Summarization (Section 4)
+â”‚
+â”œâ”€ "Add voice narration" or "Generate audio for slides"
+â”‚  â””â”€> Use Voice Narration (Section 5)
+â”‚
+â”œâ”€ "Download slides as images" or "Export slides and voices"
+â”‚  â””â”€> Use Download Export (Section 6)
+â”‚
+â””â”€ "Search for themes" or "What themes are available?"
+   â””â”€> Use Theme Search (Section 7)
 ```
 
 ---
@@ -649,13 +649,13 @@ Generate slides in multiple languages (use full language name):
 ```bash
 --language "Auto"                # Automatic detection (default)
 --language "English"             # English
---language "Simplified Chinese"  # 简体中文
---language "Traditional Chinese" # 繁體中文
---language "Spanish"             # Español
---language "French"              # Français
+--language "Simplified Chinese"  # ç®€ä½“ä¸­æ–‡
+--language "Traditional Chinese" # ç¹é«”ä¸­æ–‡
+--language "Spanish"             # EspaÃ±ol
+--language "French"              # FranÃ§ais
 --language "German"              # Deutsch
---language "Japanese"            # 日本語
---language "Korean"              # 한국어
+--language "Japanese"            # æ—¥æœ¬èªž
+--language "Korean"              # í•œêµ­ì–´
 ```
 
 And more: Arabic, Portuguese, Indonesian, Russian, Hindi, Vietnamese, Turkish, Polish, Italian
@@ -709,10 +709,10 @@ All scripts accept parameters that match [2slides API](https://2slides.com/api.m
 | | `--resolution` | 1K, 2K, 4K |
 | | `--content-detail` | concise, standard |
 | `create_pdf_slides.py` | Same as above + `--design-style` / `--design-spec` (free text) | |
-| `generate_narration.py` | `--voice` | 30 voices (Puck, Aoede, Charon, …); use `--list-voices` |
+| `generate_narration.py` | `--voice` | 30 voices (Puck, Aoede, Charon, â€¦); use `--list-voices` |
 | | `--language` | Auto, English, Spanish, Arabic, Portuguese, Indonesian, Japanese, Russian, Hindi, French, German, Vietnamese, Turkish, Polish, Italian, Korean, Simplified Chinese, Traditional Chinese |
 | | `--multi-speaker` | enabled when present |
-| `search_themes.py` | `--query` (required), `--limit` (1–100) | |
+| `search_themes.py` | `--query` (required), `--limit` (1â€“100) | |
 | `get_job_status.py` | `--job-id` (required) | |
 | `download_slides_pages_voices.py` | `--job-id` (required), `--output` (path) | |
 
@@ -770,18 +770,19 @@ See [pricing.md](references/pricing.md) for:
 ## Security & Safety Notes
 
 - **Credentials:** This skill reads the API key from the `SLIDES_2SLIDES_API_KEY` environment variable. Never hard-code the key in commands, commit it, or echo it back to the user. The scripts send it as a bearer/`apikey` value to `https://2slides.com` over HTTPS only.
-- **Network + paid mutations:** Every generation call makes an outbound network request to the 2slides API and **spends the user's credits** (10–210 credits/page depending on mode). Treat generation, reference-image, custom-PDF, and narration calls as billable actions — confirm intent before generating large or high-resolution (4K) decks, and surface the expected page count/cost when it is non-trivial.
+- **Network + paid mutations:** Every generation call makes an outbound network request to the 2slides API and **spends the user's credits** (10â€“210 credits/page depending on mode). Treat generation, reference-image, custom-PDF, and narration calls as billable actions â€” confirm intent before generating large or high-resolution (4K) decks, and surface the expected page count/cost when it is non-trivial.
 - **No destructive local actions:** The scripts only read content/files the user points to and write generated output (e.g. a downloaded ZIP) to the path the user specifies. They do not modify or delete unrelated files.
 - **Input handling:** Reference-image and document inputs are sent to the 2slides service for processing. Do not submit confidential material the user has not authorized for third-party processing.
-- **Download URLs expire in 1 hour** — fetch artifacts promptly and do not treat the URLs as durable storage.
+- **Download URLs expire in 1 hour** â€” fetch artifacts promptly and do not treat the URLs as durable storage.
 
 ## Limitations
 
 - Requires a valid 2slides account, API key, and sufficient credits; this skill does not provision or pay for credits.
-- Results are AI-generated drafts intended as a starting point, not a final, fact-checked deliverable — review content before use.
+- Results are AI-generated drafts intended as a starting point, not a final, fact-checked deliverable â€” review content before use.
 - This skill does not replace environment-specific validation or expert review. Stop and ask for clarification if the API key, required inputs, or intended cost/scope are missing.
-- Rate limits apply (Fast PPT 10/min, Nano Banana 6/min); poll async jobs every 20–30s rather than tight-looping.
+- Rate limits apply (Fast PPT 10/min, Nano Banana 6/min); poll async jobs every 20â€“30s rather than tight-looping.
 
 ## Related Skills
 
-- `@youtube-full` — fetch source material (transcripts) that can be summarized into a deck with this skill.
+- `@youtube-full` â€” fetch source material (transcripts) that can be summarized into a deck with this skill.
+

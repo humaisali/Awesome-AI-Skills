@@ -1,4 +1,4 @@
----
+﻿---
 name: codex-subagent
 description: "Launch Codex CLI as an isolated subagent for bounded coding, review, or verification tasks."
 category: agent-orchestration
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [codex, subagents, delegation]
 tools: [claude, codex]
 license: "MIT"
@@ -24,7 +24,7 @@ disable-model-invocation: true
 
 Codex CLI is OpenAI's terminal coding agent. `codex exec` runs it non-interactively:
 it works autonomously in a sandbox, streams progress to stderr, and prints only the
-final message to stdout. Auth reuses the user's ChatGPT subscription — never an API key.
+final message to stdout. Auth reuses the user's ChatGPT subscription â€” never an API key.
 
 ## When to delegate
 
@@ -41,7 +41,7 @@ codex --version       # missing? npm i -g @openai/codex  (or: brew install --cas
 codex login status    # exit 0 + "Logged in using ChatGPT" = ready
 ```
 
-Not logged in → stop and tell the user to run `codex login` (one-time browser OAuth).
+Not logged in â†’ stop and tell the user to run `codex login` (one-time browser OAuth).
 Never read, print, or copy credentials (`~/.codex/auth.json`).
 
 ## Launch
@@ -64,7 +64,7 @@ codex exec \
 - Wrap the command in a background/Bash subagent if your host agent has one
   (Cursor: Task tool with a shell subagent) so Codex's verbose stream stays out
   of the parent context. Fallback: a plain background terminal.
-- Runs take minutes and have no built-in timeout — background it and monitor.
+- Runs take minutes and have no built-in timeout â€” background it and monitor.
 - Optional: `-m <model>` to override the model, `--json` for JSONL event stream.
 
 ## Collect results
@@ -74,7 +74,7 @@ cat "$OUT"                            # final message = the deliverable
 git -C /path/to/repo status --short   # see what Codex actually changed
 ```
 
-Follow-up in the same session (run from the same cwd — resume filters by cwd):
+Follow-up in the same session (run from the same cwd â€” resume filters by cwd):
 
 ```bash
 codex exec resume --last "follow-up instruction" </dev/null
@@ -83,7 +83,7 @@ codex exec resume --last "follow-up instruction" </dev/null
 ## Parallel runs
 
 Parallelize only genuinely independent tasks, and assign file ownership upfront so
-results merge cleanly. One git worktree per Codex run — never two in the same tree:
+results merge cleanly. One git worktree per Codex run â€” never two in the same tree:
 
 ```bash
 git worktree add /tmp/wt-taskA -b codex/task-a
@@ -92,10 +92,10 @@ codex exec --cd /tmp/wt-taskA --sandbox workspace-write -o /tmp/outA.md "task A"
 
 ## Failure modes
 
-- Hangs forever with no output → stdin was left open. Kill it, relaunch with `</dev/null`.
-- `codex login status` non-zero → the user must run `codex login`. Don't work around it.
-- ChatGPT plan rate limit hit → report to the user; never retry in a loop.
-- "Not a git repo" error → add `--skip-git-repo-check`, or init a repo first.
+- Hangs forever with no output â†’ stdin was left open. Kill it, relaunch with `</dev/null`.
+- `codex login status` non-zero â†’ the user must run `codex login`. Don't work around it.
+- ChatGPT plan rate limit hit â†’ report to the user; never retry in a loop.
+- "Not a git repo" error â†’ add `--skip-git-repo-check`, or init a repo first.
 - Network is blocked inside the workspace-write sandbox by default. If the task
   needs it (installs, API calls): `-c sandbox_workspace_write.network_access=true`.
 - NEVER use `--dangerously-bypass-approvals-and-sandbox`.
@@ -107,7 +107,7 @@ codex exec --cd /tmp/wt-taskA --sandbox workspace-write -o /tmp/outA.md "task A"
 
 ## Cursor-native wrapper (optional)
 
-For auto-routing and `/codex` invocation inside Cursor, add `~/.cursor/agents/codex.md` —
+For auto-routing and `/codex` invocation inside Cursor, add `~/.cursor/agents/codex.md` â€”
 a custom subagent whose description is "delegates coding tasks to Codex CLI" and whose
 body points at this skill.
 
@@ -115,3 +115,4 @@ body points at this skill.
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

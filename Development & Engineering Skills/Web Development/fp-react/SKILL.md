@@ -1,10 +1,10 @@
----
+﻿---
 name: fp-react
 description: Practical patterns for using fp-ts with React - hooks, state, forms, data fetching. Works with React 18/19, Next.js 14/15.
 risk: unknown
 source: https://github.com/humaisali
 version: 2.0.0
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [fp-ts, react, typescript, hooks, state-management, forms, data-fetching, remote-data, react-19, next-js]
 ---
 
@@ -411,7 +411,7 @@ function UserProfile({ userId }: { userId: string }) {
 ### Why RemoteData Beats Booleans
 
 ```typescript
-// ❌ BAD: Impossible states are possible
+// âŒ BAD: Impossible states are possible
 interface BadState {
   data: User | null
   loading: boolean
@@ -419,7 +419,7 @@ interface BadState {
 }
 // Can have: { data: user, loading: true, error: someError } - what does that mean?!
 
-// ✅ GOOD: Only valid states exist
+// âœ… GOOD: Only valid states exist
 type GoodState = RemoteData<Error, User>
 // Can only be: NotAsked | Loading | Failure | Success
 ```
@@ -433,7 +433,7 @@ fp-ts values like `O.some(1)` create new objects each render. React sees them as
 ### The Problem
 
 ```typescript
-// ❌ BAD: Creates new Option every render
+// âŒ BAD: Creates new Option every render
 function BadComponent() {
   const [value, setValue] = useState(O.some(1))
 
@@ -447,7 +447,7 @@ function BadComponent() {
 ### Solution 1: useMemo
 
 ```typescript
-// ✅ GOOD: Memoize Option creation
+// âœ… GOOD: Memoize Option creation
 function GoodComponent() {
   const [rawValue, setRawValue] = useState<number | null>(1)
 
@@ -795,3 +795,4 @@ const modalProps = {
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: frontend-seo
 description: A portable, framework-agnostic SEO system for any React or React Native-for-web frontend. Centralizes site metadata in one constants module, derives canonical URLs from a single base, builds per-route metadata (title, description, canonical, Open Graph, Twitter/X cards), generates...
 risk: unknown
@@ -16,9 +16,9 @@ license_source: https://github.com/humaisali
 Use this skill when you need a portable, framework-agnostic SEO system for any React or React Native-for-web frontend. Centralizes site metadata in one constants module, derives canonical URLs from a single base, builds per-route metadata (title, description, canonical, Open Graph, Twitter/X cards), generates...
 
 
-> Portable skill — readable by Claude Code, OpenCode, Codex, Cursor, Windsurf, and others.
-> This skill describes an **SEO system** — a set of pure builder functions plus a thin
-> framework adapter — not a component library or a visual style.
+> Portable skill â€” readable by Claude Code, OpenCode, Codex, Cursor, Windsurf, and others.
+> This skill describes an **SEO system** â€” a set of pure builder functions plus a thin
+> framework adapter â€” not a component library or a visual style.
 > It pairs with the **frontend-architecture** skill: the SEO system lives in a single
 > service module (`services/seo/`) and is consumed through one barrel.
 
@@ -35,7 +35,7 @@ feed, and typed JSON-LD** derived from the same content the app already renders.
 2. **URLs are always absolute and canonical.** A single `canonicalUrl(path)` function turns any path into an absolute, trailing-slash-normalized URL. Every sitemap entry, RSS link, OG URL, and JSON-LD `@id` flows through it.
 3. **Builders are pure; the adapter is thin.** Metadata, sitemap, robots, RSS, and JSON-LD are produced by pure functions that take data and return plain objects. Only one small function touches the framework's metadata type. Pure functions are trivially unit-testable.
 4. **Structured data is typed and reused.** JSON-LD objects share a `JsonLd` type and a small set of `schema.org` builders (`Person`, `WebSite`, `BlogPosting`, `CreativeWork`, `BreadcrumbList`, `FAQPage`). Entities cross-reference each other by stable `@id`.
-5. **Discovery surfaces are generated from content.** `sitemap.xml`, `robots.txt`, and the RSS feed are built from the same content collections the app renders — never maintained by hand, never drifting.
+5. **Discovery surfaces are generated from content.** `sitemap.xml`, `robots.txt`, and the RSS feed are built from the same content collections the app renders â€” never maintained by hand, never drifting.
 
 Everything below is the mechanical application of these five ideas.
 
@@ -48,25 +48,25 @@ The SEO system is one service module plus its constants and types. It slots dire
 
 ```
 src/
-├── constants/
-│   └── seo.ts                  ← SINGLE source of truth for site identity
-├── types/
-│   └── seo.ts                  ← SchemaType, RouteDescriptor, SitemapEntry,
-│                                  RobotsConfig, RssItem, Redirect, JsonLd
-├── services/seo/
-│   ├── index.ts                ← barrel: canonicalUrl, buildMetadata,
-│   │                              sitemapEntries, robots, rssItems,
-│   │                              structuredData, redirects
-│   └── structured-data.ts      ← per-type JSON-LD builders (Person, WebSite, …)
-└── app/ (or routes/)           ← THIN adapter: route files call the builders
-    ├── layout.tsx              ← global default metadata (from constants/seo)
-    ├── sitemap.ts              ← mounts sitemapEntries()
-    ├── robots.ts               ← mounts robots()
-    └── feed.xml/route.ts       ← mounts rssItems()
+â”œâ”€â”€ constants/
+â”‚   â””â”€â”€ seo.ts                  â† SINGLE source of truth for site identity
+â”œâ”€â”€ types/
+â”‚   â””â”€â”€ seo.ts                  â† SchemaType, RouteDescriptor, SitemapEntry,
+â”‚                                  RobotsConfig, RssItem, Redirect, JsonLd
+â”œâ”€â”€ services/seo/
+â”‚   â”œâ”€â”€ index.ts                â† barrel: canonicalUrl, buildMetadata,
+â”‚   â”‚                              sitemapEntries, robots, rssItems,
+â”‚   â”‚                              structuredData, redirects
+â”‚   â””â”€â”€ structured-data.ts      â† per-type JSON-LD builders (Person, WebSite, â€¦)
+â””â”€â”€ app/ (or routes/)           â† THIN adapter: route files call the builders
+    â”œâ”€â”€ layout.tsx              â† global default metadata (from constants/seo)
+    â”œâ”€â”€ sitemap.ts              â† mounts sitemapEntries()
+    â”œâ”€â”€ robots.ts               â† mounts robots()
+    â””â”€â”€ feed.xml/route.ts       â† mounts rssItems()
 ```
 
 Rule of thumb: **builders never import the framework** (except the one `buildMetadata` adapter);
-**route files never build SEO data inline** — they call a builder and mount the result.
+**route files never build SEO data inline** â€” they call a builder and mount the result.
 
 ---
 
@@ -82,7 +82,7 @@ export const SITE_NAME = "Jane Doe";
 export const SITE_HANDLE = "@janedoe";
 export const SITE_LOCALE = "en_US";
 
-export const SITE_TITLE_DEFAULT = "Jane Doe — Senior Engineer";
+export const SITE_TITLE_DEFAULT = "Jane Doe â€” Senior Engineer";
 export const SITE_TITLE_TEMPLATE = "%s | Jane Doe"; // child pages fill %s
 
 export const SITE_DESCRIPTION =
@@ -173,7 +173,7 @@ export interface JsonLd {
 
 Note the `I`-prefix convention from `frontend-architecture` applies to **stateful UI interfaces**;
 these SEO data models are plain DTOs and follow the source project's existing convention
-(here, unprefixed). Keep whichever convention the host project already uses — consistency wins.
+(here, unprefixed). Keep whichever convention the host project already uses â€” consistency wins.
 
 ---
 
@@ -188,7 +188,7 @@ import { SITE_URL } from "@/constants/seo";
 
 export function canonicalUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  if (normalized === "/") return SITE_URL; // root → base, no trailing slash
+  if (normalized === "/") return SITE_URL; // root â†’ base, no trailing slash
   const withoutTrailing = normalized.endsWith("/")
     ? normalized.slice(0, -1)
     : normalized;
@@ -198,7 +198,7 @@ export function canonicalUrl(path: string): string {
 
 **Hard rules:**
 
-- Never concatenate `SITE_URL + path` by hand — always `canonicalUrl(path)`.
+- Never concatenate `SITE_URL + path` by hand â€” always `canonicalUrl(path)`.
 - Pick one trailing-slash policy (this skill: **no trailing slash**) and apply it everywhere.
 - Every OG `url`, sitemap `url`, RSS `link`, and JSON-LD `@id`/`url` goes through `canonicalUrl`.
 
@@ -212,7 +212,7 @@ export function canonicalUrl(path: string): string {
 Everything else is framework-free.
 
 ```ts
-// services/seo/index.ts  (Next.js example — swap the return type for other frameworks)
+// services/seo/index.ts  (Next.js example â€” swap the return type for other frameworks)
 import type { Metadata } from "next";
 import { OG_IMAGE_PATH } from "@/constants/seo";
 import type { RouteDescriptor } from "@/types/seo";
@@ -236,7 +236,7 @@ Set the title template, default OG/Twitter cards, robots policy, icons, manifest
 verification **once** at the root. Child routes only override what differs.
 
 ```tsx
-// app/layout.tsx — global metadata, all values from constants/seo
+// app/layout.tsx â€” global metadata, all values from constants/seo
 import type { Metadata } from "next";
 import {
   SITE_URL,
@@ -322,7 +322,7 @@ export async function generateMetadata({ params }) {
 
 - Set defaults once in the layout; override per route only where it differs.
 - Use a title **template** so child pages don't repeat the site name.
-- Every page resolves a single `canonical` — never emit duplicate or relative canonicals.
+- Every page resolves a single `canonical` â€” never emit duplicate or relative canonicals.
 
 ---
 
@@ -344,7 +344,7 @@ const PRIMARY_ROUTES: Array<{
 }> = [
   { path: ROUTES.HOME, changeFrequency: "weekly", priority: 1.0 },
   { path: ROUTES.BLOG, changeFrequency: "daily", priority: 0.9 },
-  // …other primary routes
+  // â€¦other primary routes
 ];
 
 export function sitemapEntries(options: {
@@ -388,7 +388,7 @@ export function sitemapEntries(options: {
 ```
 
 ```ts
-// app/sitemap.ts — thin adapter
+// app/sitemap.ts â€” thin adapter
 import type { MetadataRoute } from "next";
 import { sitemapEntries } from "@/services/seo";
 
@@ -449,7 +449,7 @@ export function rssItems(posts: BlogPost[]): RssItem[] {
 ```
 
 ```ts
-// app/feed.xml/route.ts — sort newest-first, CDATA-wrap free text
+// app/feed.xml/route.ts â€” sort newest-first, CDATA-wrap free text
 import { rssItems } from "@/services/seo";
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "@/constants/seo";
 
@@ -520,7 +520,7 @@ export function websiteJsonLd(): JsonLd {
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
     name: AUTHOR_NAME,
-    author: Humais Ali
+    Maintained & Curated by: Humais Ali
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -539,7 +539,7 @@ export function blogPostingJsonLd(post: BlogPost, url: string): JsonLd {
     description: post.description,
     datePublished: post.publishDate,
     dateModified: post.publishDate,
-    author: Humais Ali
+    Maintained & Curated by: Humais Ali
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
       name: post.author,
@@ -624,7 +624,7 @@ export default async function Page({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }}
         suppressHydrationWarning
       />
-      {/* …page content */}
+      {/* â€¦page content */}
     </>
   );
 }
@@ -652,15 +652,15 @@ The builders are framework-free. Only the mounting layer changes.
 | **Expo Router (web)**  | static head config / `expo-router` head; SEO matters only on the web target                     | a small web-only build step calling `sitemapEntries`/`rssItems`                            |
 
 For a `buildMetadata` that must stay framework-neutral, return a plain shape
-(`{ title, description, canonical, ogImage }`) and let each adapter translate it — keep the
+(`{ title, description, canonical, ogImage }`) and let each adapter translate it â€” keep the
 Next.js `Metadata` return type only in a Next.js project.
 
 ---
 
 ## 9. Conventions checklist (enforce in review)
 
-- [ ] All site identity (URL, name, description, keywords, author, handles, OG image, verification) lives in **one** `constants/seo` module — no duplicates, no hardcoded base URL.
-- [ ] Every absolute URL is produced by `canonicalUrl()` — no manual `SITE_URL + path`.
+- [ ] All site identity (URL, name, description, keywords, author, handles, OG image, verification) lives in **one** `constants/seo` module â€” no duplicates, no hardcoded base URL.
+- [ ] Every absolute URL is produced by `canonicalUrl()` â€” no manual `SITE_URL + path`.
 - [ ] One trailing-slash policy, applied everywhere.
 - [ ] Global metadata (title template, default OG/Twitter, robots, verification, manifest) is set **once** in the root layout.
 - [ ] Dynamic routes override metadata via `buildMetadata` (or the framework adapter), passing only what differs.
@@ -688,7 +688,7 @@ JSON-LD builder if it needs its own schema, and give its detail page a `generate
 `canonicalUrl`, that the trailing-slash policy is uniform, and that the sitemap contains only
 indexable, absolute URLs. Confirm robots isn't blocking what should be indexed.
 
-**Reviewing SEO coverage:** run the checklist in §9. The highest-value catches are hardcoded URLs
+**Reviewing SEO coverage:** run the checklist in Â§9. The highest-value catches are hardcoded URLs
 that bypass `canonicalUrl` (duplicate-content risk) and JSON-LD that duplicates entity fields
 instead of referencing a stable `@id`.
 
@@ -699,7 +699,7 @@ instead of referencing a stable `@id`.
 This skill follows the Anthropic `SKILL.md` format and is portable across agents.
 
 1. Keep it under `skills/frontend-seo/SKILL.md` in a public GitHub repo.
-2. Keep the frontmatter `name` and high-signal `description` — discovery indexes match against it.
+2. Keep the frontmatter `name` and high-signal `description` â€” discovery indexes match against it.
 3. Install with: `npx skills add <org>/<repo> --skill "frontend-seo"`.
 4. Non-`SKILL.md` agents can be pointed here from `AGENTS.md` / `CLAUDE.md`; Kiro can mirror it as a steering file.
 
@@ -708,3 +708,4 @@ This skill follows the Anthropic `SKILL.md` format and is portable across agents
 - Use this skill only when the task clearly matches its upstream source and local project context.
 - Verify commands, generated code, dependencies, credentials, and external service behavior before applying changes.
 - Do not treat examples as a substitute for environment-specific tests, security review, or user approval for destructive or costly actions.
+

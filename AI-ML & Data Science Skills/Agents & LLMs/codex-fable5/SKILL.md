@@ -1,4 +1,4 @@
----
+﻿---
 name: codex-fable5
 description: "Apply Fable-inspired discipline to Codex work: inspect first, track goals and findings, ground conclusions in evidence, verify before completion, and adapt Claude/Fable prompt guidance without identity or provider claims."
 category: agent-behavior
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: baskduf/FableCodex
 source_type: community
 date_added: "2026-06-15"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [codex, fable-style, agent-workflow, verification, prompt-adaptation]
 tools: [codex, antigravity]
 license: "AGPL-3.0-or-later"
@@ -160,3 +160,4 @@ Agent behavior:
 - `@codex-review` - Use when the primary task is a code review pass.
 - `@skill-issue` - Use when diagnosing whether a skill will trigger for a prompt.
 - `@open-dynamic-workflows` - Use when the task needs multi-agent planning and adversarial verification.
+

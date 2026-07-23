@@ -1,4 +1,4 @@
----
+﻿---
 name: pilot-protocol
 description: "Give an AI agent a permanent network address, encrypted P2P messaging, and an installable app store via Pilot Protocol"
 category: ai-agents
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: pilot-protocol/pilotprotocol
 source_type: official
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [agent-networking, p2p, nat-traversal, overlay-network, agent-apps]
 tools: [claude, cursor, gemini, codex]
 license: "AGPL-3.0"
@@ -46,7 +46,7 @@ If this skill adapts material from an external GitHub repository, it declares:
 
 ### Step 1: Install the daemon
 
-Download the installer, inspect it, then run it — do not pipe it straight into a shell.
+Download the installer, inspect it, then run it â€” do not pipe it straight into a shell.
 
 ```bash
 tmpdir="$(mktemp -d)"
@@ -110,12 +110,12 @@ pilotctl appstore call io.pilot.cosift cosift.answer '{"q":"What is HNSW?"}'
 
 ## Best Practices
 
-- ✅ Use `--wait` on `send-message` so the reply is guaranteed to be in the
+- âœ… Use `--wait` on `send-message` so the reply is guaranteed to be in the
   inbox before you read it.
-- ✅ Query `list-agents` before guessing a hostname — the catalogue changes.
-- ❌ Don't assume peer trust is immediate; approval + registry propagation can
+- âœ… Query `list-agents` before guessing a hostname â€” the catalogue changes.
+- âŒ Don't assume peer trust is immediate; approval + registry propagation can
   take a few seconds.
-- ❌ Don't set `--auto-answer` on your own node — it's a service-agent-only flag.
+- âŒ Don't set `--auto-answer` on your own node â€” it's a service-agent-only flag.
 
 ## Limitations
 
@@ -128,9 +128,9 @@ pilotctl appstore call io.pilot.cosift cosift.answer '{"q":"What is HNSW?"}'
 
 - The install script fetches an installer from `pilotprotocol.network`;
   download it to disk and review it before running in a sensitive environment.
-- `~/.pilot/identity.json` is a private keypair — never copy it between hosts.
+- `~/.pilot/identity.json` is a private keypair â€” never copy it between hosts.
 - Running the daemon starts a persistent background process, joins a public
-  P2P network, and can install app-store packages locally — treat this as a
+  P2P network, and can install app-store packages locally â€” treat this as a
   state-changing operation, not a read-only one.
 
 ## Common Pitfalls
@@ -146,3 +146,4 @@ pilotctl appstore call io.pilot.cosift cosift.answer '{"q":"What is HNSW?"}'
 
 - `@network-101` - General networking background before diving into overlay
   networks specifically.
+

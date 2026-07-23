@@ -1,13 +1,13 @@
----
+﻿---
 name: aegisops-ai
 description: "Autonomous DevSecOps & FinOps Guardrails. Orchestrates Gemini 3 Flash to audit Linux Kernel patches, Terraform cost drifts, and K8s compliance."
 risk: safe
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-03-24"
 ---
 
-# /aegisops-ai — Autonomous Governance Orchestrator
+# /aegisops-ai â€” Autonomous Governance Orchestrator
 
 AegisOps-AI is a professional-grade "Living Pipeline" 
 that integrates advanced AI reasoning directly into 
@@ -39,7 +39,7 @@ hardened K8s manifests.
 - **Post-Mortem Analysis:** For analyzing *why* a previous AI session failed, use `/analyze-project` instead.
 
 ---
-## 🤖 Generative AI Integration
+## ðŸ¤– Generative AI Integration
 
 AegisOps-AI leverages the **Google GenAI SDK** to implement a "Reasoning Path" for autonomous security and financial audits:
 
@@ -47,27 +47,27 @@ AegisOps-AI leverages the **Google GenAI SDK** to implement a "Reasoning Path" f
 * **Intelligent Cost Synthesis:** Processes raw Terraform plan diffs through a financial reasoning model to detect high-risk resource escalations and "silent" fiscal drifts.
 * **Natural Language Policy Mapping:** Translates human security intent into syntactically correct, hardened Kubernetes `securityContext` configurations.
 
-## 🧭 Core Modules
+## ðŸ§­ Core Modules
 
-### 1. 🐧 Kernel Patch Reviewer (`patch_analyzer.py`)
+### 1. ðŸ§ Kernel Patch Reviewer (`patch_analyzer.py`)
 
 * **Problem:** Manual review of Linux Kernel memory safety is time-consuming and prone to human error.
 * **Solution:** Gemini 3 performs a "Deep Reasoning" audit on raw Git diffs to detect critical memory corruption vulnerabilities (UAF, Stale State) in seconds.
 * **Key Output:** `analysis_results.json`
 
-### 2. 💰 FinOps & Cloud Auditor (`cost_auditor.py`)
+### 2. ðŸ’° FinOps & Cloud Auditor (`cost_auditor.py`)
 
 * **Problem:** Infrastructure-as-Code (IaC) changes can lead to accidental "Silent Disasters" and massive cloud bill spikes.
-* **Solution:** Analyzes `terraform plan` output to identify cost anomalies—such as accidental upgrades from `t3.micro` to high-performance GPU instances.
+* **Solution:** Analyzes `terraform plan` output to identify cost anomaliesâ€”such as accidental upgrades from `t3.micro` to high-performance GPU instances.
 * **Key Output:** `infrastructure_audit_report.json`
 
-### 3. ☸️ K8s Policy Hardener (`k8s_policy_generator.py`)
+### 3. â˜¸ï¸ K8s Policy Hardener (`k8s_policy_generator.py`)
 
 * **Problem:** Implementing "Least Privilege" security contexts in Kubernetes is complex and often neglected.
 * **Solution:** Translates natural language security requirements into production-ready, hardened YAML manifests (Read-only root FS, Non-root enforcement, etc.).
 * **Key Output:** `hardened_deployment.yaml`
 
-## 🛠️ Setup & Environment
+## ðŸ› ï¸ Setup & Environment
 
 ### 1. Clone the Repository
 
@@ -90,7 +90,7 @@ store your credentials:
 ```bash
 printf 'GEMINI_API_KEY=%s\n' "$GEMINI_API_KEY" > .env
 ```
-## 🏁 Operational Dashboard
+## ðŸ Operational Dashboard
 
 To execute the full suite of agents in sequence and generate all security reports:
 
@@ -104,7 +104,7 @@ python3 main.py
 
 ---
 
-## 💡 Best Practices
+## ðŸ’¡ Best Practices
 
 * **Context is King:** Provide at least 5 lines of context around Git diffs for more accurate neural reasoning.
 * **Continuous Gating:** Run the FinOps auditor before every infrastructure change, not after.
@@ -112,7 +112,7 @@ python3 main.py
 
 ---
 
-## 🔒 Security & Safety Notes
+## ðŸ”’ Security & Safety Notes
 
 * **Key Management:** Use CI/CD secrets for `GEMINI_API_KEY` in production.
 * **Least Privilege:** Test "Hardened" manifests in staging first to ensure no functional regressions.
@@ -126,3 +126,4 @@ python3 main.py
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

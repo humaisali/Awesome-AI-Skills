@@ -1,4 +1,4 @@
----
+﻿---
 name: brooks-lint
 description: "AI code reviewer grounded in classic software engineering books for catching design smells, coupling issues, and architectural risks."
 category: development
@@ -9,7 +9,7 @@ source_type: community
 license: "MIT"
 license_source: https://github.com/humaisali
 date_added: "2026-04-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [code-review, architecture, software-design, refactoring, claude-code]
 tools: [claude, codex, cursor, gemini]
 ---
@@ -20,9 +20,9 @@ tools: [claude, codex, cursor, gemini]
 
 Brooks Lint is a Claude Code skill that reviews your code through the lens of 12 classic software engineering books. Instead of checking style rules, it asks: "What would the authors of *The Pragmatic Programmer*, *Clean Code*, and *Designing Data-Intensive Applications* say about this code?"
 
-It synthesizes the principles from landmark engineering books into actionable, structured feedback — catching design smells, tight coupling, missing abstractions, and architectural risks that linters and AI tools typically miss.
+It synthesizes the principles from landmark engineering books into actionable, structured feedback â€” catching design smells, tight coupling, missing abstractions, and architectural risks that linters and AI tools typically miss.
 
-Named after Fred Brooks, author of *The Mythical Man-Month* — because the hardest bugs are conceptual, not syntactic.
+Named after Fred Brooks, author of *The Mythical Man-Month* â€” because the hardest bugs are conceptual, not syntactic.
 
 ## The 12 Books
 
@@ -82,10 +82,10 @@ npx agentic-awesome-skills --claude
 **Brooks Lint output:**
 ```
 [Pragmatic Programmer] DRY violation: payment validation logic duplicated in 3 places
-[Clean Code] Method processPayment() does 4 things — violates Single Responsibility
-[Release It!] No timeout on external payment gateway call — risk of cascade failure
-[DDIA] No idempotency key — retry on network error will double-charge
-[APOSD] PaymentService knows too much about UserRepository — high coupling
+[Clean Code] Method processPayment() does 4 things â€” violates Single Responsibility
+[Release It!] No timeout on external payment gateway call â€” risk of cascade failure
+[DDIA] No idempotency key â€” retry on network error will double-charge
+[APOSD] PaymentService knows too much about UserRepository â€” high coupling
 ```
 
 ### Example 2: Full Codebase Architecture Review
@@ -118,13 +118,13 @@ npx agentic-awesome-skills --claude
 - Run `@brooks-lint` after writing new service layers or data pipelines
 - Combine with `@logic-lens` for full coverage: logic bugs + design smells
 - Use `@brooks-lint analyze architecture` weekly on growing codebases
-- Focus on CRITICAL and HIGH findings first — LOW findings are style suggestions
+- Focus on CRITICAL and HIGH findings first â€” LOW findings are style suggestions
 
 ## Related Skills
 
-- `@logic-lens` — Complementary: catches logic bugs; brooks-lint catches design issues
-- `@security-auditor` — Specialized security-only deep scan
-- `@lint-and-validate` — Style/syntax linting to run alongside design review
+- `@logic-lens` â€” Complementary: catches logic bugs; brooks-lint catches design issues
+- `@security-auditor` â€” Specialized security-only deep scan
+- `@lint-and-validate` â€” Style/syntax linting to run alongside design review
 
 ## Additional Resources
 
@@ -134,4 +134,5 @@ npx agentic-awesome-skills --claude
 
 ## Limitations
 
-Use this skill only when the task clearly matches the scope described above (design review and architectural analysis). Brooks Lint applies AI-powered analysis grounded in established engineering principles. It should complement — not replace — human design review for production-critical decisions. Results reflect the principles of the 12 source books and may not apply to all architectural styles or domains.
+Use this skill only when the task clearly matches the scope described above (design review and architectural analysis). Brooks Lint applies AI-powered analysis grounded in established engineering principles. It should complement â€” not replace â€” human design review for production-critical decisions. Results reflect the principles of the 12 source books and may not apply to all architectural styles or domains.
+

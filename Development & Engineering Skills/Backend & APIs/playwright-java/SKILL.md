@@ -1,16 +1,16 @@
----
+﻿---
 name: playwright-java
 description: "Scaffold, write, debug, and enhance enterprise-grade Playwright E2E tests in Java using Page Object Model, JUnit 5, Allure reporting, and parallel execution."
 category: test-automation
 risk: safe
 source: https://github.com/humaisali
 date_added: "2025-03-08"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [playwright, java, e2e-testing, junit5, page-object-model, allure, selenium-alternative]
 tools: [claude, cursor,antigravity]
 ---
 
-# Playwright Java – Advanced Test Automation
+# Playwright Java â€“ Advanced Test Automation
 
 ## Overview
 
@@ -50,7 +50,7 @@ Use this matrix to pick the right pattern before writing any code:
 
 | User Request | Approach |
 |---|---|
-| New project from scratch | Full scaffold — see `references/config.md` |
+| New project from scratch | Full scaffold â€” see `references/config.md` |
 | Single feature test | POM page class + JUnit5 test class |
 | API + UI hybrid | `APIRequestContext` alongside `Page` |
 | Cross-browser | `@MethodSource` parameterized over browser names |
@@ -67,24 +67,24 @@ Always use this layout when creating a new project:
 
 ```
 src/
-├── test/
-│   ├── java/com/company/tests/
-│   │   ├── base/
-│   │   │   ├── BaseTest.java        ← templates/BaseTest.java
-│   │   │   └── BasePage.java        ← templates/BasePage.java
-│   │   ├── pages/
-│   │   │   └── LoginPage.java
-│   │   ├── tests/
-│   │   │   └── LoginTest.java
-│   │   ├── utils/
-│   │   │   ├── TestDataFactory.java
-│   │   │   └── WaitUtils.java
-│   │   └── config/
-│   │       └── ConfigReader.java
-│   └── resources/
-│       ├── test.properties
-│       ├── junit-platform.properties
-│       └── testdata/users.json
+â”œâ”€â”€ test/
+â”‚   â”œâ”€â”€ java/com/company/tests/
+â”‚   â”‚   â”œâ”€â”€ base/
+â”‚   â”‚   â”‚   â”œâ”€â”€ BaseTest.java        â† templates/BaseTest.java
+â”‚   â”‚   â”‚   â””â”€â”€ BasePage.java        â† templates/BasePage.java
+â”‚   â”‚   â”œâ”€â”€ pages/
+â”‚   â”‚   â”‚   â””â”€â”€ LoginPage.java
+â”‚   â”‚   â”œâ”€â”€ tests/
+â”‚   â”‚   â”‚   â””â”€â”€ LoginTest.java
+â”‚   â”‚   â”œâ”€â”€ utils/
+â”‚   â”‚   â”‚   â”œâ”€â”€ TestDataFactory.java
+â”‚   â”‚   â”‚   â””â”€â”€ WaitUtils.java
+â”‚   â”‚   â””â”€â”€ config/
+â”‚   â”‚       â””â”€â”€ ConfigReader.java
+â”‚   â””â”€â”€ resources/
+â”‚       â”œâ”€â”€ test.properties
+â”‚       â”œâ”€â”€ junit-platform.properties
+â”‚       â””â”€â”€ testdata/users.json
 pom.xml
 ```
 
@@ -149,7 +149,7 @@ public class BaseTest {
 ```java
 public class LoginPage extends BasePage {
 
-    // Declare ALL locators as fields — never inline in action methods
+    // Declare ALL locators as fields â€” never inline in action methods
     private final Locator emailInput;
     private final Locator passwordInput;
     private final Locator loginButton;
@@ -166,7 +166,7 @@ public class LoginPage extends BasePage {
 
     @Override protected String getUrl() { return "/login"; }
 
-    // Navigation methods return the next Page Object — enables fluent chaining
+    // Navigation methods return the next Page Object â€” enables fluent chaining
     public DashboardPage loginAs(String email, String password) {
         fill(emailInput, email);
         fill(passwordInput, password);
@@ -249,7 +249,7 @@ class LoginTest extends BaseTest {
 ```java
 @Test
 void shouldDisplayNewlyCreatedOrder() {
-    // Arrange via API — faster than navigating through UI
+    // Arrange via API â€” faster than navigating through UI
     APIRequestContext api = page().context().request();
     APIResponse response = api.post("/api/orders",
         RequestOptions.create()
@@ -339,25 +339,25 @@ junit.jupiter.execution.parallel.config.fixed.parallelism=4
 
 ## Best Practices
 
-- ✅ Use `ThreadLocal<Page>` for every parallel-safe test suite
-- ✅ Declare all `Locator` fields at the top of the Page Object class
-- ✅ Return the next Page Object from navigation methods (fluent chaining)
-- ✅ Use `assertThat(locator)` — it auto-retries until timeout
-- ✅ Use `getByRole`, `getByLabel`, `getByTestId` as first-choice locators
-- ✅ Start tracing in `@BeforeEach` and stop with a file path in `@AfterEach`
-- ✅ Use `SoftAssertions` when validating multiple fields on a single page
-- ✅ Set up saved auth state (`storageState`) to skip login across test classes
-- ❌ Never use `Thread.sleep()` — replace with `waitFor()` or `waitForResponse()`
-- ❌ Never hardcode base URLs — always use `ConfigReader.getBaseUrl()`
-- ❌ Never create a `Playwright` instance inside a Page Object
-- ❌ Never use XPath for dynamic or frequently changing elements
+- âœ… Use `ThreadLocal<Page>` for every parallel-safe test suite
+- âœ… Declare all `Locator` fields at the top of the Page Object class
+- âœ… Return the next Page Object from navigation methods (fluent chaining)
+- âœ… Use `assertThat(locator)` â€” it auto-retries until timeout
+- âœ… Use `getByRole`, `getByLabel`, `getByTestId` as first-choice locators
+- âœ… Start tracing in `@BeforeEach` and stop with a file path in `@AfterEach`
+- âœ… Use `SoftAssertions` when validating multiple fields on a single page
+- âœ… Set up saved auth state (`storageState`) to skip login across test classes
+- âŒ Never use `Thread.sleep()` â€” replace with `waitFor()` or `waitForResponse()`
+- âŒ Never hardcode base URLs â€” always use `ConfigReader.getBaseUrl()`
+- âŒ Never create a `Playwright` instance inside a Page Object
+- âŒ Never use XPath for dynamic or frequently changing elements
 
 ---
 
 ## Common Pitfalls
 
 - **Problem:** Tests fail randomly in parallel mode
-  **Solution:** Ensure every test creates its own `Playwright → Browser → BrowserContext → Page` chain via `ThreadLocal`. Never share a `Page` across threads.
+  **Solution:** Ensure every test creates its own `Playwright â†’ Browser â†’ BrowserContext â†’ Page` chain via `ThreadLocal`. Never share a `Page` across threads.
 
 - **Problem:** `assertThat(locator).isVisible()` times out even when the element appears
   **Solution:** Increase timeout with `.setTimeout(10_000)` or raise `context.setDefaultTimeout()` in `BaseTest`.
@@ -366,10 +366,10 @@ junit.jupiter.execution.parallel.config.fixed.parallelism=4
   **Solution:** Replace with `page.waitForResponse("**/api/endpoint", () -> action())` or `assertThat(locator).hasText("Done")` which polls automatically.
 
 - **Problem:** Playwright trace zip is empty or missing
-  **Solution:** Ensure `tracing().start()` is called before test actions and `tracing().stop()` is in `@AfterEach` — not `@AfterAll`.
+  **Solution:** Ensure `tracing().start()` is called before test actions and `tracing().stop()` is in `@AfterEach` â€” not `@AfterAll`.
 
 - **Problem:** Allure report is blank or missing steps
-  **Solution:** Add the AspectJ agent to `maven-surefire-plugin` `<argLine>` in `pom.xml` — see `references/config.md` for the exact snippet.
+  **Solution:** Add the AspectJ agent to `maven-surefire-plugin` `<argLine>` in `pom.xml` â€” see `references/config.md` for the exact snippet.
 
 - **Problem:** `storageState` auth file is stale and tests redirect to login
   **Solution:** Re-run `AuthSetup` to regenerate `target/auth/user-state.json` before the suite, or add a `@BeforeAll` that conditionally refreshes it.
@@ -378,13 +378,14 @@ junit.jupiter.execution.parallel.config.fixed.parallelism=4
 
 ## Related Skills
 
-- `@rest-assured-java` — Use for pure API test suites without any UI interaction
-- `@selenium-java` — Legacy alternative; prefer Playwright for all new projects
-- `@allure-reporting` — Deep-dive into Allure annotations, categories, and history trends
-- `@testcontainers-java` — Use alongside this skill when tests need a live database or service
-- `@github-actions-ci` — For building complete multi-browser matrix CI pipelines
+- `@rest-assured-java` â€” Use for pure API test suites without any UI interaction
+- `@selenium-java` â€” Legacy alternative; prefer Playwright for all new projects
+- `@allure-reporting` â€” Deep-dive into Allure annotations, categories, and history trends
+- `@testcontainers-java` â€” Use alongside this skill when tests need a live database or service
+- `@github-actions-ci` â€” For building complete multi-browser matrix CI pipelines
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

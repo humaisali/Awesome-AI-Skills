@@ -1,4 +1,4 @@
----
+﻿---
 name: crossframe-teach
 description: "Use when CrossFrame Suite routes explicit Chinese teaching of CrossFrame concepts, misreading boundaries, plain-language examples, signals, or exercises."
 category: content
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: xi-kari/crossframe-skill
 source_type: community
 date_added: 2026-06-16
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: MIT
 license_source: https://github.com/humaisali
 tools:
@@ -41,70 +41,71 @@ This AAS-ready copy preserves the original CrossFrame skill body below. Chinese 
 - Use only after explicit CrossFrame invocation or `crossframe-suite` routing; do not apply it as a generic default reasoning layer.
 - It structures analysis, drafting, and review, but does not replace source verification, domain expertise, or legal, medical, or financial judgment.
 
-> **本 skill 不独立触发。** 所有 CrossFrame 任务统一从 `crossframe-suite` 入口调度。用户无需直接调用本 skill；suite 根据路由规则在需要时自动加载。
+> **æœ¬ skill ä¸ç‹¬ç«‹è§¦å‘ã€‚** æ‰€æœ‰ CrossFrame ä»»åŠ¡ç»Ÿä¸€ä»Ž `crossframe-suite` å…¥å£è°ƒåº¦ã€‚ç”¨æˆ·æ— éœ€ç›´æŽ¥è°ƒç”¨æœ¬ skillï¼›suite æ ¹æ®è·¯ç”±è§„åˆ™åœ¨éœ€è¦æ—¶è‡ªåŠ¨åŠ è½½ã€‚
 
-如果概念教学要连接文章写作、案例沉淀、读书研究或输出评审，先读取 `../crossframe-suite/SKILL.md` 做总调度；本 skill 只负责教学解释、误读边界和练习。
+å¦‚æžœæ¦‚å¿µæ•™å­¦è¦è¿žæŽ¥æ–‡ç« å†™ä½œã€æ¡ˆä¾‹æ²‰æ·€ã€è¯»ä¹¦ç ”ç©¶æˆ–è¾“å‡ºè¯„å®¡ï¼Œå…ˆè¯»å– `../crossframe-suite/SKILL.md` åšæ€»è°ƒåº¦ï¼›æœ¬ skill åªè´Ÿè´£æ•™å­¦è§£é‡Šã€è¯¯è¯»è¾¹ç•Œå’Œç»ƒä¹ ã€‚
 
-## 轻入口原则
+## è½»å…¥å£åŽŸåˆ™
 
-中文是权威语义。`CrossFrame Teach` 只是教学入口，不重写、不替代、不压缩 canonical CrossFrame。
+ä¸­æ–‡æ˜¯æƒå¨è¯­ä¹‰ã€‚`CrossFrame Teach` åªæ˜¯æ•™å­¦å…¥å£ï¼Œä¸é‡å†™ã€ä¸æ›¿ä»£ã€ä¸åŽ‹ç¼© canonical CrossFrameã€‚
 
-每次触发后先读取相邻 canonical 材料：
+æ¯æ¬¡è§¦å‘åŽå…ˆè¯»å–ç›¸é‚» canonical ææ–™ï¼š
 
 - `../crossframe/SKILL.md`
 - `../crossframe/references/read-routing-map.md`
-- 若概念教学触发高责任、公共制度、亲密关系、长期演化、框架治理、AI 现实验证、弱信号/不透明、无法退出、工具化、隐喻/来源透明或文章输出，追加读取 `../crossframe/references/continuity-bundles.md`，并按需使用 `../crossframe/worksheets/source-continuity-check.md`；未完成联读时只能降档。
-- 复用 `../crossframe/templates/read-state-capsule.md` 规定的 `v5-read-state-capsule`，并在高责任、公共、AI/过程性产物、生命周期、无法退出主体或文章输出场景执行 `../crossframe/worksheets/source-anchor-integrity-check.md`。如果胶囊缺失，回到 `../crossframe/SKILL.md` 补齐；本 skill 不重新发明源路由。
+- è‹¥æ¦‚å¿µæ•™å­¦è§¦å‘é«˜è´£ä»»ã€å…¬å…±åˆ¶åº¦ã€äº²å¯†å…³ç³»ã€é•¿æœŸæ¼”åŒ–ã€æ¡†æž¶æ²»ç†ã€AI çŽ°å®žéªŒè¯ã€å¼±ä¿¡å·/ä¸é€æ˜Žã€æ— æ³•é€€å‡ºã€å·¥å…·åŒ–ã€éšå–»/æ¥æºé€æ˜Žæˆ–æ–‡ç« è¾“å‡ºï¼Œè¿½åŠ è¯»å– `../crossframe/references/continuity-bundles.md`ï¼Œå¹¶æŒ‰éœ€ä½¿ç”¨ `../crossframe/worksheets/source-continuity-check.md`ï¼›æœªå®Œæˆè”è¯»æ—¶åªèƒ½é™æ¡£ã€‚
+- å¤ç”¨ `../crossframe/templates/read-state-capsule.md` è§„å®šçš„ `v5-read-state-capsule`ï¼Œå¹¶åœ¨é«˜è´£ä»»ã€å…¬å…±ã€AI/è¿‡ç¨‹æ€§äº§ç‰©ã€ç”Ÿå‘½å‘¨æœŸã€æ— æ³•é€€å‡ºä¸»ä½“æˆ–æ–‡ç« è¾“å‡ºåœºæ™¯æ‰§è¡Œ `../crossframe/worksheets/source-anchor-integrity-check.md`ã€‚å¦‚æžœèƒ¶å›Šç¼ºå¤±ï¼Œå›žåˆ° `../crossframe/SKILL.md` è¡¥é½ï¼›æœ¬ skill ä¸é‡æ–°å‘æ˜Žæºè·¯ç”±ã€‚
 
-不要把 canonical 全文复制进回答。只按本次概念需要读取 canonical 的协议、术语保真材料、概念卡或模板；教学表达使用本 skill 的轻量协议和模板。
+ä¸è¦æŠŠ canonical å…¨æ–‡å¤åˆ¶è¿›å›žç­”ã€‚åªæŒ‰æœ¬æ¬¡æ¦‚å¿µéœ€è¦è¯»å– canonical çš„åè®®ã€æœ¯è¯­ä¿çœŸææ–™ã€æ¦‚å¿µå¡æˆ–æ¨¡æ¿ï¼›æ•™å­¦è¡¨è¾¾ä½¿ç”¨æœ¬ skill çš„è½»é‡åè®®å’Œæ¨¡æ¿ã€‚
 
-## 必读资源
+## å¿…è¯»èµ„æº
 
-1. 读取 `protocols/teach-protocol.md`，确定本次是概念课、误读纠偏、现实信号训练，还是练习题生成。
-2. 读取 `references/teaching-fidelity.md`，防止术语堆砌、解释过短失真、道德化和漏练习。
-3. 需要成稿时使用 `templates/concept-lesson.md`；只生成练习时使用 `templates/micro-exercises.md`。
-4. 需要对照样例时读取 `examples/` 中对应概念；需要自测时读取 `evals/smoke-tests.md`。
+1. è¯»å– `protocols/teach-protocol.md`ï¼Œç¡®å®šæœ¬æ¬¡æ˜¯æ¦‚å¿µè¯¾ã€è¯¯è¯»çº åã€çŽ°å®žä¿¡å·è®­ç»ƒï¼Œè¿˜æ˜¯ç»ƒä¹ é¢˜ç”Ÿæˆã€‚
+2. è¯»å– `references/teaching-fidelity.md`ï¼Œé˜²æ­¢æœ¯è¯­å †ç Œã€è§£é‡Šè¿‡çŸ­å¤±çœŸã€é“å¾·åŒ–å’Œæ¼ç»ƒä¹ ã€‚
+3. éœ€è¦æˆç¨¿æ—¶ä½¿ç”¨ `templates/concept-lesson.md`ï¼›åªç”Ÿæˆç»ƒä¹ æ—¶ä½¿ç”¨ `templates/micro-exercises.md`ã€‚
+4. éœ€è¦å¯¹ç…§æ ·ä¾‹æ—¶è¯»å– `examples/` ä¸­å¯¹åº”æ¦‚å¿µï¼›éœ€è¦è‡ªæµ‹æ—¶è¯»å– `evals/smoke-tests.md`ã€‚
 
-## 输出顺序
+## è¾“å‡ºé¡ºåº
 
-默认按这个顺序输出，不要把术语放在第一段当结论：
+é»˜è®¤æŒ‰è¿™ä¸ªé¡ºåºè¾“å‡ºï¼Œä¸è¦æŠŠæœ¯è¯­æ”¾åœ¨ç¬¬ä¸€æ®µå½“ç»“è®ºï¼š
 
-1. **先说人话**：用普通生活语言解释概念在说什么。
-2. **概念映射**：把人话对应到 1-3 个 CrossFrame 结构问题。
-3. **反例与误读边界**：写清不能误读成什么，给一个坏例或反例。
-4. **现实观察**：列出现实里能看见的行为、资源、边界、反馈或责任变化。
-5. **练习**：给 1-3 个小练习，帮助用户自己辨认概念边界。
+1. **å…ˆè¯´äººè¯**ï¼šç”¨æ™®é€šç”Ÿæ´»è¯­è¨€è§£é‡Šæ¦‚å¿µåœ¨è¯´ä»€ä¹ˆã€‚
+2. **æ¦‚å¿µæ˜ å°„**ï¼šæŠŠäººè¯å¯¹åº”åˆ° 1-3 ä¸ª CrossFrame ç»“æž„é—®é¢˜ã€‚
+3. **åä¾‹ä¸Žè¯¯è¯»è¾¹ç•Œ**ï¼šå†™æ¸…ä¸èƒ½è¯¯è¯»æˆä»€ä¹ˆï¼Œç»™ä¸€ä¸ªåä¾‹æˆ–åä¾‹ã€‚
+4. **çŽ°å®žè§‚å¯Ÿ**ï¼šåˆ—å‡ºçŽ°å®žé‡Œèƒ½çœ‹è§çš„è¡Œä¸ºã€èµ„æºã€è¾¹ç•Œã€åé¦ˆæˆ–è´£ä»»å˜åŒ–ã€‚
+5. **ç»ƒä¹ **ï¼šç»™ 1-3 ä¸ªå°ç»ƒä¹ ï¼Œå¸®åŠ©ç”¨æˆ·è‡ªå·±è¾¨è®¤æ¦‚å¿µè¾¹ç•Œã€‚
 
-如果用户要求极简，也至少保留一个极短自测问题，除非用户明确说不要练习。
+å¦‚æžœç”¨æˆ·è¦æ±‚æžç®€ï¼Œä¹Ÿè‡³å°‘ä¿ç•™ä¸€ä¸ªæžçŸ­è‡ªæµ‹é—®é¢˜ï¼Œé™¤éžç”¨æˆ·æ˜Žç¡®è¯´ä¸è¦ç»ƒä¹ ã€‚
 
-## 教学边界
+## æ•™å­¦è¾¹ç•Œ
 
-- 概念解释不是现实诊断；没有事实时，不给强判断。
-- 不把 CrossFrame 概念当作道德要求、人格标签、命运预言或专业替代品。
-- 不说“这是典型的 X，所以 Y”；先说事实模式，再给概念映射。
-- 不把“爱/开放行动”讲成继续忍耐、继续牺牲或取消责任链。
-- 不把“开放断言”讲成含糊、不负责或最终审判。
-- 不把“承接/回流”讲成脾气好、会沟通、态度变好或单方负责。
+- æ¦‚å¿µè§£é‡Šä¸æ˜¯çŽ°å®žè¯Šæ–­ï¼›æ²¡æœ‰äº‹å®žæ—¶ï¼Œä¸ç»™å¼ºåˆ¤æ–­ã€‚
+- ä¸æŠŠ CrossFrame æ¦‚å¿µå½“ä½œé“å¾·è¦æ±‚ã€äººæ ¼æ ‡ç­¾ã€å‘½è¿é¢„è¨€æˆ–ä¸“ä¸šæ›¿ä»£å“ã€‚
+- ä¸è¯´â€œè¿™æ˜¯å…¸åž‹çš„ Xï¼Œæ‰€ä»¥ Yâ€ï¼›å…ˆè¯´äº‹å®žæ¨¡å¼ï¼Œå†ç»™æ¦‚å¿µæ˜ å°„ã€‚
+- ä¸æŠŠâ€œçˆ±/å¼€æ”¾è¡ŒåŠ¨â€è®²æˆç»§ç»­å¿è€ã€ç»§ç»­ç‰ºç‰²æˆ–å–æ¶ˆè´£ä»»é“¾ã€‚
+- ä¸æŠŠâ€œå¼€æ”¾æ–­è¨€â€è®²æˆå«ç³Šã€ä¸è´Ÿè´£æˆ–æœ€ç»ˆå®¡åˆ¤ã€‚
+- ä¸æŠŠâ€œæ‰¿æŽ¥/å›žæµâ€è®²æˆè„¾æ°”å¥½ã€ä¼šæ²Ÿé€šã€æ€åº¦å˜å¥½æˆ–å•æ–¹è´Ÿè´£ã€‚
 
-## 最低合格标准
+## æœ€ä½Žåˆæ ¼æ ‡å‡†
 
-一次合格的教学回答必须能回答：
+ä¸€æ¬¡åˆæ ¼çš„æ•™å­¦å›žç­”å¿…é¡»èƒ½å›žç­”ï¼š
 
-- 普通人第一段能不能听懂？
-- 这个概念对应哪些现实行为或结构变化？
-- 它最容易被误读成什么？
-- 哪个反例能让用户知道边界在哪里？
-- 用户可以观察什么信号？
-- 用户可以做哪一个练习来验证自己是否理解？
+- æ™®é€šäººç¬¬ä¸€æ®µèƒ½ä¸èƒ½å¬æ‡‚ï¼Ÿ
+- è¿™ä¸ªæ¦‚å¿µå¯¹åº”å“ªäº›çŽ°å®žè¡Œä¸ºæˆ–ç»“æž„å˜åŒ–ï¼Ÿ
+- å®ƒæœ€å®¹æ˜“è¢«è¯¯è¯»æˆä»€ä¹ˆï¼Ÿ
+- å“ªä¸ªåä¾‹èƒ½è®©ç”¨æˆ·çŸ¥é“è¾¹ç•Œåœ¨å“ªé‡Œï¼Ÿ
+- ç”¨æˆ·å¯ä»¥è§‚å¯Ÿä»€ä¹ˆä¿¡å·ï¼Ÿ
+- ç”¨æˆ·å¯ä»¥åšå“ªä¸€ä¸ªç»ƒä¹ æ¥éªŒè¯è‡ªå·±æ˜¯å¦ç†è§£ï¼Ÿ
 
-## 资源索引
+## èµ„æºç´¢å¼•
 
-- `protocols/teach-protocol.md`：教学解释流程。
-- `references/teaching-fidelity.md`：教学保真与反误用规则。
-- `templates/concept-lesson.md`：完整概念课模板。
-- `templates/micro-exercises.md`：练习题模板。
-- `examples/chengjie-huiliu.md`：承接/回流教学样例。
-- `examples/open-assertion.md`：开放断言教学样例。
-- `examples/love-open-action.md`：爱/开放行动教学样例。
-- `examples/failure-patterns.md`：失败样例。
-- `evals/smoke-tests.md`：smoke tests。
+- `protocols/teach-protocol.md`ï¼šæ•™å­¦è§£é‡Šæµç¨‹ã€‚
+- `references/teaching-fidelity.md`ï¼šæ•™å­¦ä¿çœŸä¸Žåè¯¯ç”¨è§„åˆ™ã€‚
+- `templates/concept-lesson.md`ï¼šå®Œæ•´æ¦‚å¿µè¯¾æ¨¡æ¿ã€‚
+- `templates/micro-exercises.md`ï¼šç»ƒä¹ é¢˜æ¨¡æ¿ã€‚
+- `examples/chengjie-huiliu.md`ï¼šæ‰¿æŽ¥/å›žæµæ•™å­¦æ ·ä¾‹ã€‚
+- `examples/open-assertion.md`ï¼šå¼€æ”¾æ–­è¨€æ•™å­¦æ ·ä¾‹ã€‚
+- `examples/love-open-action.md`ï¼šçˆ±/å¼€æ”¾è¡ŒåŠ¨æ•™å­¦æ ·ä¾‹ã€‚
+- `examples/failure-patterns.md`ï¼šå¤±è´¥æ ·ä¾‹ã€‚
+- `evals/smoke-tests.md`ï¼šsmoke testsã€‚
+

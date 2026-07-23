@@ -1,10 +1,10 @@
----
+﻿---
 name: instagram
 description: Integracao completa com Instagram via Graph API. Publicacao, analytics, comentarios, DMs, hashtags, agendamento, templates e gestao de contas Business/Creator.
 risk: critical
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - social-media
 - instagram
@@ -41,73 +41,73 @@ Integracao completa com Instagram via Graph API. Publicacao, analytics, comentar
 
 ## How It Works
 
-Controle completo da conta Instagram via Graph API. Publicação, comunidade, analytics,
-DMs, hashtags, templates e dashboard — tudo gerido com governança (rate limits, audit log,
-confirmações antes de ações públicas).
+Controle completo da conta Instagram via Graph API. PublicaÃ§Ã£o, comunidade, analytics,
+DMs, hashtags, templates e dashboard â€” tudo gerido com governanÃ§a (rate limits, audit log,
+confirmaÃ§Ãµes antes de aÃ§Ãµes pÃºblicas).
 
-## Resumo Rápido
+## Resumo RÃ¡pido
 
-| Área | Scripts | O que faz |
+| Ãrea | Scripts | O que faz |
 |------|---------|-----------|
 | **Setup** | `account_setup.py`, `auth.py` | Configurar conta, OAuth, token |
-| **Publicação** | `publish.py`, `schedule.py` | Publicar foto/vídeo/reel/story/carrossel, agendar |
-| **Comunidade** | `comments.py`, `messages.py` | Comentários, DMs, menções |
-| **Analytics** | `insights.py`, `analyze.py` | Métricas, melhores horários, top posts |
+| **PublicaÃ§Ã£o** | `publish.py`, `schedule.py` | Publicar foto/vÃ­deo/reel/story/carrossel, agendar |
+| **Comunidade** | `comments.py`, `messages.py` | ComentÃ¡rios, DMs, menÃ§Ãµes |
+| **Analytics** | `insights.py`, `analyze.py` | MÃ©tricas, melhores horÃ¡rios, top posts |
 | **Hashtags** | `hashtags.py` | Pesquisa e tracking |
-| **Inteligência** | `templates.py`, `analyze.py` | Templates de conteúdo, tendências |
+| **InteligÃªncia** | `templates.py`, `analyze.py` | Templates de conteÃºdo, tendÃªncias |
 | **Infra** | `export.py`, `serve_api.py`, `run_all.py` | Exportar, dashboard, sync |
-| **Leitura** | `profile.py`, `media.py` | Perfil, listar mídia |
+| **Leitura** | `profile.py`, `media.py` | Perfil, listar mÃ­dia |
 
-## Localização
+## LocalizaÃ§Ã£o
 
 ```
 C:\Users\renat\skills\instagram\
-├── SKILL.md
-├── scripts/
-│   ├── requirements.txt
-│   │  # ── CORE ──
-│   ├── config.py                     # Paths, constantes, specs de mídia
-│   ├── db.py                         # SQLite: accounts, posts, comments, insights
-│   ├── auth.py                       # OAuth 2.0, token storage/refresh
-│   ├── api_client.py                 # Instagram Graph API wrapper + retry
-│   ├── governance.py                 # Rate limits, audit log, confirmações
-│   │  # ── FEATURES ──
-│   ├── account_setup.py              # Detecção conta, migração, verificação
-│   ├── publish.py                    # Publicar + upload local via Imgur
-│   ├── schedule.py                   # Orquestrador: approved → published
-│   ├── comments.py                   # Ler/responder/deletar comentários
-│   ├── messages.py                   # DMs (enviar/receber/listar)
-│   ├── insights.py                   # Fetch + store métricas
-│   ├── hashtags.py                   # Pesquisa + tracking
-│   ├── profile.py                    # Ver/atualizar perfil
-│   ├── media.py                      # Listar mídia, detalhes
-│   │  # ── INTELIGÊNCIA ──
-│   ├── templates.py                  # Templates de caption/hashtags
-│   ├── analyze.py                    # Melhores horários, top posts
-│   │  # ── INFRA ──
-│   ├── export.py                     # Exportar JSON/CSV/JSONL
-│   ├── serve_api.py                  # FastAPI + dashboard
-│   └── run_all.py                    # Sync completo
-├── references/
-│   ├── graph_api.md                  # Endpoints e parâmetros
-│   ├── permissions.md                # Scopes OAuth por feature
-│   ├── rate_limits.md                # Limites 2025
-│   ├── account_types.md              # Business vs Creator
-│   ├── publishing_guide.md           # Specs de mídia
-│   ├── setup_walkthrough.md          # Guia Meta App
-│   └── schema.md                     # ER diagram
-├── static/
-│   └── dashboard.html                # Dashboard Chart.js
-└── data/
+â”œâ”€â”€ SKILL.md
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ requirements.txt
+â”‚   â”‚  # â”€â”€ CORE â”€â”€
+â”‚   â”œâ”€â”€ config.py                     # Paths, constantes, specs de mÃ­dia
+â”‚   â”œâ”€â”€ db.py                         # SQLite: accounts, posts, comments, insights
+â”‚   â”œâ”€â”€ auth.py                       # OAuth 2.0, token storage/refresh
+â”‚   â”œâ”€â”€ api_client.py                 # Instagram Graph API wrapper + retry
+â”‚   â”œâ”€â”€ governance.py                 # Rate limits, audit log, confirmaÃ§Ãµes
+â”‚   â”‚  # â”€â”€ FEATURES â”€â”€
+â”‚   â”œâ”€â”€ account_setup.py              # DetecÃ§Ã£o conta, migraÃ§Ã£o, verificaÃ§Ã£o
+â”‚   â”œâ”€â”€ publish.py                    # Publicar + upload local via Imgur
+â”‚   â”œâ”€â”€ schedule.py                   # Orquestrador: approved â†’ published
+â”‚   â”œâ”€â”€ comments.py                   # Ler/responder/deletar comentÃ¡rios
+â”‚   â”œâ”€â”€ messages.py                   # DMs (enviar/receber/listar)
+â”‚   â”œâ”€â”€ insights.py                   # Fetch + store mÃ©tricas
+â”‚   â”œâ”€â”€ hashtags.py                   # Pesquisa + tracking
+â”‚   â”œâ”€â”€ profile.py                    # Ver/atualizar perfil
+â”‚   â”œâ”€â”€ media.py                      # Listar mÃ­dia, detalhes
+â”‚   â”‚  # â”€â”€ INTELIGÃŠNCIA â”€â”€
+â”‚   â”œâ”€â”€ templates.py                  # Templates de caption/hashtags
+â”‚   â”œâ”€â”€ analyze.py                    # Melhores horÃ¡rios, top posts
+â”‚   â”‚  # â”€â”€ INFRA â”€â”€
+â”‚   â”œâ”€â”€ export.py                     # Exportar JSON/CSV/JSONL
+â”‚   â”œâ”€â”€ serve_api.py                  # FastAPI + dashboard
+â”‚   â””â”€â”€ run_all.py                    # Sync completo
+â”œâ”€â”€ references/
+â”‚   â”œâ”€â”€ graph_api.md                  # Endpoints e parÃ¢metros
+â”‚   â”œâ”€â”€ permissions.md                # Scopes OAuth por feature
+â”‚   â”œâ”€â”€ rate_limits.md                # Limites 2025
+â”‚   â”œâ”€â”€ account_types.md              # Business vs Creator
+â”‚   â”œâ”€â”€ publishing_guide.md           # Specs de mÃ­dia
+â”‚   â”œâ”€â”€ setup_walkthrough.md          # Guia Meta App
+â”‚   â””â”€â”€ schema.md                     # ER diagram
+â”œâ”€â”€ static/
+â”‚   â””â”€â”€ dashboard.html                # Dashboard Chart.js
+â””â”€â”€ data/
     
 
-## Instalação (Uma Vez)
+## InstalaÃ§Ã£o (Uma Vez)
 
 ```bash
 pip install -r C:\Users\renat\skills\instagram\scripts\requirements.txt
 ```
 
-## Configuração Inicial
+## ConfiguraÃ§Ã£o Inicial
 
 ```bash
 
@@ -115,25 +115,25 @@ pip install -r C:\Users\renat\skills\instagram\scripts\requirements.txt
 
 python C:\Users\renat\skills\instagram\scripts\account_setup.py --check
 
-## 2. Configurar Oauth (Abre Browser Para Autorização)
+## 2. Configurar Oauth (Abre Browser Para AutorizaÃ§Ã£o)
 
 python C:\Users\renat\skills\instagram\scripts\auth.py --setup
 
-## 3. Verificar Se Está Tudo Funcionando
+## 3. Verificar Se EstÃ¡ Tudo Funcionando
 
 python C:\Users\renat\skills\instagram\scripts\profile.py --view
 ```
 
-Se a conta for pessoal, o script `account_setup.py --guide` dá instruções de migração
+Se a conta for pessoal, o script `account_setup.py --guide` dÃ¡ instruÃ§Ãµes de migraÃ§Ã£o
 para Business ou Creator.
 
-## Foto (Aceita Arquivo Local — Faz Upload Automático Via Imgur)
+## Foto (Aceita Arquivo Local â€” Faz Upload AutomÃ¡tico Via Imgur)
 
 python C:\Users\renat\skills\instagram\scripts\publish.py --type photo --image caminho/foto.jpg --caption "Texto do post"
 
-## Vídeo
+## VÃ­deo
 
-python C:\Users\renat\skills\instagram\scripts\publish.py --type video --video caminho/video.mp4 --caption "Meu vídeo"
+python C:\Users\renat\skills\instagram\scripts\publish.py --type video --video caminho/video.mp4 --caption "Meu vÃ­deo"
 
 ## Reel
 
@@ -147,16 +147,16 @@ python C:\Users\renat\skills\instagram\scripts\publish.py --type story --image c
 
 python C:\Users\renat\skills\instagram\scripts\publish.py --type carousel --images img1.jpg img2.jpg img3.jpg --caption "Carrossel"
 
-## Criar Como Rascunho (Não Publica Imediatamente)
+## Criar Como Rascunho (NÃ£o Publica Imediatamente)
 
 python C:\Users\renat\skills\instagram\scripts\publish.py --type photo --image foto.jpg --caption "Texto" --draft
 
-## Aprovar Rascunho Para Publicação
+## Aprovar Rascunho Para PublicaÃ§Ã£o
 
 python C:\Users\renat\skills\instagram\scripts\publish.py --approve --id 5
 ```
 
-## Agendar Publicação Futura
+## Agendar PublicaÃ§Ã£o Futura
 
 python C:\Users\renat\skills\instagram\scripts\schedule.py --type photo --image foto.jpg --caption "Post agendado" --at "2026-03-01T10:00"
 
@@ -173,30 +173,30 @@ python C:\Users\renat\skills\instagram\scripts\schedule.py --process
 python C:\Users\renat\skills\instagram\scripts\schedule.py --cancel --id 5
 ```
 
-## Listar Comentários De Um Post
+## Listar ComentÃ¡rios De Um Post
 
 python C:\Users\renat\skills\instagram\scripts\comments.py --list --media-id 12345
 
-## Responder A Um Comentário
+## Responder A Um ComentÃ¡rio
 
 python C:\Users\renat\skills\instagram\scripts\comments.py --reply --comment-id 67890 --text "Obrigado!"
 
-## Deletar Comentário
+## Deletar ComentÃ¡rio
 
 python C:\Users\renat\skills\instagram\scripts\comments.py --delete --comment-id 67890
 
-## Ver Menções
+## Ver MenÃ§Ãµes
 
 python C:\Users\renat\skills\instagram\scripts\comments.py --mentions
 
-## Comentários Não Respondidos
+## ComentÃ¡rios NÃ£o Respondidos
 
 python C:\Users\renat\skills\instagram\scripts\comments.py --unreplied
 ```
 
 ## Enviar Dm
 
-python C:\Users\renat\skills\instagram\scripts\messages.py --send --user-id 12345 --text "Olá!"
+python C:\Users\renat\skills\instagram\scripts\messages.py --send --user-id 12345 --text "OlÃ¡!"
 
 ## Listar Conversas
 
@@ -207,11 +207,11 @@ python C:\Users\renat\skills\instagram\scripts\messages.py --conversations
 python C:\Users\renat\skills\instagram\scripts\messages.py --thread --conversation-id 12345
 ```
 
-## Métricas De Um Post Específico
+## MÃ©tricas De Um Post EspecÃ­fico
 
 python C:\Users\renat\skills\instagram\scripts\insights.py --media --media-id 12345
 
-## Métricas Da Conta (Últimos 7 Dias)
+## MÃ©tricas Da Conta (Ãšltimos 7 Dias)
 
 python C:\Users\renat\skills\instagram\scripts\insights.py --user --period day --since 7
 
@@ -220,7 +220,7 @@ python C:\Users\renat\skills\instagram\scripts\insights.py --user --period day -
 python C:\Users\renat\skills\instagram\scripts\insights.py --fetch-all --limit 20
 ```
 
-## Melhores Horários Para Postar (Baseado Nos Seus Dados)
+## Melhores HorÃ¡rios Para Postar (Baseado Nos Seus Dados)
 
 python C:\Users\renat\skills\instagram\scripts\analyze.py --best-times
 
@@ -228,7 +228,7 @@ python C:\Users\renat\skills\instagram\scripts\analyze.py --best-times
 
 python C:\Users\renat\skills\instagram\scripts\analyze.py --top-posts --limit 10
 
-## Tendências De Crescimento
+## TendÃªncias De Crescimento
 
 python C:\Users\renat\skills\instagram\scripts\analyze.py --growth --period 30
 ```
@@ -248,7 +248,7 @@ python C:\Users\renat\skills\instagram\scripts\hashtags.py --info "marketing"
 
 ## Criar Template
 
-python C:\Users\renat\skills\instagram\scripts\templates.py --create --name "promo" --caption "Nova promoção: {produto}! {desconto}% OFF" --hashtags "#oferta,#desconto,#promoção"
+python C:\Users\renat\skills\instagram\scripts\templates.py --create --name "promo" --caption "Nova promoÃ§Ã£o: {produto}! {desconto}% OFF" --hashtags "#oferta,#desconto,#promoÃ§Ã£o"
 
 ## Listar Templates
 
@@ -256,7 +256,7 @@ python C:\Users\renat\skills\instagram\scripts\templates.py --list
 
 ## Usar Template Em Um Post
 
-python C:\Users\renat\skills\instagram\scripts\publish.py --type photo --image foto.jpg --template promo --vars produto="Tênis" desconto=30
+python C:\Users\renat\skills\instagram\scripts\publish.py --type photo --image foto.jpg --template promo --vars produto="TÃªnis" desconto=30
 ```
 
 ## Ver Perfil
@@ -276,7 +276,7 @@ python C:\Users\renat\skills\instagram\scripts\media.py --details --media-id 123
 
 python C:\Users\renat\skills\instagram\scripts\export.py --type insights --format csv
 
-## Exportar Comentários
+## Exportar ComentÃ¡rios
 
 python C:\Users\renat\skills\instagram\scripts\export.py --type comments --format json
 
@@ -292,11 +292,11 @@ python C:\Users\renat\skills\instagram\scripts\serve_api.py
 
 ```
 
-## Status Da Autenticação
+## Status Da AutenticaÃ§Ã£o
 
 python C:\Users\renat\skills\instagram\scripts\auth.py --status
 
-## Sync Completo (Busca Perfil + Mídia + Insights + Comentários)
+## Sync Completo (Busca Perfil + MÃ­dia + Insights + ComentÃ¡rios)
 
 python C:\Users\renat\skills\instagram\scripts\run_all.py
 
@@ -309,43 +309,43 @@ python C:\Users\renat\skills\instagram\scripts\run_all.py --only media insights
 
 A skill rastreia automaticamente os rate limits da API:
 - **200 requests/hora** por conta
-- **25 publicações/dia** por conta
-- **30 hashtags únicas/semana** por conta
+- **25 publicaÃ§Ãµes/dia** por conta
+- **30 hashtags Ãºnicas/semana** por conta
 - **200 DMs/hora** por conta
 
-Quando em 90% do limite, a skill emite warnings. Se exceder, bloqueia a ação e informa
+Quando em 90% do limite, a skill emite warnings. Se exceder, bloqueia a aÃ§Ã£o e informa
 quanto tempo esperar.
 
-## Confirmações
+## ConfirmaÃ§Ãµes
 
-Ações que afetam conteúdo público requerem confirmação:
-- **PUBLISH**: Publicar foto/vídeo/reel/story/carrossel
-- **DELETE**: Deletar comentário
+AÃ§Ãµes que afetam conteÃºdo pÃºblico requerem confirmaÃ§Ã£o:
+- **PUBLISH**: Publicar foto/vÃ­deo/reel/story/carrossel
+- **DELETE**: Deletar comentÃ¡rio
 - **MESSAGE**: Enviar DM
-- **ENGAGE**: Responder comentário, ocultar comentário
+- **ENGAGE**: Responder comentÃ¡rio, ocultar comentÃ¡rio
 
-O script retorna os detalhes da ação e pede confirmação antes de executar.
+O script retorna os detalhes da aÃ§Ã£o e pede confirmaÃ§Ã£o antes de executar.
 
 ## Audit Log
 
-Todas as ações que modificam dados são logadas no banco SQLite (`action_log` table):
-- Timestamp, ação, parâmetros, resultado, status de confirmação
+Todas as aÃ§Ãµes que modificam dados sÃ£o logadas no banco SQLite (`action_log` table):
+- Timestamp, aÃ§Ã£o, parÃ¢metros, resultado, status de confirmaÃ§Ã£o
 - Consultar via: `python C:\Users\renat\skills\instagram\scripts\db.py`
 
 ## Token Auto-Refresh
 
-O token OAuth (60 dias) é renovado automaticamente quando está a 7 dias de expirar.
-Sem intervenção manual necessária.
+O token OAuth (60 dias) Ã© renovado automaticamente quando estÃ¡ a 7 dias de expirar.
+Sem intervenÃ§Ã£o manual necessÃ¡ria.
 
-## Limitações Da Api
+## LimitaÃ§Ãµes Da Api
 
-Coisas que a Instagram Graph API **não permite**:
-- Deletar posts já publicados
-- Editar captions após publicar
+Coisas que a Instagram Graph API **nÃ£o permite**:
+- Deletar posts jÃ¡ publicados
+- Editar captions apÃ³s publicar
 - Aplicar filtros via API
-- Postar de contas pessoais (só Business/Creator)
-- DMs fora da janela de 24hrs (usuário precisa ter interagido primeiro)
-- Fotos em formato diferente de JPEG (auto-conversão feita pelos scripts)
+- Postar de contas pessoais (sÃ³ Business/Creator)
+- DMs fora da janela de 24hrs (usuÃ¡rio precisa ter interagido primeiro)
+- Fotos em formato diferente de JPEG (auto-conversÃ£o feita pelos scripts)
 
 ## "Quero Publicar Uma Foto"
 
@@ -360,13 +360,13 @@ python C:\Users\renat\skills\instagram\scripts\run_all.py --only insights
 python C:\Users\renat\skills\instagram\scripts\analyze.py --summary
 ```
 
-## "Qual O Melhor Horário Para Postar?"
+## "Qual O Melhor HorÃ¡rio Para Postar?"
 
 ```bash
 python C:\Users\renat\skills\instagram\scripts\analyze.py --best-times
 ```
 
-## "Responde Esse Comentário"
+## "Responde Esse ComentÃ¡rio"
 
 ```bash
 python C:\Users\renat\skills\instagram\scripts\comments.py --reply --comment-id ID --text "Resposta"
@@ -384,16 +384,16 @@ python C:\Users\renat\skills\instagram\scripts\run_all.py
 python C:\Users\renat\skills\instagram\scripts\serve_api.py
 ```
 
-## Referências
+## ReferÃªncias
 
 Consultar quando precisar de detalhes:
-- `references/graph_api.md` — Endpoints, parâmetros e responses da API
-- `references/publishing_guide.md` — Specs de mídia (dimensões, formatos, tamanhos)
-- `references/rate_limits.md` — Rate limits detalhados e estratégias
-- `references/account_types.md` — Diferenças Business vs Creator, migração
-- `references/permissions.md` — Scopes OAuth necessários por feature
-- `references/setup_walkthrough.md` — Guia passo-a-passo de setup do Meta App
-- `references/schema.md` — Schema do banco SQLite (ER diagram, campos, índices, queries)
+- `references/graph_api.md` â€” Endpoints, parÃ¢metros e responses da API
+- `references/publishing_guide.md` â€” Specs de mÃ­dia (dimensÃµes, formatos, tamanhos)
+- `references/rate_limits.md` â€” Rate limits detalhados e estratÃ©gias
+- `references/account_types.md` â€” DiferenÃ§as Business vs Creator, migraÃ§Ã£o
+- `references/permissions.md` â€” Scopes OAuth necessÃ¡rios por feature
+- `references/setup_walkthrough.md` â€” Guia passo-a-passo de setup do Meta App
+- `references/schema.md` â€” Schema do banco SQLite (ER diagram, campos, Ã­ndices, queries)
 
 ## Best Practices
 
@@ -417,3 +417,4 @@ Consultar quando precisar de detalhes:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

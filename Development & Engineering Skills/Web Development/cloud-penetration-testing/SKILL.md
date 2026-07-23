@@ -1,9 +1,9 @@
----
+﻿---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -509,3 +509,4 @@ gcloud beta compute ssh instance-name --zone us-central1-a --project target-proj
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

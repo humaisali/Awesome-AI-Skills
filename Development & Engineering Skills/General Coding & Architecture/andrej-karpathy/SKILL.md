@@ -1,4 +1,4 @@
----
+﻿---
 name: andrej-karpathy
 description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
 risk: safe
@@ -8,7 +8,7 @@ source_type: community
 license: MIT
 license_source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - coding-guidelines
 - code-review
@@ -117,3 +117,4 @@ Better response:
 - These guidelines are behavioral guardrails, not a replacement for project-specific architecture or style rules.
 - For emergency fixes, prioritize the smallest verified correction over extensive planning.
 - For exploratory prototypes, some caution can be relaxed, but assumptions and verification should still be explicit.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-svelte
 description: "Integrate the beta markstream-svelte renderer into Svelte 5 or SvelteKit with runes, explicit CSS, smooth streaming, workers, and SSR-safe boundaries."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [svelte, sveltekit, markdown, streaming, ssr]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -66,3 +66,4 @@ Before changing dependencies or source files, inspect the existing package manag
 ## Security & Safety Notes
 
 Keep safe HTML and strict Mermaid defaults. Review dependencies and never run browser-only peers during SSR.
+

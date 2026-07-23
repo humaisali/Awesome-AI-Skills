@@ -1,10 +1,10 @@
----
+﻿---
 name: akf-trust-metadata
-description: "The AI native file format. EXIF for AI — stamps every file with trust scores, source provenance, and compliance metadata. Embeds into 20+ formats (DOCX, PDF, images, code). EU AI Act, SOX, HIPAA auditing."
+description: "The AI native file format. EXIF for AI â€” stamps every file with trust scores, source provenance, and compliance metadata. Embeds into 20+ formats (DOCX, PDF, images, code). EU AI Act, SOX, HIPAA auditing."
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-27"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - trust
 - metadata
@@ -14,7 +14,7 @@ tags:
 - ai-native
 ---
 
-# AKF — The AI Native File Format
+# AKF â€” The AI Native File Format
 
 Every photo has EXIF. Every song has ID3. AKF is the native metadata format for AI-generated content.
 
@@ -71,3 +71,4 @@ pip install akf
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

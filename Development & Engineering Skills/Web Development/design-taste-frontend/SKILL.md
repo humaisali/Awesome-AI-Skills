@@ -1,4 +1,4 @@
----
+﻿---
 name: design-taste-frontend
 description: "Use when building high-agency frontend interfaces with strict design taste, calibrated color, responsive layout, and motion rules."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Leonxlnx/taste-skill
 source_type: community
 date_added: "2026-04-17"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [frontend, design, ui, react]
 tools: [claude, cursor, codex, antigravity]
 ---
@@ -54,7 +54,7 @@ Unless the user explicitly specifies a different stack, adhere to these structur
 
 
 ## 3. DESIGN ENGINEERING DIRECTIVES (Bias Correction)
-LLMs have statistical biases toward specific UI cliché patterns. Proactively construct premium interfaces using these engineered rules:
+LLMs have statistical biases toward specific UI clichÃ© patterns. Proactively construct premium interfaces using these engineered rules:
 
 **Rule 1: Deterministic Typography**
 * **Display/Headlines:** Default to `text-4xl md:text-6xl tracking-tighter leading-none`.
@@ -88,7 +88,7 @@ LLMs have statistical biases toward specific UI cliché patterns. Proactively co
 To actively combat generic AI designs, systematically implement these high-end coding concepts as your baseline:
 * **"Liquid Glass" Refraction:** When glassmorphism is needed, go beyond `backdrop-blur`. Add a 1px inner border (`border-white/10`) and a subtle inner shadow (`shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]`) to simulate physical edge refraction.
 * **Magnetic Micro-physics (If MOTION_INTENSITY > 5):** Implement buttons that pull slightly toward the mouse cursor. **CRITICAL:** NEVER use React `useState` for magnetic hover or continuous animations. Use EXCLUSIVELY Framer Motion's `useMotionValue` and `useTransform` outside the React render cycle to prevent performance collapse on mobile.
-* **Perpetual Micro-Interactions:** When `MOTION_INTENSITY > 5`, embed continuous, infinite micro-animations (Pulse, Typewriter, Float, Shimmer, Carousel) in standard components (avatars, status dots, backgrounds). Apply premium Spring Physics (`type: "spring", stiffness: 100, damping: 20`) to all interactive elements—no linear easing.
+* **Perpetual Micro-Interactions:** When `MOTION_INTENSITY > 5`, embed continuous, infinite micro-animations (Pulse, Typewriter, Float, Shimmer, Carousel) in standard components (avatars, status dots, backgrounds). Apply premium Spring Physics (`type: "spring", stiffness: 100, damping: 20`) to all interactive elementsâ€”no linear easing.
 * **Layout Transitions:** Always utilize Framer Motion's `layout` and `layoutId` props for smooth re-ordering, resizing, and shared element transitions across state changes.
 * **Staggered Orchestration:** Do not mount lists or grids instantly. Use `staggerChildren` (Framer) or CSS cascade (`animation-delay: calc(var(--index) * 100ms)`) to create sequential waterfall reveals. **CRITICAL:** For `staggerChildren`, the Parent (`variants`) and Children MUST reside in the identical Client Component tree. If data is fetched asynchronously, pass the data as props into a centralized Parent Motion wrapper.
 
@@ -139,7 +139,7 @@ To guarantee a premium, non-generic output, you MUST strictly avoid these common
 * **NO Generic Avatars:** DO NOT use standard SVG "egg" or Lucide user icons for avatars. Use creative, believable photo placeholders or specific styling.
 * **NO Fake Numbers:** Avoid predictable outputs like `99.99%`, `50%`, or basic phone numbers (`1234567`). Use organic, messy data (`47.2%`, `+1 (312) 847-1928`).
 * **NO Startup Slop Names:** "Acme", "Nexus", "SmartFlow". Invent premium, contextual brand names.
-* **NO Filler Words:** Avoid AI copywriting clichés like "Elevate", "Seamless", "Unleash", or "Next-Gen". Use concrete verbs.
+* **NO Filler Words:** Avoid AI copywriting clichÃ©s like "Elevate", "Seamless", "Unleash", or "Next-Gen". Use concrete verbs.
 
 ### External Resources & Components
 * **NO Broken Unsplash Links:** Do not use Unsplash. Use absolute, reliable placeholders like `https://picsum.photos/seed/{random_string}/800/600` or SVG UI Avatars.
@@ -152,7 +152,7 @@ Do not default to generic UI. Pull from this library of advanced concepts to ens
 ### The Standard Hero Paradigm
 * Stop doing centered text over a dark image. Try asymmetric Hero sections: Text cleanly aligned to the left or right. The background should feature a high-quality, relevant image with a subtle stylistic fade (darkening or lightening gracefully into the background color depending on if it is Light or Dark mode).
 
-### Navigation & Menüs
+### Navigation & MenÃ¼s
 * **Mac OS Dock Magnification:** Nav-bar at the edge; icons scale fluidly on hover.
 * **Magnetic Button:** Buttons that physically pull toward the cursor.
 * **Gooey Menu:** Sub-items detach from the main button like a viscous liquid.
@@ -245,3 +245,4 @@ Evaluate your code against this matrix before outputting. This is the **last** f
 - [ ] Are empty, loading, and error states provided?
 - [ ] Are cards omitted in favor of spacing where possible?
 - [ ] Did you strictly isolate CPU-heavy perpetual animations in their own Client Components?
+

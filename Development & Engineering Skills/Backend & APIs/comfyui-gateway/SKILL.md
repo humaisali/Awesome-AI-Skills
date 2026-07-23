@@ -1,10 +1,10 @@
----
+﻿---
 name: comfyui-gateway
 description: REST API gateway for ComfyUI servers. Workflow management, job queuing, webhooks, caching, auth, rate limiting, and image delivery (URL + base64).
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - comfyui
 - api-gateway
@@ -48,18 +48,18 @@ with priorities, webhook callbacks, result caching, and multiple storage backend
 ## Architecture Overview
 
 ```
-┌─────────────┐     ┌──────────────────────────────────┐     ┌──────────┐
-│   Clients    │────▶│        ComfyUI Gateway           │────▶│ ComfyUI  │
-│ (curl, n8n,  │     │                                  │     │ Server   │
-│  Claude,     │     │  ┌─────────┐  ┌──────────────┐  │     │ (local/  │
-│  Lovable,    │     │  │ Fastify │  │ BullMQ Queue │  │     │  remote) │
-│  Supabase)   │     │  │ API     │──│ (or in-mem)  │  │     └──────────┘
-│              │◀────│  └─────────┘  └──────────────┘  │
-│              │     │  ┌─────────┐  ┌──────────────┐  │     ┌──────────┐
-│              │     │  │ Auth +  │  │ Storage      │  │────▶│ S3/MinIO │
-│              │     │  │ RateL.  │  │ (local/S3)   │  │     │(optional)│
-│              │     │  └─────────┘  └──────────────┘  │     └──────────┘
-└─────────────┘     └──────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   Clients    â”‚â”€â”€â”€â”€â–¶â”‚        ComfyUI Gateway           â”‚â”€â”€â”€â”€â–¶â”‚ ComfyUI  â”‚
+â”‚ (curl, n8n,  â”‚     â”‚                                  â”‚     â”‚ Server   â”‚
+â”‚  Claude,     â”‚     â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚     â”‚ (local/  â”‚
+â”‚  Lovable,    â”‚     â”‚  â”‚ Fastify â”‚  â”‚ BullMQ Queue â”‚  â”‚     â”‚  remote) â”‚
+â”‚  Supabase)   â”‚     â”‚  â”‚ API     â”‚â”€â”€â”‚ (or in-mem)  â”‚  â”‚     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+â”‚              â”‚â—€â”€â”€â”€â”€â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚
+â”‚              â”‚     â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚              â”‚     â”‚  â”‚ Auth +  â”‚  â”‚ Storage      â”‚  â”‚â”€â”€â”€â”€â–¶â”‚ S3/MinIO â”‚
+â”‚              â”‚     â”‚  â”‚ RateL.  â”‚  â”‚ (local/S3)   â”‚  â”‚     â”‚(optional)â”‚
+â”‚              â”‚     â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ## Components
@@ -111,7 +111,7 @@ npm run start:worker # Worker only
 
 ## Environment Variables
 
-All configuration is via `.env` — nothing is hardcoded:
+All configuration is via `.env` â€” nothing is hardcoded:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -148,55 +148,55 @@ All configuration is via `.env` — nothing is hardcoded:
 
 ```
 GET /health
-→ { ok: true, version, comfyui: { reachable, url, models? }, uptime }
+â†’ { ok: true, version, comfyui: { reachable, url, models? }, uptime }
 
 GET /capabilities
-→ { workflows: [...], maxSize, maxBatch, formats, storageProvider }
+â†’ { workflows: [...], maxSize, maxBatch, formats, storageProvider }
 ```
 
 ## Workflows (Crud)
 
 ```
-GET    /workflows            → list all workflows
-POST   /workflows            → register new workflow
-GET    /workflows/:id        → workflow details + input schema
-PUT    /workflows/:id        → update workflow
-DELETE /workflows/:id        → remove workflow
+GET    /workflows            â†’ list all workflows
+POST   /workflows            â†’ register new workflow
+GET    /workflows/:id        â†’ workflow details + input schema
+PUT    /workflows/:id        â†’ update workflow
+DELETE /workflows/:id        â†’ remove workflow
 ```
 
 ## Jobs
 
 ```
-POST   /jobs                 → create job (returns jobId immediately)
-GET    /jobs/:jobId          → status + progress + outputs
-GET    /jobs/:jobId/logs     → sanitized execution logs
-POST   /jobs/:jobId/cancel   → request cancellation
-GET    /jobs                 → list jobs (filters: status, workflowId, after, before, limit)
+POST   /jobs                 â†’ create job (returns jobId immediately)
+GET    /jobs/:jobId          â†’ status + progress + outputs
+GET    /jobs/:jobId/logs     â†’ sanitized execution logs
+POST   /jobs/:jobId/cancel   â†’ request cancellation
+GET    /jobs                 â†’ list jobs (filters: status, workflowId, after, before, limit)
 ```
 
 ## Outputs
 
 ```
-GET    /outputs/:jobId       → list output files + metadata
-GET    /outputs/:jobId/:file → download/stream file
+GET    /outputs/:jobId       â†’ list output files + metadata
+GET    /outputs/:jobId/:file â†’ download/stream file
 ```
 
 ## Job Lifecycle
 
 ```
-queued → running → succeeded
-                 → failed
-                 → canceled
+queued â†’ running â†’ succeeded
+                 â†’ failed
+                 â†’ canceled
 ```
 
 1. Client POSTs to `/jobs` with workflowId + inputs
 2. Gateway validates, checks cache, checks idempotency
-3. If cache hit → returns existing outputs immediately (status: `cache_hit`)
-4. Otherwise → enqueues job, returns `jobId` + `pollUrl`
+3. If cache hit â†’ returns existing outputs immediately (status: `cache_hit`)
+4. Otherwise â†’ enqueues job, returns `jobId` + `pollUrl`
 5. Worker picks up job, renders workflow template, submits to ComfyUI
 6. Worker polls ComfyUI for progress (or listens via WebSocket)
-7. On completion → downloads outputs, stores them, updates DB
-8. If callbackUrl → sends signed webhook POST
+7. On completion â†’ downloads outputs, stores them, updates DB
+8. If callbackUrl â†’ sends signed webhook POST
 9. Client polls `/jobs/:jobId` or receives webhook
 
 ## Workflow Templates
@@ -266,7 +266,7 @@ The client auto-detects ComfyUI version and adapts:
 ## Cache Strategy
 
 Cache key = SHA-256 of `workflowId + sorted(inputs) + sorted(params) + checkpoint`.
-On cache hit, the gateway returns a "virtual" job with pre-existing outputs — no GPU
+On cache hit, the gateway returns a "virtual" job with pre-existing outputs â€” no GPU
 computation needed. Cache is stored alongside job data in the DB with configurable TTL.
 
 ## Error Classification
@@ -287,19 +287,19 @@ computation needed. Cache is stored alongside job data in the DB with configurab
 
 Three production-ready workflow templates are included:
 
-## 1. `Sdxl_Realism_V1` — Photorealistic Generation
+## 1. `Sdxl_Realism_V1` â€” Photorealistic Generation
 
 - Checkpoint: SDXL base
 - Optimized for: Portraits, landscapes, product shots
 - Default: 1024x1024, 30 steps, cfg 7.0
 
-## 2. `Sprite_Transparent_Bg` — Game Sprites With Alpha
+## 2. `Sprite_Transparent_Bg` â€” Game Sprites With Alpha
 
 - Checkpoint: SD 1.5 or SDXL
 - Optimized for: 2D game assets, transparent backgrounds
 - Default: 512x512, 25 steps, cfg 7.5
 
-## 3. `Icon_512` — App Icons With Optional Upscale
+## 3. `Icon_512` â€” App Icons With Optional Upscale
 
 - Checkpoint: SDXL base
 - Optimized for: Square icons, clean edges
@@ -347,62 +347,62 @@ Read `references/integration.md` for ready-to-use examples with:
 
 ```
 comfyui-gateway/
-├── SKILL.md
-├── package.json
-├── tsconfig.json
-├── .env.example
-├── src/
-│   ├── api/
-│   │   ├── server.ts          # Fastify setup + plugins
-│   │   ├── routes/
-│   │   │   ├── health.ts      # GET /health, /capabilities
-│   │   │   ├── workflows.ts   # CRUD /workflows
-│   │   │   ├── jobs.ts        # CRUD /jobs
-│   │   │   └── outputs.ts     # GET /outputs
-│   │   ├── middleware/
-│   │   │   └── error-handler.ts
-│   │   └── plugins/
-│   │       ├── auth.ts        # API key + JWT
-│   │       ├── rate-limit.ts
-│   │       └── cors.ts
-│   ├── worker/
-│   │   └── processor.ts       # Job processor
-│   ├── comfyui/
-│   │   └── client.ts          # ComfyUI HTTP + WS client
-│   ├── storage/
-│   │   ├── index.ts           # Provider factory
-│   │   ├── local.ts           # Local filesystem
-│   │   └── s3.ts              # S3-compatible
-│   ├── workflows/
-│   │   └── manager.ts         # Template CRUD + rendering
-│   ├── cache/
-│   │   └── index.ts           # Hash-based cache
-│   ├── notifications/
-│   │   └── webhook.ts         # HMAC-signed callbacks
-│   ├── auth/
-│   │   └── index.ts           # Key/JWT validation + roles
-│   ├── db/
-│   │   ├── index.ts           # DB factory (SQLite/Postgres)
-│   │   └── migrations.ts      # Schema creation
-│   ├── cli/
-│   │   └── index.ts           # CLI commands
-│   ├── utils/
-│   │   ├── config.ts          # Env loading + validation
-│   │   ├── errors.ts          # Error classes
-│   │   ├── logger.ts          # Pino setup
-│   │   └── hash.ts            # SHA-256 hashing
-│   └── index.ts               # Main entrypoint
-├── config/
-│   └── workflows/             # Bundled workflow templates
-│       ├── sdxl_realism_v1.json
-│       ├── sdxl_realism_v1.schema.json
-│       ├── sprite_transparent_bg.json
-│       ├── sprite_transparent_bg.schema.json
-│       ├── icon_512.json
-│       └── icon_512.schema.json
-├── data/
-│   ├── outputs/               # Generated images
-│   ├── workflows/             # User-added wor
+â”œâ”€â”€ SKILL.md
+â”œâ”€â”€ package.json
+â”œâ”€â”€ tsconfig.json
+â”œâ”€â”€ .env.example
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ api/
+â”‚   â”‚   â”œâ”€â”€ server.ts          # Fastify setup + plugins
+â”‚   â”‚   â”œâ”€â”€ routes/
+â”‚   â”‚   â”‚   â”œâ”€â”€ health.ts      # GET /health, /capabilities
+â”‚   â”‚   â”‚   â”œâ”€â”€ workflows.ts   # CRUD /workflows
+â”‚   â”‚   â”‚   â”œâ”€â”€ jobs.ts        # CRUD /jobs
+â”‚   â”‚   â”‚   â””â”€â”€ outputs.ts     # GET /outputs
+â”‚   â”‚   â”œâ”€â”€ middleware/
+â”‚   â”‚   â”‚   â””â”€â”€ error-handler.ts
+â”‚   â”‚   â””â”€â”€ plugins/
+â”‚   â”‚       â”œâ”€â”€ auth.ts        # API key + JWT
+â”‚   â”‚       â”œâ”€â”€ rate-limit.ts
+â”‚   â”‚       â””â”€â”€ cors.ts
+â”‚   â”œâ”€â”€ worker/
+â”‚   â”‚   â””â”€â”€ processor.ts       # Job processor
+â”‚   â”œâ”€â”€ comfyui/
+â”‚   â”‚   â””â”€â”€ client.ts          # ComfyUI HTTP + WS client
+â”‚   â”œâ”€â”€ storage/
+â”‚   â”‚   â”œâ”€â”€ index.ts           # Provider factory
+â”‚   â”‚   â”œâ”€â”€ local.ts           # Local filesystem
+â”‚   â”‚   â””â”€â”€ s3.ts              # S3-compatible
+â”‚   â”œâ”€â”€ workflows/
+â”‚   â”‚   â””â”€â”€ manager.ts         # Template CRUD + rendering
+â”‚   â”œâ”€â”€ cache/
+â”‚   â”‚   â””â”€â”€ index.ts           # Hash-based cache
+â”‚   â”œâ”€â”€ notifications/
+â”‚   â”‚   â””â”€â”€ webhook.ts         # HMAC-signed callbacks
+â”‚   â”œâ”€â”€ auth/
+â”‚   â”‚   â””â”€â”€ index.ts           # Key/JWT validation + roles
+â”‚   â”œâ”€â”€ db/
+â”‚   â”‚   â”œâ”€â”€ index.ts           # DB factory (SQLite/Postgres)
+â”‚   â”‚   â””â”€â”€ migrations.ts      # Schema creation
+â”‚   â”œâ”€â”€ cli/
+â”‚   â”‚   â””â”€â”€ index.ts           # CLI commands
+â”‚   â”œâ”€â”€ utils/
+â”‚   â”‚   â”œâ”€â”€ config.ts          # Env loading + validation
+â”‚   â”‚   â”œâ”€â”€ errors.ts          # Error classes
+â”‚   â”‚   â”œâ”€â”€ logger.ts          # Pino setup
+â”‚   â”‚   â””â”€â”€ hash.ts            # SHA-256 hashing
+â”‚   â””â”€â”€ index.ts               # Main entrypoint
+â”œâ”€â”€ config/
+â”‚   â””â”€â”€ workflows/             # Bundled workflow templates
+â”‚       â”œâ”€â”€ sdxl_realism_v1.json
+â”‚       â”œâ”€â”€ sdxl_realism_v1.schema.json
+â”‚       â”œâ”€â”€ sprite_transparent_bg.json
+â”‚       â”œâ”€â”€ sprite_transparent_bg.schema.json
+â”‚       â”œâ”€â”€ icon_512.json
+â”‚       â””â”€â”€ icon_512.schema.json
+â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ outputs/               # Generated images
+â”‚   â”œâ”€â”€ workflows/             # User-added wor
 
 ## Best Practices
 
@@ -426,3 +426,4 @@ comfyui-gateway/
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

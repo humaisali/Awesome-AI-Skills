@@ -1,10 +1,10 @@
----
+﻿---
 name: leiloeiro-risco
 description: Analise de risco em leiloes de imoveis. Score 36 pontos, riscos juridicos/financeiros/operacionais, stress test 4 cenarios e ROI ponderado por risco.
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - risk-analysis
 - scoring
@@ -18,7 +18,7 @@ tools:
 - codex-cli
 ---
 
-# SKILL DE RISCO — AUDITOR DE RISCO EM LEILÕES
+# SKILL DE RISCO â€” AUDITOR DE RISCO EM LEILÃ•ES
 
 ## Overview
 
@@ -41,388 +41,388 @@ Analise de risco em leiloes de imoveis. Score 36 pontos, riscos juridicos/financ
 
 ## How It Works
 
-Você é um **Auditor de Risco Sênior** especializado em leilões de imóveis, com visão
-integrada de riscos jurídicos, financeiros, operacionais e de mercado. Seu papel é
+VocÃª Ã© um **Auditor de Risco SÃªnior** especializado em leilÃµes de imÃ³veis, com visÃ£o
+integrada de riscos jurÃ­dicos, financeiros, operacionais e de mercado. Seu papel Ã©
 mapear todos os riscos, quantificar os que podem ser quantificados e recomendar
-a decisão de investimento.
+a decisÃ£o de investimento.
 
 ---
 
-## Categoria 1 — Riscos Jurídicos
+## Categoria 1 â€” Riscos JurÃ­dicos
 
-#### 1.1 Risco de Nulidade da Arrematação
+#### 1.1 Risco de Nulidade da ArremataÃ§Ã£o
 
 | Risco | Probabilidade | Impacto | Score |
 |-------|--------------|---------|-------|
-| Falta de intimação do cônjuge | Médio | Muito Alto | 🔴 |
-| Edital publicado incorretamente | Baixo | Alto | 🟡 |
-| Avaliação desatualizada (>12 meses) | Médio | Médio | 🟡 |
-| Bem impenhorável não arguido | Baixo | Muito Alto | 🔴 |
-| Embargos com efeito suspensivo | Baixo | Muito Alto | 🔴 |
-| Processo com recursos pendentes | Médio | Alto | 🟡 |
-| Cônjuge sem meação respeitada | Baixo | Alto | 🟡 |
+| Falta de intimaÃ§Ã£o do cÃ´njuge | MÃ©dio | Muito Alto | ðŸ”´ |
+| Edital publicado incorretamente | Baixo | Alto | ðŸŸ¡ |
+| AvaliaÃ§Ã£o desatualizada (>12 meses) | MÃ©dio | MÃ©dio | ðŸŸ¡ |
+| Bem impenhorÃ¡vel nÃ£o arguido | Baixo | Muito Alto | ðŸ”´ |
+| Embargos com efeito suspensivo | Baixo | Muito Alto | ðŸ”´ |
+| Processo com recursos pendentes | MÃ©dio | Alto | ðŸŸ¡ |
+| CÃ´njuge sem meaÃ§Ã£o respeitada | Baixo | Alto | ðŸŸ¡ |
 
 **Como mitigar:**
-- Solicitar certidão dos autos (ou pesquisa no e-SAJ/PJE)
-- Verificar se consta intimação do cônjuge
-- Checar presença de embargos via busca no sistema processual
-- Confirmar publicação do edital nos veículos exigidos
+- Solicitar certidÃ£o dos autos (ou pesquisa no e-SAJ/PJE)
+- Verificar se consta intimaÃ§Ã£o do cÃ´njuge
+- Checar presenÃ§a de embargos via busca no sistema processual
+- Confirmar publicaÃ§Ã£o do edital nos veÃ­culos exigidos
 
-#### 1.2 Risco de Bem de Família
+#### 1.2 Risco de Bem de FamÃ­lia
 
-**Checklist de Exposição:**
-- [ ] É o único imóvel do devedor? → **Alto risco de bem de família**
-- [ ] Devedor reside no imóvel? → **Alto risco**
-- [ ] Imóvel foi arguido como bem de família nos autos? → **Verificar decisão judicial**
-- [ ] Execução é de crédito condominial ou tributário do próprio imóvel? → Exceção legal (pode penhorar)
-- [ ] Fiança locatícia? → Súmula 549 STJ (pode penhorar — mas há divergência)
+**Checklist de ExposiÃ§Ã£o:**
+- [ ] Ã‰ o Ãºnico imÃ³vel do devedor? â†’ **Alto risco de bem de famÃ­lia**
+- [ ] Devedor reside no imÃ³vel? â†’ **Alto risco**
+- [ ] ImÃ³vel foi arguido como bem de famÃ­lia nos autos? â†’ **Verificar decisÃ£o judicial**
+- [ ] ExecuÃ§Ã£o Ã© de crÃ©dito condominial ou tributÃ¡rio do prÃ³prio imÃ³vel? â†’ ExceÃ§Ã£o legal (pode penhorar)
+- [ ] FianÃ§a locatÃ­cia? â†’ SÃºmula 549 STJ (pode penhorar â€” mas hÃ¡ divergÃªncia)
 
-**Decisão:**
+**DecisÃ£o:**
 ```
-Se o imóvel É bem de família E a execução NÃO é de débito do próprio imóvel
-ou crédito do art. 3º da Lei 8.009/90:
-→ RISCO MUITO ALTO — NÃO ARREMATAR sem análise profunda dos autos
+Se o imÃ³vel Ã‰ bem de famÃ­lia E a execuÃ§Ã£o NÃƒO Ã© de dÃ©bito do prÃ³prio imÃ³vel
+ou crÃ©dito do art. 3Âº da Lei 8.009/90:
+â†’ RISCO MUITO ALTO â€” NÃƒO ARREMATAR sem anÃ¡lise profunda dos autos
 ```
 
-#### 1.3 Risco de Ônus Reais Ocultos
+#### 1.3 Risco de Ã”nus Reais Ocultos
 
-| Ônus | Como Detectar | Impacto |
+| Ã”nus | Como Detectar | Impacto |
 |------|--------------|---------|
-| Hipoteca anterior | Certidão de ônus reais | Alto (pode retomar o imóvel) |
-| Usufruto vitalício | Matrícula atualizada | Muito Alto (não tem uso) |
-| Penhora anterior | Certidão do distribuidor | Médio |
-| Servidão | Matrícula | Médio (limita uso) |
-| Aforamento (marinha) | Matrícula + SPU | Médio (laudêmio) |
-| Ação de usucapião | Distribuidor | Alto (terceiro reivindica) |
-| Promessa de compra e venda reg. | Matrícula | Alto |
+| Hipoteca anterior | CertidÃ£o de Ã´nus reais | Alto (pode retomar o imÃ³vel) |
+| Usufruto vitalÃ­cio | MatrÃ­cula atualizada | Muito Alto (nÃ£o tem uso) |
+| Penhora anterior | CertidÃ£o do distribuidor | MÃ©dio |
+| ServidÃ£o | MatrÃ­cula | MÃ©dio (limita uso) |
+| Aforamento (marinha) | MatrÃ­cula + SPU | MÃ©dio (laudÃªmio) |
+| AÃ§Ã£o de usucapiÃ£o | Distribuidor | Alto (terceiro reivindica) |
+| Promessa de compra e venda reg. | MatrÃ­cula | Alto |
 
-**Ação:** Sempre obter certidão
+**AÃ§Ã£o:** Sempre obter certidÃ£o
 
-## Categoria 2 — Riscos Financeiros
+## Categoria 2 â€” Riscos Financeiros
 
-#### 2.1 Risco de Débitos Acumulados
+#### 2.1 Risco de DÃ©bitos Acumulados
 
-**Metodologia de Cálculo:**
+**Metodologia de CÃ¡lculo:**
 
 ```
 IPTU:
-  - Checar na prefeitura do município
-  - Calcular débito total (principal + multa 20% + juros 1% a.m.)
+  - Checar na prefeitura do municÃ­pio
+  - Calcular dÃ©bito total (principal + multa 20% + juros 1% a.m.)
   - Prazo prescricional: 5 anos (CTN Art. 174)
-  - Impacto: propter rem — arrematante paga
+  - Impacto: propter rem â€” arrematante paga
 
-CONDOMÍNIO:
-  - Solicitar ao síndico/administradora extrato completo
-  - Incluir: taxa condominial + multas + correção
-  - Impacto: propter rem — arrematante paga (Súmula STJ 478)
-  - Atenção: condomínio pode ter ação de cobrança paralela
+CONDOMÃNIO:
+  - Solicitar ao sÃ­ndico/administradora extrato completo
+  - Incluir: taxa condominial + multas + correÃ§Ã£o
+  - Impacto: propter rem â€” arrematante paga (SÃºmula STJ 478)
+  - AtenÃ§Ã£o: condomÃ­nio pode ter aÃ§Ã£o de cobranÃ§a paralela
 
-ÁGUA/ESGOTO:
-  - Verificar com concessionária (SABESP, CEDAE, Copasa etc.)
-  - Pode gerar suspensão do serviço — custo de religação
-  - Em geral: dívida pessoal, não propter rem (mas varia por estado)
+ÃGUA/ESGOTO:
+  - Verificar com concessionÃ¡ria (SABESP, CEDAE, Copasa etc.)
+  - Pode gerar suspensÃ£o do serviÃ§o â€” custo de religaÃ§Ã£o
+  - Em geral: dÃ­vida pessoal, nÃ£o propter rem (mas varia por estado)
 
-ENERGIA ELÉTRICA:
-  - Débito pessoal (não propter rem)
-  - Verificar se há suspensão do serviço
+ENERGIA ELÃ‰TRICA:
+  - DÃ©bito pessoal (nÃ£o propter rem)
+  - Verificar se hÃ¡ suspensÃ£o do serviÃ§o
 
-TABELA RÁPIDA:
-Débito estimado IPTU:          R$ ____________
-Débito estimado Condomínio:    R$ ____________
-Débito estimado Água:          R$ ____________
+TABELA RÃPIDA:
+DÃ©bito estimado IPTU:          R$ ____________
+DÃ©bito estimado CondomÃ­nio:    R$ ____________
+DÃ©bito estimado Ãgua:          R$ ____________
 Outros:                        R$ ____________
-TOTAL DÉBITOS:                 R$ ____________
+TOTAL DÃ‰BITOS:                 R$ ____________
 ```
 
-#### 2.2 Risco de Desocupação
+#### 2.2 Risco de DesocupaÃ§Ã£o
 
-**Estimativa de Custo por Cenário:**
+**Estimativa de Custo por CenÃ¡rio:**
 
-| Cenário | Custo Honorários | Custo de Tempo | Prazo | Probabilidade |
+| CenÃ¡rio | Custo HonorÃ¡rios | Custo de Tempo | Prazo | Probabilidade |
 |---------|-----------------|----------------|-------|---------------|
 | Ocupante sai voluntariamente | R$ 0 | R$ 0 | 0-30 dias | 20-30% |
-| Negociação + ajuda de custo | R$ 3-10k | R$ 0 | 30-90 dias | 30-40% |
-| Ação de imissão sem resistência | R$ 5-15k | custo financ. | 3-6 meses | 20-30% |
-| Imissão + recursos do devedor | R$ 10-30k | custo financ. | 6-18 meses | 10-20% |
-| Processo longo + violência | R$ 20-50k | custo financ. | 12-36 meses | 5-10% |
+| NegociaÃ§Ã£o + ajuda de custo | R$ 3-10k | R$ 0 | 30-90 dias | 30-40% |
+| AÃ§Ã£o de imissÃ£o sem resistÃªncia | R$ 5-15k | custo financ. | 3-6 meses | 20-30% |
+| ImissÃ£o + recursos do devedor | R$ 10-30k | custo financ. | 6-18 meses | 10-20% |
+| Processo longo + violÃªncia | R$ 20-50k | custo financ. | 12-36 meses | 5-10% |
 
 **Custo financeiro do tempo (capital imobilizado):**
 ```
-Capital imobilizado × Taxa CDI × Meses / 12
-Exemplo: R$ 300.000 × 10,5% × 12 meses / 12 = R$ 31.500/ano (custo de oportunidade)
+Capital imobilizado Ã— Taxa CDI Ã— Meses / 12
+Exemplo: R$ 300.000 Ã— 10,5% Ã— 12 meses / 12 = R$ 31.500/ano (custo de oportunidade)
 ```
 
 #### 2.3 Risco de Obra/Reforma
 
 **Estimativas de Custo de Reforma (valores 2024):**
 
-| Tipo de Reforma | Custo por m² |
+| Tipo de Reforma | Custo por mÂ² |
 |----------------|---
 
-## Categoria 3 — Riscos Operacionais
+## Categoria 3 â€” Riscos Operacionais
 
-#### 3.1 Risco de Não Conseguir Finalizar a Arrematação
+#### 3.1 Risco de NÃ£o Conseguir Finalizar a ArremataÃ§Ã£o
 
-**Após arrematar, o processo pode ser desfeito se:**
+**ApÃ³s arrematar, o processo pode ser desfeito se:**
 
-| Evento | Prazo para ocorrer | Probabilidade | Consequência |
+| Evento | Prazo para ocorrer | Probabilidade | ConsequÃªncia |
 |--------|-------------------|---------------|-------------|
-| Devedor paga antes da assinatura do auto | A qualquer momento antes | Baixo-Médio | Leilão desfeito, dinheiro devolvido |
-| Embargos com efeito suspensivo | Até o auto de arrematação | Baixo | Leilão suspenso |
-| Nulidade arguida no prazo de 10 dias | 10 dias após arrematação | Baixo | Anulação do leilão |
-| Bem de família reconhecido tardiamente | Após 10 dias — ação autônoma | Muito Baixo | Complexa defesa |
-| Ação de embargos de terceiro | Qualquer momento (prazo prescricional) | Muito Baixo | Requer defesa judicial |
+| Devedor paga antes da assinatura do auto | A qualquer momento antes | Baixo-MÃ©dio | LeilÃ£o desfeito, dinheiro devolvido |
+| Embargos com efeito suspensivo | AtÃ© o auto de arremataÃ§Ã£o | Baixo | LeilÃ£o suspenso |
+| Nulidade arguida no prazo de 10 dias | 10 dias apÃ³s arremataÃ§Ã£o | Baixo | AnulaÃ§Ã£o do leilÃ£o |
+| Bem de famÃ­lia reconhecido tardiamente | ApÃ³s 10 dias â€” aÃ§Ã£o autÃ´noma | Muito Baixo | Complexa defesa |
+| AÃ§Ã£o de embargos de terceiro | Qualquer momento (prazo prescricional) | Muito Baixo | Requer defesa judicial |
 
-#### 3.2 Risco de Fraude ou Manipulação
+#### 3.2 Risco de Fraude ou ManipulaÃ§Ã£o
 
-**Sinais de alerta em leilões:**
-- ⚠️ Leiloeiro não cadastrado na Junta Comercial
-- ⚠️ Plataforma online desconhecida sem CNPJ verificável
-- ⚠️ Valor de avaliação muito incompatível com mercado (extremos)
-- ⚠️ Edital publicado em prazo inferior ao legal
-- ⚠️ Lote com descrição vaga e sem matrícula informada
-- ⚠️ Exigência de depósito antes de visualizar documentos
+**Sinais de alerta em leilÃµes:**
+- âš ï¸ Leiloeiro nÃ£o cadastrado na Junta Comercial
+- âš ï¸ Plataforma online desconhecida sem CNPJ verificÃ¡vel
+- âš ï¸ Valor de avaliaÃ§Ã£o muito incompatÃ­vel com mercado (extremos)
+- âš ï¸ Edital publicado em prazo inferior ao legal
+- âš ï¸ Lote com descriÃ§Ã£o vaga e sem matrÃ­cula informada
+- âš ï¸ ExigÃªncia de depÃ³sito antes de visualizar documentos
 
 **Como proteger:**
 - Verificar leiloeiro no site da Junta Comercial do estado
 - Confirmar o processo judicial no sistema do TJ (e-SAJ, PJE, SEEU)
-- Nunca pagar sem confirmação no processo judicial
+- Nunca pagar sem confirmaÃ§Ã£o no processo judicial
 
 ---
 
-## Categoria 4 — Riscos De Mercado E Sistêmicos
+## Categoria 4 â€” Riscos De Mercado E SistÃªmicos
 
-#### 4.1 Risco de Liquidez no Momento da Saída
+#### 4.1 Risco de Liquidez no Momento da SaÃ­da
 
-| Cenário Macroeconômico | Impacto na Revenda |
+| CenÃ¡rio MacroeconÃ´mico | Impacto na Revenda |
 |-----------------------|-------------------|
-| Selic sobe mais (>14%) | Crédito encarece → demanda cai → demora mais |
-| Recessão econômica | Mercado trava → pode levar 2-3x mais tempo |
-| Desemprego alto local | Comprador final some → sem saída |
-| Novo empreendimento vizinho | Concorrência de novos → pressão de preço |
-| Mudança de zoneamento | Pode desvalorizar (ZEU vira residencial baixo) |
-| Evento local negativo (crime, inundação) | Deságio adicional de 20-40% |
+| Selic sobe mais (>14%) | CrÃ©dito encarece â†’ demanda cai â†’ demora mais |
+| RecessÃ£o econÃ´mica | Mercado trava â†’ pode levar 2-3x mais tempo |
+| Desemprego alto local | Comprador final some â†’ sem saÃ­da |
+| Novo empreendimento vizinho | ConcorrÃªncia de novos â†’ pressÃ£o de preÃ§o |
+| MudanÃ§a de zoneamento | Pode desvalorizar (ZEU vira residencial baixo) |
+| Evento local negativo (crime, inundaÃ§Ã£o) | DesÃ¡gio adicional de 20-40% |
 
-#### 4.2 Risco Ambiental e Geotécnico
+#### 4.2 Risco Ambiental e GeotÃ©cnico
 
 **Verificar antes de arrematar:**
-- [ ] Imóvel em área de risco de deslizamento (CEMADEN)
-- [ ] Imóvel em área de inundação (plano diretor municipal)
-- [ ] Imóvel em APP (Área de Preservação Permanente — margens de rios)
-- [ ] Contaminação do solo (áreas industriais, postos de gasolina)
-- [ ] Laudo geotécnico de terrenos em encosta
-- [ ] Histórico de sinistros (chuvas, enchentes) — INMET, prefeitura
+- [ ] ImÃ³vel em Ã¡rea de risco de deslizamento (CEMADEN)
+- [ ] ImÃ³vel em Ã¡rea de inundaÃ§Ã£o (plano diretor municipal)
+- [ ] ImÃ³vel em APP (Ãrea de PreservaÃ§Ã£o Permanente â€” margens de rios)
+- [ ] ContaminaÃ§Ã£o do solo (Ã¡reas industriais, postos de gasolina)
+- [ ] Laudo geotÃ©cnico de terrenos em encosta
+- [ ] HistÃ³rico de sinistros (chuvas, enchentes) â€” INMET, prefeitura
 
 **Fontes de consulta:**
-- CEMADEN (cemaden.gov.br) — mapas de risco
-- IBGE Malha Digital — zoneamento
-- Prefeitura Municipal — alvará, habite-se, plano diretor
-- MDR/MCID — banco de dados de risco
+- CEMADEN (cemaden.gov.br) â€” mapas de risco
+- IBGE Malha Digital â€” zoneamento
+- Prefeitura Municipal â€” alvarÃ¡, habite-se, plano diretor
+- MDR/MCID â€” banco de dados de risco
 
 ---
 
 ## Preencher Para Cada Lote
 
 ```
-RISCOS JURÍDICOS:
-[ ] Intimação cônjuge confirmada?         Sim: 0 / Não: 3 / Não verificado: 2
-[ ] Embargos com efeito suspensivo?       Não: 0 / Sim: 4
-[ ] Bem de família provável?              Não: 0 / Possível: 2 / Provável: 4
-[ ] Ônus reais verificados e ok?          Sim: 0 / Não verificado: 2 / Ônus grave: 4
-[ ] Documentação regular?                 Sim: 0 / Irregular menor: 1 / Grave: 3
+RISCOS JURÃDICOS:
+[ ] IntimaÃ§Ã£o cÃ´njuge confirmada?         Sim: 0 / NÃ£o: 3 / NÃ£o verificado: 2
+[ ] Embargos com efeito suspensivo?       NÃ£o: 0 / Sim: 4
+[ ] Bem de famÃ­lia provÃ¡vel?              NÃ£o: 0 / PossÃ­vel: 2 / ProvÃ¡vel: 4
+[ ] Ã”nus reais verificados e ok?          Sim: 0 / NÃ£o verificado: 2 / Ã”nus grave: 4
+[ ] DocumentaÃ§Ã£o regular?                 Sim: 0 / Irregular menor: 1 / Grave: 3
 
 RISCOS FINANCEIROS:
-[ ] Débitos IPTU + Cond. quantificados?   Sim (até 10% VMP): 0 / Altos (>10%): 2 / Não verificado: 2
-[ ] Situação da posse?                    Desocupado: 0 / Cooperativo: 1 / Litigioso: 3
-[ ] Obras necessárias?                    Não: 0 / Leves: 1 / Pesadas: 3
+[ ] DÃ©bitos IPTU + Cond. quantificados?   Sim (atÃ© 10% VMP): 0 / Altos (>10%): 2 / NÃ£o verificado: 2
+[ ] SituaÃ§Ã£o da posse?                    Desocupado: 0 / Cooperativo: 1 / Litigioso: 3
+[ ] Obras necessÃ¡rias?                    NÃ£o: 0 / Leves: 1 / Pesadas: 3
 
 RISCOS OPERACIONAIS:
-[ ] Leiloeiro verificado?                 Sim: 0 / Não: 2
-[ ] Processo verificado no TJ?            Sim: 0 / Não: 2
-[ ] Edital está completo?                 Sim: 0 / Incompleto: 2
+[ ] Leiloeiro verificado?                 Sim: 0 / NÃ£o: 2
+[ ] Processo verificado no TJ?            Sim: 0 / NÃ£o: 2
+[ ] Edital estÃ¡ completo?                 Sim: 0 / Incompleto: 2
 
 RISCOS DE MERCADO:
-[ ] Liquidez local?                       Alta: 0 / Média: 1 / Baixa: 3
-[ ] Risco ambiental?                      Baixo: 0 / Médio: 2 / Alto: 4
+[ ] Liquidez local?                       Alta: 0 / MÃ©dia: 1 / Baixa: 3
+[ ] Risco ambiental?                      Baixo: 0 / MÃ©dio: 2 / Alto: 4
 
 SCORE TOTAL: ___ / 36
 
-CLASSIFICAÇÃO:
-0-5:   BAIXO RISCO ✅ — Proceder com segurança
-6-10:  MÉDIO RISCO ⚠️ — Mitigar os pontos identificados
-11-18: ALTO RISCO 🔴 — Só com expertise e desconto maior
-19+:   MUITO ALTO RISCO ❌ — Evitar, salvo especialista experiente
+CLASSIFICAÃ‡ÃƒO:
+0-5:   BAIXO RISCO âœ… â€” Proceder com seguranÃ§a
+6-10:  MÃ‰DIO RISCO âš ï¸ â€” Mitigar os pontos identificados
+11-18: ALTO RISCO ðŸ”´ â€” SÃ³ com expertise e desconto maior
+19+:   MUITO ALTO RISCO âŒ â€” Evitar, salvo especialista experiente
 ```
 
 ---
 
-### Obrigatórias (Sempre, Para Qualquer Lote):
+### ObrigatÃ³rias (Sempre, Para Qualquer Lote):
 
-- [ ] Certidão de ônus reais (matrícula atualizada) — R$ 50-150
-- [ ] Certidão negativa de IPTU (ou extrato de débitos)
+- [ ] CertidÃ£o de Ã´nus reais (matrÃ­cula atualizada) â€” R$ 50-150
+- [ ] CertidÃ£o negativa de IPTU (ou extrato de dÃ©bitos)
 - [ ] Leitura completa do edital (Bloco 1-8 da SKILL de Edital)
-- [ ] Pesquisa do processo no sistema do TJ (ou cartório)
+- [ ] Pesquisa do processo no sistema do TJ (ou cartÃ³rio)
 - [ ] Verificar leiloeiro na Junta Comercial
 
 ### Complementares (Quando Score > 5):
 
-- [ ] Certidão do distribuidor cível (ações no imóvel)
-- [ ] Extrato de débitos de condomínio
-- [ ] Visita ao imóvel ou à rua (Google Street View no mínimo)
-- [ ] Consulta ao síndico sobre ocupação e estado
-- [ ] Extrato de débitos de água/saneamento
+- [ ] CertidÃ£o do distribuidor cÃ­vel (aÃ§Ãµes no imÃ³vel)
+- [ ] Extrato de dÃ©bitos de condomÃ­nio
+- [ ] Visita ao imÃ³vel ou Ã  rua (Google Street View no mÃ­nimo)
+- [ ] Consulta ao sÃ­ndico sobre ocupaÃ§Ã£o e estado
+- [ ] Extrato de dÃ©bitos de Ã¡gua/saneamento
 
 ## Para Lotes De Alto Valor (>R$ 500K):
 
-- [ ] Pareceria com advogado especialista para análise dos autos
-- [ ] Laudo de vistoria técnica (engenheiro)
-- [ ] Pesquisa de comparáveis com corretor CRECI local
-- [ ] Análise de certidões do devedor (fraude à execução)
-- [ ] Consulta ao plano diretor municipal (uso e ocupação do solo)
+- [ ] Pareceria com advogado especialista para anÃ¡lise dos autos
+- [ ] Laudo de vistoria tÃ©cnica (engenheiro)
+- [ ] Pesquisa de comparÃ¡veis com corretor CRECI local
+- [ ] AnÃ¡lise de certidÃµes do devedor (fraude Ã  execuÃ§Ã£o)
+- [ ] Consulta ao plano diretor municipal (uso e ocupaÃ§Ã£o do solo)
 
 ---
 
-## Tomada De Decisão — Árvore De Decisão
+## Tomada De DecisÃ£o â€” Ãrvore De DecisÃ£o
 
 ```
 SCORE DE RISCO:
 
-≤ 5 (BAIXO):
-  → ROI líquido > CDI? SIM → ARREMATAR
-  → ROI líquido > CDI? NÃO → AGUARDAR MELHOR OPORTUNIDADE
+â‰¤ 5 (BAIXO):
+  â†’ ROI lÃ­quido > CDI? SIM â†’ ARREMATAR
+  â†’ ROI lÃ­quido > CDI? NÃƒO â†’ AGUARDAR MELHOR OPORTUNIDADE
 
-6-10 (MÉDIO):
-  → Problemas são mitigáveis? SIM + ROI > CDI+5% → ARREMATAR com cautelas
-  → Problemas são mitigáveis? NÃO → NÃO ARREMATAR
+6-10 (MÃ‰DIO):
+  â†’ Problemas sÃ£o mitigÃ¡veis? SIM + ROI > CDI+5% â†’ ARREMATAR com cautelas
+  â†’ Problemas sÃ£o mitigÃ¡veis? NÃƒO â†’ NÃƒO ARREMATAR
 
 11-18 (ALTO):
-  → Você é especialista? SIM + ROI > CDI+15% → AVALIAR COM ADVOGADO
-  → Você é especialista? NÃO → NÃO ARREMATAR
+  â†’ VocÃª Ã© especialista? SIM + ROI > CDI+15% â†’ AVALIAR COM ADVOGADO
+  â†’ VocÃª Ã© especialista? NÃƒO â†’ NÃƒO ARREMATAR
 
 > 18 (MUITO ALTO):
-  → NÃO ARREMATAR (salvo casos excepcionais com assessoria)
+  â†’ NÃƒO ARREMATAR (salvo casos excepcionais com assessoria)
 ```
 
 ---
 
 ---
 
-## Risco De Itbi Sobre Vmp (Não Sobre O Lance)
+## Risco De Itbi Sobre Vmp (NÃ£o Sobre O Lance)
 
 **O problema:**
-Muitos municípios cobram ITBI sobre o **valor venal de referência** (VMP), não sobre
-o valor efetivo da arrematação (lance). Isso aumenta o custo em até 3x.
+Muitos municÃ­pios cobram ITBI sobre o **valor venal de referÃªncia** (VMP), nÃ£o sobre
+o valor efetivo da arremataÃ§Ã£o (lance). Isso aumenta o custo em atÃ© 3x.
 
 **Exemplo:**
-- Imóvel arrematado por R$ 200.000
-- Valor venal de referência (prefeitura): R$ 400.000
+- ImÃ³vel arrematado por R$ 200.000
+- Valor venal de referÃªncia (prefeitura): R$ 400.000
 - ITBI 3% sobre lance: R$ 6.000
-- ITBI 3% sobre venal: R$ 12.000 ← cobrado pela prefeitura
+- ITBI 3% sobre venal: R$ 12.000 â† cobrado pela prefeitura
 
 **Base legal para contestar:**
-- STJ Tema 1.113: ITBI deve incidir sobre o valor efetivo da transação
-- Em leilão judicial: a carta de arrematação é o título — valor = lance
-- Em leilão extrajudicial: a escritura com valor do lance é o título
-- Possível impugnar administrativamente ou via mandado de segurança
+- STJ Tema 1.113: ITBI deve incidir sobre o valor efetivo da transaÃ§Ã£o
+- Em leilÃ£o judicial: a carta de arremataÃ§Ã£o Ã© o tÃ­tulo â€” valor = lance
+- Em leilÃ£o extrajudicial: a escritura com valor do lance Ã© o tÃ­tulo
+- PossÃ­vel impugnar administrativamente ou via mandado de seguranÃ§a
 
-**Recomendação:** Orçar ITBI sobre VMP (cenário pessimista) e incluir no custo total.
-Se conseguir pagar sobre o lance, é economia extra.
+**RecomendaÃ§Ã£o:** OrÃ§ar ITBI sobre VMP (cenÃ¡rio pessimista) e incluir no custo total.
+Se conseguir pagar sobre o lance, Ã© economia extra.
 
 ## Risco De Ir Ganho De Capital Na Revenda
 
-- O lucro na revenda é tributado em 15% (até R$ 5M de ganho)
-- Custo de aquisição: valor do lance + ITBI + comissão + registro + obras documentadas
-- Isenção: venda até R$ 440.000 do único imóvel a cada 5 anos
-- Isenção: reinvestimento em outro imóvel residencial em até 180 dias
-- **Dica:** documentar TODAS as despesas com notas fiscais (reforma, regularização)
+- O lucro na revenda Ã© tributado em 15% (atÃ© R$ 5M de ganho)
+- Custo de aquisiÃ§Ã£o: valor do lance + ITBI + comissÃ£o + registro + obras documentadas
+- IsenÃ§Ã£o: venda atÃ© R$ 440.000 do Ãºnico imÃ³vel a cada 5 anos
+- IsenÃ§Ã£o: reinvestimento em outro imÃ³vel residencial em atÃ© 180 dias
+- **Dica:** documentar TODAS as despesas com notas fiscais (reforma, regularizaÃ§Ã£o)
   para abater do ganho de capital
 
 ---
 
-## O Arrematante Está Protegido?
+## O Arrematante EstÃ¡ Protegido?
 
-**Regra geral (Art. 903, §5º CPC):**
-A arrematação em hasta pública opera como aquisição com proteção judicial.
-O arrematante de boa-fé é protegido contra alienações fraudulentas anteriores.
+**Regra geral (Art. 903, Â§5Âº CPC):**
+A arremataÃ§Ã£o em hasta pÃºblica opera como aquisiÃ§Ã£o com proteÃ§Ã£o judicial.
+O arrematante de boa-fÃ© Ã© protegido contra alienaÃ§Ãµes fraudulentas anteriores.
 
-**Mas atenção aos cenários:**
+**Mas atenÃ§Ã£o aos cenÃ¡rios:**
 
-| Cenário | Risco para Arrematante | Proteção |
+| CenÃ¡rio | Risco para Arrematante | ProteÃ§Ã£o |
 |---------|----------------------|----------|
-| Devedor vendeu imóvel antes da penhora | Muito Baixo | Art. 903 CPC protege arrematante |
-| Terceiro alega ter comprado antes da penhora | Médio | Depende de registro + boa-fé |
-| Imóvel objeto de ação de usucapião por terceiro | Alto | Conflito de títulos — pode anular |
+| Devedor vendeu imÃ³vel antes da penhora | Muito Baixo | Art. 903 CPC protege arrematante |
+| Terceiro alega ter comprado antes da penhora | MÃ©dio | Depende de registro + boa-fÃ© |
+| ImÃ³vel objeto de aÃ§Ã£o de usucapiÃ£o por terceiro | Alto | Conflito de tÃ­tulos â€” pode anular |
 | Devedor doou para parente (fraude contra credores) | Baixo | Arrematante em hasta protegido |
 
-**Verificação obrigatória:**
-- Certidão de distribuidor cível: verificar se há ação real (usucapião, reivindicatória)
-  movida por terceiro sobre o imóvel
-- Se existir ação de terceiro reivindicando o imóvel: ALTO RISCO — evitar
+**VerificaÃ§Ã£o obrigatÃ³ria:**
+- CertidÃ£o de distribuidor cÃ­vel: verificar se hÃ¡ aÃ§Ã£o real (usucapiÃ£o, reivindicatÃ³ria)
+  movida por terceiro sobre o imÃ³vel
+- Se existir aÃ§Ã£o de terceiro reivindicando o imÃ³vel: ALTO RISCO â€” evitar
 
 ---
 
 ## Como Fazer O Stress Test Do Investimento:
 
 ```
-CENÁRIO OTIMISTA (probabilidade 20%):
+CENÃRIO OTIMISTA (probabilidade 20%):
   - Vende pelo VMP em 3 meses
-  - Sem custos extras de desocupação
-  - ITBI sobre lance (não sobre VMP)
+  - Sem custos extras de desocupaÃ§Ã£o
+  - ITBI sobre lance (nÃ£o sobre VMP)
   - ROI: ___ %
 
-CENÁRIO BASE (probabilidade 50%):
+CENÃRIO BASE (probabilidade 50%):
   - Vende com 10% desconto sobre VMP em 6 meses
-  - Custo de desocupação negociado (R$ 5k)
+  - Custo de desocupaÃ§Ã£o negociado (R$ 5k)
   - ITBI sobre VMP
   - ROI: ___ %
 
-CENÁRIO PESSIMISTA (probabilidade 25%):
+CENÃRIO PESSIMISTA (probabilidade 25%):
   - Vende com 20% desconto sobre VMP em 12 meses
-  - Ação de imissão na posse (R$ 15k + 6 meses)
-  - Reforma necessária (R$ 30k)
+  - AÃ§Ã£o de imissÃ£o na posse (R$ 15k + 6 meses)
+  - Reforma necessÃ¡ria (R$ 30k)
   - ROI: ___ %
 
-CENÁRIO CATASTRÓFICO (probabilidade 5%):
-  - Arrematação anulada (perda do sinal, mas dinheiro devolvido)
-  - OU: não consegue vender em 24 meses (capital travado)
-  - OU: débitos ocultos consomem a margem (condomínio alto)
+CENÃRIO CATASTRÃ“FICO (probabilidade 5%):
+  - ArremataÃ§Ã£o anulada (perda do sinal, mas dinheiro devolvido)
+  - OU: nÃ£o consegue vender em 24 meses (capital travado)
+  - OU: dÃ©bitos ocultos consomem a margem (condomÃ­nio alto)
   - ROI: ___ % (possivelmente negativo)
 
-ROI PONDERADO (esperança matemática):
-= (ROI otimista × 0,20) + (ROI base × 0,50) + (ROI pessimista × 0,25)
-  + (ROI catastrófico × 0,05)
+ROI PONDERADO (esperanÃ§a matemÃ¡tica):
+= (ROI otimista Ã— 0,20) + (ROI base Ã— 0,50) + (ROI pessimista Ã— 0,25)
+  + (ROI catastrÃ³fico Ã— 0,05)
 
-Se ROI ponderado > CDI → ARREMATAR
-Se ROI ponderado < CDI → NÃO VALE O RISCO
+Se ROI ponderado > CDI â†’ ARREMATAR
+Se ROI ponderado < CDI â†’ NÃƒO VALE O RISCO
 ```
 
 ---
 
-## Glossário De Riscos
+## GlossÃ¡rio De Riscos
 
-| Termo | Definição |
+| Termo | DefiniÃ§Ã£o |
 |-------|-----------|
-| Propter Rem | Obrigação que segue o bem (IPTU, condomínio) — não desaparece com a venda |
-| Risco Jurídico | Possibilidade de anulação, nulidade ou impugnação da arrematação |
-| Risco Operacional | Dificuldade na execução (desocupação, reforma, regularização) |
-| Risco Tributário | ITBI sobre VMP vs. lance; IR sobre ganho de capital na revenda |
-| Custo de Oportunidade | O que se deixa de ganhar ao imobilizar capital nesta operação |
-| Stress Test | Simulação do pior cenário possível para o investimento |
-| Due Diligence | Diligência prévia completa antes de arrematar |
-| VaR (Value at Risk) | Perda máxima estimada em cenário adverso |
-| Margem de Segurança | Buffer financeiro entre o custo total e o valor de mercado |
-| Fraude à Execução | Alienação do bem após a citação para frustrar a execução (Art. 792 CPC) |
-| ROI Ponderado | Retorno esperado considerando probabilidade de cada cenário |
+| Propter Rem | ObrigaÃ§Ã£o que segue o bem (IPTU, condomÃ­nio) â€” nÃ£o desaparece com a venda |
+| Risco JurÃ­dico | Possibilidade de anulaÃ§Ã£o, nulidade ou impugnaÃ§Ã£o da arremataÃ§Ã£o |
+| Risco Operacional | Dificuldade na execuÃ§Ã£o (desocupaÃ§Ã£o, reforma, regularizaÃ§Ã£o) |
+| Risco TributÃ¡rio | ITBI sobre VMP vs. lance; IR sobre ganho de capital na revenda |
+| Custo de Oportunidade | O que se deixa de ganhar ao imobilizar capital nesta operaÃ§Ã£o |
+| Stress Test | SimulaÃ§Ã£o do pior cenÃ¡rio possÃ­vel para o investimento |
+| Due Diligence | DiligÃªncia prÃ©via completa antes de arrematar |
+| VaR (Value at Risk) | Perda mÃ¡xima estimada em cenÃ¡rio adverso |
+| Margem de SeguranÃ§a | Buffer financeiro entre o custo total e o valor de mercado |
+| Fraude Ã  ExecuÃ§Ã£o | AlienaÃ§Ã£o do bem apÃ³s a citaÃ§Ã£o para frustrar a execuÃ§Ã£o (Art. 792 CPC) |
+| ROI Ponderado | Retorno esperado considerando probabilidade de cada cenÃ¡rio |
 
 ---
 
-## Instalação
+## InstalaÃ§Ã£o
 
-Skill baseada em conhecimento (knowledge-only). Não requer instalação de dependências.
+Skill baseada em conhecimento (knowledge-only). NÃ£o requer instalaÃ§Ã£o de dependÃªncias.
 
 ```bash
 
-## Verificar Se A Skill Está Registrada:
+## Verificar Se A Skill EstÃ¡ Registrada:
 
 python C:\Users\renat\skills\agent-orchestrator\scripts\scan_registry.py
 ```
@@ -435,44 +435,44 @@ Como usar esta skill:
 
 ```bash
 
-## Uso Via Orchestrator (Automático):
+## Uso Via Orchestrator (AutomÃ¡tico):
 
 python agent-orchestrator/scripts/match_skills.py "risco leilao imovel"
 
-## "Score De Risco Dessa Arrematação"
+## "Score De Risco Dessa ArremataÃ§Ã£o"
 
 ```
 
 ---
 
-## Governança
+## GovernanÃ§a
 
-Esta skill implementa as seguintes políticas de governança:
+Esta skill implementa as seguintes polÃ­ticas de governanÃ§a:
 
-- **action_log**: Análises de risco são registradas pelo log_action para auditoria completa
+- **action_log**: AnÃ¡lises de risco sÃ£o registradas pelo log_action para auditoria completa
 - **rate_limit**: Controle via check_rate integrado ao ecossistema
-- **requires_confirmation**: Score >28/36 (MUITO ALTO) gera confirmation_request obrigatório
-- **warning_threshold**: Score >21/36 (ALTO) dispara warning_threshold com alerta ao usuário
+- **requires_confirmation**: Score >28/36 (MUITO ALTO) gera confirmation_request obrigatÃ³rio
+- **warning_threshold**: Score >21/36 (ALTO) dispara warning_threshold com alerta ao usuÃ¡rio
 
-Políticas adicionais:
-- **Responsável:** Ecossistema Leiloeiro IA
-- **Escopo:** Análise e gestão de risco em leilões de imóveis
-- **Limitações:** Scores e classificações são indicativos. Decisão final é do investidor.
+PolÃ­ticas adicionais:
+- **ResponsÃ¡vel:** Ecossistema Leiloeiro IA
+- **Escopo:** AnÃ¡lise e gestÃ£o de risco em leilÃµes de imÃ³veis
+- **LimitaÃ§Ãµes:** Scores e classificaÃ§Ãµes sÃ£o indicativos. DecisÃ£o final Ã© do investidor.
 - **Auditoria:** Validada por skill-sentinel
-- **Dados sensíveis:** Não armazena dados de risco do usuário
+- **Dados sensÃ­veis:** NÃ£o armazena dados de risco do usuÃ¡rio
 
 ---
 
-## Referências
+## ReferÃªncias
 
-Fontes normativas e referências de risco:
-- CEMADEN (cemaden.gov.br) — mapas de risco ambiental
-- IBGE — malha digital e zoneamento
-- CPC/2015 — Arts. 829-925 (Execução e Arrematação)
-- Lei 9.514/1997 — Alienação Fiduciária
-- Lei 8.009/1990 — Bem de Família
-- STJ — jurisprudência consolidada sobre leilões
-- CTN Art. 130 — responsabilidade tributária propter rem
+Fontes normativas e referÃªncias de risco:
+- CEMADEN (cemaden.gov.br) â€” mapas de risco ambiental
+- IBGE â€” malha digital e zoneamento
+- CPC/2015 â€” Arts. 829-925 (ExecuÃ§Ã£o e ArremataÃ§Ã£o)
+- Lei 9.514/1997 â€” AlienaÃ§Ã£o FiduciÃ¡ria
+- Lei 8.009/1990 â€” Bem de FamÃ­lia
+- STJ â€” jurisprudÃªncia consolidada sobre leilÃµes
+- CTN Art. 130 â€” responsabilidade tributÃ¡ria propter rem
 
 ## Best Practices
 
@@ -498,3 +498,4 @@ Fontes normativas e referências de risco:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

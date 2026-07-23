@@ -1,4 +1,4 @@
----
+﻿---
 name: sql-sentinel
 description: "Audit SQL for the cost & performance anti-patterns that burn warehouse credits. Scores warehouse health 0-100 and outputs a prioritized cost-reduction plan for BigQuery, Snowflake, Redshift, and Postgres."
 category: data
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: takeaseatventure/sql-sentinel
 source_type: community
 date_added: "2026-06-26"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [sql, bigquery, snowflake, redshift, postgres, data-warehouse, cost-optimization, performance, audit, finops]
 tools: [claude, cursor, codex, gemini]
 plugin:
@@ -26,7 +26,7 @@ license_source: https://github.com/humaisali
 
 ## Overview
 
-A static-analysis skill that audits SQL for the cost & performance anti-patterns that dominate warehouse bills — `SELECT *`, full-table scans, non-sargable predicates, Cartesian joins, the `NOT IN` NULL trap, and 15 more. It scores warehouse query health 0-100 (A-F) and outputs a prioritized cost-reduction plan, each finding with a `why`, a concrete `fix`, and an estimated savings.
+A static-analysis skill that audits SQL for the cost & performance anti-patterns that dominate warehouse bills â€” `SELECT *`, full-table scans, non-sargable predicates, Cartesian joins, the `NOT IN` NULL trap, and 15 more. It scores warehouse query health 0-100 (A-F) and outputs a prioritized cost-reduction plan, each finding with a `why`, a concrete `fix`, and an estimated savings.
 
 Built for analytics engineers (dbt, Looker), data platform teams running FinOps / "reduce cloud spend" initiatives, and anyone reviewing a SQL pull request before it hits production. Works across BigQuery, Snowflake, Redshift, and Postgres. Zero dependencies, MIT licensed.
 
@@ -86,14 +86,14 @@ The audit scores this 17/100 (grade F) and flags 7 findings:
 - HIGH: `SELECT *` forces full column scan (30-90% wasted bytes on wide tables)
 - HIGH: leading-wildcard `LIKE '%signup%'` defeats indexes
 - HIGH: `LOWER(event_name)` defeats indexes (non-sargable)
-- HIGH: `NOT IN (SELECT ...)` — NULL semantics hazard
+- HIGH: `NOT IN (SELECT ...)` â€” NULL semantics hazard
 - MEDIUM: `SELECT DISTINCT` dedup cost
 - MEDIUM: `ORDER BY` without `LIMIT` sorts the full result
 
 ### Example 2: A clean, sargable query
 
 ```sql
--- This scores 90+/100 (grade A) — no findings
+-- This scores 90+/100 (grade A) â€” no findings
 SELECT id, email, created_at
 FROM users
 WHERE created_at >= TIMESTAMP '2026-01-01'
@@ -107,7 +107,7 @@ LIMIT 100;
 | Rule | Severity | Catches |
 |---|---|---|
 | SQL001 | high | `SELECT *` full column scan |
-| SQL002 | critical | No `WHERE` → full table scan |
+| SQL002 | critical | No `WHERE` â†’ full table scan |
 | SQL003 | high | `LIKE '%term'` non-sargable |
 | SQL004 | high | Function on column kills index |
 | SQL005 | critical | `CROSS JOIN` / comma-join |
@@ -137,4 +137,5 @@ cd scripts && node test.js   # 26 tests, zero dependencies
 
 - This is a **static** analyzer. It finds anti-patterns in the *text* of SQL; it does not read query plans, row counts, or billing. A flagged query on a 100-row table is cheap; the same query on a billion-row table is the problem the rule exists to prevent.
 - The fact-table heuristic (SQL015) keys off table *names* (`*_events`, `*_log`) and is advisory, not definitive.
-- It does not execute SQL — safe to run on any `.sql` file.
+- It does not execute SQL â€” safe to run on any `.sql` file.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: ecl-harness-engineer
 description: "Create or audit ECL Agent Harness infrastructure: AGENTS.md, change tracking, repository guidance, lint checks, CI gates, and agent handoff docs."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: qinghui316/ecl-harness-engineer
 source_type: community
 date_added: "2026-06-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [codex, agent-harness, ecl, workflow, ci]
 tools: [codex, claude, cursor, gemini, antigravity]
 license: MIT
@@ -17,7 +17,7 @@ license_source: https://github.com/humaisali
 # ECL Harness Engineer
 Design and create Harness Engineering infrastructure so AI agents can work reliably in a codebase.
 
-> **Core Philosophy**: "Intelligence without infrastructure is just a demo." The Agent Harness is the Operating System — the LLM is just the CPU. The repository becomes the single source of truth — if an agent can't see it in context, it doesn't exist.
+> **Core Philosophy**: "Intelligence without infrastructure is just a demo." The Agent Harness is the Operating System â€” the LLM is just the CPU. The repository becomes the single source of truth â€” if an agent can't see it in context, it doesn't exist.
 
 ## When to Use This Skill
 
@@ -48,12 +48,12 @@ business features, replace the coding agent's plan mode, or create a separate re
 Plan mode is useful for live discussion; ECL artifacts are the repository record that later agents,
 linters, CI, and archive history can inspect.
 
-1. **Quick Detection + Intent Confirmation** — what exists, what already passes, and what the user wants.
-2. **Analysis** — architecture, harness state, environment, and project identity.
-3. **Intake Review + Delta Synthesis** — classify small vs structured work, support requirement-first
+1. **Quick Detection + Intent Confirmation** â€” what exists, what already passes, and what the user wants.
+2. **Analysis** â€” architecture, harness state, environment, and project identity.
+3. **Intake Review + Delta Synthesis** â€” classify small vs structured work, support requirement-first
    and plan-first inputs, and compute exactly what to create or update.
-4. **Creation/Update** — docs, status handoff, linters, ECL/change scripts, environment config, and CI.
-5. **Verification + Handoff** — run checks, attribute failures, update STATUS.md, trigger auto-evolve checks, and summarize results.
+4. **Creation/Update** â€” docs, status handoff, linters, ECL/change scripts, environment config, and CI.
+5. **Verification + Handoff** â€” run checks, attribute failures, update STATUS.md, trigger auto-evolve checks, and summarize results.
 
 ---
 
@@ -367,20 +367,20 @@ Create a delta list:
 - [ ] harness/evolution/{state.json,results.tsv,proposals/} (`pending.md` is generated later only when the archive threshold is reached)
 
 ### Optional Advanced (only if explicitly requested)
-- [ ] harness/eval/ — agent evaluation datasets and runner inputs
-- [ ] harness/trace/ — execution traces for agent runs
-- [ ] harness/state/ — executor runtime state
-- [ ] harness/checkpoints/ — resumable execution checkpoints
-- [ ] harness/memory/ — long-term agent memory experiments
-- [ ] harness/metrics/ — execution and quality metrics
+- [ ] harness/eval/ â€” agent evaluation datasets and runner inputs
+- [ ] harness/trace/ â€” execution traces for agent runs
+- [ ] harness/state/ â€” executor runtime state
+- [ ] harness/checkpoints/ â€” resumable execution checkpoints
+- [ ] harness/memory/ â€” long-term agent memory experiments
+- [ ] harness/metrics/ â€” execution and quality metrics
 
 ### To Update (exists but has gaps)
-- [ ] docs/DEVELOPMENT.md — missing build commands
-- [ ] scripts/lint-quality.py — missing 3 packages in layer map
+- [ ] docs/DEVELOPMENT.md â€” missing build commands
+- [ ] scripts/lint-quality.py â€” missing 3 packages in layer map
 
 ### Already Good (no changes needed)
-- [x] Makefile — has all required targets
-- [x] .github/workflows/ci.yml — properly configured
+- [x] Makefile â€” has all required targets
+- [x] .github/workflows/ci.yml â€” properly configured
 ```
 
 ### 3.3 Confirm with User (if confirmation tool is available)
@@ -448,7 +448,7 @@ Create execution plan for business code (harness-executor will implement this):
 
 Tech stack: {TECH}
 Project type: {from user choice}
-Architecture: 3-layer (Types → Core → Entry Points)
+Architecture: 3-layer (Types â†’ Core â†’ Entry Points)
 
 Create: docs/exec-plans/active/bootstrap-code.md
 
@@ -458,7 +458,7 @@ Contents:
 - Basic types and core logic
 - Test files
 
-This is for harness-executor to implement — not ecl-harness-engineer's responsibility.
+This is for harness-executor to implement â€” not ecl-harness-engineer's responsibility.
 """)
 ```
 
@@ -496,17 +496,17 @@ wc -l AGENTS.md  # Should be 80-120 lines
 # ECL Harness Engineer internal boundary language.
 
 # 5. All expected files exist
-test -f AGENTS.md && echo "✓ AGENTS.md"
-test -f docs/ARCHITECTURE.md && echo "✓ ARCHITECTURE.md"
-test -f docs/ECL.md && echo "✓ ECL.md"
-test -f docs/STATUS.md && echo "✓ STATUS.md"
-test -f scripts/lint-deps* && echo "✓ lint-deps"
-test -f scripts/harness-change.* && echo "✓ harness-change"
-test -f scripts/lint-ecl.* && echo "✓ lint-ecl"
-test -f scripts/harness-evolve.* && echo "✓ harness-evolve"
-test -d harness/ && echo "✓ harness/"
-test -d harness/changes && echo "✓ harness/changes"
-test -f harness/evolution/state.json && echo "✓ evolution state"
+test -f AGENTS.md && echo "âœ“ AGENTS.md"
+test -f docs/ARCHITECTURE.md && echo "âœ“ ARCHITECTURE.md"
+test -f docs/ECL.md && echo "âœ“ ECL.md"
+test -f docs/STATUS.md && echo "âœ“ STATUS.md"
+test -f scripts/lint-deps* && echo "âœ“ lint-deps"
+test -f scripts/harness-change.* && echo "âœ“ harness-change"
+test -f scripts/lint-ecl.* && echo "âœ“ lint-ecl"
+test -f scripts/harness-evolve.* && echo "âœ“ harness-evolve"
+test -d harness/ && echo "âœ“ harness/"
+test -d harness/changes && echo "âœ“ harness/changes"
+test -f harness/evolution/state.json && echo "âœ“ evolution state"
 
 # 6. Design docs exist (not just index)
 find docs/design-docs -name "*.md" ! -name "index.md" | wc -l
@@ -617,10 +617,10 @@ Detailed proposal format, scoring weights, status values, and complexity budget 
 - Makefile
 
 ### Verification Results
-- Harness checks: ✓
-- Architecture checks: ✓
-- Business gates: ✓ or pre-existing failures listed below
-- AGENTS.md size: ✓ ({N} lines)
+- Harness checks: âœ“
+- Architecture checks: âœ“
+- Business gates: âœ“ or pre-existing failures listed below
+- AGENTS.md size: âœ“ ({N} lines)
 
 ### Pre-existing Project Failures
 - {List baseline-red commands and short reasons, or "None observed."}
@@ -659,9 +659,9 @@ Keep it 80-120 lines. Link to detailed docs, don't embed them.
 
 Linter errors must be agent-actionable:
 ```
-✗ BAD: "Forbidden import in core/types/user.go"
+âœ— BAD: "Forbidden import in core/types/user.go"
 
-✓ GOOD: "core/types/user.go:15 imports core/config (layer 0 → layer 2).
+âœ“ GOOD: "core/types/user.go:15 imports core/config (layer 0 â†’ layer 2).
          Layer 0 packages must have NO internal dependencies.
 
          Fix options:
@@ -712,3 +712,4 @@ score and pass validation.
 Agent prompts for Phase 2 and Phase 4 subagents are in `agents/`.
 
 For small projects (< 20 files) or when subagents aren't available, execute phases inline instead of spawning agents.
+

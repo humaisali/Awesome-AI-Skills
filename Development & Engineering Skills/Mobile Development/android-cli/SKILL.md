@@ -1,4 +1,4 @@
----
+﻿---
 name: android-cli
 description: Orchestrates Android development tasks including project creation, deployment, SDK management, and environment diagnostics using the `android` command-line tool.
 category: tools
@@ -6,7 +6,7 @@ risk: critical
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-06-15"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [android, cli, adb, mobile, build, emulator]
 tools: [claude, cursor, gemini, antigravity]
 plugin:
@@ -249,3 +249,4 @@ update
           Update the Android CLI
                 --url=PARAM   The URL to download the update from
 ```
+

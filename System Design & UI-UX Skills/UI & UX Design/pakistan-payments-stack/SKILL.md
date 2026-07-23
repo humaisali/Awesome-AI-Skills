@@ -1,11 +1,11 @@
----
+﻿---
 name: pakistan-payments-stack
 description: "Design and implement production-grade Pakistani payment integrations (JazzCash, Easypaisa, bank/PSP rails, optional Raast) for SaaS with PKR billing, webhook reliability, and reconciliation."
 category: api-integration
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [saas, payments, pakistan, nextjs, b2b, pkr, reconciliation]
 tools: [cursor, claude, gemini]
 ---
@@ -173,3 +173,4 @@ Related Skills
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

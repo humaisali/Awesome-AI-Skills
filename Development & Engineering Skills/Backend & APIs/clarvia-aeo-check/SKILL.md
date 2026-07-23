@@ -1,11 +1,11 @@
----
+﻿---
 name: clarvia-aeo-check
 description: "Score any MCP server, API, or CLI for agent-readiness using Clarvia AEO (Agent Experience Optimization). Search 15,400+ indexed tools before adding them to your workflow."
 category: tool-quality
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-27"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [mcp, aeo, tool-quality, agent-readiness, api-scoring, clarvia]
 tools: [claude, cursor, windsurf, cline]
 ---
@@ -113,16 +113,16 @@ Add to your CI pipeline using the GitHub Action:
 
 ## Best Practices
 
-- ✅ Score tools before adding them to long-running agent workflows
-- ✅ Use Clarvia's leaderboard to discover alternatives you haven't considered
-- ✅ Re-check scores periodically — tools improve over time
-- ❌ Don't skip scoring for "well-known" tools — even popular tools can score poorly
-- ❌ Don't use tools scoring below 50 in production agent pipelines without understanding the limitations
+- âœ… Score tools before adding them to long-running agent workflows
+- âœ… Use Clarvia's leaderboard to discover alternatives you haven't considered
+- âœ… Re-check scores periodically â€” tools improve over time
+- âŒ Don't skip scoring for "well-known" tools â€” even popular tools can score poorly
+- âŒ Don't use tools scoring below 50 in production agent pipelines without understanding the limitations
 
 ## Common Pitfalls
 
 - **Problem:** Clarvia returns "not found" for a tool
-  **Solution:** Try scanning by URL directly with `aeo_score` — Clarvia will score it on-demand
+  **Solution:** Try scanning by URL directly with `aeo_score` â€” Clarvia will score it on-demand
 
 - **Problem:** Score seems low for a tool I trust
   **Solution:** Use `get_score_breakdown` to see which dimensions are weak and decide if they matter for your use case
@@ -136,3 +136,4 @@ Add to your CI pipeline using the GitHub Action:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

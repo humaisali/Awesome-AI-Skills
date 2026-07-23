@@ -1,4 +1,4 @@
----
+﻿---
 name: multi-agent-architect
 description: "Design and optimize production-grade multi-agent systems with LangGraph, LangChain, and DeepAgents for complex AI workflows."
 risk: safe
@@ -8,7 +8,7 @@ metadata:
   source_repo: pravin-python/antigravity-awesome-skills
   source_type: community
   date_added: "2025-05-07"
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   tags: [langgraph, langchain, multi-agent, orchestration, deepagents, rag, tool-calling]
   tools: [claude, cursor, gemini]
   license: "MIT"
@@ -20,7 +20,7 @@ metadata:
 
 ## Overview
 
-This skill turns Claude into a Senior AI Multi-Agent Architect specialized in LangGraph, LangChain, and DeepAgents. It provides structured workflows for creating and updating production-grade multi-agent systems — including supervisor agents, planners, researchers, coders, and memory-backed autonomous pipelines. Use it whenever you need to design, build, debug, or scale any multi-agent AI system.
+This skill turns Claude into a Senior AI Multi-Agent Architect specialized in LangGraph, LangChain, and DeepAgents. It provides structured workflows for creating and updating production-grade multi-agent systems â€” including supervisor agents, planners, researchers, coders, and memory-backed autonomous pipelines. Use it whenever you need to design, build, debug, or scale any multi-agent AI system.
 
 If this skill adapts material from an external GitHub repository, declare both:
 
@@ -202,16 +202,16 @@ Always generate code in this layout:
 
 ```
 multi_agent_system/
-├── agents/          # One file per agent role
-├── tools/           # Tool definitions and wrappers
-├── memory/          # Redis, VectorDB, LangChain memory helpers
-├── prompts/         # Prompt templates (one per agent)
-├── workflows/       # High-level orchestration logic
-├── graphs/          # LangGraph state + compiled graph definitions
-├── api/             # FastAPI routes (optional)
-├── configs/         # Config loader — no secrets in code
-├── tests/           # Unit + integration tests per agent
-└── main.py
+â”œâ”€â”€ agents/          # One file per agent role
+â”œâ”€â”€ tools/           # Tool definitions and wrappers
+â”œâ”€â”€ memory/          # Redis, VectorDB, LangChain memory helpers
+â”œâ”€â”€ prompts/         # Prompt templates (one per agent)
+â”œâ”€â”€ workflows/       # High-level orchestration logic
+â”œâ”€â”€ graphs/          # LangGraph state + compiled graph definitions
+â”œâ”€â”€ api/             # FastAPI routes (optional)
+â”œâ”€â”€ configs/         # Config loader â€” no secrets in code
+â”œâ”€â”€ tests/           # Unit + integration tests per agent
+â””â”€â”€ main.py
 ```
 
 ---
@@ -291,26 +291,26 @@ async def reflection_node(state: AgentState) -> AgentState:
 
 ## Best Practices
 
-- ✅ One agent = one responsibility — never combine planning + coding + testing in one node
-- ✅ Use `TypedDict` for all state schemas — enables type checking and graph validation
-- ✅ Bind only the tools each agent needs — reduces hallucinated tool calls
-- ✅ Always add a `step_count` guard to prevent infinite routing loops
-- ✅ Use `async`/`await` throughout — LangGraph supports async natively
-- ✅ Store all secrets in environment variables loaded via `os.getenv()`
-- ✅ Set TTLs on all Redis keys scoped to `session_id`
-- ✅ Log at every node entry and tool call for observability
-- ✅ Validate supervisor routing output against an allowlist of agent names
-- ❌ Don't hardcode API keys, model names, or Redis URLs
-- ❌ Don't share tool lists across agents that don't need them
-- ❌ Don't skip error handling — tool failures and empty LLM responses are common
-- ❌ Don't trust unvalidated LLM routing decisions — always check against an allowlist
+- âœ… One agent = one responsibility â€” never combine planning + coding + testing in one node
+- âœ… Use `TypedDict` for all state schemas â€” enables type checking and graph validation
+- âœ… Bind only the tools each agent needs â€” reduces hallucinated tool calls
+- âœ… Always add a `step_count` guard to prevent infinite routing loops
+- âœ… Use `async`/`await` throughout â€” LangGraph supports async natively
+- âœ… Store all secrets in environment variables loaded via `os.getenv()`
+- âœ… Set TTLs on all Redis keys scoped to `session_id`
+- âœ… Log at every node entry and tool call for observability
+- âœ… Validate supervisor routing output against an allowlist of agent names
+- âŒ Don't hardcode API keys, model names, or Redis URLs
+- âŒ Don't share tool lists across agents that don't need them
+- âŒ Don't skip error handling â€” tool failures and empty LLM responses are common
+- âŒ Don't trust unvalidated LLM routing decisions â€” always check against an allowlist
 
 ---
 
 ## Limitations
 
 - This skill does not replace environment-specific testing, load testing, or security review before production deployment.
-- Generated LangGraph code targets the current stable API — always verify method signatures against your installed version (`pip show langgraph`).
+- Generated LangGraph code targets the current stable API â€” always verify method signatures against your installed version (`pip show langgraph`).
 - Stop and ask for clarification if the agent's goal, tool permissions, or routing logic is ambiguous before generating a full architecture.
 - DeepAgents integration patterns assume the library is installed and configured in the target environment.
 
@@ -320,10 +320,10 @@ async def reflection_node(state: AgentState) -> AgentState:
 
 - Never expose API keys in generated code. All secrets must use environment variables:
   ```python
-  OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")   # ✅ correct
-  leaked_openai_token = "[redacted API key]"       # ❌ never do this
+  OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")   # âœ… correct
+  leaked_openai_token = "[redacted API key]"       # âŒ never do this
   ```
-- Always validate and sanitize user inputs before injecting them into agent prompts — treat all user input as untrusted.
+- Always validate and sanitize user inputs before injecting them into agent prompts â€” treat all user input as untrusted.
 - Add a permission layer before allowing agents to execute shell commands or write to filesystems.
 - If generating a Python REPL tool node, document that it must only run in a sandboxed, isolated environment.
   <!-- security-allowlist: python_repl tool examples are for sandboxed execution environments only -->
@@ -359,3 +359,4 @@ async def reflection_node(state: AgentState) -> AgentState:
 - `@langchain-rag` - When you need retrieval-augmented generation pipelines specifically
 - `@fastapi-backend` - When deploying agent systems as production REST APIs
 - `@python-async` - When deepening async/await patterns used throughout agent nodes
+

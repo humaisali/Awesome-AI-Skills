@@ -1,4 +1,4 @@
----
+﻿---
 name: video-content-extractor
 description: "Extract key frames from MP4 videos at configurable intervals, run Tesseract OCR, and generate structured Markdown reports with video metadata and timestamped text transcripts."
 category: media-processing
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: 274326424/video-content-extractor
 source_type: community
 date_added: "2026-06-06"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [video, ocr, ffmpeg, tesseract, frame-extraction, media]
 tools: [codex]
 ---
@@ -101,3 +101,4 @@ python scripts/extract_video.py lecture.mp4 . 15 chi_sim+eng
 
 - @media-summarizer - For summarizing video content using visual and audio cues.
 - @document-ocr - For OCR on static images or scanned documents without video processing.
+

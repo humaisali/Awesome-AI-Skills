@@ -1,4 +1,4 @@
----
+﻿---
 name: to-issues
 description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices.
 disable-model-invocation: true
@@ -8,7 +8,7 @@ source: https://github.com/humaisali
 source_repo: "mattpocock/skills"
 source_type: "community"
 date_added: "2026-06-19"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: "MIT"
 license_source: https://github.com/humaisali
 tags:
@@ -32,7 +32,7 @@ _Source: [mattpocock/skills](https://github.com/mattpocock/skills) (MIT)._
 
 Break a plan into independently-grabbable issues using vertical slices (tracer bullets).
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
+The issue tracker and triage label vocabulary should have been provided to you â€” run `/setup-matt-pocock-skills` if not.
 
 ## Process
 
@@ -89,7 +89,7 @@ A reference to the parent issue on the issue tracker (if the source was an exist
 
 A concise description of this vertical slice. Describe the end-to-end behavior, not layer-by-layer implementation.
 
-Avoid specific file paths or code snippets — they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it here and note briefly that it came from a prototype. Trim to the decision-rich parts — not a working demo, just the important bits.
+Avoid specific file paths or code snippets â€” they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it here and note briefly that it came from a prototype. Trim to the decision-rich parts â€” not a working demo, just the important bits.
 
 ## Acceptance criteria
 
@@ -113,3 +113,4 @@ Do NOT close or modify any parent issue.
 - Requires the upstream tool, account, API key, or local setup when the workflow names one.
 - Does not authorize destructive, production, paid, or external-message actions without explicit user approval.
 - Validate generated artifacts or recommendations against the user's real sources before treating them as final.
+

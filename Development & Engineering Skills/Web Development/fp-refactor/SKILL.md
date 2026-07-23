@@ -1,10 +1,10 @@
----
+﻿---
 name: fp-refactor
 description: Comprehensive guide for refactoring imperative TypeScript code to fp-ts functional patterns
 risk: unknown
 source: https://github.com/humaisali
 version: 1.0.0
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
   - fp-ts
   - refactoring
@@ -1785,9 +1785,10 @@ Migrating to fp-ts is a journey, not a destination. Key principles:
 5. **Document patterns**: Create team-specific guides for your codebase
 6. **Review benefits**: Ensure the added complexity provides value
 
-The goal is more maintainable, type-safe code—not functional programming for its own sake.
+The goal is more maintainable, type-safe codeâ€”not functional programming for its own sake.
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,10 +1,10 @@
----
+﻿---
 name: "board"
 description: "Read, write, and browse the AgentHub message board for agent coordination. Use when the user runs /hub:board or asks to post, read, or inspect coordination messages between competing AgentHub agents."
 command: /hub:board
 ---
 
-# /hub:board — Message Board
+# /hub:board â€” Message Board
 
 Interface for the AgentHub message board. Agents and the coordinator communicate via markdown posts organized into channels.
 
@@ -70,7 +70,7 @@ All posts use YAML frontmatter:
 
 ```markdown
 ---
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 timestamp: 2026-03-17T14:35:10Z
 channel: results
 sequence: 1
@@ -84,7 +84,7 @@ Example result post for a content task:
 
 ```markdown
 ---
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 timestamp: 2026-03-17T15:20:33Z
 channel: results
 sequence: 2
@@ -93,14 +93,15 @@ parent: null
 
 ## Result Summary
 
-- **Approach**: Storytelling angle — open with customer pain point, build to solution
+- **Approach**: Storytelling angle â€” open with customer pain point, build to solution
 - **Word count**: 1520
 - **Key sections**: Hook, Problem, Solution, Social Proof, CTA
-- **Confidence**: High — follows proven AIDA framework
+- **Confidence**: High â€” follows proven AIDA framework
 ```
 
 ## Board Rules
 
-- **Append-only** — never edit or delete existing posts
-- **Unique filenames** — `{seq:03d}-{author}-{timestamp}.md`
-- **Frontmatter required** — every post has author, timestamp, channel
+- **Append-only** â€” never edit or delete existing posts
+- **Unique filenames** â€” `{seq:03d}-{author}-{timestamp}.md`
+- **Frontmatter required** â€” every post has author, timestamp, channel
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: dispatch
 description: "Delegate tasks to OpenAI Codex CLI and Google Antigravity CLI from Claude Code with topic-aware sessions"
 category: agent-behavior
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: sparklingneuronics/sparkling-skills
 source_type: community
 date_added: "2026-06-28"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [delegation, codex, antigravity, gemini, multi-model, second-opinion, agent-workflow]
 tools: [claude, codex, antigravity]
 license: "MIT"
@@ -140,3 +140,4 @@ Claude: Codex confirms the null-check issue is real -- it traced the code path
 
 - `dispatching-parallel-agents` - When to dispatch multiple independent subagents in parallel
 - `codex-review` - Professional code review integrated with Codex AI
+

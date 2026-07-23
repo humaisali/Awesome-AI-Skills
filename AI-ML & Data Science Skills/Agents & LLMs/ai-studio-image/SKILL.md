@@ -1,10 +1,10 @@
----
+﻿---
 name: ai-studio-image
 description: Geracao de imagens humanizadas via Google AI Studio (Gemini). Fotos realistas estilo influencer ou educacional com iluminacao natural e imperfeicoes sutis.
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - image-generation
 - ai-studio
@@ -18,7 +18,7 @@ tools:
 - codex-cli
 ---
 
-# AI Studio Image — Especialista em Imagens Humanizadas
+# AI Studio Image â€” Especialista em Imagens Humanizadas
 
 ## Overview
 
@@ -46,11 +46,11 @@ a leve granulacao de um sensor de celular, a iluminacao que nao e perfeita, o en
 ligeiramente descentralizado, a profundidade de campo caracteristica de uma lente pequena.
 Esta skill injeta sistematicamente essas qualidades em cada geracao.
 
-## Ai Studio Image — Especialista Em Imagens Humanizadas
+## Ai Studio Image â€” Especialista Em Imagens Humanizadas
 
 Skill de geracao de imagens via Google AI Studio que transforma qualquer prompt em fotos
 com aparencia genuinamente humana. Cada imagem gerada parece ter sido tirada por uma
-pessoa real com seu celular — nao por uma IA.
+pessoa real com seu celular â€” nao por uma IA.
 
 ## 1. Configurar Api Key
 
@@ -112,7 +112,7 @@ e **educacional** para qualquer coisa relacionada a ensino/apresentacao.
 | `landscape` | 16:9 | YouTube thumbnails, banners, desktop |
 | `stories` | 9:16 | Instagram/Facebook Stories, TikTok, Reels |
 
-Se nao especificado, deduza pelo contexto (stories → 9:16, feed → 1:1, etc).
+Se nao especificado, deduza pelo contexto (stories â†’ 9:16, feed â†’ 1:1, etc).
 
 ## Passo 3: Transformar O Prompt
 
@@ -125,31 +125,31 @@ python C:\Users\renat\skills\ai-studio-image\scripts\prompt_engine.py --prompt "
 
 O motor de humanizacao adiciona camadas de realismo:
 
-**Camada 1 — Dispositivo e Tecnica:**
+**Camada 1 â€” Dispositivo e Tecnica:**
 - Fotografado com smartphone (iPhone/Samsung Galaxy)
 - Lente de celular com profundidade de campo natural
-- Sem flash — apenas luz ambiente
+- Sem flash â€” apenas luz ambiente
 - Leve ruido de sensor (ISO elevado em baixa luz)
 
-**Camada 2 — Iluminacao Natural:**
+**Camada 2 â€” Iluminacao Natural:**
 - Luz do sol indireta / golden hour / luz de janela
 - Sombras suaves e organicas
 - Sem iluminacao de estudio
 - Reflexos naturais em superficies
 
-**Camada 3 — Imperfeicoes Humanas:**
+**Camada 3 â€” Imperfeicoes Humanas:**
 - Enquadramento ligeiramente imperfeito (nao centralizado matematicamente)
 - Foco seletivo natural (algo levemente fora de foco no background)
 - Micro-tremor de maos (nitidez nao e absoluta)
 - Elementos aleatorios do ambiente real
 
-**Camada 4 — Autenticidade:**
+**Camada 4 â€” Autenticidade:**
 - Expressoes faciais genuinas (nao poses de estudio)
 - Roupas e cenarios do dia-a-dia
-- Textura de pele real (poros, marcas sutis — sem pele de porcelana)
+- Textura de pele real (poros, marcas sutis â€” sem pele de porcelana)
 - Proporcoes corporais realistas
 
-**Camada 5 — Contexto Ambiental:**
+**Camada 5 â€” Contexto Ambiental:**
 - Cenarios reais (nao fundos genericos de stock)
 - Objetos do cotidiano no ambiente
 - Iluminacao consistente com o cenario
@@ -170,7 +170,7 @@ python C:\Users\renat\skills\ai-studio-image\scripts\generate.py \
 
 | Modelo | Velocidade | Qualidade | Custo | Uso Ideal |
 |--------|-----------|-----------|-------|-----------|
-| `gemini-2-flash-exp` | Rapido | Alta | **GRATIS** | **Padrao — usar sempre** |
+| `gemini-2-flash-exp` | Rapido | Alta | **GRATIS** | **Padrao â€” usar sempre** |
 | `imagen-4` | Medio | Alta | $0.03/img | Alta qualidade (requer --force-paid) |
 | `imagen-4-ultra` | Lento | Maxima | $0.06/img | Impressao, 2K (requer --force-paid) |
 | `imagen-4-fast` | Rapido | Boa | $0.02/img | Volume alto (requer --force-paid) |
@@ -239,7 +239,7 @@ Controle quanto "imperfeicao" injetar:
 
 | Nivel | Efeito |
 |-------|--------|
-| `ultra` | Maximo realismo — parece 100% foto de celular |
+| `ultra` | Maximo realismo â€” parece 100% foto de celular |
 | `natural` (padrao) | Equilibrio perfeito entre qualidade e realismo |
 | `polished` | Mais limpo, ainda natural mas com mais cuidado estetico |
 | `editorial` | Estilo revista, natural mas com producao |
@@ -287,15 +287,15 @@ As imagens geradas podem ser enviadas para o Canva para adicao de texto/branding
 |----------|---------|
 | `GEMINI_API_KEY not found` | Configure a variavel de ambiente ou crie `.env` |
 | `quota exceeded` | Aguarde reset do rate limit ou upgrade do plano |
-| `image blocked` | Ajuste o prompt — pode conter conteudo restrito |
+| `image blocked` | Ajuste o prompt â€” pode conter conteudo restrito |
 | `low quality output` | Aumente humanization para `ultra`, tente outro modelo |
 
 ## Referencias
 
 Para guias detalhados, consulte:
-- `references/setup-guide.md` — Instalacao e configuracao completa
-- `references/prompt-engineering.md` — Tecnicas avancadas de prompt para imagens humanizadas
-- `references/api-reference.md` — Documentacao da API do Google AI Studio
+- `references/setup-guide.md` â€” Instalacao e configuracao completa
+- `references/prompt-engineering.md` â€” Tecnicas avancadas de prompt para imagens humanizadas
+- `references/api-reference.md` â€” Documentacao da API do Google AI Studio
 
 ## Best Practices
 
@@ -319,3 +319,4 @@ Para guias detalhados, consulte:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

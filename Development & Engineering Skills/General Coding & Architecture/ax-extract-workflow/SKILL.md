@@ -1,4 +1,4 @@
----
+﻿---
 name: ax-extract-workflow
 description: "Reconstruct workflow behind a past coding-agent artifact using local ax sessions/commits/skills/tool traces. Use when asked how X was built."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Necmttn/ax
 source_type: community
 date_added: "2026-06-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [ai-coding, workflow-reconstruction, session-analysis, observability]
 tools: [claude, cursor, gemini, codex-cli]
 license: "AGPL-3.0-only"
@@ -154,3 +154,4 @@ Use this when the user remembers when the work happened but not the commit.
 - `@agenttrace-session-audit` - Use for local agent-session health, cost, latency, and tool-failure audits.
 - `@domain-modeling` - Use when the reconstruction reveals terminology or architectural decisions that should be captured.
 - `@planning-with-files` - Use when the user wants to turn the reconstructed recipe into a new plan with tracked notes.
+

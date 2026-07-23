@@ -1,4 +1,4 @@
----
+﻿---
 name: postgres-readonly-queries
 description: "Execute safe read-only SQL queries against PostgreSQL databases with multi-connection support and defense-in-depth write protection."
 category: data
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: sanjay3290/ai-skills
 source_type: community
 date_added: "2026-07-09"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [postgres, sql, database, read-only]
 tools: [claude, cursor, gemini]
 license: "Apache-2.0"
@@ -150,3 +150,4 @@ If unclear, run `--list` and ask user which database.
   database and avoid exporting or sharing results without explicit authorization.
 - The script is not a replacement for backups, auditing, access reviews, or production change
   controls.
+

@@ -1,11 +1,11 @@
----
+﻿---
 name: skill-check
 description: "Validate Claude Code skills against the agentskills specification. Catches structural, semantic, and naming issues before users do."
 category: development
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-11"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [validation, linter, agentskills, skill-authoring, code-quality]
 tools: [claude, cursor, windsurf, codex-cli]
 license: MIT
@@ -110,3 +110,4 @@ All 31 checks passed. No issues found.
 
 - **Problem:** Wisdom/platitude check flags legitimate instructions
   **Solution:** Rephrase generic advice ("Remember that testing is important") as concrete directives ("Run tests before committing").
+

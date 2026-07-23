@@ -1,4 +1,4 @@
----
+﻿---
 name: gemini-deep-research
 description: "Run autonomous multi-step research with Google's Gemini Deep Research Agent: kick off a query, poll progress, and collect a cited report for market analysis or literature reviews."
 category: research
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: sanjay3290/ai-skills
 source_type: community
 date_added: "2026-07-09"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [research, gemini, google, reports]
 tools: [claude, cursor, gemini]
 license: "Apache-2.0"
@@ -113,7 +113,7 @@ python3 scripts/research.py --list
 
 ## Workflow
 
-1. User requests research → Run `--query "..."`
+1. User requests research â†’ Run `--query "..."`
 2. Inform user of estimated time (2-10 minutes)
 3. Monitor with `--stream` or poll with `--status`
 4. Return formatted results
@@ -134,3 +134,4 @@ python3 scripts/research.py --list
 - This skill cannot guarantee that a prompt is safe to disclose; redact proprietary or personal
   material before requesting user approval.
 - An API key must remain local and must never be committed, printed, or sent in a query.
+

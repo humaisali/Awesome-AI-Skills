@@ -1,4 +1,4 @@
----
+﻿---
 name: faf-wizard
 description: "Done-for-you .faf generator. One-click AI context for any project - new, legacy, or famous. Auto-detects stack, scores readiness, works everywhere."
 category: productivity
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Wolfe-Jam/faf-skills
 source_type: community
 date_added: "2026-04-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [faf, automation, project-setup, ai-context, productivity]
 tools: [claude, cursor, gemini, windsurf, any-ai]
 ---
@@ -93,8 +93,8 @@ human_context:
 
 ### Step 3: Scoring & Report (20 seconds)
 ```
-✅ Generated: project.faf
-🏆 AI-Readiness: 87% Bronze - Production ready
+âœ… Generated: project.faf
+ðŸ† AI-Readiness: 87% Bronze - Production ready
 
 Filled: 9/11 active slots
 Ignored: 22 slots (not applicable)
@@ -107,10 +107,10 @@ To reach Silver (95%):
 ## Performance Data (Real Numbers)
 
 **Analyzed 8,400+ Projects:**
-- ✅ **99.2% detection accuracy** across 153+ formats
-- ✅ **Average generation time**: 12.3 seconds
-- ✅ **Bronze tier or higher**: 94% of projects
-- ✅ **Zero manual configuration**: Works out of the box
+- âœ… **99.2% detection accuracy** across 153+ formats
+- âœ… **Average generation time**: 12.3 seconds
+- âœ… **Bronze tier or higher**: 94% of projects
+- âœ… **Zero manual configuration**: Works out of the box
 
 ### Format Support
 Automatically detects and configures:
@@ -125,12 +125,12 @@ Automatically detects and configures:
 ## Universal Compatibility
 
 ### Works With Every AI Tool
-- ✅ **Claude Code** - Reads .faf natively
-- ✅ **Cursor** - Auto-syncs to .cursorrules  
-- ✅ **Gemini CLI** - Converts to GEMINI.md
-- ✅ **Windsurf** - Syncs to .windsurfrules
-- ✅ **ChatGPT** - Readable YAML format
-- ✅ **Any AI** - Universal format support
+- âœ… **Claude Code** - Reads .faf natively
+- âœ… **Cursor** - Auto-syncs to .cursorrules  
+- âœ… **Gemini CLI** - Converts to GEMINI.md
+- âœ… **Windsurf** - Syncs to .windsurfrules
+- âœ… **ChatGPT** - Readable YAML format
+- âœ… **Any AI** - Universal format support
 
 ### Migration Support
 Already have AI context files?
@@ -198,25 +198,25 @@ Install from Chrome Web Store - works on any Git repository.
 ## When to Use faf-expert Instead
 
 Use `faf-wizard` for:
-- ✅ Quick project onboarding
-- ✅ Automatic everything
-- ✅ "Just make it work"
-- ✅ Time-constrained scenarios
+- âœ… Quick project onboarding
+- âœ… Automatic everything
+- âœ… "Just make it work"
+- âœ… Time-constrained scenarios
 
 Use `faf-expert` for:
-- 🎯 Fine-tuned championship scoring (95%+)
-- 🎯 Complex MCP server configuration
-- 🎯 Multi-platform sync management  
-- 🎯 Enterprise deployment patterns
+- ðŸŽ¯ Fine-tuned championship scoring (95%+)
+- ðŸŽ¯ Complex MCP server configuration
+- ðŸŽ¯ Multi-platform sync management  
+- ðŸŽ¯ Enterprise deployment patterns
 
 ## Validation & Security
 
 **Enterprise-Grade Standards:**
-- ✅ **800+ comprehensive tests** across CLI and MCP
-- ✅ **No credentials ever stored** in .faf files
-- ✅ **YAML format validation** prevents malformed files
-- ✅ **IANA-registered format** (application/vnd.faf+yaml)
-- ✅ **MIT licensed** - safe for commercial use
+- âœ… **800+ comprehensive tests** across CLI and MCP
+- âœ… **No credentials ever stored** in .faf files
+- âœ… **YAML format validation** prevents malformed files
+- âœ… **IANA-registered format** (application/vnd.faf+yaml)
+- âœ… **MIT licensed** - safe for commercial use
 
 ## Getting Started
 
@@ -242,7 +242,7 @@ faf sync --target all --watch
 ## Community & Support
 
 - **Website**: https://faf.one
-- **Chrome Extension**: 4.8★ rating, Google approved
+- **Chrome Extension**: 4.8â˜… rating, Google approved
 - **Downloads**: 52k+ across ecosystem  
 - **Discord**: Active community of 1000+ developers
 - **Documentation**: Comprehensive guides and examples
@@ -255,3 +255,4 @@ faf sync --target all --watch
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

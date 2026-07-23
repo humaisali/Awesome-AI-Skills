@@ -1,9 +1,9 @@
----
+﻿---
 name: privilege-escalation-methods
 description: "Provide comprehensive techniques for escalating privileges from a low-privileged user to root/administrator access on compromised Linux and Windows systems. Essential for penetration testing post-exploitation phase and red team operations."
 risk: unknown
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -335,3 +335,4 @@ For detailed enumeration scripts, use:
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

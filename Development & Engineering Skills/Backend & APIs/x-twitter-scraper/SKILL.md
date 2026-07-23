@@ -1,4 +1,4 @@
----
+﻿---
 name: x-twitter-scraper
 description: "Use Xquik for X data workflows: tweet search, user lookup, follower export, media downloads, monitors, webhooks, REST API, MCP, SDK setup, and approval-gated account actions."
 category: data
@@ -6,7 +6,7 @@ risk: critical
 source: https://github.com/humaisali
 source_repo: Xquik-dev/x-twitter-scraper
 source_type: official
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [twitter, x, social-media, x-api, tweet-search, follower-export, automation, mcp, sdk, webhooks]
 date_added: "2026-02-28"
 license: MIT
@@ -169,3 +169,4 @@ https://github.com/Xquik-dev/x-twitter-scraper
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

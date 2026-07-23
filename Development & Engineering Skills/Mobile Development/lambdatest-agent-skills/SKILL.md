@@ -1,4 +1,4 @@
----
+﻿---
 name: lambdatest-agent-skills
 description: "Production-grade test automation skills for 46 frameworks across E2E, unit, mobile, BDD, visual, and cloud testing in 15+ languages."
 category: testing
@@ -7,14 +7,14 @@ source: https://github.com/humaisali
 source_repo: LambdaTest/agent-skills
 source_type: community
 date_added: "2026-04-16"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [testing, test-automation, e2e, unit-testing, mobile-testing, bdd, selenium, playwright, cypress, jest, pytest, appium, lambdatest]
 tools: [claude, cursor, gemini, copilot]
 license: "MIT"
 license_source: https://github.com/humaisali
 ---
 
-# LambdaTest Agent Skills — Test Automation Registry (46 Skills)
+# LambdaTest Agent Skills â€” Test Automation Registry (46 Skills)
 
 ## Overview
 
@@ -30,7 +30,7 @@ This skill adapts material from an external GitHub repository:
 - Use when working with Selenium, Playwright, Cypress, Jest, pytest, Appium, or any of the 46 supported frameworks
 - Use when setting up a new test project and need the correct project structure, config files, and dependencies
 - Use when integrating tests into a CI/CD pipeline (GitHub Actions, Jenkins, GitLab CI)
-- Use when migrating tests between frameworks (e.g. Selenium → Playwright, Puppeteer → Cypress)
+- Use when migrating tests between frameworks (e.g. Selenium â†’ Playwright, Puppeteer â†’ Cypress)
 - Use when running tests on cloud infrastructure such as LambdaTest / TestMu AI
 - Use when the user asks how to write, debug, or scale automated tests
 
@@ -46,11 +46,11 @@ Load the relevant framework skill from the registry below. Each skill includes: 
 
 ### Step 3: Generate Production-Ready Test Code
 
-Use the loaded skill context to generate test code that follows real-world conventions — not generic boilerplate. Apply correct import paths, configuration formats, assertion libraries, and runner commands specific to the framework and language.
+Use the loaded skill context to generate test code that follows real-world conventions â€” not generic boilerplate. Apply correct import paths, configuration formats, assertion libraries, and runner commands specific to the framework and language.
 
 ### Step 4: Configure for Local or Cloud Execution
 
-If the user wants to run tests locally, apply local runner configuration. If running on LambdaTest / TestMu AI cloud, configure RemoteWebDriver capabilities or the appropriate cloud SDK, and set `LT_USERNAME` and `LT_ACCESS_KEY` from environment variables — never hardcode credentials.
+If the user wants to run tests locally, apply local runner configuration. If running on LambdaTest / TestMu AI cloud, configure RemoteWebDriver capabilities or the appropriate cloud SDK, and set `LT_USERNAME` and `LT_ACCESS_KEY` from environment variables â€” never hardcode credentials.
 
 ### Step 5: Add CI/CD Integration
 
@@ -58,7 +58,7 @@ When requested, generate a GitHub Actions (or Jenkins / GitLab CI) workflow that
 
 ## Skill Registry
 
-### 🌐 E2E / Browser Testing (15 skills)
+### ðŸŒ E2E / Browser Testing (15 skills)
 
 | Skill | Languages | Description |
 |---|---|---|
@@ -78,7 +78,7 @@ When requested, generate a GitHub Actions (or Jenkins / GitLab CI) workflow that
 | `laravel-dusk-skill` | PHP | Laravel Dusk browser testing |
 | `robot-framework-skill` | Python, Robot | Robot Framework keyword-driven testing |
 
-### 🧪 Unit Testing (15 skills)
+### ðŸ§ª Unit Testing (15 skills)
 
 | Skill | Languages | Description |
 |---|---|---|
@@ -98,7 +98,7 @@ When requested, generate a GitHub Actions (or Jenkins / GitLab CI) workflow that
 | `testunit-skill` | Ruby | Test::Unit Ruby testing |
 | `unittest-skill` | Python | Python unittest with mocking |
 
-### 📱 Mobile Testing (5 skills)
+### ðŸ“± Mobile Testing (5 skills)
 
 | Skill | Languages | Description |
 |---|---|---|
@@ -108,7 +108,7 @@ When requested, generate a GitHub Actions (or Jenkins / GitLab CI) workflow that
 | `flutter-testing-skill` | Dart | Flutter widget and integration tests |
 | `detox-skill` | JS, TS | Detox React Native E2E testing |
 
-### 📋 BDD Testing (7 skills)
+### ðŸ“‹ BDD Testing (7 skills)
 
 | Skill | Languages | Description |
 |---|---|---|
@@ -120,25 +120,25 @@ When requested, generate a GitHub Actions (or Jenkins / GitLab CI) workflow that
 | `gauge-skill` | Java, Python, JS, Ruby, C# | Gauge specification-based testing |
 | `lettuce-skill` | Python | Lettuce Python BDD testing |
 
-### 👁️ Visual Testing (1 skill)
+### ðŸ‘ï¸ Visual Testing (1 skill)
 
 | Skill | Languages | Description |
 |---|---|---|
 | `smartui-skill` | JS, TS, Java | SmartUI visual regression testing |
 
-### ☁️ Cloud Testing (1 skill)
+### â˜ï¸ Cloud Testing (1 skill)
 
 | Skill | Languages | Description |
 |---|---|---|
 | `hyperexecute-skill` | YAML | HyperExecute cloud test orchestration |
 
-### 🔄 Migration (1 skill)
+### ðŸ”„ Migration (1 skill)
 
 | Skill | Languages | Description |
 |---|---|---|
 | `test-framework-migration-skill` | JS, TS, Java, Python, C# | Convert tests between Selenium, Playwright, Puppeteer, Cypress |
 
-### 🔄 DevOps / CI/CD (1 skill)
+### ðŸ”„ DevOps / CI/CD (1 skill)
 
 | Skill | Languages | Description |
 |---|---|---|
@@ -180,16 +180,16 @@ The skill generates a `conftest.py` with shared fixtures, parametrized test case
 
 ## Best Practices
 
-- ✅ Always use environment variables for cloud credentials (`LT_USERNAME`, `LT_ACCESS_KEY`) — never hardcode them
-- ✅ Use Page Object Model (POM) to keep test logic separate from UI selectors
-- ✅ Prefer explicit waits over fixed `sleep()` calls in all frameworks
-- ✅ Run tests in parallel where the framework supports it to reduce execution time
-- ✅ Always capture screenshots and logs on test failure for easier debugging
-- ✅ Match dependency versions to what each framework officially recommends — avoid mixing major versions
-- ❌ Don't write tests that depend on test execution order
-- ❌ Don't hardcode URLs, credentials, or environment-specific values inside test files
-- ❌ Don't skip writing assertions — a test without assertions is not a test
-- ❌ Don't ignore flaky tests — investigate and fix root cause rather than adding retries as a permanent fix
+- âœ… Always use environment variables for cloud credentials (`LT_USERNAME`, `LT_ACCESS_KEY`) â€” never hardcode them
+- âœ… Use Page Object Model (POM) to keep test logic separate from UI selectors
+- âœ… Prefer explicit waits over fixed `sleep()` calls in all frameworks
+- âœ… Run tests in parallel where the framework supports it to reduce execution time
+- âœ… Always capture screenshots and logs on test failure for easier debugging
+- âœ… Match dependency versions to what each framework officially recommends â€” avoid mixing major versions
+- âŒ Don't write tests that depend on test execution order
+- âŒ Don't hardcode URLs, credentials, or environment-specific values inside test files
+- âŒ Don't skip writing assertions â€” a test without assertions is not a test
+- âŒ Don't ignore flaky tests â€” investigate and fix root cause rather than adding retries as a permanent fix
 
 ## Limitations
 
@@ -201,7 +201,7 @@ The skill generates a `conftest.py` with shared fixtures, parametrized test case
 ## Security & Safety Notes
 
 - Never include `LT_USERNAME`, `LT_ACCESS_KEY`, API tokens, or any credentials in generated code. Always reference them via environment variables.
-- When generating CI/CD pipelines, store secrets in GitHub Actions Secrets or equivalent — never in plaintext YAML.
+- When generating CI/CD pipelines, store secrets in GitHub Actions Secrets or equivalent â€” never in plaintext YAML.
 - Installation commands (`npm install`, `pip install`, `mvn install`) should only be run in local development or authorized CI environments.
 
 ## Common Pitfalls
@@ -210,7 +210,7 @@ The skill generates a `conftest.py` with shared fixtures, parametrized test case
   **Solution:** Ensure headless mode is enabled in CI, and that browser versions match between local and CI environments. Use the framework's built-in CI detection where available.
 
 - **Problem:** Flaky tests due to timing issues
-  **Solution:** Replace `sleep()` with explicit waits — `waitForSelector` in Playwright, `WebDriverWait` in Selenium, `cy.get().should()` in Cypress.
+  **Solution:** Replace `sleep()` with explicit waits â€” `waitForSelector` in Playwright, `WebDriverWait` in Selenium, `cy.get().should()` in Cypress.
 
 - **Problem:** Cloud tests fail with authentication errors
   **Solution:** Verify `LT_USERNAME` and `LT_ACCESS_KEY` are correctly set as environment variables and match the credentials on the LambdaTest dashboard.
@@ -223,7 +223,8 @@ The skill generates a `conftest.py` with shared fixtures, parametrized test case
 
 ## Related Skills
 
-- `@test-driven-development` — Use when you want to design tests before writing implementation code
-- `@testing-patterns` — Use for general testing design patterns and strategies
-- `@cicd-pipeline-skill` — Use when setting up end-to-end CI/CD pipelines with test automation
-- `@debugging-strategies` — Use when diagnosing systematic test failures
+- `@test-driven-development` â€” Use when you want to design tests before writing implementation code
+- `@testing-patterns` â€” Use for general testing design patterns and strategies
+- `@cicd-pipeline-skill` â€” Use when setting up end-to-end CI/CD pipelines with test automation
+- `@debugging-strategies` â€” Use when diagnosing systematic test failures
+

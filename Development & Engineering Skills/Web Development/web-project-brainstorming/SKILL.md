@@ -1,4 +1,4 @@
----
+﻿---
 name: web-project-brainstorming
 description: Masterclass framework for brainstorming web development projects and page designs. Outlines structural phases for concept, UX flow, styling aesthetics, technical architecture, and SEO.
 category: consulting
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-06-26"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [brainstorming, project-planning, web-development, product-scoping, design-system, architecture]
 tools: [claude, cursor, gemini]
 ---
@@ -32,7 +32,7 @@ Execute web project brainstorming sequentially across six structured phases. Ask
 Define the product's primary value proposition and scope:
 - **Target Audience**: Who is using the website or application?
 - **Core Value**: What problem does it solve for users?
-- **Key Features**: What are the top 3–5 mandatory features?
+- **Key Features**: What are the top 3â€“5 mandatory features?
 
 ### Phase 2: User Experience (UX) & Information Architecture
 Map how users navigate and interact:
@@ -71,7 +71,7 @@ Break the work down into manageable increments:
 Use this prompt layout when initiating a brainstorming session with a client or team member:
 
 ```markdown
-👋 Let's brainstorm your new web project! We will walk through 6 quick phases.
+ðŸ‘‹ Let's brainstorm your new web project! We will walk through 6 quick phases.
 
 ---
 ### Phase 1: Core Concept & Scoping
@@ -120,10 +120,10 @@ Once all phases are complete, generate a markdown blueprint for the project usin
 
 ## Best Practices
 
-- ✅ Ask questions incrementally—never dump all six phases in a single response to avoid cognitive overload.
-- ✅ Propose logical defaults (e.g., recommending responsive Tailwind/CSS Grid and standard semantic HTML) if the user is unsure.
-- ✅ Ensure semantic HTML layout hierarchy (one `<h1>` per page, sequential `<section>`, `<article>`, `<header>`, `<footer>` elements) is planned from the start.
-- ✅ Document explicit non-goals to prevent feature creep.
+- âœ… Ask questions incrementallyâ€”never dump all six phases in a single response to avoid cognitive overload.
+- âœ… Propose logical defaults (e.g., recommending responsive Tailwind/CSS Grid and standard semantic HTML) if the user is unsure.
+- âœ… Ensure semantic HTML layout hierarchy (one `<h1>` per page, sequential `<section>`, `<article>`, `<header>`, `<footer>` elements) is planned from the start.
+- âœ… Document explicit non-goals to prevent feature creep.
 
 ## Limitations
 
@@ -147,3 +147,4 @@ Once all phases are complete, generate a markdown blueprint for the project usin
 - `@writing-plans` - Organizing structural step-by-step engineering plans.
 - `@architecture-decision-records` - Documenting architectural decisions.
 - `@ux-flow` - Designing deep user experience flows and interaction details.
+

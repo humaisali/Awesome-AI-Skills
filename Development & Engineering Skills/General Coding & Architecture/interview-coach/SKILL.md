@@ -1,11 +1,11 @@
----
+﻿---
 name: interview-coach
-description: "Full job search coaching system — JD decoding, resume, storybank, mock interviews, transcript analysis, comp negotiation. 23 commands, persistent state."
+description: "Full job search coaching system â€” JD decoding, resume, storybank, mock interviews, transcript analysis, comp negotiation. 23 commands, persistent state."
 category: productivity
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-11"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [interview, job-search, coaching, career, storybank, negotiation]
 tools: [claude]
 ---
@@ -15,7 +15,7 @@ tools: [claude]
 ## Overview
 
 A persistent, adaptive coaching system for the full job search lifecycle.
-Not a question bank — an opinionated system that tracks your patterns,
+Not a question bank â€” an opinionated system that tracks your patterns,
 scores your answers, and gets sharper the more you use it. State persists
 in `coaching_state.md` across sessions so you always pick up where you left off.
 
@@ -25,7 +25,7 @@ in `coaching_state.md` across sessions so you always pick up where you left off.
 npx skills add dbhat93/job-search-os
 ```
 
-Then type `/coach` → `kickoff`.
+Then type `/coach` â†’ `kickoff`.
 
 ## When to Use This Skill
 
@@ -37,12 +37,12 @@ Then type `/coach` → `kickoff`.
 
 ## What It Covers
 
-- **JD decoding** — six lenses, fit verdict, recruiter questions to ask
-- **Resume + LinkedIn** — ATS audit, bullet rewrites, platform-native optimization
-- **Mock interviews** — behavioral, system design, case, panel, technical formats
-- **Transcript analysis** — paste from Otter/Zoom/Grain, auto-detected format
-- **Storybank** — STAR stories with earned secrets, retrieval drills, portfolio optimization
-- **Comp + negotiation** — pre-offer scripting, offer analysis, exact negotiation scripts
+- **JD decoding** â€” six lenses, fit verdict, recruiter questions to ask
+- **Resume + LinkedIn** â€” ATS audit, bullet rewrites, platform-native optimization
+- **Mock interviews** â€” behavioral, system design, case, panel, technical formats
+- **Transcript analysis** â€” paste from Otter/Zoom/Grain, auto-detected format
+- **Storybank** â€” STAR stories with earned secrets, retrieval drills, portfolio optimization
+- **Comp + negotiation** â€” pre-offer scripting, offer analysis, exact negotiation scripts
 - **23 total commands** across the full search lifecycle
 
 ## Examples
@@ -54,7 +54,7 @@ Then type `/coach` → `kickoff`.
 kickoff
 ```
 
-The coach asks for your resume, target role, and timeline — then builds
+The coach asks for your resume, target role, and timeline â€” then builds
 your profile and gives you a prioritized action plan.
 
 ### Example 2: Prep for a specific company
@@ -96,3 +96,4 @@ https://github.com/dbhat93/job-search-os
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

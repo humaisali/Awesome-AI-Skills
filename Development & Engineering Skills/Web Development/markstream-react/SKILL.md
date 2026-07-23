@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-react
 description: "Integrate the beta markstream-react renderer into React 18+ or Next.js with correct client/server entrypoints, CSS, streaming state, and component overrides."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [react, nextjs, markdown, streaming, ssr]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -72,3 +72,4 @@ export function StreamingAnswer({
 ## Security & Safety Notes
 
 Review dependencies and never opt untrusted model output into trusted HTML or loose diagram rendering.
+

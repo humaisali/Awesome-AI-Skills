@@ -1,10 +1,10 @@
----
+﻿---
 name: earllm-build
-description: "Build, maintain, and extend the EarLLM One Android project — a Kotlin/Compose app that connects Bluetooth earbuds to an LLM via voice pipeline."
+description: "Build, maintain, and extend the EarLLM One Android project â€” a Kotlin/Compose app that connects Bluetooth earbuds to an LLM via voice pipeline."
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - android
 - kotlin
@@ -19,11 +19,11 @@ tools:
 - codex-cli
 ---
 
-# EarLLM One — Build & Maintain
+# EarLLM One â€” Build & Maintain
 
 ## Overview
 
-Build, maintain, and extend the EarLLM One Android project — a Kotlin/Compose app that connects Bluetooth earbuds to an LLM via voice pipeline.
+Build, maintain, and extend the EarLLM One Android project â€” a Kotlin/Compose app that connects Bluetooth earbuds to an LLM via voice pipeline.
 
 ## When to Use This Skill
 
@@ -51,10 +51,10 @@ EarLLM One is a multi-module Android app (Kotlin + Jetpack Compose) that capture
 ## Module Dependency Graph
 
 ```
-app ──→ voice ──→ audio ──→ core-logging
-  │       │
-  ├──→ bluetooth ──→ core-logging
-  └──→ llm ──→ core-logging
+app â”€â”€â†’ voice â”€â”€â†’ audio â”€â”€â†’ core-logging
+  â”‚       â”‚
+  â”œâ”€â”€â†’ bluetooth â”€â”€â†’ core-logging
+  â””â”€â”€â†’ llm â”€â”€â†’ core-logging
 ```
 
 ## Modules And Key Files
@@ -98,28 +98,28 @@ These are verified facts from official documentation and device testing. Treat t
 
 6. **`VOICE_COMMUNICATION` audio source enables AEC** (Acoustic Echo Cancellation), which is critical to prevent TTS audio output from feeding back into the STT microphone input. Never change this source without understanding the echo implications.
 
-7. **Never play TTS (A2DP) while simultaneously recording via SCO.** The correct sequence is: stop playback → switch to HFP → record → switch to A2DP → play response.
+7. **Never play TTS (A2DP) while simultaneously recording via SCO.** The correct sequence is: stop playback â†’ switch to HFP â†’ record â†’ switch to A2DP â†’ play response.
 
 ## Data Flow
 
 ```
 Headset button tap
-  → MediaSession (HeadsetButtonController)
-  → TapAction.RECORD_TOGGLE
-  → VoicePipeline.toggleRecording()
-  → VoiceCaptureController captures PCM (16kHz mono)
-  → stopRecording() returns ByteArray
-  → SpeechToTextController.transcribe(pcmData)
-  → LlmClient.chat(messages)
-  → TextToSpeechController.speak(response)
-  → Audio output via A2DP to earbuds
+  â†’ MediaSession (HeadsetButtonController)
+  â†’ TapAction.RECORD_TOGGLE
+  â†’ VoicePipeline.toggleRecording()
+  â†’ VoiceCaptureController captures PCM (16kHz mono)
+  â†’ stopRecording() returns ByteArray
+  â†’ SpeechToTextController.transcribe(pcmData)
+  â†’ LlmClient.chat(messages)
+  â†’ TextToSpeechController.speak(response)
+  â†’ Audio output via A2DP to earbuds
 ```
 
 ## Adding A New Feature
 
 1. Identify which module(s) are affected
 2. Read existing code in those modules first
-3. Follow the StateFlow pattern — expose state via `MutableStateFlow` / `StateFlow`
+3. Follow the StateFlow pattern â€” expose state via `MutableStateFlow` / `StateFlow`
 4. Update `MainViewModel.kt` if the feature needs UI integration
 5. Add unit tests in the module's `src/test/` directory
 6. Update docs if the feature changes behavior
@@ -128,7 +128,7 @@ Headset button tap
 
 - `VoiceCaptureController.kt` handles PCM recording at 16kHz mono
 - WAV headers use hex byte values (not char literals) to avoid shell quoting issues
-- VU meter: RMS calculation → dB conversion → normalized 0-1 range
+- VU meter: RMS calculation â†’ dB conversion â†’ normalized 0-1 range
 - Buffer size: `getMinBufferSize().coerceAtLeast(4096)`
 
 ## Changing Bluetooth Behavior
@@ -139,7 +139,7 @@ Headset button tap
 
 ## Modifying The Llm Integration
 
-- `LlmClient.kt` defines the interface — keep it generic
+- `LlmClient.kt` defines the interface â€” keep it generic
 - `StubLlmClient.kt` for offline testing (500ms simulated delay)
 - `RealLlmClient.kt` uses OkHttp to call OpenAI-compatible APIs
 - API keys stored in `SecureTokenStore.kt` (EncryptedSharedPreferences)
@@ -194,3 +194,4 @@ powershell -Command "Remove-Item 'EarLLM_One_v1.0.zip' -Force -ErrorAction Silen
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

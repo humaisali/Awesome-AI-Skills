@@ -1,11 +1,11 @@
----
+﻿---
 name: frontend-api-integration-patterns
 description: "Production-ready patterns for integrating frontend applications with backend APIs, including race condition handling, request cancellation, retry strategies, error normalization, and UI state management."
 category: frontend
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-04-23"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
   - frontend
   - api-integration
@@ -25,7 +25,7 @@ tools:
 
 This skill provides production-ready patterns for integrating frontend applications with backend APIs.
 
-Most frontend issues are not caused by APIs being difficult to call, but by **incorrect handling of asynchronous behavior**—leading to race conditions, stale data, duplicated requests, and poor user experience.
+Most frontend issues are not caused by APIs being difficult to call, but by **incorrect handling of asynchronous behavior**â€”leading to race conditions, stale data, duplicated requests, and poor user experience.
 
 This skill focuses on **correctness, resilience, and user experience**, not just making API calls work.
 
@@ -285,24 +285,24 @@ const deleteItem = async (id) => {
 
 ## Best Practices
 
-* ✅ Centralize API logic in a dedicated layer
-* ✅ Normalize errors using a custom error class
-* ✅ Always handle loading, error, and success states
-* ✅ Use AbortController for request cancellation
-* ✅ Retry only transient failures (5xx)
-* ✅ Use debouncing for input-driven APIs
-* ✅ Deduplicate identical requests
+* âœ… Centralize API logic in a dedicated layer
+* âœ… Normalize errors using a custom error class
+* âœ… Always handle loading, error, and success states
+* âœ… Use AbortController for request cancellation
+* âœ… Retry only transient failures (5xx)
+* âœ… Use debouncing for input-driven APIs
+* âœ… Deduplicate identical requests
 
 ---
 
 ## Anti-Patterns
 
-* ❌ Retrying 4xx errors
-* ❌ No request cancellation (memory leaks)
-* ❌ Race-condition-prone state updates
-* ❌ Swallowing errors silently
-* ❌ Global loading/error state for multiple requests
-* ❌ Calling APIs directly inside components repeatedly
+* âŒ Retrying 4xx errors
+* âŒ No request cancellation (memory leaks)
+* âŒ Race-condition-prone state updates
+* âŒ Swallowing errors silently
+* âŒ Global loading/error state for multiple requests
+* âŒ Calling APIs directly inside components repeatedly
 
 ---
 
@@ -340,3 +340,4 @@ const deleteItem = async (id) => {
 * https://axios-http.com
 
 ---
+

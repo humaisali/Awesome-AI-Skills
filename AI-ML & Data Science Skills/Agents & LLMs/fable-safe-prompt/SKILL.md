@@ -1,4 +1,4 @@
----
+﻿---
 name: fable-safe-prompt
 description: "Rewrite allowed prompts to reduce false-positive safety triggers without bypassing policy or changing intent."
 category: agent-behavior
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [prompting, safety, guardrails]
 tools: [claude, codex]
 license: "MIT"
@@ -22,7 +22,7 @@ disable-model-invocation: true
 - Use when an allowed prompt appears likely to hit false-positive classifier language.
 - Use when the user asks for prompt wording that keeps benign intent clear and policy-compliant.
 
-Return the user's prompt back **in full, verbatim**, changing ONLY the specific sentences/phrases most likely to trip Fable 5's cyber/bio classifiers. Do not rewrite the whole thing, do not summarize, do not restructure — minimal surgical edits. Keep the actual goal and all benign text exactly as written. This lowers false positives for benign work. It must not be used to bypass safety policy or enable harmful requests.
+Return the user's prompt back **in full, verbatim**, changing ONLY the specific sentences/phrases most likely to trip Fable 5's cyber/bio classifiers. Do not rewrite the whole thing, do not summarize, do not restructure â€” minimal surgical edits. Keep the actual goal and all benign text exactly as written. This lowers false positives for benign work. It must not be used to bypass safety policy or enable harmful requests.
 
 Fable 5 runs 3 input classifiers: **cyber**, **bio/chem**, **reasoning_extraction**. Triggers are keyword/surface-based, largely intent-independent ("hello" and "cancer" got flagged). The fix is to abstract away the sensitive domain, not just restate intent.
 
@@ -69,11 +69,12 @@ If no benign defensive equivalent exists for a sentence (it's purely offensive),
    ```
    Confirm in one line that it's on the clipboard.
 3. A short list of exactly which sentences you changed and what they became.
-4. If the task is genuinely offensive (pentest, exploit repro, malware analysis): say plainly no edit makes it Fable-safe — use an Opus 4.8 fallback or vetted Mythos, not Fable 5.
+4. If the task is genuinely offensive (pentest, exploit repro, malware analysis): say plainly no edit makes it Fable-safe â€” use an Opus 4.8 fallback or vetted Mythos, not Fable 5.
 
-**Hard truth:** you can't reliably stop Fable 5 guardrails. Robust API setups also treat `stop_reason: "refusal"` (HTTP 200, `stop_details.category` = `cyber`/`bio`) as a route to an Opus 4.8 fallback — mention only if the user controls the integration.
+**Hard truth:** you can't reliably stop Fable 5 guardrails. Robust API setups also treat `stop_reason: "refusal"` (HTTP 200, `stop_details.category` = `cyber`/`bio`) as a route to an Opus 4.8 fallback â€” mention only if the user controls the integration.
 
 ## Limitations
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

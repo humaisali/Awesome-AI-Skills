@@ -1,4 +1,4 @@
----
+﻿---
 name: unslop
 description: "Post-process AI-generated text through the unslop CLI to strip AI writing patterns before publishing"
 category: writing
@@ -7,20 +7,20 @@ source: https://github.com/humaisali
 source_repo: MohamedAbdallah-14/unslop
 source_type: community
 date_added: "2026-04-25"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [writing, content-quality, ai-writing, text-processing, cli, publishing]
 tools: [claude-code, cursor, gemini-cli, codex-cli, antigravity]
 license: "MIT"
 license_source: https://github.com/humaisali
 ---
 
-# unslop — Strip AI Writing Patterns via CLI
+# unslop â€” Strip AI Writing Patterns via CLI
 
 ## Overview
 
 unslop is a CLI tool that post-processes text to remove AI writing patterns programmatically. Unlike skills that ask the agent to avoid AI-isms, unslop runs as a deterministic pipeline step: pipe text in, get clean text out. Use it as a final pass before committing docs, publishing posts, or sending any AI-generated content to production.
 
-The `--deterministic` flag makes output reproducible — same input always produces same output. The `--stdin` flag reads from stdin, enabling shell pipeline composition.
+The `--deterministic` flag makes output reproducible â€” same input always produces same output. The `--stdin` flag reads from stdin, enabling shell pipeline composition.
 
 ## When to Use This Skill
 
@@ -55,7 +55,7 @@ Standard cleanup (may vary slightly between runs):
 echo "This leverages cutting-edge AI to deliver robust solutions." | unslop --stdin
 ```
 
-Deterministic cleanup (same input → same output every run):
+Deterministic cleanup (same input â†’ same output every run):
 
 ```bash
 echo "This leverages cutting-edge AI to deliver robust solutions." | unslop --stdin --deterministic
@@ -117,22 +117,23 @@ done
 
 ## Best Practices
 
-- ✅ Use `--deterministic` in CI and automation to ensure reproducible output
-- ✅ Run on the final draft, not intermediate iterations
-- ✅ Combine with the `avoid-ai-writing` skill for both generation-time guidance and post-processing
-- ❌ Don't run on code files — unslop targets prose, not source code
-- ❌ Don't skip review after unslop: automated cleanup can occasionally change meaning; read the output
+- âœ… Use `--deterministic` in CI and automation to ensure reproducible output
+- âœ… Run on the final draft, not intermediate iterations
+- âœ… Combine with the `avoid-ai-writing` skill for both generation-time guidance and post-processing
+- âŒ Don't run on code files â€” unslop targets prose, not source code
+- âŒ Don't skip review after unslop: automated cleanup can occasionally change meaning; read the output
 
 ## Limitations
 
-- Processes prose only — not code, JSON, or structured data
+- Processes prose only â€” not code, JSON, or structured data
 - Does not catch factual errors or substantive writing issues
 - Some replacements may not fit every context; review the output before publishing
 - Requires Python tooling such as `pipx` or `uv` for standalone CLI installation
 
 ## Security & Safety Notes
 
-- unslop reads from stdin and writes to stdout — no file system side effects by default
+- unslop reads from stdin and writes to stdout â€” no file system side effects by default
 - `--deterministic` mode is local and does not make LLM API calls
 - Default LLM mode may use `ANTHROPIC_API_KEY` or the Claude CLI; use `--deterministic` for sensitive local files and CI gates
 - Safe to run in CI pipelines and commit hooks when pinned to deterministic mode
+

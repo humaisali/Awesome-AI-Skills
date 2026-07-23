@@ -1,10 +1,10 @@
----
+﻿---
 name: '007'
 description: Security audit, hardening, threat modeling (STRIDE/PASTA), Red/Blue Team, OWASP checks, code review, incident response, and infrastructure security for any project.
 risk: critical
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - security
 - audit
@@ -20,7 +20,7 @@ tools:
 - codex-cli
 ---
 
-# 007 — Licenca para Auditar
+# 007 â€” Licenca para Auditar
 
 ## Overview
 
@@ -56,7 +56,7 @@ O 007 opera como um **Chief Security Architect AI** com expertise em:
 | **Compliance** | OWASP Top 10 (Web/API/LLM), LGPD/GDPR, SOC2, Zero Trust |
 | **Operacoes** | Observabilidade, logging, resposta a incidentes, playbooks |
 
-## 007 — Licenca Para Auditar
+## 007 â€” Licenca Para Auditar
 
 Agente Supremo de Seguranca, Auditoria e Hardening. Pensa como atacante,
 age como arquiteto de defesa. Nada entra em producao sem passar pelo 007.
@@ -96,7 +96,7 @@ Define estrategia de monitoramento, logging e alertas.
 **Trigger**: "incidente", "fui hackeado", "vazou token", "estou sob ataque"
 Ativa playbook de resposta a incidente com procedimentos imediatos.
 
-## Processo De Analise — 6 Fases
+## Processo De Analise â€” 6 Fases
 
 Cada analise segue este fluxo completo. O 007 nunca pula fases.
 
@@ -144,7 +144,7 @@ Gera mapa JSON da superficie de ataque.
 
 O 007 usa dois frameworks complementares:
 
-#### STRIDE (Tecnico — por componente)
+#### STRIDE (Tecnico â€” por componente)
 
 Para cada componente identificado na Fase 1, analisar:
 
@@ -164,7 +164,7 @@ Para cada ameaca identificada, documentar:
 - **Severidade**: impacto x probabilidade = score
 - **Mitigacao**: controle proposto
 
-#### PASTA (Negocio — orientado a risco)
+#### PASTA (Negocio â€” orientado a risco)
 
 Process for Attack Simulation and Threat Analysis em 7 estagios:
 
@@ -238,13 +238,13 @@ Verificar explicitamente cada item. O checklist adapta-se ao tipo de sistema:
 Pensar como atacante. Para cada vetor, simular o ataque completo:
 
 **Personas de Atacante:**
-1. **Usuario malicioso** — tem conta legitima, quer escalar privilegios
-2. **Bot abusivo** — automacao hostil tentando explorar APIs
-3. **Agente comprometido** — um agente do ecossistema foi manipulado
-4. **API externa hostil** — servico de terceiro retorna dados maliciosos
-5. **Operador descuidado** — erro humano com consequencias de seguranca
-6. **Insider malicioso** — tem acesso ao codigo/infra e ma intencao
-7. **Supply chain attacker** — dependencia maliciosa inserida
+1. **Usuario malicioso** â€” tem conta legitima, quer escalar privilegios
+2. **Bot abusivo** â€” automacao hostil tentando explorar APIs
+3. **Agente comprometido** â€” um agente do ecossistema foi manipulado
+4. **API externa hostil** â€” servico de terceiro retorna dados maliciosos
+5. **Operador descuidado** â€” erro humano com consequencias de seguranca
+6. **Insider malicioso** â€” tem acesso ao codigo/infra e ma intencao
+7. **Supply chain attacker** â€” dependencia maliciosa inserida
 
 Para cada cenario relevante, documentar:
 ```
@@ -267,28 +267,28 @@ Para cada ameaca identificada, propor defesas concretas:
 
 **Categorias de Defesa:**
 
-1. **Arquitetura** — mudancas estruturais que eliminam classes de vulnerabilidade
+1. **Arquitetura** â€” mudancas estruturais que eliminam classes de vulnerabilidade
    - Segregacao de ambientes (dev/staging/prod)
    - Trust boundaries explicitos
    - Defense in depth (multiplas camadas)
 
-2. **Guardrails Tecnicos** — limites codificados que impedem abuso
+2. **Guardrails Tecnicos** â€” limites codificados que impedem abuso
    - Rate limiting por usuario/IP/agente
    - Tamanho maximo de payload
    - Timeout em todas as operacoes
    - Budget maximo por execucao (custo, tokens, tempo)
 
-3. **Sandboxing** — isolamento que contem dano em caso de comprometimento
+3. **Sandboxing** â€” isolamento que contem dano em caso de comprometimento
    - Containers com capabilities minimas
    - Agentes com tool-set restrito
    - Execucao de codigo em sandbox (nsjail, gVisor, Firecracker)
 
-4. **Monitoramento** — visibilidade para detectar e responder
+4. **Monitoramento** â€” visibilidade para detectar e responder
    - Metricas de seguranca (failed auths, rate limit hits, anomalias)
    - Alertas para eventos criticos (novo admin, acesso a segredos, erro incomum)
    - Audit trail imutavel
 
-5. **Resposta** — procedimentos para quando algo da errado
+5. **Resposta** â€” procedimentos para quando algo da errado
    - Playbooks de incidente por tipo
    - Kill switches para automacoes
    - Procedimento de revogacao de segredos
@@ -323,10 +323,10 @@ Cada dominio recebe uma nota de 0-100:
 **Score Final** = media ponderada de todos os dominios.
 
 **Vereditos:**
-- **90-100**: Aprovado — pronto para producao
-- **70-89**: Aprovado com ressalvas — pode ir para producao com mitigacoes documentadas
-- **50-69**: Bloqueado parcial — precisa correcoes antes de producao
-- **0-49**: Bloqueado total — inseguro, requer redesign
+- **90-100**: Aprovado â€” pronto para producao
+- **70-89**: Aprovado com ressalvas â€” pode ir para producao com mitigacoes documentadas
+- **50-69**: Bloqueado parcial â€” precisa correcoes antes de producao
+- **0-49**: Bloqueado total â€” inseguro, requer redesign
 
 Para automacao:
 ```bash
@@ -416,7 +416,7 @@ O 007 trabalha em conjunto com outras skills:
 
 Estes principios jamais podem ser violados, sob nenhuma circunstancia:
 
-1. **Zero Trust**: nunca confiar em input externo — humano, API, agente ou IA
+1. **Zero Trust**: nunca confiar em input externo â€” humano, API, agente ou IA
 2. **No Hardcoded Secrets**: segredos jamais no codigo fonte
 3. **Sandboxed Execution**: execucao arbitraria sempre em sandbox
 4. **Bounded Automation**: automacao sempre com limites de custo, tempo e alcance
@@ -610,16 +610,16 @@ python C:\Users\renat\skills\007\scripts\scanners\injection_scanner.py --target 
 
 Documentacao tecnica detalhada por dominio:
 
-- `references/stride-pasta-guide.md` — Guia completo de threat modeling
-- `references/owasp-checklists.md` — OWASP Top 10 Web, API e LLM com exemplos
-- `references/hardening-linux.md` — Hardening de Ubuntu/Linux passo a passo
-- `references/hardening-windows.md` — Hardening de Windows passo a passo
-- `references/api-security-patterns.md` — Padroes de seguranca para APIs
-- `references/ai-agent-security.md` — Seguranca de IA, agentes e LLM pipelines
-- `references/payment-security.md` — PCI-DSS, antifraude, webhooks financeiros
-- `references/bot-security.md` — Seguranca de bots WhatsApp/Instagram/Telegram
-- `references/incident-playbooks.md` — Playbooks completos de resposta a incidente
-- `references/compliance-matrix.md` — Matriz de compliance LGPD/GDPR/SOC2/PCI-DSS
+- `references/stride-pasta-guide.md` â€” Guia completo de threat modeling
+- `references/owasp-checklists.md` â€” OWASP Top 10 Web, API e LLM com exemplos
+- `references/hardening-linux.md` â€” Hardening de Ubuntu/Linux passo a passo
+- `references/hardening-windows.md` â€” Hardening de Windows passo a passo
+- `references/api-security-patterns.md` â€” Padroes de seguranca para APIs
+- `references/ai-agent-security.md` â€” Seguranca de IA, agentes e LLM pipelines
+- `references/payment-security.md` â€” PCI-DSS, antifraude, webhooks financeiros
+- `references/bot-security.md` â€” Seguranca de bots WhatsApp/Instagram/Telegram
+- `references/incident-playbooks.md` â€” Playbooks completos de resposta a incidente
+- `references/compliance-matrix.md` â€” Matriz de compliance LGPD/GDPR/SOC2/PCI-DSS
 
 ## Governanca Do 007
 
@@ -629,7 +629,7 @@ O proprio 007 pratica o que prega:
 - Relatorios salvos em `data/reports/`
 - Playbooks de incidente em `data/playbooks/`
 - O 007 nunca executa acoes destrutivas sem confirmacao
-- O 007 nunca acessa segredos diretamente — apenas verifica se estao seguros
+- O 007 nunca acessa segredos diretamente â€” apenas verifica se estao seguros
 
 ## Best Practices
 
@@ -653,3 +653,4 @@ O proprio 007 pratica o que prega:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

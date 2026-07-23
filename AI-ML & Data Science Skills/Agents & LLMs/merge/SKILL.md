@@ -1,10 +1,10 @@
----
+﻿---
 name: "merge"
 description: "Merge the winning agent's branch into base, archive losers, and clean up worktrees. Use when the user runs /hub:merge or asks to land the winning AgentHub result and tidy the session."
 command: /hub:merge
 ---
 
-# /hub:merge — Merge Winner
+# /hub:merge â€” Merge Winner
 
 Merge the best agent's branch into the base branch, archive losing branches via git tags, and clean up worktrees.
 
@@ -58,7 +58,7 @@ Write `.agenthub/board/results/merge-summary.md`:
 
 ```markdown
 ---
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 timestamp: {now}
 channel: results
 ---
@@ -80,10 +80,10 @@ python {skill_path}/scripts/session_manager.py --update {session-id} --state mer
 
 ## Safety
 
-- **Confirm with user** before merging — show the diff summary first
-- **Never force-push** — merge is always `--no-ff` for clear history
-- **Archive, don't delete** — losing agents' commits are preserved via tags
-- **Clean worktrees** — don't leave orphan directories on disk
+- **Confirm with user** before merging â€” show the diff summary first
+- **Never force-push** â€” merge is always `--no-ff` for clear history
+- **Archive, don't delete** â€” losing agents' commits are preserved via tags
+- **Clean worktrees** â€” don't leave orphan directories on disk
 
 ## After Merge
 
@@ -92,3 +92,4 @@ Tell the user:
 - Losers archived with tags `hub/archive/{session-id}/agent-{N}`
 - Worktrees cleaned up
 - Session state: `merged`
+

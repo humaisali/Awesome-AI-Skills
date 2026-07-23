@@ -1,4 +1,4 @@
----
+﻿---
 name: frontend-lighthouse
 description: "Add a portable Lighthouse CI gate for production frontend builds with Core Web Vitals budgets, category floors, median runs, and CI artifacts."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: stareezy-1/frontend-architecture-skill
 source_type: community
 date_added: "2026-06-29"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [frontend, lighthouse, performance, core-web-vitals, ci]
 tools: [lighthouse, node, github-actions]
 license: "MIT"
@@ -16,8 +16,8 @@ license_source: https://github.com/humaisali
 
 # Frontend Lighthouse (portable performance gate)
 
-> Portable skill — readable by Claude Code, OpenCode, Codex, Cursor, Windsurf, and others.
-> This skill describes a **CI performance gate** — a Lighthouse CI config plus a workflow — not a
+> Portable skill â€” readable by Claude Code, OpenCode, Codex, Cursor, Windsurf, and others.
+> This skill describes a **CI performance gate** â€” a Lighthouse CI config plus a workflow â€” not a
 > component library or a visual style. It pairs with the **frontend-seo** and
 > **frontend-architecture** skills: SEO writes the metadata, Lighthouse proves it ships fast.
 
@@ -36,10 +36,10 @@ Vitals budgets and category score floors**. Budgets live in **one** `lighthouser
 
 ## 0. The five core ideas
 
-1. **One config, one source of truth.** All budgets and assertions live in a single `lighthouserc.cjs`. Named constants for each budget — no magic numbers buried in assertion objects.
+1. **One config, one source of truth.** All budgets and assertions live in a single `lighthouserc.cjs`. Named constants for each budget â€” no magic numbers buried in assertion objects.
 2. **Gate the production build, never dev.** Lighthouse runs against `build` + `start` (the real, optimized output). Dev-server numbers are meaningless for a budget.
 3. **Median-of-N kills flakiness.** Run 3+ times and assert on the median run, so per-run jitter (cold caches, CI noise) never red-flags a healthy build.
-4. **Budgets encode Google's "good" thresholds.** LCP ≤ 2500 ms, INP ≤ 200 ms (gated via the TBT lab proxy), CLS ≤ 0.1 — the values that earn green scores, not "needs improvement".
+4. **Budgets encode Google's "good" thresholds.** LCP â‰¤ 2500 ms, INP â‰¤ 200 ms (gated via the TBT lab proxy), CLS â‰¤ 0.1 â€” the values that earn green scores, not "needs improvement".
 5. **Blocking in CI, visible as artifacts.** A GitHub Action runs the gate on every PR touching the app and uploads the HTML/JSON reports so failures are debuggable.
 
 ---
@@ -48,9 +48,9 @@ Vitals budgets and category score floors**. Budgets live in **one** `lighthouser
 
 ```
 apps/web/                          (or your app root)
-├── lighthouserc.cjs               ← the gate: budgets + assertions + collect settings
-├── package.json                   ← "lhci": "lhci autorun --config=./lighthouserc.cjs"
-└── .github/workflows/lighthouse.yml  ← PR-blocking CI job (build → start → lhci → upload)
+â”œâ”€â”€ lighthouserc.cjs               â† the gate: budgets + assertions + collect settings
+â”œâ”€â”€ package.json                   â† "lhci": "lhci autorun --config=./lighthouserc.cjs"
+â””â”€â”€ .github/workflows/lighthouse.yml  â† PR-blocking CI job (build â†’ start â†’ lhci â†’ upload)
 ```
 
 Plus a dev dependency: `@lhci/cli`.
@@ -64,19 +64,19 @@ pnpm add -D @lhci/cli        # or npm i -D / yarn add -D
 ## 2. The config (`lighthouserc.cjs`)
 
 `.cjs` (CommonJS) so it loads without ESM/TS transpilation. Every budget is a **named constant**
-with a comment explaining the threshold — never a bare number inside an assertion.
+with a comment explaining the threshold â€” never a bare number inside an assertion.
 
 ```js
 /**
- * Lighthouse CI configuration — Core Web Vitals budgets for the marketing surface.
+ * Lighthouse CI configuration â€” Core Web Vitals budgets for the marketing surface.
  *
  * Enforces Google's mobile "good" CWV thresholds:
- *   - Largest Contentful Paint (LCP) ≤ 2500 ms
- *   - Cumulative Layout Shift (CLS)  ≤ 0.1
- *   - Interaction to Next Paint (INP) ≤ 200 ms
+ *   - Largest Contentful Paint (LCP) â‰¤ 2500 ms
+ *   - Cumulative Layout Shift (CLS)  â‰¤ 0.1
+ *   - Interaction to Next Paint (INP) â‰¤ 200 ms
  *
  * INP is a *field* metric with no direct lab audit, so in the lab we gate on
- * Total Blocking Time (TBT) — Lighthouse's recommended lab proxy — at the same
+ * Total Blocking Time (TBT) â€” Lighthouse's recommended lab proxy â€” at the same
  * budget, and assert the experimental INP audit directly as a warning where the
  * build exposes it.
  *
@@ -92,7 +92,7 @@ const BASE_URL = `http://localhost:${PORT}`;
 const MARKETING_URLS = [`${BASE_URL}/`];
 
 /**
- * Core Web Vitals budgets on mobile — Google's "good" thresholds.
+ * Core Web Vitals budgets on mobile â€” Google's "good" thresholds.
  * These are the values that earn the best Lighthouse scores.
  */
 const LCP_BUDGET_MS = 2500; // good
@@ -158,10 +158,10 @@ module.exports = {
 **Hard rules:**
 
 - Every budget is a named constant with a unit in its name (`LCP_BUDGET_MS`) and a comment.
-- `aggregationMethod: "median-run"` is non-negotiable — single-run gates flake constantly.
-- `numberOfRuns` ≥ 3 (odd numbers give a clean median).
+- `aggregationMethod: "median-run"` is non-negotiable â€” single-run gates flake constantly.
+- `numberOfRuns` â‰¥ 3 (odd numbers give a clean median).
 - Assert on TBT for INP in the lab; treat the experimental `interaction-to-next-paint` audit as a `warn`, not an `error` (it isn't present in every Lighthouse build).
-- Keep `onlyCategories` to exactly what you gate — fewer audits, faster, less noise.
+- Keep `onlyCategories` to exactly what you gate â€” fewer audits, faster, less noise.
 
 ---
 
@@ -169,17 +169,17 @@ module.exports = {
 
 | Audit / category            | Severity | Threshold | Why                                                   |
 | --------------------------- | -------- | --------- | ----------------------------------------------------- |
-| `largest-contentful-paint`  | `error`  | ≤ 2500 ms | Google "good" LCP                                     |
-| `cumulative-layout-shift`   | `error`  | ≤ 0.1     | Google "good" CLS                                     |
-| `total-blocking-time`       | `error`  | ≤ 200 ms  | INP lab proxy                                         |
-| `interaction-to-next-paint` | `warn`   | ≤ 200 ms  | not in all builds; don't hard-fail on a missing audit |
-| `categories:performance`    | `error`  | ≥ 0.9     | top (green) band                                      |
-| `categories:seo`            | `error`  | ≥ 0.95    | SEO is cheap to keep perfect                          |
-| `categories:accessibility`  | `error`  | ≥ 0.95    | a11y regressions must block                           |
-| `categories:best-practices` | `error`  | ≥ 0.9     | green band                                            |
+| `largest-contentful-paint`  | `error`  | â‰¤ 2500 ms | Google "good" LCP                                     |
+| `cumulative-layout-shift`   | `error`  | â‰¤ 0.1     | Google "good" CLS                                     |
+| `total-blocking-time`       | `error`  | â‰¤ 200 ms  | INP lab proxy                                         |
+| `interaction-to-next-paint` | `warn`   | â‰¤ 200 ms  | not in all builds; don't hard-fail on a missing audit |
+| `categories:performance`    | `error`  | â‰¥ 0.9     | top (green) band                                      |
+| `categories:seo`            | `error`  | â‰¥ 0.95    | SEO is cheap to keep perfect                          |
+| `categories:accessibility`  | `error`  | â‰¥ 0.95    | a11y regressions must block                           |
+| `categories:best-practices` | `error`  | â‰¥ 0.9     | green band                                            |
 
 Use `error` for contracts that must hold and `warn` for audits that are environment-dependent or
-aspirational. **Start strict and only loosen with a recorded reason** — a budget you keep raising
+aspirational. **Start strict and only loosen with a recorded reason** â€” a budget you keep raising
 to make CI pass is a budget that no longer protects anything.
 
 ---
@@ -195,7 +195,7 @@ to make CI pass is a budget that no longer protects anything.
 }
 ```
 
-`lhci autorun` runs `collect` → `assert` → `upload` in sequence. Run it locally before pushing to
+`lhci autorun` runs `collect` â†’ `assert` â†’ `upload` in sequence. Run it locally before pushing to
 reproduce exactly what CI does:
 
 ```bash
@@ -267,7 +267,7 @@ jobs:
 **Hard rules:**
 
 - Trigger on the app path **and** the workflow file so config changes are self-testing.
-- `if: always()` on the upload step — you need the report most when the gate fails.
+- `if: always()` on the upload step â€” you need the report most when the gate fails.
 - Gate on the **production** build (`pnpm build` then the `start` server in `collect`).
 - Match the CI Node/pnpm versions to the repo's pinned versions to avoid lockfile drift.
 
@@ -286,28 +286,28 @@ The config is framework-neutral except `startServerCommand` and `startServerRead
 | **Vite SPA**  | `npx vite preview --port 3100`                                    | `"Local:"`                                  |
 
 For purely static output you can skip the server and point `collect.staticDistDir` at the build
-folder instead of `startServerCommand` — Lighthouse serves it internally.
+folder instead of `startServerCommand` â€” Lighthouse serves it internally.
 
 ---
 
 ## 7. Debugging failing or flaky runs
 
-- **Flaky LCP/TBT** → raise `numberOfRuns` (5), confirm `median-run`, and make sure nothing else is competing for CPU on the runner.
-- **`interaction-to-next-paint` errors** → it should be `warn`, not `error`; the audit is missing in some Lighthouse versions.
-- **"server not ready" timeout** → fix `startServerReadyPattern` to match the framework's actual ready log, and raise `startServerReadyTimeout`.
-- **Real regressions** → open the uploaded report artifact, read the failed audit's "Opportunities"/"Diagnostics", fix the cause (oversized image, render-blocking JS, layout shift from unsized media) — don't just bump the budget.
-- **Desktop vs mobile divergence** → run both form factors; mobile is the stricter gate and should be the default.
+- **Flaky LCP/TBT** â†’ raise `numberOfRuns` (5), confirm `median-run`, and make sure nothing else is competing for CPU on the runner.
+- **`interaction-to-next-paint` errors** â†’ it should be `warn`, not `error`; the audit is missing in some Lighthouse versions.
+- **"server not ready" timeout** â†’ fix `startServerReadyPattern` to match the framework's actual ready log, and raise `startServerReadyTimeout`.
+- **Real regressions** â†’ open the uploaded report artifact, read the failed audit's "Opportunities"/"Diagnostics", fix the cause (oversized image, render-blocking JS, layout shift from unsized media) â€” don't just bump the budget.
+- **Desktop vs mobile divergence** â†’ run both form factors; mobile is the stricter gate and should be the default.
 
 ---
 
 ## 8. Conventions checklist (enforce in review)
 
-- [ ] All budgets are named constants with units and comments — no magic numbers in assertions.
+- [ ] All budgets are named constants with units and comments â€” no magic numbers in assertions.
 - [ ] Gate runs against the **production** build, never the dev server.
-- [ ] `aggregationMethod: "median-run"` with `numberOfRuns` ≥ 3.
-- [ ] CWV budgets at Google "good" thresholds (LCP ≤ 2500, TBT ≤ 200, CLS ≤ 0.1).
+- [ ] `aggregationMethod: "median-run"` with `numberOfRuns` â‰¥ 3.
+- [ ] CWV budgets at Google "good" thresholds (LCP â‰¤ 2500, TBT â‰¤ 200, CLS â‰¤ 0.1).
 - [ ] INP gated via TBT (`error`); experimental INP audit is `warn`.
-- [ ] Category floors set as `error` (perf ≥ 0.9, SEO/a11y ≥ 0.95, best-practices ≥ 0.9).
+- [ ] Category floors set as `error` (perf â‰¥ 0.9, SEO/a11y â‰¥ 0.95, best-practices â‰¥ 0.9).
 - [ ] `onlyCategories` lists exactly the gated categories.
 - [ ] CI triggers on the app path **and** the workflow file; reports upload with `if: always()`.
 - [ ] Local `pnpm lhci` reproduces the CI run.
@@ -327,7 +327,7 @@ is audited independently against the same budgets.
 **Tuning budgets:** change the named constant, not the assertion. Record why in the comment. Prefer
 fixing the regression over raising the budget.
 
-**Reviewing performance:** run the checklist in §8. The highest-value catches are a gate that runs
+**Reviewing performance:** run the checklist in Â§8. The highest-value catches are a gate that runs
 against the dev server (meaningless numbers) and single-run assertions (chronic flakiness).
 
 ---
@@ -337,7 +337,7 @@ against the dev server (meaningless numbers) and single-run assertions (chronic 
 This skill follows the Anthropic `SKILL.md` format and is portable across agents.
 
 1. Keep it under `skills/frontend-lighthouse/SKILL.md` in a public GitHub repo.
-2. Keep the frontmatter `name` and high-signal `description` — discovery indexes match against it.
+2. Keep the frontmatter `name` and high-signal `description` â€” discovery indexes match against it.
 3. Install with: `npx skills add <org>/<repo> --skill "frontend-lighthouse"`.
 4. Non-`SKILL.md` agents can be pointed here from `AGENTS.md` / `CLAUDE.md`; Kiro can mirror it as a steering file.
 
@@ -346,3 +346,4 @@ This skill follows the Anthropic `SKILL.md` format and is portable across agents
 - Lighthouse CI is a lab signal and does not replace field monitoring from real-user metrics.
 - Budgets must be tuned to the actual app route, hosting platform, and device/network assumptions.
 - A passing Lighthouse gate does not prove business-critical flows, visual correctness, or backend availability.
+

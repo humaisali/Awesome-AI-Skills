@@ -1,4 +1,4 @@
----
+﻿---
 name: azure-storage-file-share-ts
 description: Azure File Share JavaScript/TypeScript SDK (@azure/storage-file-share) for SMB file share operations.
 risk: unknown
@@ -8,7 +8,7 @@ date_added: '2026-02-27'
 
 # @azure/storage-file-share (TypeScript/JavaScript)
 
-SDK for Azure File Share operations — SMB file shares, directories, and file operations.
+SDK for Azure File Share operations â€” SMB file shares, directories, and file operations.
 
 ## Installation
 
@@ -85,9 +85,9 @@ const client = new ShareServiceClient(
 
 ```
 ShareServiceClient (account level)
-└── ShareClient (share level)
-    └── ShareDirectoryClient (directory level)
-        └── ShareFileClient (file level)
+â””â”€â”€ ShareClient (share level)
+    â””â”€â”€ ShareDirectoryClient (directory level)
+        â””â”€â”€ ShareFileClient (file level)
 ```
 
 ## Share Operations
@@ -306,7 +306,7 @@ console.log("ETag:", properties.etag);
 
 ```typescript
 await fileClient.setMetadata({
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   category: "documents",
 });
 ```
@@ -471,27 +471,27 @@ import {
 
 ## Best Practices
 
-1. **Use connection strings for simplicity** — Easiest setup for development
-2. **Use DefaultAzureCredential for production** — Enable managed identity in Azure
-3. **Set quotas on shares** — Prevent unexpected storage costs
-4. **Use streaming for large files** — `uploadStream`/`downloadToFile` for files > 256MB
-5. **Use ranges for partial updates** — More efficient than full file replacement
-6. **Create snapshots before major changes** — Point-in-time recovery
-7. **Handle errors gracefully** — Check `RestError.statusCode` for specific handling
-8. **Use `*IfExists` methods** — For idempotent operations
+1. **Use connection strings for simplicity** â€” Easiest setup for development
+2. **Use DefaultAzureCredential for production** â€” Enable managed identity in Azure
+3. **Set quotas on shares** â€” Prevent unexpected storage costs
+4. **Use streaming for large files** â€” `uploadStream`/`downloadToFile` for files > 256MB
+5. **Use ranges for partial updates** â€” More efficient than full file replacement
+6. **Create snapshots before major changes** â€” Point-in-time recovery
+7. **Handle errors gracefully** â€” Check `RestError.statusCode` for specific handling
+8. **Use `*IfExists` methods** â€” For idempotent operations
 
 ## Platform Differences
 
 | Feature | Node.js | Browser |
 |---------|---------|---------|
-| `StorageSharedKeyCredential` | ✅ | ❌ |
-| `uploadFile()` | ✅ | ❌ |
-| `uploadStream()` | ✅ | ❌ |
-| `downloadToFile()` | ✅ | ❌ |
-| `downloadToBuffer()` | ✅ | ❌ |
-| SAS generation | ✅ | ❌ |
-| DefaultAzureCredential | ✅ | ❌ |
-| Anonymous/SAS access | ✅ | ✅ |
+| `StorageSharedKeyCredential` | âœ… | âŒ |
+| `uploadFile()` | âœ… | âŒ |
+| `uploadStream()` | âœ… | âŒ |
+| `downloadToFile()` | âœ… | âŒ |
+| `downloadToBuffer()` | âœ… | âŒ |
+| SAS generation | âœ… | âŒ |
+| DefaultAzureCredential | âœ… | âŒ |
+| Anonymous/SAS access | âœ… | âœ… |
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
@@ -500,3 +500,4 @@ This skill is applicable to execute the workflow or actions described in the ove
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

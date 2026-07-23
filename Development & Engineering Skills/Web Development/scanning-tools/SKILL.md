@@ -1,9 +1,9 @@
----
+﻿---
 name: scanning-tools
 description: "Master essential security scanning tools for network discovery, vulnerability assessment, web application testing, wireless security, and compliance validation. This skill covers tool selection, configuration, and practical usage across different scanning categories."
 risk: unknown
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -591,3 +591,4 @@ gvm-cli socket --xml '<get_reports report_id="<id>" format_id="<pdf_format>"/>'
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

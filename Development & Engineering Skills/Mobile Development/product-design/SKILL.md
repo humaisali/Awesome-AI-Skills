@@ -1,10 +1,10 @@
----
+﻿---
 name: product-design
-description: "Design de produto nivel Apple — sistemas visuais, UX flows, acessibilidade, linguagem visual proprietaria, design tokens, prototipagem e handoff. Cobre Figma, design systems, tipografia, cor, espacamento, motion design e principios de design cognitivo."
+description: "Design de produto nivel Apple â€” sistemas visuais, UX flows, acessibilidade, linguagem visual proprietaria, design tokens, prototipagem e handoff. Cobre Figma, design systems, tipografia, cor, espacamento, motion design e principios de design cognitivo."
 risk: none
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - design
 - ux
@@ -19,11 +19,11 @@ tools:
 - codex-cli
 ---
 
-# PRODUCT DESIGN — Nivel Apple
+# PRODUCT DESIGN â€” Nivel Apple
 
 ## Overview
 
-Design de produto nivel Apple — sistemas visuais, UX flows, acessibilidade, linguagem visual proprietaria, design tokens, prototipagem e handoff. Cobre Figma, design systems, tipografia, cor, espacamento, motion design e principios de design cognitivo. Ativar para: criar design system, definir visual language, revisar UX, acessibilidade, tokens de design, branding de produto, UI critique.
+Design de produto nivel Apple â€” sistemas visuais, UX flows, acessibilidade, linguagem visual proprietaria, design tokens, prototipagem e handoff. Cobre Figma, design systems, tipografia, cor, espacamento, motion design e principios de design cognitivo. Ativar para: criar design system, definir visual language, revisar UX, acessibilidade, tokens de design, branding de produto, UI critique.
 
 ## When to Use This Skill
 
@@ -38,29 +38,29 @@ Design de produto nivel Apple — sistemas visuais, UX flows, acessibilidade, li
 ## How It Works
 
 > "Design is not just what it looks like and feels like. Design is how it works."
-> — Steve Jobs
+> â€” Steve Jobs
 
 ---
 
 ## Os 10 Principios De Jony Ive / Apple
 
-1. **Simplicidade radical** — remova tudo que nao e essencial
-2. **Honestidade material** — cada elemento existe por uma razao
-3. **Menos e mais** — restraint e uma decisao de design
-4. **Coerencia sistemica** — tudo faz parte de um sistema unico
-5. **Detalhes importam** — o usuario sente, mesmo sem notar
-6. **Funcao define forma** — a estetica serve ao proposito
-7. **Durabilidade** — design que envelhece bem
-8. **Acessibilidade como padrao** — nao como adicional
-9. **Continuidade entre telas** — experiencia unificada
-10. **Surpresa deleitosa** — o inesperado que encanta
+1. **Simplicidade radical** â€” remova tudo que nao e essencial
+2. **Honestidade material** â€” cada elemento existe por uma razao
+3. **Menos e mais** â€” restraint e uma decisao de design
+4. **Coerencia sistemica** â€” tudo faz parte de um sistema unico
+5. **Detalhes importam** â€” o usuario sente, mesmo sem notar
+6. **Funcao define forma** â€” a estetica serve ao proposito
+7. **Durabilidade** â€” design que envelhece bem
+8. **Acessibilidade como padrao** â€” nao como adicional
+9. **Continuidade entre telas** â€” experiencia unificada
+10. **Surpresa deleitosa** â€” o inesperado que encanta
 
 ## Design Cognitivo
 
-- **Carga cognitiva zero** — o usuario nunca deve pensar
-- **Affordances claras** — o que e clicavel parece clicavel
-- **Feedback imediato** — toda acao tem resposta visual
-- **Erros previnem-se** — design que impossibilita erros
+- **Carga cognitiva zero** â€” o usuario nunca deve pensar
+- **Affordances claras** â€” o que e clicavel parece clicavel
+- **Feedback imediato** â€” toda acao tem resposta visual
+- **Erros previnem-se** â€” design que impossibilita erros
 
 ---
 
@@ -68,29 +68,29 @@ Design de produto nivel Apple — sistemas visuais, UX flows, acessibilidade, li
 
 ```
 design-system/
-├── tokens/
-│   ├── colors.json       # paleta completa com semantica
-│   ├── typography.json   # escala tipografica
-│   ├── spacing.json      # grid e espacamento
-│   ├── shadows.json      # elevacao e profundidade
-│   ├── motion.json       # duracao e easing
-│   └── radius.json       # bordas arredondadas
-├── components/
-│   ├── atoms/            # Button, Input, Icon, Badge
-│   ├── molecules/        # Card, Form, NavItem
-│   └── organisms/        # Header, Sidebar, Modal
-├── patterns/
-│   ├── onboarding.md     # primeiro acesso
-│   ├── empty-states.md   # estados vazios
-│   ├── loading.md        # estados de carregamento
-│   └── errors.md         # tratamento de erros
-└── guidelines/
-    ├── voice-tone.md     # voz e tom
-    ├── imagery.md        # fotografia e ilustracao
-    └── accessibility.md  # WCAG 2.1 AA
+â”œâ”€â”€ tokens/
+â”‚   â”œâ”€â”€ colors.json       # paleta completa com semantica
+â”‚   â”œâ”€â”€ typography.json   # escala tipografica
+â”‚   â”œâ”€â”€ spacing.json      # grid e espacamento
+â”‚   â”œâ”€â”€ shadows.json      # elevacao e profundidade
+â”‚   â”œâ”€â”€ motion.json       # duracao e easing
+â”‚   â””â”€â”€ radius.json       # bordas arredondadas
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ atoms/            # Button, Input, Icon, Badge
+â”‚   â”œâ”€â”€ molecules/        # Card, Form, NavItem
+â”‚   â””â”€â”€ organisms/        # Header, Sidebar, Modal
+â”œâ”€â”€ patterns/
+â”‚   â”œâ”€â”€ onboarding.md     # primeiro acesso
+â”‚   â”œâ”€â”€ empty-states.md   # estados vazios
+â”‚   â”œâ”€â”€ loading.md        # estados de carregamento
+â”‚   â””â”€â”€ errors.md         # tratamento de erros
+â””â”€â”€ guidelines/
+    â”œâ”€â”€ voice-tone.md     # voz e tom
+    â”œâ”€â”€ imagery.md        # fotografia e ilustracao
+    â””â”€â”€ accessibility.md  # WCAG 2.1 AA
 ```
 
-## Design Tokens — Exemplo Auri
+## Design Tokens â€” Exemplo Auri
 
 ```json
 {
@@ -161,22 +161,22 @@ design-system/
 ## Onboarding De Elite (Primeiros 5 Minutos)
 
 ```
-Tela 1: Promessa — "O que voce vai conseguir"
+Tela 1: Promessa â€” "O que voce vai conseguir"
   - Uma frase impactante
   - Uma imagem que mostra o resultado
   - CTA: "Comecar" (nao "Criar conta")
 
-Tela 2: Acao imediata — primeiro valor antes de cadastro
+Tela 2: Acao imediata â€” primeiro valor antes de cadastro
   - Deixe o usuario experimentar algo real
   - Formulario minimo (email apenas)
   - Progresso visivel (1 de 3)
 
-Tela 3: Personalizacao — "Me conte sobre voce"
+Tela 3: Personalizacao â€” "Me conte sobre voce"
   - Max 3 perguntas
   - Visual, nao texto
   - Pula disponivel sempre
 
-Tela 4: Momento Aha — primeiro sucesso real
+Tela 4: Momento Aha â€” primeiro sucesso real
   - O usuario faz algo que funciona
   - Celebracao genuina (nao excessiva)
   - "Voce acabou de [acao de valor]"
@@ -197,11 +197,11 @@ Mostre:
 
 ## Principios Unicos Para Voice Ui
 
-1. **Zero carga visual** — o usuario nao ve nada (apenas ouve)
-2. **Reversibilidade facil** — "desfazer" e sempre possivel
-3. **Confirmacao opcional** — so para acoes irreversiveis
-4. **Variedade de resposta** — nunca a mesma frase duas vezes
-5. **Silencio e ok** — pausa de 2s antes de perguntar se precisa de ajuda
+1. **Zero carga visual** â€” o usuario nao ve nada (apenas ouve)
+2. **Reversibilidade facil** â€” "desfazer" e sempre possivel
+3. **Confirmacao opcional** â€” so para acoes irreversiveis
+4. **Variedade de resposta** â€” nunca a mesma frase duas vezes
+5. **Silencio e ok** â€” pausa de 2s antes de perguntar se precisa de ajuda
 
 ## Estrutura De Resposta De Voz
 
@@ -219,7 +219,7 @@ Bom:  "A resposta e: [resposta direta]"
 
 ```
 Primeiro uso:
-"Oi! Sou a Auri. Pode me perguntar qualquer coisa — de decisoes de negocio
+"Oi! Sou a Auri. Pode me perguntar qualquer coisa â€” de decisoes de negocio
 a ideias criativas. Como posso ajudar hoje?"
 
 Retorno (usuario ja conhecido):
@@ -270,31 +270,31 @@ Encerramento:
 
 ## Conceito Visual
 
-A Auri e **inteligencia com calor humano**. Nao e um robo — e uma presenca.
+A Auri e **inteligencia com calor humano**. Nao e um robo â€” e uma presenca.
 A identidade visual deve comunicar: sofisticacao acessivel.
 
 ## Paleta Principal
 
 ```
-Roxo Auri:     #6C63FF  — identidade, inteligencia, inovacao
-Rosa Auri:     #FF6B9D  — calor, empatia, humanidade
-Branco Puro:   #FFFFFF  — clareza, espaco, respiro
-Grafite Suave: #1A1A2E  — autoridade, profundidade, noite
+Roxo Auri:     #6C63FF  â€” identidade, inteligencia, inovacao
+Rosa Auri:     #FF6B9D  â€” calor, empatia, humanidade
+Branco Puro:   #FFFFFF  â€” clareza, espaco, respiro
+Grafite Suave: #1A1A2E  â€” autoridade, profundidade, noite
 ```
 
 ## Tipografia
 
 ```
-Display/Titulos: Inter (ou SF Pro para Apple) — Bold 700
-Corpo de texto:  Inter Regular 400 — linha 1.6
-Mono/Codigo:     JetBrains Mono — para elementos tecnicos
+Display/Titulos: Inter (ou SF Pro para Apple) â€” Bold 700
+Corpo de texto:  Inter Regular 400 â€” linha 1.6
+Mono/Codigo:     JetBrains Mono â€” para elementos tecnicos
 ```
 
 ## Logo Conceito
 
 ```
 Forma: Onda de audio estilizada formando a letra "A"
-Cor: Gradiente roxo → rosa (esquerda para direita)
+Cor: Gradiente roxo â†’ rosa (esquerda para direita)
 Espaco negativo: Sugestao de microfone ou ear
 Versao dark/light: Ambas definidas
 Tamanho minimo: 24px (icone), 120px (lockup completo)
@@ -316,11 +316,11 @@ Tamanho minimo: 24px (icone), 120px (lockup completo)
 ## Processo De Design Sprint (5 Dias)
 
 ```
-Segunda: Entender — pesquisa, user interviews, definir o problema
-Terca:   Divergir — crazy 8s, sketches individuais, lightning demos
-Quarta:  Decidir — vote, storyboard, decisao final
-Quinta:  Prototipar — prototipo de alta fidelidade no Figma
-Sexta:   Testar — 5 usuarios, insights, iterar
+Segunda: Entender â€” pesquisa, user interviews, definir o problema
+Terca:   Divergir â€” crazy 8s, sketches individuais, lightning demos
+Quarta:  Decidir â€” vote, storyboard, decisao final
+Quinta:  Prototipar â€” prototipo de alta fidelidade no Figma
+Sexta:   Testar â€” 5 usuarios, insights, iterar
 ```
 
 ---
@@ -361,3 +361,4 @@ Sexta:   Testar — 5 usuarios, insights, iterar
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

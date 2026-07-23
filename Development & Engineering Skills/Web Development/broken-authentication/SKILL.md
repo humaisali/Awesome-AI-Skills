@@ -1,9 +1,9 @@
----
+﻿---
 name: broken-authentication
 description: "Identify and exploit authentication and session management vulnerabilities in web applications. Broken authentication consistently ranks in the OWASP Top 10 and can lead to account takeover, identity theft, and unauthorized access to sensitive systems."
 risk: unknown
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -478,3 +478,4 @@ https://target.com/reset?token=a1b2c3d4e5f6&email=admin@example.com
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

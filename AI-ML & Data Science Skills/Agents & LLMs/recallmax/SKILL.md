@@ -1,16 +1,16 @@
----
+﻿---
 name: recallmax
-description: "FREE — God-tier long-context memory for AI agents. Injects 500K-1M clean tokens, auto-summarizes with tone/intent preservation, compresses 14-turn history into 800 tokens."
+description: "FREE â€” God-tier long-context memory for AI agents. Injects 500K-1M clean tokens, auto-summarizes with tone/intent preservation, compresses 14-turn history into 800 tokens."
 category: memory
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [memory, context, rag, summarization, compression, long-context, agent-infrastructure]
 tools: [claude, cursor, codex, gemini, copilot, windsurf, antigravity, grok]
 ---
 
-# RecallMax — God-Tier Long-Context Memory
+# RecallMax â€” God-Tier Long-Context Memory
 
 ## Overview
 
@@ -44,10 +44,10 @@ RecallMax cleanly injects external context (documents, RAG results, prior conver
 ### Step 2: Adaptive Summarization
 
 As conversations grow, RecallMax automatically summarizes older turns while preserving:
-- **Tone** — sarcasm, formality, urgency
-- **Intent** — what the user actually wants vs. what they said
-- **Key facts** — numbers, names, decisions, commitments
-- **Emotional register** — frustration, excitement, confusion
+- **Tone** â€” sarcasm, formality, urgency
+- **Intent** â€” what the user actually wants vs. what they said
+- **Key facts** â€” numbers, names, decisions, commitments
+- **Emotional register** â€” frustration, excitement, confusion
 
 ### Step 3: History Compression
 
@@ -59,12 +59,12 @@ Built-in cross-reference checks for controversial or ambiguous claims within the
 
 ## Best Practices
 
-- ✅ Use RecallMax at the start of long-running agent sessions
-- ✅ Enable auto-summarization for conversations beyond 20 turns
-- ✅ Use compression before hitting context window limits
-- ✅ Let the fact verifier run on high-stakes outputs
-- ❌ Don't inject unvetted external content without dedup
-- ❌ Don't skip summarization and rely on raw truncation
+- âœ… Use RecallMax at the start of long-running agent sessions
+- âœ… Enable auto-summarization for conversations beyond 20 turns
+- âœ… Use compression before hitting context window limits
+- âœ… Let the fact verifier run on high-stakes outputs
+- âŒ Don't inject unvetted external content without dedup
+- âŒ Don't skip summarization and rely on raw truncation
 
 ## Related Skills
 
@@ -80,3 +80,4 @@ Built-in cross-reference checks for controversial or ambiguous claims within the
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

@@ -1,11 +1,11 @@
----
+﻿---
 name: google-calendar-automation
 description: "Lightweight Google Calendar integration with standalone OAuth authentication. No MCP server required."
 license: Apache-2.0
 risk: critical
 source: https://github.com/humaisali
 metadata:
-  author: Humais Ali
+  Maintained & Curated by: Humais Ali
   version: "1.0"
 ---
 
@@ -13,7 +13,7 @@ metadata:
 
 Lightweight Google Calendar integration with standalone OAuth authentication. No MCP server required.
 
-> **⚠️ Requires Google Workspace account.** Personal Gmail accounts are not supported.
+> **âš ï¸ Requires Google Workspace account.** Personal Gmail accounts are not supported.
 
 ## When to Use
 - You need to list, create, inspect, or update Google Calendar events from local scripts.
@@ -166,3 +166,4 @@ Tokens are automatically refreshed when expired using Google's cloud function.
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

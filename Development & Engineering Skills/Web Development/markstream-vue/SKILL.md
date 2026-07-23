@@ -1,4 +1,4 @@
----
+﻿---
 name: markstream-vue
 description: "Integrate markstream-vue into plain Vue 3 with renderer modes, code and DOM choices, streaming state, virtualization, optional peers, and scoped components."
 category: frontend
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: Simon-He95/markstream-vue
 source_type: official
 date_added: "2026-07-21"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [vue, markdown, streaming, virtualization, ai-chat]
 tools: [claude, cursor, gemini, codex]
 license: MIT
@@ -69,3 +69,4 @@ defineProps<{ content: string; isDone: boolean }>()
 ## Security & Safety Notes
 
 Review dependency changes. Never enable trusted HTML or loose Mermaid rendering for untrusted model output.
+

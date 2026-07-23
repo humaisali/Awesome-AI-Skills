@@ -1,4 +1,4 @@
----
+﻿---
 name: linkedin-profile-optimizer
 description: "High-intent expert for LinkedIn profile checks, authority building, and SEO optimization. Invoke to audit, rewrite, and enhance profiles for top 1% positioning."
 category: growth
@@ -6,7 +6,7 @@ risk: safe
 source: https://github.com/humaisali
 source_type: self
 date_added: "2026-04-13"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [linkedin, branding, career, growth, personal-brand]
 tools: [claude, cursor, gemini, antigravity]
 ---
@@ -75,7 +75,7 @@ Critically evaluate the existing profile like a global recruiter, high-level inv
 ### Phase 3: Profile Optimization
 
 #### 1. Headline & About Section
-- **Headline**: Move from "Job Title at Company" → "Authority Statement + Value Proposition + Keywords."
+- **Headline**: Move from "Job Title at Company" â†’ "Authority Statement + Value Proposition + Keywords."
 - **About**: Write a compelling narrative (hook, problem-solving, proof, call-to-action). 
     - **SEO Intent Check**: Ensure primary keywords are in the first 2-3 lines.
     - **Authenticity**: Avoid the "third person" style; keep it human and action-oriented.
@@ -97,8 +97,8 @@ Critically evaluate the existing profile like a global recruiter, high-level inv
 #### 4. Skills & SEO
 - **Identify Bulk Skills**: Remove generic fillers (e.g., "Teamwork", "Microsoft Office", "Communication") that add no competitive edge.
 - **Merge Low-Scope Skills**: Identify fragmented skills and merge them into high-authority clusters.
-    - *Example*: Merge "Data Entry" + "Excel" + "Admin" → **Operations & Data Strategy**.
-    - *Example*: Merge "HTML" + "CSS" + "JS" → **Full-Stack Engineering / UI Development**.
+    - *Example*: Merge "Data Entry" + "Excel" + "Admin" â†’ **Operations & Data Strategy**.
+    - *Example*: Merge "HTML" + "CSS" + "JS" â†’ **Full-Stack Engineering / UI Development**.
 - **Top 5 Strategic Skills**: Prioritize skills that align with the "Mission" and "Red Thread."
 - **Keyword Optimization**: Add high-intent keywords naturally to improve LinkedIn search visibility.
 
@@ -141,10 +141,10 @@ Critically evaluate the existing profile like a global recruiter, high-level inv
 
 ## Best Practices
 
-- ✅ **Quantify Impact**: Use numbers, percentages, and dollar amounts wherever possible.
-- ✅ **Unify the Brand**: Find the "Red Thread" that connects diverse roles.
-- ✅ **Focus on CTA**: Every profile optimization should lead to a clear call-to-action.
-- ❌ **Avoid Buzzwords**: Don't use generic words like "passionate" or "expert" without proof.
+- âœ… **Quantify Impact**: Use numbers, percentages, and dollar amounts wherever possible.
+- âœ… **Unify the Brand**: Find the "Red Thread" that connects diverse roles.
+- âœ… **Focus on CTA**: Every profile optimization should lead to a clear call-to-action.
+- âŒ **Avoid Buzzwords**: Don't use generic words like "passionate" or "expert" without proof.
 
 ## Common Pitfalls
 
@@ -164,3 +164,4 @@ Critically evaluate the existing profile like a global recruiter, high-level inv
 - `@copywriting` - For deep narrative writing and conversion-focused text.
 - `@jobgpt` - For specific job application workflows and interview prep.
 - `@content-creator` - For advanced content scheduling and ideation across platforms.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: push-skill-to-github
 description: "Commit and push skill changes to the configured skills repository after review and validation."
 category: development
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_repo: davidondrej/skills
 source_type: community
 date_added: "2026-07-07"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [skills, git, publishing]
 tools: [claude, codex]
 license: "MIT"
@@ -21,13 +21,13 @@ license_source: https://github.com/humaisali
 - Use when skill changes are ready to commit and push to the configured skills repo.
 - Use when the user asks to save or publish skill updates after validation.
 
-For committing any skill change to the user's private skills repo, git root **`~/.agents`** (this is also the canonical skill folder; `.claude` and `.pi/agent/skills` symlink to `~/.agents/skills`). Pushes here auto-publish a sanitized public mirror to `davidondrej/skills` — never push directly to that public repo.
+For committing any skill change to the user's private skills repo, git root **`~/.agents`** (this is also the canonical skill folder; `.claude` and `.pi/agent/skills` symlink to `~/.agents/skills`). Pushes here auto-publish a sanitized public mirror to `davidondrej/skills` â€” never push directly to that public repo.
 
 Use this after creating or editing a skill. If the skill is distributed to all agents, do that first (`distribute-skill-to-all-agents`), then run this to push the canonical copy.
 
 ## Steps
 
-**Not in cmux?** (no `$CMUX_WORKSPACE_ID`): skip the cmux pane steps — just run the git commands from step 2 directly in any available terminal, then verify the push output.
+**Not in cmux?** (no `$CMUX_WORKSPACE_ID`): skip the cmux pane steps â€” just run the git commands from step 2 directly in any available terminal, then verify the push output.
 
 1. **Open a fresh cmux pane** in the current workspace, no focus steal:
    ```bash
@@ -59,3 +59,4 @@ Use this after creating or editing a skill. If the skill is distributed to all a
 
 - Adapted from `davidondrej/skills`; verify local paths, tools, credentials, and agent features before acting.
 - For commands, remote access, scheduling, browser automation, or file-changing workflows, get explicit user approval and confirm the target environment first.
+

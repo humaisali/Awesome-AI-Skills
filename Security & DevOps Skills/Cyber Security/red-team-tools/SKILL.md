@@ -1,9 +1,9 @@
----
+﻿---
 name: red-team-tools
 description: "Implement proven methodologies and tool workflows from top security researchers for effective reconnaissance, vulnerability discovery, and bug bounty hunting. Automate common tasks while maintaining thorough coverage of attack surfaces."
 risk: offensive
 source: https://github.com/humaisali
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 date_added: "2026-02-27"
 ---
 
@@ -314,3 +314,4 @@ amass enum -d target.com | httpx | nuclei -t ~/nuclei-templates/
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+

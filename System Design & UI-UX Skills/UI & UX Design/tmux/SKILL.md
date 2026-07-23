@@ -1,20 +1,20 @@
----
+﻿---
 name: tmux
 description: "Expert tmux session, window, and pane management for terminal multiplexing, persistent remote workflows, and shell scripting automation."
 category: development
 risk: safe
 source: https://github.com/humaisali
 date_added: "2026-03-28"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [tmux, terminal, multiplexer, sessions, shell, remote, automation]
 tools: [claude, cursor, gemini]
 ---
 
-# tmux — Terminal Multiplexer
+# tmux â€” Terminal Multiplexer
 
 ## Overview
 
-`tmux` keeps terminal sessions alive across SSH disconnects, splits work across multiple panes, and enables fully scriptable terminal automation. This skill covers session management, window/pane layout, keybinding patterns, and using `tmux` non-interactively from shell scripts — essential for remote servers, long-running jobs, and automated workflows.
+`tmux` keeps terminal sessions alive across SSH disconnects, splits work across multiple panes, and enables fully scriptable terminal automation. This skill covers session management, window/pane layout, keybinding patterns, and using `tmux` non-interactively from shell scripts â€” essential for remote servers, long-running jobs, and automated workflows.
 
 ## When to Use This Skill
 
@@ -92,11 +92,11 @@ tmux kill-window -t work:logs
 tmux move-window -s work:3 -t work:1
 
 # From inside tmux:
-# Prefix + c     — new window
-# Prefix + ,     — rename window
-# Prefix + &     — kill window
-# Prefix + n/p   — next/previous window
-# Prefix + 0-9   — switch to window by number
+# Prefix + c     â€” new window
+# Prefix + ,     â€” rename window
+# Prefix + &     â€” kill window
+# Prefix + n/p   â€” next/previous window
+# Prefix + 0-9   â€” switch to window by number
 ```
 
 ### Pane Management
@@ -126,12 +126,12 @@ tmux swap-pane -s work:1.0 -t work:1.1
 tmux kill-pane -t work:1.1
 
 # From inside tmux:
-# Prefix + %     — split vertical
-# Prefix + "     — split horizontal
-# Prefix + arrow — navigate panes
-# Prefix + z     — zoom/unzoom current pane
-# Prefix + x     — kill pane
-# Prefix + {/}   — swap pane with previous/next
+# Prefix + %     â€” split vertical
+# Prefix + "     â€” split horizontal
+# Prefix + arrow â€” navigate panes
+# Prefix + z     â€” zoom/unzoom current pane
+# Prefix + x     â€” kill pane
+# Prefix + {/}   â€” swap pane with previous/next
 ```
 
 ### Sending Commands to Panes Without Being Attached
@@ -333,16 +333,16 @@ tmux attach -t shared
 
 ## Best Practices
 
-- Always name sessions (`-s name`) in scripts — unnamed sessions are hard to target reliably
+- Always name sessions (`-s name`) in scripts â€” unnamed sessions are hard to target reliably
 - Use `tmux has-session -t name 2>/dev/null` before creating to make scripts idempotent
 - Set `-x` and `-y` when creating detached sessions to give panes a proper size for commands that check terminal dimensions
-- Use `send-keys ... Enter` for automation rather than piping stdin — it works even when the target pane is running an interactive program
+- Use `send-keys ... Enter` for automation rather than piping stdin â€” it works even when the target pane is running an interactive program
 - Keep `~/.tmux.conf` in version control for reproducibility across machines
 - Prefer `bind -n` for bindings that don't need the prefix, but only for keys that don't conflict with application shortcuts
 
 ## Security & Safety Notes
 
-- `send-keys` executes commands in a pane without confirmation — verify the target (`-t session:window.pane`) before use in scripts to avoid sending keystrokes to the wrong pane
+- `send-keys` executes commands in a pane without confirmation â€” verify the target (`-t session:window.pane`) before use in scripts to avoid sending keystrokes to the wrong pane
 - Read-only attach (`-r`) is appropriate when sharing sessions with others to prevent accidental input
 - Avoid storing secrets in tmux window/pane titles or environment variables exported into sessions on shared machines
 
@@ -365,11 +365,12 @@ tmux attach -t shared
 
 ## Related Skills
 
-- `@bash-pro` — Writing the shell scripts that orchestrate tmux sessions
-- `@bash-linux` — General Linux terminal patterns used inside tmux panes
-- `@ssh` — Combining tmux with SSH for persistent remote workflows
+- `@bash-pro` â€” Writing the shell scripts that orchestrate tmux sessions
+- `@bash-linux` â€” General Linux terminal patterns used inside tmux panes
+- `@ssh` â€” Combining tmux with SSH for persistent remote workflows
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

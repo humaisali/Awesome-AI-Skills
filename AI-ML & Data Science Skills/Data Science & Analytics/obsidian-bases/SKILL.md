@@ -1,4 +1,4 @@
----
+﻿---
 name: obsidian-bases
 description: Create and edit Obsidian Bases (.base files) with views, filters, formulas, and summaries. Use when working with .base files, creating database-like views of notes, or when the user mentions Bases, table views, card views, filters, or formulas in Obsidian.
 risk: unknown
@@ -165,7 +165,7 @@ formulas:
   total: "price * quantity"
 
   # Conditional logic
-  status_icon: 'if(done, "✅", "⏳")'
+  status_icon: 'if(done, "âœ…", "â³")'
 
   # String formatting
   formatted_price: 'if(price, price.toFixed(2) + " dollars")'
@@ -307,7 +307,7 @@ filters:
 formulas:
   days_until_due: 'if(due, (date(due) - today()).days, "")'
   is_overdue: 'if(due, date(due) < today() && status != "done", false)'
-  priority_label: 'if(priority == 1, "🔴 High", if(priority == 2, "🟡 Medium", "🟢 Low"))'
+  priority_label: 'if(priority == 1, "ðŸ”´ High", if(priority == 2, "ðŸŸ¡ Medium", "ðŸŸ¢ Low"))'
 
 properties:
   status:
@@ -355,12 +355,11 @@ filters:
 
 formulas:
   reading_time: 'if(pages, (pages * 2).toString() + " min", "")'
-  status_icon: 'if(status == "reading", "📖", if(status == "done", "✅", "📚"))'
+  status_icon: 'if(status == "reading", "ðŸ“–", if(status == "done", "âœ…", "ðŸ“š"))'
   year_read: 'if(finished_date, date(finished_date).year, "")'
 
 properties:
-  author:
-    Humais Ali
+  Maintained & Curated by: Humais Ali
   formula.status_icon:
     displayName: ""
   formula.reading_time:
@@ -508,3 +507,4 @@ formulas:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

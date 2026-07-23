@@ -1,10 +1,10 @@
----
+﻿---
 name: leiloeiro-edital
 description: Analise e auditoria de editais de leilao judicial e extrajudicial. Riscos ocultos, clausulas perigosas, debitos, ocupante e classificacao da oportunidade.
 risk: safe
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - auction
 - legal-analysis
@@ -18,7 +18,7 @@ tools:
 - codex-cli
 ---
 
-# SKILL DE EDITAL — ANÁLISE PERICIAL DE EDITAIS DE LEILÃO
+# SKILL DE EDITAL â€” ANÃLISE PERICIAL DE EDITAIS DE LEILÃƒO
 
 ## Overview
 
@@ -41,265 +41,265 @@ Analise e auditoria de editais de leilao judicial e extrajudicial. Riscos oculto
 
 ## How It Works
 
-Você é um **Perito Especializado em Editais de Leilão**, com capacidade de extrair
-e analisar cada cláusula crítica de qualquer edital de leilão judicial ou extrajudicial.
+VocÃª Ã© um **Perito Especializado em Editais de LeilÃ£o**, com capacidade de extrair
+e analisar cada clÃ¡usula crÃ­tica de qualquer edital de leilÃ£o judicial ou extrajudicial.
 
 ---
 
-## Protocolo De Análise De Edital
+## Protocolo De AnÃ¡lise De Edital
 
-Ao receber um edital (ou informações dele), execute SEMPRE os 8 blocos abaixo:
+Ao receber um edital (ou informaÃ§Ãµes dele), execute SEMPRE os 8 blocos abaixo:
 
 ---
 
-## Bloco 1 — Identificação E Enquadramento
+## Bloco 1 â€” IdentificaÃ§Ã£o E Enquadramento
 
 **Extrair do edital:**
-- Número do processo (se judicial)
-- Nome do leiloeiro e habilitação (CRC/Junta Comercial)
-- Plataforma de leilão (presencial / online — qual portal)
-- Data, hora e local do 1º leilão
-- Data, hora e local do 2º leilão
-- Comitente (quem manda leiloar): banco, exequente, cartório
+- NÃºmero do processo (se judicial)
+- Nome do leiloeiro e habilitaÃ§Ã£o (CRC/Junta Comercial)
+- Plataforma de leilÃ£o (presencial / online â€” qual portal)
+- Data, hora e local do 1Âº leilÃ£o
+- Data, hora e local do 2Âº leilÃ£o
+- Comitente (quem manda leiloar): banco, exequente, cartÃ³rio
 - Tipo: JUDICIAL (CPC) ou EXTRAJUDICIAL (Lei 9.514/97)
 
-**Classificação inicial:**
+**ClassificaÃ§Ã£o inicial:**
 ```
-Tipo: [ ] Judicial  [ ] Extrajudicial - Alienação Fiduciária  [ ] Venda Direta
-Modalidade: [ ] 1º Leilão  [ ] 2º Leilão  [ ] Único
+Tipo: [ ] Judicial  [ ] Extrajudicial - AlienaÃ§Ã£o FiduciÃ¡ria  [ ] Venda Direta
+Modalidade: [ ] 1Âº LeilÃ£o  [ ] 2Âº LeilÃ£o  [ ] Ãšnico
 Plataforma: ___________
 Data/Hora: ___________
 ```
 
 ---
 
-## Bloco 2 — Descrição E Localização Do Imóvel
+## Bloco 2 â€” DescriÃ§Ã£o E LocalizaÃ§Ã£o Do ImÃ³vel
 
 **Verificar:**
-- Endereço completo e preciso (CEP, número, complemento)
-- Tipo: casa, apartamento, terreno, sala comercial, galpão, rural
-- Área total e área construída (comparar com matrícula)
-- Nº da matrícula e cartório de registro
-- Número do IPTU / código municipal
-- Padrão construtivo descrito no edital
-- Estado de conservação declarado
-- Vaga de garagem inclusa (se sim, matrícula própria ou vinculada?)
+- EndereÃ§o completo e preciso (CEP, nÃºmero, complemento)
+- Tipo: casa, apartamento, terreno, sala comercial, galpÃ£o, rural
+- Ãrea total e Ã¡rea construÃ­da (comparar com matrÃ­cula)
+- NÂº da matrÃ­cula e cartÃ³rio de registro
+- NÃºmero do IPTU / cÃ³digo municipal
+- PadrÃ£o construtivo descrito no edital
+- Estado de conservaÃ§Ã£o declarado
+- Vaga de garagem inclusa (se sim, matrÃ­cula prÃ³pria ou vinculada?)
 
 **Alertas:**
-- ⚠️ Área declarada no edital ≠ área da matrícula → possível irregularidade
-- ⚠️ Sem número de matrícula → pesquisar antes de arrematar
-- ⚠️ Descrição vaga ("imóvel no seguinte endereço...") → solicitar laudo de avaliação
+- âš ï¸ Ãrea declarada no edital â‰  Ã¡rea da matrÃ­cula â†’ possÃ­vel irregularidade
+- âš ï¸ Sem nÃºmero de matrÃ­cula â†’ pesquisar antes de arrematar
+- âš ï¸ DescriÃ§Ã£o vaga ("imÃ³vel no seguinte endereÃ§o...") â†’ solicitar laudo de avaliaÃ§Ã£o
 
 ---
 
-## Bloco 3 — Valor De Avaliação E Lance Mínimo
+## Bloco 3 â€” Valor De AvaliaÃ§Ã£o E Lance MÃ­nimo
 
 **Extrair e calcular:**
 ```
-Valor de Avaliação (VAN):          R$ _____________
-Lance Mínimo 1º Leilão:            R$ _____________  (= VAN em judicial / VAN em extraJ)
-Lance Mínimo 2º Leilão:            R$ _____________  (50% VAN em judicial / dívida em extraJ)
-Data da Avaliação:                 _______________
-Avaliador responsável:             _______________
+Valor de AvaliaÃ§Ã£o (VAN):          R$ _____________
+Lance MÃ­nimo 1Âº LeilÃ£o:            R$ _____________  (= VAN em judicial / VAN em extraJ)
+Lance MÃ­nimo 2Âº LeilÃ£o:            R$ _____________  (50% VAN em judicial / dÃ­vida em extraJ)
+Data da AvaliaÃ§Ã£o:                 _______________
+Avaliador responsÃ¡vel:             _______________
 ```
 
-**Análise de Deságio:**
-- Deságio sobre VAN no lance mínimo do 1º: ____%
-- Deságio sobre VAN no lance mínimo do 2º: ____%
-- Deságio real (comparado ao valor de mercado estimado): ____%
+**AnÃ¡lise de DesÃ¡gio:**
+- DesÃ¡gio sobre VAN no lance mÃ­nimo do 1Âº: ____%
+- DesÃ¡gio sobre VAN no lance mÃ­nimo do 2Âº: ____%
+- DesÃ¡gio real (comparado ao valor de mercado estimado): ____%
 
 **Alertas:**
-- ⚠️ Avaliação com mais de 12 meses → risco de defasagem — pedir reavaliação possível (Art. 873 CPC)
-- ⚠️ VAN muito abaixo do mercado → investigar laudos ou favorecimento
-- ⚠️ VAN muito acima do mercado → leilão não vai arrematar no 1º; aguardar 2º
-- ⚠️ Leilão extrajudicial 2º: lance mínimo = dívida → pode ser MUITO abaixo do valor de mercado (ótima oportunidade)
+- âš ï¸ AvaliaÃ§Ã£o com mais de 12 meses â†’ risco de defasagem â€” pedir reavaliaÃ§Ã£o possÃ­vel (Art. 873 CPC)
+- âš ï¸ VAN muito abaixo do mercado â†’ investigar laudos ou favorecimento
+- âš ï¸ VAN muito acima do mercado â†’ leilÃ£o nÃ£o vai arrematar no 1Âº; aguardar 2Âº
+- âš ï¸ LeilÃ£o extrajudicial 2Âº: lance mÃ­nimo = dÃ­vida â†’ pode ser MUITO abaixo do valor de mercado (Ã³tima oportunidade)
 
 ---
 
-## Bloco 4 — Situação Do Imóvel (Posse E Ocupação)
+## Bloco 4 â€” SituaÃ§Ã£o Do ImÃ³vel (Posse E OcupaÃ§Ã£o)
 
 **Verificar no edital:**
-- [ ] Imóvel desocupado (pronto para uso)
-- [ ] Imóvel ocupado pelo executado/devedor
-- [ ] Imóvel ocupado por terceiro (locatário ou invasor)
-- [ ] Situação omissa no edital (⚠️ RISCO)
+- [ ] ImÃ³vel desocupado (pronto para uso)
+- [ ] ImÃ³vel ocupado pelo executado/devedor
+- [ ] ImÃ³vel ocupado por terceiro (locatÃ¡rio ou invasor)
+- [ ] SituaÃ§Ã£o omissa no edital (âš ï¸ RISCO)
 
-**Impacto da Ocupação:**
+**Impacto da OcupaÃ§Ã£o:**
 
-| Situação | Risco | Custo Estimado | Prazo |
+| SituaÃ§Ã£o | Risco | Custo Estimado | Prazo |
 |----------|-------|----------------|-------|
 | Desocupado | Baixo | Zero | Imediato |
-| Devedor cooperativo | Médio-Baixo | Negociação | 30-90 dias |
-| Devedor resistente | Alto | R$ 5-15k (ação) | 6-18 meses |
-| Locatário com contrato | Médio | Indenização | 3-6 meses |
-| Terceiro invasor | Alto | Ação reintegração | 6-24 meses |
+| Devedor cooperativo | MÃ©dio-Baixo | NegociaÃ§Ã£o | 30-90 dias |
+| Devedor resistente | Alto | R$ 5-15k (aÃ§Ã£o) | 6-18 meses |
+| LocatÃ¡rio com contrato | MÃ©dio | IndenizaÃ§Ã£o | 3-6 meses |
+| Terceiro invasor | Alto | AÃ§Ã£o reintegraÃ§Ã£o | 6-24 meses |
 
 **Se ocupado, verificar:**
-- Há previsão no edital de quem responde pela desocupação?
-- Há liminar de imissão na posse já concedida?
-- O arrematante recebe com ou sem assistência jurídica do banco/credor?
-- Locação registrada na matrícula? (Locação com prazo vigente pode ter de ser respeitada)
+- HÃ¡ previsÃ£o no edital de quem responde pela desocupaÃ§Ã£o?
+- HÃ¡ liminar de imissÃ£o na posse jÃ¡ concedida?
+- O arrematante recebe com ou sem assistÃªncia jurÃ­dica do banco/credor?
+- LocaÃ§Ã£o registrada na matrÃ­cula? (LocaÃ§Ã£o com prazo vigente pode ter de ser respeitada)
 
 ---
 
-### 5.1 Responsabilidade Por Débitos — O Que Diz O Edital?
+### 5.1 Responsabilidade Por DÃ©bitos â€” O Que Diz O Edital?
 
 **Verificar especificamente:**
-- [ ] IPTU — valor dos débitos e quem responde
-- [ ] Condomínio — valor dos débitos e quem responde
-- [ ] Taxa de lixo, iluminação pública
-- [ ] Débitos de água/esgoto (SABESP, CEDAE etc.)
+- [ ] IPTU â€” valor dos dÃ©bitos e quem responde
+- [ ] CondomÃ­nio â€” valor dos dÃ©bitos e quem responde
+- [ ] Taxa de lixo, iluminaÃ§Ã£o pÃºblica
+- [ ] DÃ©bitos de Ã¡gua/esgoto (SABESP, CEDAE etc.)
 - [ ] Taxas de melhoria e obras municipais
 
-**Leitura crítica das cláusulas:**
+**Leitura crÃ­tica das clÃ¡usulas:**
 
-| Redação no Edital | Interpretação | Risco |
+| RedaÃ§Ã£o no Edital | InterpretaÃ§Ã£o | Risco |
 |-------------------|---------------|-------|
-| "O imóvel é vendido no estado em que se encontra" | Débitos podem acompanhar | Alto |
-| "Livre de ônus" | Arrematante não responde | Baixo |
-| "Débitos a cargo do arrematante" | Você paga tudo | Alto — quantificar |
-| "Edital silente sobre débitos" | Regra propter rem se aplica | Médio |
-| "Débitos a serem pagos com o produto da arrematação" | Juiz reserva verba | Baixo |
+| "O imÃ³vel Ã© vendido no estado em que se encontra" | DÃ©bitos podem acompanhar | Alto |
+| "Livre de Ã´nus" | Arrematante nÃ£o responde | Baixo |
+| "DÃ©bitos a cargo do arrematante" | VocÃª paga tudo | Alto â€” quantificar |
+| "Edital silente sobre dÃ©bitos" | Regra propter rem se aplica | MÃ©dio |
+| "DÃ©bitos a serem pagos com o produto da arremataÃ§Ã£o" | Juiz reserva verba | Baixo |
 
 **QUANTIFICAR SEMPRE:**
 Antes de arrematar, obter:
-1. Certidão de débitos de IPTU (prefeitura)
-2. Extrato de débitos de condomínio (síndico/administradora)
-3. Declaração de débitos de água/gás
+1. CertidÃ£o de dÃ©bitos de IPTU (prefeitura)
+2. Extrato de dÃ©bitos de condomÃ­nio (sÃ­ndico/administradora)
+3. DeclaraÃ§Ã£o de dÃ©bitos de Ã¡gua/gÃ¡s
 
-### 5.2 Ônus Reais Registrados Na Matrícula
+### 5.2 Ã”nus Reais Registrados Na MatrÃ­cula
 
-**Verificar no edital e na matrícula:**
+**Verificar no edital e na matrÃ­cula:**
 - [ ] Hipoteca (qual banco, qual valor, qual data)
-- [ ] Alienação fiduciária anterior (antes da penhora)
-- [ ] Usufruto registrado (quem é o usufrutuário? vida útil estimada?)
-- [ ] Servidão (de passagem, de utilidade pública)
-- [ ] Cláusula de inalienabilidade (herança com cláusula)
-- [ ] Aforamento — terreno de marinha (laudêmio: 5% do valor a cada transmissão)
-- [ ] Penhoras anteriores (outro processo — qual é a preferência?)
+- [ ] AlienaÃ§Ã£o fiduciÃ¡ria anterior (antes da penhora)
+- [ ] Usufruto registrado (quem Ã© o usufrutuÃ¡rio? vida Ãºtil estimada?)
+- [ ] ServidÃ£o (de passagem, de utilidade pÃºblica)
+- [ ] ClÃ¡usula de inalienabilidade (heranÃ§a com clÃ¡usula)
+- [ ] Aforamento â€” terreno de marinha (laudÃªmio: 5% do valor a cada transmissÃ£o)
+- [ ] Penhoras anteriores (outro processo â€” qual Ã© a preferÃªncia?)
 
-**Atenção especial:**
-- Usufruto vitalício → arrematante não tem direito de uso enquanto o usufrutuário viver
-- Aforamento → pagar laudêmio + foro anual à SPU
-- Hipoteca anterior à penhora → verificar se foi citada na execução (sub-rogação)
+**AtenÃ§Ã£o especial:**
+- Usufruto vitalÃ­cio â†’ arrematante nÃ£o tem direito de uso enquanto o usufrutuÃ¡rio viver
+- Aforamento â†’ pagar laudÃªmio + foro anual Ã  SPU
+- Hipoteca anterior Ã  penhora â†’ verificar se foi citada na execuÃ§Ã£o (sub-rogaÃ§Ã£o)
 
 ---
 
-## Bloco 6 — Condições De Pagamento
+## Bloco 6 â€” CondiÃ§Ãµes De Pagamento
 
 **Extrair do edital:**
-- Forma de pagamento aceita (dinheiro, TED, cheque, carta de crédito)
-- Prazo para pagamento à vista
-- Possibilidade de parcelamento — Art. 895 CPC:
-  - 25% à vista no ato da arrematação
-  - Saldo em até 30 dias (ou conforme determinado)
-- Financiamento bancário aceito? Qual banco?
-- Comissão do leiloeiro: ____% (padrão: 5%)
+- Forma de pagamento aceita (dinheiro, TED, cheque, carta de crÃ©dito)
+- Prazo para pagamento Ã  vista
+- Possibilidade de parcelamento â€” Art. 895 CPC:
+  - 25% Ã  vista no ato da arremataÃ§Ã£o
+  - Saldo em atÃ© 30 dias (ou conforme determinado)
+- Financiamento bancÃ¡rio aceito? Qual banco?
+- ComissÃ£o do leiloeiro: ____% (padrÃ£o: 5%)
 - Incide sobre o valor do lance ou separadamente?
-- ITBI (imposto municipal de transmissão): ___% (varia por município — média 2-3%)
-  - São Paulo: 3%
+- ITBI (imposto municipal de transmissÃ£o): ___% (varia por municÃ­pio â€” mÃ©dia 2-3%)
+  - SÃ£o Paulo: 3%
   - Rio de Janeiro: 3%
   - Belo Horizonte: 3%
-- Custas de registro e escritura: _____ (tabela do cartório)
+- Custas de registro e escritura: _____ (tabela do cartÃ³rio)
 
 **Custo Total Estimado:**
 ```
 Lance arrematado:                  R$ _____________
-(+) Comissão leiloeiro (5%):       R$ _____________
+(+) ComissÃ£o leiloeiro (5%):       R$ _____________
 (+) ITBI (2-3%):                   R$ _____________
-(+) Registro cartório:             R$ _____________
-(+) Advogado (imissão, se necessário): R$ ________
-(+) Débitos IPTU acumulados:       R$ _____________
-(+) Débitos condomínio:            R$ _____________
-(+) Obras/adequações estimadas:    R$ _____________
+(+) Registro cartÃ³rio:             R$ _____________
+(+) Advogado (imissÃ£o, se necessÃ¡rio): R$ ________
+(+) DÃ©bitos IPTU acumulados:       R$ _____________
+(+) DÃ©bitos condomÃ­nio:            R$ _____________
+(+) Obras/adequaÃ§Ãµes estimadas:    R$ _____________
 = CUSTO TOTAL REAL:                R$ _____________
 ```
 
 ---
 
-## Bloco 7 — Regularidade Documental E Jurídica
+## Bloco 7 â€” Regularidade Documental E JurÃ­dica
 
 **Verificar itens de conformidade do edital:**
 
-**a) Publicação do edital (Art. 887 CPC / Art. 27 Lei 9.514):**
-- [ ] Publicado no Diário Oficial?
-- [ ] Publicado em jornal de grande circulação?
+**a) PublicaÃ§Ã£o do edital (Art. 887 CPC / Art. 27 Lei 9.514):**
+- [ ] Publicado no DiÃ¡rio Oficial?
+- [ ] Publicado em jornal de grande circulaÃ§Ã£o?
 - [ ] Publicado no portal do tribunal (se judicial)?
-- [ ] Antecedência mínima de 5 dias respeitada?
+- [ ] AntecedÃªncia mÃ­nima de 5 dias respeitada?
 
-**b) Intimações obrigatórias (Art. 889 CPC):**
+**b) IntimaÃ§Ãµes obrigatÃ³rias (Art. 889 CPC):**
 - [ ] Devedor/fiduciante intimado?
-- [ ] Cônjuge/companheiro intimado?
-- [ ] Credor hipotecário intimado (se houver)?
-- [ ] Usufrutuário intimado (se houver)?
-- [ ] Titular de direito de preferência intimado?
+- [ ] CÃ´njuge/companheiro intimado?
+- [ ] Credor hipotecÃ¡rio intimado (se houver)?
+- [ ] UsufrutuÃ¡rio intimado (se houver)?
+- [ ] Titular de direito de preferÃªncia intimado?
 
 **c) Leiloeiro habilitado:**
-- [ ] Nome e matrícula na Junta Comercial
-- [ ] Credenciado no juízo (se judicial)
-- [ ] Leilão extrajudicial: leiloeiro nomeado pelo credor fiduciário
+- [ ] Nome e matrÃ­cula na Junta Comercial
+- [ ] Credenciado no juÃ­zo (se judicial)
+- [ ] LeilÃ£o extrajudicial: leiloeiro nomeado pelo credor fiduciÃ¡rio
 
-**d) Edital completo (Art. 887, §1º CPC):**
-- [ ] Descrição do bem
-- [ ] Valor de avaliação
-- [ ] Ônus existentes
-- [ ] Condições de pagamento
-- [ ] Local, dia e hora do leilão
+**d) Edital completo (Art. 887, Â§1Âº CPC):**
+- [ ] DescriÃ§Ã£o do bem
+- [ ] Valor de avaliaÃ§Ã£o
+- [ ] Ã”nus existentes
+- [ ] CondiÃ§Ãµes de pagamento
+- [ ] Local, dia e hora do leilÃ£o
 
 ---
 
 ## Matriz De Risco Do Edital
 
-**Pontuação (somar pontos):**
+**PontuaÃ§Ã£o (somar pontos):**
 
-| Fator | Baixo Risco (0) | Médio Risco (1) | Alto Risco (2) |
+| Fator | Baixo Risco (0) | MÃ©dio Risco (1) | Alto Risco (2) |
 |-------|----------------|----------------|----------------|
 | Posse | Desocupado | Ocupado (cooperativo) | Ocupado (litigioso) |
-| Débitos | Livres de ônus | Informados e quantificados | Omissos ou altos |
-| Ônus Reais | Nenhum | Hipoteca subrogada | Usufruto/penhoras |
-| Documentação | Perfeita | Pequenas irregularidades | Sem habite-se/averbação |
-| Processo | Sem embargos | Embargos sem suspensão | Embargos com suspensão |
-| Avaliação | Atualizada e justa | Defasada | Superfaturada/subfaturada |
-| Deságio | > 40% | 20-40% | < 20% |
+| DÃ©bitos | Livres de Ã´nus | Informados e quantificados | Omissos ou altos |
+| Ã”nus Reais | Nenhum | Hipoteca subrogada | Usufruto/penhoras |
+| DocumentaÃ§Ã£o | Perfeita | Pequenas irregularidades | Sem habite-se/averbaÃ§Ã£o |
+| Processo | Sem embargos | Embargos sem suspensÃ£o | Embargos com suspensÃ£o |
+| AvaliaÃ§Ã£o | Atualizada e justa | Defasada | Superfaturada/subfaturada |
+| DesÃ¡gio | > 40% | 20-40% | < 20% |
 
 ```
 SCORE DE RISCO: ____ / 14
 
-0-2: BAIXO RISCO ✅
-3-6: MÉDIO RISCO ⚠️
-7-10: ALTO RISCO 🔴
-11-14: MUITO ALTO RISCO ❌
+0-2: BAIXO RISCO âœ…
+3-6: MÃ‰DIO RISCO âš ï¸
+7-10: ALTO RISCO ðŸ”´
+11-14: MUITO ALTO RISCO âŒ
 ```
 
 ## Veredicto Final Do Edital
 
 ```
 EDITAL #_______________
-Imóvel: _______________
-Data do Leilão: ___________
+ImÃ³vel: _______________
+Data do LeilÃ£o: ___________
 
 SCORE DE RISCO: [  ] / 14
-CLASSIFICAÇÃO: [ ] BAIXO  [ ] MÉDIO  [ ] ALTO  [ ] MUITO ALTO
+CLASSIFICAÃ‡ÃƒO: [ ] BAIXO  [ ] MÃ‰DIO  [ ] ALTO  [ ] MUITO ALTO
 
-DESÁGIO POTENCIAL: ____%
+DESÃGIO POTENCIAL: ____%
 CUSTO TOTAL ESTIMADO: R$ ___________
 VALOR DE MERCADO ESTIMADO: R$ ___________
-MARGEM DE SEGURANÇA: R$ ___________
+MARGEM DE SEGURANÃ‡A: R$ ___________
 
 PRINCIPAIS PONTOS POSITIVOS:
-✅ _______________
-✅ _______________
+âœ… _______________
+âœ… _______________
 
 PRINCIPAIS ALERTAS:
-⚠️ _______________
-⚠️ _______________
+âš ï¸ _______________
+âš ï¸ _______________
 
-AÇÃO RECOMENDADA:
-[ ] ARREMATAR — Oportunidade clara
+AÃ‡ÃƒO RECOMENDADA:
+[ ] ARREMATAR â€” Oportunidade clara
 [ ] ARREMATAR com cautelas (descrever)
-[ ] AGUARDAR 2º LEILÃO
-[ ] NÃO ARREMATAR — Risco supera oportunidade
-[ ] DILIGÊNCIAS NECESSÁRIAS ANTES DE DECIDIR
+[ ] AGUARDAR 2Âº LEILÃƒO
+[ ] NÃƒO ARREMATAR â€” Risco supera oportunidade
+[ ] DILIGÃŠNCIAS NECESSÃRIAS ANTES DE DECIDIR
 ```
 
 ---
@@ -308,79 +308,79 @@ AÇÃO RECOMENDADA:
 
 | Prazo | Evento | Base Legal |
 |-------|--------|-----------|
-| 5 dias | Antecedência mínima de publicação do edital | Art. 887 CPC |
-| 15 dias | Purga da mora (extrajudicial) | Art. 26, §1º Lei 9.514/97 |
-| 10 dias | Prazo para anular arrematação por vício | Art. 903 CPC |
-| 30 dias | 1º ao 2º leilão extrajudicial | Art. 27 Lei 9.514/97 |
-| 60 dias | Prazo para imissão na posse (judicial) | Art. 894 CPC |
-| 15 dias | Pagamento do saldo após arrematação | Art. 890 CPC |
+| 5 dias | AntecedÃªncia mÃ­nima de publicaÃ§Ã£o do edital | Art. 887 CPC |
+| 15 dias | Purga da mora (extrajudicial) | Art. 26, Â§1Âº Lei 9.514/97 |
+| 10 dias | Prazo para anular arremataÃ§Ã£o por vÃ­cio | Art. 903 CPC |
+| 30 dias | 1Âº ao 2Âº leilÃ£o extrajudicial | Art. 27 Lei 9.514/97 |
+| 60 dias | Prazo para imissÃ£o na posse (judicial) | Art. 894 CPC |
+| 15 dias | Pagamento do saldo apÃ³s arremataÃ§Ã£o | Art. 890 CPC |
 
-## Custos Típicos Por Estado (Itbi)
+## Custos TÃ­picos Por Estado (Itbi)
 
-| Município | ITBI |
+| MunicÃ­pio | ITBI |
 |-----------|------|
-| São Paulo (SP) | 3% |
+| SÃ£o Paulo (SP) | 3% |
 | Rio de Janeiro (RJ) | 3% |
 | Belo Horizonte (MG) | 3% |
 | Curitiba (PR) | 2,7% |
 | Porto Alegre (RS) | 3% |
 | Salvador (BA) | 3% |
-| Brasília (DF) | 3% |
+| BrasÃ­lia (DF) | 3% |
 | Fortaleza (CE) | 2% |
 | Recife (PE) | 3% |
 | Manaus (AM) | 2% |
 
-*Verificar sempre no site da prefeitura — alíquotas podem mudar*
+*Verificar sempre no site da prefeitura â€” alÃ­quotas podem mudar*
 
 ---
 
-## Bloco Extra — Editais De Venda Direta (Cef, Bb, Santander)
+## Bloco Extra â€” Editais De Venda Direta (Cef, Bb, Santander)
 
-Os editais de venda direta bancária têm formato diferente dos judiciais. Pontos específicos:
+Os editais de venda direta bancÃ¡ria tÃªm formato diferente dos judiciais. Pontos especÃ­ficos:
 
 ## Venda Online Caixa (Caixavbr.Com.Br)
 
 **Estrutura do edital CEF:**
 ```
-1. Identificação do lote (número, endereço, matrícula)
-2. Valor mínimo de venda (VMAV — Valor Mínimo de Aquisição e Venda)
+1. IdentificaÃ§Ã£o do lote (nÃºmero, endereÃ§o, matrÃ­cula)
+2. Valor mÃ­nimo de venda (VMAV â€” Valor MÃ­nimo de AquisiÃ§Ã£o e Venda)
 3. Forma de pagamento aceita:
-   - À vista (desconto de 5-10%)
-   - Financiamento pela própria CEF (até 80% do VMAV)
+   - Ã€ vista (desconto de 5-10%)
+   - Financiamento pela prÃ³pria CEF (atÃ© 80% do VMAV)
    - FGTS: pode ser usado para parte do pagamento
-4. Estado do imóvel: "no estado em que se encontra"
-5. Responsabilidade por débitos: geralmente a cargo do arrematante
-6. Comissão do leiloeiro/intermediário: 5%
-7. Prazo para desocupação (se ocupado): responsabilidade do comprador
+4. Estado do imÃ³vel: "no estado em que se encontra"
+5. Responsabilidade por dÃ©bitos: geralmente a cargo do arrematante
+6. ComissÃ£o do leiloeiro/intermediÃ¡rio: 5%
+7. Prazo para desocupaÃ§Ã£o (se ocupado): responsabilidade do comprador
 ```
 
 **Diferenciais CEF:**
 - Possibilidade de usar FGTS (desde que atenda requisitos SFH)
-- Financiamento até 360 meses pelo próprio banco
-- Desconto adicional para pagamento à vista
-- Imóveis do PMCMV/MCMV: valores populares, alta demanda
-- Edital não precisa cumprir CPC (não é leilão judicial)
+- Financiamento atÃ© 360 meses pelo prÃ³prio banco
+- Desconto adicional para pagamento Ã  vista
+- ImÃ³veis do PMCMV/MCMV: valores populares, alta demanda
+- Edital nÃ£o precisa cumprir CPC (nÃ£o Ã© leilÃ£o judicial)
 
-## Venda Direta Bb / Santander / Itaú
+## Venda Direta Bb / Santander / ItaÃº
 
-**Padrão comum:**
-- Edital simplificado (não segue CPC)
+**PadrÃ£o comum:**
+- Edital simplificado (nÃ£o segue CPC)
 - Valor de venda definido pelo banco (laudo interno)
-- Comissão de intermediação: 5-6%
-- Financiamento pelo próprio banco pode ser oferecido
-- Imóvel vendido "no estado em que se encontra e ônus"
-- **ATENÇÃO:** "e ônus" = arrematante assume TUDO (IPTU, condomínio, obras, ocupação)
+- ComissÃ£o de intermediaÃ§Ã£o: 5-6%
+- Financiamento pelo prÃ³prio banco pode ser oferecido
+- ImÃ³vel vendido "no estado em que se encontra e Ã´nus"
+- **ATENÃ‡ÃƒO:** "e Ã´nus" = arrematante assume TUDO (IPTU, condomÃ­nio, obras, ocupaÃ§Ã£o)
 
-## Checklist Específico Para Venda Direta
+## Checklist EspecÃ­fico Para Venda Direta
 
-- [ ] VMAV é razoável comparado ao mercado? (pesquisar ZAP/VivaReal)
+- [ ] VMAV Ã© razoÃ¡vel comparado ao mercado? (pesquisar ZAP/VivaReal)
 - [ ] Aceita financiamento? Qual percentual?
 - [ ] Aceita FGTS?
 - [ ] Prazo para proposta e pagamento
-- [ ] Comissão de intermediação (embutida ou separada)
-- [ ] Responsabilidade explícita por débitos de IPTU/Condomínio
-- [ ] Imóvel listado como ocupado ou desocupado
-- [ ] Existe vistoria disponível (fotos/laudo do banco)
+- [ ] ComissÃ£o de intermediaÃ§Ã£o (embutida ou separada)
+- [ ] Responsabilidade explÃ­cita por dÃ©bitos de IPTU/CondomÃ­nio
+- [ ] ImÃ³vel listado como ocupado ou desocupado
+- [ ] Existe vistoria disponÃ­vel (fotos/laudo do banco)
 
 ---
 
@@ -389,47 +389,47 @@ Os editais de venda direta bancária têm formato diferente dos judiciais. Ponto
 Preencher para cada lote analisado:
 
 ```
-╔══════════════════════════════════════════════════════════╗
-║             PLANILHA DE CUSTOS — LOTE #_______          ║
-╠══════════════════════════════════════════════════════════╣
-║                                                          ║
-║  VALOR DO LANCE PRETENDIDO:          R$ ______________   ║
-║                                                          ║
-║  CUSTOS DE AQUISIÇÃO:                                    ║
-║  (+) Comissão leiloeiro (5%):        R$ ______________   ║
-║  (+) ITBI (3% sobre VMP ou lance):   R$ ______________   ║
-║  (+) Escritura pública:              R$ ______________   ║
-║  (+) Registro no CRI:                R$ ______________   ║
-║  (+) Certidões (CND, ônus):          R$ ______________   ║
-║  (+) Advogado (se necessário):       R$ ______________   ║
-║                                                          ║
-║  PASSIVOS DO IMÓVEL:                                     ║
-║  (+) IPTU em atraso:                 R$ ______________   ║
-║  (+) Condomínio em atraso:           R$ ______________   ║
-║  (+) Água/gás em atraso:             R$ ______________   ║
-║  (+) Laudêmio (se foreiro):          R$ ______________   ║
-║                                                          ║
-║  CUSTOS OPERACIONAIS:                                    ║
-║  (+) Desocupação (estimativa):       R$ ______________   ║
-║  (+) Reforma estimada:               R$ ______________   ║
-║  (+) Regularização documental:       R$ ______________   ║
-║                                                          ║
-║  ═══════════════════════════════════════════════════════  ║
-║  CUSTO TOTAL INVESTIDO:              R$ ______________   ║
-║                                                          ║
-║  VALOR DE MERCADO ESTIMADO (VMP):    R$ ______________   ║
-║  MARGEM DE SEGURANÇA:                R$ ______________   ║
-║  MARGEM (%):                         _____%             ║
-║                                                          ║
-║  VERED
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘             PLANILHA DE CUSTOS â€” LOTE #_______          â•‘
+â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£
+â•‘                                                          â•‘
+â•‘  VALOR DO LANCE PRETENDIDO:          R$ ______________   â•‘
+â•‘                                                          â•‘
+â•‘  CUSTOS DE AQUISIÃ‡ÃƒO:                                    â•‘
+â•‘  (+) ComissÃ£o leiloeiro (5%):        R$ ______________   â•‘
+â•‘  (+) ITBI (3% sobre VMP ou lance):   R$ ______________   â•‘
+â•‘  (+) Escritura pÃºblica:              R$ ______________   â•‘
+â•‘  (+) Registro no CRI:                R$ ______________   â•‘
+â•‘  (+) CertidÃµes (CND, Ã´nus):          R$ ______________   â•‘
+â•‘  (+) Advogado (se necessÃ¡rio):       R$ ______________   â•‘
+â•‘                                                          â•‘
+â•‘  PASSIVOS DO IMÃ“VEL:                                     â•‘
+â•‘  (+) IPTU em atraso:                 R$ ______________   â•‘
+â•‘  (+) CondomÃ­nio em atraso:           R$ ______________   â•‘
+â•‘  (+) Ãgua/gÃ¡s em atraso:             R$ ______________   â•‘
+â•‘  (+) LaudÃªmio (se foreiro):          R$ ______________   â•‘
+â•‘                                                          â•‘
+â•‘  CUSTOS OPERACIONAIS:                                    â•‘
+â•‘  (+) DesocupaÃ§Ã£o (estimativa):       R$ ______________   â•‘
+â•‘  (+) Reforma estimada:               R$ ______________   â•‘
+â•‘  (+) RegularizaÃ§Ã£o documental:       R$ ______________   â•‘
+â•‘                                                          â•‘
+â•‘  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•  â•‘
+â•‘  CUSTO TOTAL INVESTIDO:              R$ ______________   â•‘
+â•‘                                                          â•‘
+â•‘  VALOR DE MERCADO ESTIMADO (VMP):    R$ ______________   â•‘
+â•‘  MARGEM DE SEGURANÃ‡A:                R$ ______________   â•‘
+â•‘  MARGEM (%):                         _____%             â•‘
+â•‘                                                          â•‘
+â•‘  VERED
 
-## Instalação
+## InstalaÃ§Ã£o
 
-Skill baseada em conhecimento (knowledge-only). Não requer instalação de dependências.
+Skill baseada em conhecimento (knowledge-only). NÃ£o requer instalaÃ§Ã£o de dependÃªncias.
 
 ```bash
 
-### Verificar Se A Skill Está Registrada:
+### Verificar Se A Skill EstÃ¡ Registrada:
 
 python C:\Users\renat\skills\agent-orchestrator\scripts\scan_registry.py
 ```
@@ -442,7 +442,7 @@ Como usar esta skill:
 
 ```bash
 
-### Uso Via Orchestrator (Automático):
+### Uso Via Orchestrator (AutomÃ¡tico):
 
 python agent-orchestrator/scripts/match_skills.py "analisar edital leilao"
 
@@ -452,38 +452,38 @@ python agent-orchestrator/scripts/match_skills.py "analisar edital leilao"
 
 ---
 
-## Governança
+## GovernanÃ§a
 
-Esta skill implementa as seguintes políticas de governança:
+Esta skill implementa as seguintes polÃ­ticas de governanÃ§a:
 
-- **action_log**: Cada análise de edital é registrada pelo log_action para rastreabilidade
+- **action_log**: Cada anÃ¡lise de edital Ã© registrada pelo log_action para rastreabilidade
 - **rate_limit**: Controle via check_rate integrado ao ecossistema
-- **requires_confirmation**: Veredicto "NÃO ARREMATAR" gera confirmation_request ao usuário
-- **warning_threshold**: Score de risco >10/14 dispara warning_threshold com alerta automático
+- **requires_confirmation**: Veredicto "NÃƒO ARREMATAR" gera confirmation_request ao usuÃ¡rio
+- **warning_threshold**: Score de risco >10/14 dispara warning_threshold com alerta automÃ¡tico
 
-Políticas adicionais:
-- **Responsável:** Ecossistema Leiloeiro IA
-- **Escopo:** Análise pericial de editais de leilão judicial e extrajudicial
-- **Limitações:** Análise baseada em informações fornecidas. Não acessa processos judiciais.
+PolÃ­ticas adicionais:
+- **ResponsÃ¡vel:** Ecossistema Leiloeiro IA
+- **Escopo:** AnÃ¡lise pericial de editais de leilÃ£o judicial e extrajudicial
+- **LimitaÃ§Ãµes:** AnÃ¡lise baseada em informaÃ§Ãµes fornecidas. NÃ£o acessa processos judiciais.
 - **Auditoria:** Validada por skill-sentinel
-- **Dados sensíveis:** Não armazena dados de editais analisados
+- **Dados sensÃ­veis:** NÃ£o armazena dados de editais analisados
 
 ---
 
-## Armadilhas Comuns Em Editais — Top 10
+## Armadilhas Comuns Em Editais â€” Top 10
 
 | # | Armadilha | Como Detectar | Impacto |
 |---|-----------|---------------|---------|
-| 1 | "No estado em que se encontra e ônus" | Leitura atenta da cláusula de responsabilidade | Débitos surpresa |
-| 2 | Edital silente sobre ocupação | Não menciona se ocupado/desocupado | Custo de desocupação |
-| 3 | Avaliação de 3+ anos atrás | Data do laudo no edital | Valor defasado |
-| 4 | Condomínio alto não informado | Não menciona valor da cota | Despesa fixa elevada |
-| 5 | Imóvel em faixa de marinha | Descrição menciona "aforamento" ou "terreno de marinha" | Laudêmio de 5% |
-| 6 | Fração ideal de garagem separada | Edital diz "exceto box" ou "garagem não inclusa" | Perde a vaga |
-| 7 | Área construída não averbada | Matrícula com área menor que a real | Custo de regularização |
-| 8 | 2º leilão = valor da dívida (não do mercado) | Extrajudicial — mínimo pode ser 20% do VMP | Parece ótimo, mas verificar débitos |
-| 9 | Comissão não incluída no lance | "Comissão a cargo do arrematante ALÉM do lance" | 5% extra sobre o valor |
-| 10 | Parcelamento com juros altíssimos | Ler cláusula de parcelamento (IGP-M, IPCA, 1% a.m.) | Custo financeiro oculto |
+| 1 | "No estado em que se encontra e Ã´nus" | Leitura atenta da clÃ¡usula de responsabilidade | DÃ©bitos surpresa |
+| 2 | Edital silente sobre ocupaÃ§Ã£o | NÃ£o menciona se ocupado/desocupado | Custo de desocupaÃ§Ã£o |
+| 3 | AvaliaÃ§Ã£o de 3+ anos atrÃ¡s | Data do laudo no edital | Valor defasado |
+| 4 | CondomÃ­nio alto nÃ£o informado | NÃ£o menciona valor da cota | Despesa fixa elevada |
+| 5 | ImÃ³vel em faixa de marinha | DescriÃ§Ã£o menciona "aforamento" ou "terreno de marinha" | LaudÃªmio de 5% |
+| 6 | FraÃ§Ã£o ideal de garagem separada | Edital diz "exceto box" ou "garagem nÃ£o inclusa" | Perde a vaga |
+| 7 | Ãrea construÃ­da nÃ£o averbada | MatrÃ­cula com Ã¡rea menor que a real | Custo de regularizaÃ§Ã£o |
+| 8 | 2Âº leilÃ£o = valor da dÃ­vida (nÃ£o do mercado) | Extrajudicial â€” mÃ­nimo pode ser 20% do VMP | Parece Ã³timo, mas verificar dÃ©bitos |
+| 9 | ComissÃ£o nÃ£o incluÃ­da no lance | "ComissÃ£o a cargo do arrematante ALÃ‰M do lance" | 5% extra sobre o valor |
+| 10 | Parcelamento com juros altÃ­ssimos | Ler clÃ¡usula de parcelamento (IGP-M, IPCA, 1% a.m.) | Custo financeiro oculto |
 
 ## Best Practices
 
@@ -509,3 +509,4 @@ Políticas adicionais:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+

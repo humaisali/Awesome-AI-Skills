@@ -1,4 +1,4 @@
----
+﻿---
 name: gh-image
 description: "Upload local images to GitHub and get canonical user-attachments embed URLs; use when asked to attach a screenshot to a PR, issue, or comment, or to embed before/after images in a README."
 category: developer-tools
@@ -7,7 +7,7 @@ source: https://github.com/humaisali
 source_type: community
 source_repo: drogers0/gh-image
 date_added: "2026-06-25"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 license: MIT
 license_source: https://github.com/humaisali
 tags:
@@ -33,9 +33,9 @@ plugin:
 
 # Upload images to GitHub (gh-image)
 
-GitHub has **no public API** for image uploads — the web UI uses an internal
+GitHub has **no public API** for image uploads â€” the web UI uses an internal
 endpoint that mints `user-attachments` URLs scoped to the repo's visibility.
-[`gh-image`](https://github.com/drogers0/gh-image) (MIT, © drogers0) replicates
+[`gh-image`](https://github.com/drogers0/gh-image) (MIT, Â© drogers0) replicates
 that flow as a `gh` CLI extension, so an agent can upload a local image from the
 terminal and get a ready-to-embed Markdown image line back.
 
@@ -66,7 +66,7 @@ gh extension list | grep -q 'drogers0/gh-image' \
 
 `gh-image` does **not** use the `gh` token for the upload (that endpoint rejects
 tokens). It needs a GitHub `user_session` cookie, resolved in this order:
-`--token <value>` flag → `GH_SESSION_TOKEN` env var (use in CI/headless) → a
+`--token <value>` flag â†’ `GH_SESSION_TOKEN` env var (use in CI/headless) â†’ a
 logged-in browser's cookie store (default for local use).
 
 ### Step 2: Upload
@@ -82,7 +82,7 @@ gh image "/abs/path/screenshot.png" --repo <owner>/<repo>
 ![screenshot.png](https://github.com/user-attachments/assets/<uuid>)
 ```
 
-Capture that output — it is the embeddable reference.
+Capture that output â€” it is the embeddable reference.
 
 ### Step 3: Embed into the PR / issue / comment
 
@@ -120,11 +120,12 @@ gh pr view <pr> --repo owner/repo --json body -q .body   # confirm URL present
 ## Limitations
 
 - **Session cookie required.** A `user_session` cookie grants full account access
-  (not scoped like a PAT) — treat it like a password; use a bot account in CI.
+  (not scoped like a PAT) â€” treat it like a password; use a bot account in CI.
 - **Write access to the target repo is required**; orgs that enforce SAML SSO need
   the session authorized at `https://github.com/orgs/<org>/sso` first.
 - **Private-repo images stay private:** the `user-attachments` URL inherits repo
   visibility, so an anonymous fetch on a private repo returns 404/403 by design.
-- **Windows + Chrome 127+** cannot read cookies (library limitation) — use another
+- **Windows + Chrome 127+** cannot read cookies (library limitation) â€” use another
   browser or `GH_SESSION_TOKEN`.
 - The skill embeds the Markdown itself; `gh-image` only prints the URL.
+

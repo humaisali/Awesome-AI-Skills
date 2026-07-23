@@ -1,13 +1,13 @@
----
+﻿---
 name: anywrite
-description: "Compiled CLI covering all 52 endpoints of the Anytype local API — objects, properties, tags, search, chat, files — one binary, no MCP server needed."
+description: "Compiled CLI covering all 52 endpoints of the Anytype local API â€” objects, properties, tags, search, chat, files â€” one binary, no MCP server needed."
 category: productivity
 risk: critical
 source: https://github.com/humaisali
 source_repo: Antheurus/anywrite
 source_type: community
 date_added: "2026-07-15"
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags: [anytype, cli, pkm, notes, api-integration, productivity, knowledge-management]
 tools: [claude, cursor, gemini, codex]
 license: "MIT"
@@ -26,7 +26,7 @@ plugin:
 
 ## Overview
 
-`anywrite` is a single compiled Bun/TypeScript CLI for the [Anytype](https://anytype.io) desktop app's local HTTP API — **all 52 endpoints** across spaces, objects, properties, tags, types, templates, lists, chat, files, members, search, and auth — as one binary with zero runtime dependencies. It exists as a low-context alternative to Anytype's official MCP server: rather than exposing 52 always-loaded tools to every agent session, `anywrite` is a normal CLI wired as a skill that costs zero context until it's actually invoked, and is equally usable from a terminal or any script.
+`anywrite` is a single compiled Bun/TypeScript CLI for the [Anytype](https://anytype.io) desktop app's local HTTP API â€” **all 52 endpoints** across spaces, objects, properties, tags, types, templates, lists, chat, files, members, search, and auth â€” as one binary with zero runtime dependencies. It exists as a low-context alternative to Anytype's official MCP server: rather than exposing 52 always-loaded tools to every agent session, `anywrite` is a normal CLI wired as a skill that costs zero context until it's actually invoked, and is equally usable from a terminal or any script.
 
 ## When to Use This Skill
 
@@ -44,7 +44,7 @@ The Anytype desktop app must be running locally (default `http://localhost:31009
 
 ```bash
 "/absolute/path/to/anywrite" auth --status        # shows configured yes/no and where the key came from
-"/absolute/path/to/anywrite" auth                 # challenge flow — a 4-digit code appears in the app
+"/absolute/path/to/anywrite" auth                 # challenge flow â€” a 4-digit code appears in the app
 "/absolute/path/to/anywrite" auth --code 1234     # non-interactive form of the same exchange
 ```
 
@@ -56,7 +56,7 @@ The key is written to `~/.anywrite/config.json` and is never printed by any comm
 anywrite <resource> <action> [positionals] [--flag value]
 ```
 
-Resources: `spaces`, `objects`, `properties`, `tags`, `types`, `templates`, `lists`, `files`, `members`, `search`, `chat`, `auth`. Output is JSON by default; add `--pretty` for a human view, `--json` as an escape hatch for anything the typed flags don't model yet. `space`/`type`/`property` positionals accept a name or an id — names are resolved to ids automatically.
+Resources: `spaces`, `objects`, `properties`, `tags`, `types`, `templates`, `lists`, `files`, `members`, `search`, `chat`, `auth`. Output is JSON by default; add `--pretty` for a human view, `--json` as an escape hatch for anything the typed flags don't model yet. `space`/`type`/`property` positionals accept a name or an id â€” names are resolved to ids automatically.
 
 ## Examples
 
@@ -82,11 +82,11 @@ Resources: `spaces`, `objects`, `properties`, `tags`, `types`, `templates`, `lis
 
 ## Best Practices
 
-- ✅ Pass names for `space`/`type`/`property` and let the CLI resolve them to ids.
-- ✅ Use default JSON output for scripting and `--pretty` for human review.
-- ✅ Reach for `--json` when a brand-new API field isn't yet covered by a typed flag.
-- ❌ Don't set an empty-string emoji `--icon`; omit the flag entirely instead.
-- ❌ Don't expect `lists add`/`remove` to work on sets — they only apply to collections.
+- âœ… Pass names for `space`/`type`/`property` and let the CLI resolve them to ids.
+- âœ… Use default JSON output for scripting and `--pretty` for human review.
+- âœ… Reach for `--json` when a brand-new API field isn't yet covered by a typed flag.
+- âŒ Don't set an empty-string emoji `--icon`; omit the flag entirely instead.
+- âŒ Don't expect `lists add`/`remove` to work on sets â€” they only apply to collections.
 
 ## Limitations
 
@@ -100,17 +100,18 @@ Resources: `spaces`, `objects`, `properties`, `tags`, `types`, `templates`, `lis
 - The API key is stored locally in `~/.anywrite/config.json` and is never printed by any command, including `auth --status`.
 - Config precedence at runtime: `ANYTYPE_API_KEY` env var, then `~/.anywrite/config.json`, then a read-only fallback to an existing `~/.anytype-cli/config.yaml`.
 - All operations target a locally-running Anytype desktop instance; no data is sent to third-party servers.
-- Delete is a soft archive everywhere and is idempotent — a repeated delete stays `200`, never `410`.
+- Delete is a soft archive everywhere and is idempotent â€” a repeated delete stays `200`, never `410`.
 
 ## Common Pitfalls
 
 - **Problem:** `lists add`/`remove` silently does nothing on a set.
   **Solution:** These only work on collections, not sets.
 - **Problem:** Re-uploading an identical file returns an existing object id instead of a new one.
-  **Solution:** This is intentional — file upload dedupes by content hash.
+  **Solution:** This is intentional â€” file upload dedupes by content hash.
 - **Problem:** Chat messages don't paginate like everything else.
   **Solution:** Chat paginates by cursor; every other resource paginates by offset.
 
 ## Related Skills
 
 - `@docx` - When the deliverable is a Word document rather than an Anytype object.
+

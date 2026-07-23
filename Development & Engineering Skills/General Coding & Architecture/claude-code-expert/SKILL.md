@@ -1,10 +1,10 @@
----
+﻿---
 name: claude-code-expert
 description: "Especialista profundo em Claude Code - CLI da Anthropic. Maximiza produtividade com atalhos, hooks, MCPs, configuracoes avancadas, workflows, CLAUDE.md, memoria, sub-agentes, permissoes e integracao com ecossistemas."
 risk: none
 source: https://github.com/humaisali
 date_added: '2026-03-06'
-author: Humais Ali
+Maintained & Curated by: Humais Ali
 tags:
 - claude-code
 - productivity
@@ -134,10 +134,10 @@ Sempre rodar orchestrator antes de responder
 
 ```
 ~/.claude/projects/<hash-do-path>/memory/
-├── MEMORY.md          # indice e contexto rapido (max 200 linhas)
-├── ai-personas.md     # detalhes de personas e skills ativas
-├── project-X.md       # contexto de projetos especificos
-└── decisions.md       # decisoes tecnicas importantes
+â”œâ”€â”€ MEMORY.md          # indice e contexto rapido (max 200 linhas)
+â”œâ”€â”€ ai-personas.md     # detalhes de personas e skills ativas
+â”œâ”€â”€ project-X.md       # contexto de projetos especificos
+â””â”€â”€ decisions.md       # decisoes tecnicas importantes
 ```
 
 ## Memoria Ativa (Em Claude.Md)
@@ -563,3 +563,4 @@ Esta skill e ativada automaticamente quando o usuario quer:
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+
