@@ -61,7 +61,7 @@ Awesome-AI-Skills
 │   ├── Cyber Security
 │   └── DevOps & Infrastructure
 ├── System Design & UI-UX Skills
-│   └── UX
+│   └── UI & UX Design
 └── Writing & Productivity Skills
     ├── Productivity & Workflow
     └── Writing & Content
